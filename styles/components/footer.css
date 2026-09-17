@@ -1,0 +1,93 @@
+/* Footer Styles */
+.site-footer {
+  background: #090d16;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4rem 2rem 2rem 2rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-desc {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-links-group h4, .footer-social h4 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-group li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links-group a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links-group a:hover {
+  color: #38bdf8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-btn {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.social-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 3rem auto 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

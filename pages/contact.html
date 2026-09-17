@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - RedBI4DT</title>
+  <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+
+  <!-- Componente Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Contenido Principal -->
+  <main class="page-content">
+    <section class="hero">
+      <h1 class="hero-title">Página de Contacto</h1>
+      <p class="hero-subtitle">Comprobando cómo los componentes Navbar y Footer se cargan de forma limpia y sin duplicar código.</p>
+    </section>
+
+    <section style="max-width: 600px; margin: 0 auto;">
+      <div class="card">
+        <form id="contact-form" onsubmit="event.preventDefault(); alert('Mensaje enviado (Simulación)');">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <div class="form-input-container">
+              <input type="text" id="name" class="form-input" placeholder="Tu nombre..." required>
+              <i class="fa-solid fa-user form-input-icon"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <div class="form-input-container">
+              <input type="email" id="email" class="form-input" placeholder="tu@email.com..." required>
+              <i class="fa-solid fa-envelope form-input-icon"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <div class="form-input-container">
+              <textarea id="message" class="form-input" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              <i class="fa-solid fa-comment-dots form-input-icon" style="top: 1rem;"></i>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Componente Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/loadComponents.js"></script>
+  <script src="../scripts/index.js"></script>
+</body>
+</html>
