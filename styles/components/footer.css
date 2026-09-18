@@ -1,93 +1,275 @@
-/* Footer Styles */
+/* ============================================================
+   Footer Styles - Red BI4DT
+   ============================================================ */
+
 .site-footer {
-  background: #090d16;
+  background: #0d1526;
   color: #94a3b8;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 4rem 2rem 2rem 2rem;
-  margin-top: auto;
+  font-family: inherit;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(90deg, #d97706, #f59e0b, #fbbf24, #f59e0b, #d97706) 1;
+}
+
+/* ─── Área principal ─── */
+.footer-inner {
+  padding: 3rem 2rem 2.5rem;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.8fr 1.2fr 1.6fr;
+  gap: 3rem 4rem;
+  align-items: start;
 }
 
-.footer-logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: white;
+/* ═══════════════════════════
+   COLUMNA 1 — Brand
+   ═══════════════════════════ */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
+  color: #ffffff;
+  transition: opacity 0.2s ease;
+  width: fit-content;
+}
+
+.footer-logo-link:hover {
+  opacity: 0.88;
+}
+
+.footer-logo-icon-box {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-logo-icon {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-brand-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.footer-logo-accent {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.footer-brand-sub {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 400;
 }
 
 .footer-desc {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  max-width: 320px;
-}
-
-.footer-links-group h4, .footer-social h4 {
-  color: white;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.footer-links-group ul {
-  list-style: none;
-  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #7a8fa6;
+  max-width: 280px;
   margin: 0;
 }
 
-.footer-links-group li {
-  margin-bottom: 0.5rem;
+/* Botones sociales */
+.footer-social-icons {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
 }
 
-.footer-links-group a {
-  color: #94a3b8;
+.footer-social-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════
+   COLUMNA 2 — Navegación
+   ═══════════════════════════ */
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-col-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  margin: 0 0 0.5rem;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-nav-link {
+  display: block;
+  color: #8da0b5;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.2s;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
-.footer-links-group a:hover {
-  color: #38bdf8;
+.footer-nav-list li:last-child .footer-nav-link {
+  border-bottom: none;
 }
 
-.social-icons {
+.footer-nav-link:hover {
+  color: #e2e8f0;
+  padding-left: 0.4rem;
+}
+
+/* ═══════════════════════════
+   COLUMNA 3 — Entidad
+   ═══════════════════════════ */
+.footer-entity-col {
   display: flex;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
-.social-btn {
-  color: #94a3b8;
+.footer-entity-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0;
+  margin-top: 0.35rem;
+}
+
+.footer-entity-address {
+  font-size: 0.875rem;
+  color: #7a8fa6;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.footer-entity-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: #e2e8f0;
   text-decoration: none;
-  font-size: 0.85rem;
-  padding: 0.4rem 0.8rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  transition: all 0.2s;
+  font-weight: 500;
+  margin-top: 0.3rem;
+  transition: color 0.2s ease;
 }
 
-.social-btn:hover {
-  background: rgba(56, 189, 248, 0.15);
+.footer-entity-email:hover {
   color: #38bdf8;
 }
 
-.footer-bottom {
-  max-width: 1200px;
-  margin: 3rem auto 0 auto;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  text-align: center;
-  font-size: 0.85rem;
+.footer-email-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+/* ═══════════════════════════
+   BARRA INFERIOR
+   ═══════════════════════════ */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.1rem 2rem;
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #4b6175;
+  margin: 0;
+}
+
+/* ═══════════════════════════
+   RESPONSIVE
+   ═══════════════════════════ */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 2.5rem;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1;
+  }
+
+  .footer-desc {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-inner {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .footer-brand-col {
+    grid-column: auto;
+  }
+
+  .footer-bottom-bar {
+    padding: 1rem 1.25rem;
   }
 }

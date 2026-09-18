@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
 @import url('../assets/fontawesome/css/all.min.css');
+@import url('./colors.css');
 @import url('./components/navbar.css');
 @import url('./components/footer.css');
+@import url('./contact.css');
 
 * {
   box-sizing: border-box;
@@ -9,10 +11,17 @@
   padding: 0;
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,6 +55,12 @@ main.page-content {
   width: 100%;
   margin: 0 auto;
   padding: 0 0 3rem 0;
+}
+
+/* Páginas de sección completa (sin max-width) */
+main.page-content.page-full {
+  max-width: 100%;
+  padding: 0;
 }
 
 /* El contenido interior al main (no el banner) lleva padding lateral */
@@ -294,15 +309,15 @@ main.page-content {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 3.2rem;
   font-weight: 700;
-  color: #eab308;
+  color: var(--color-gold);
   letter-spacing: -0.5px;
   margin-bottom: 1.25rem;
   line-height: 1.1;
-  text-shadow: 0 2px 12px rgba(234, 179, 8, 0.25);
+  text-shadow: 0 2px 12px rgba(245, 158, 11, 0.25);
 }
 
 .banner-description {
-  color: #cbd5e1;
+  color: var(--color-gray-soft);
   font-size: 1.05rem;
   line-height: 1.65;
   max-width: 560px;
@@ -330,17 +345,17 @@ main.page-content {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
-  color: #0f172a;
+  background: var(--gradient-gold);
+  color: var(--color-dark-bg);
   font-weight: 700;
-  border: 1px solid rgba(254, 240, 138, 0.5);
-  box-shadow: 0 4px 16px rgba(234, 179, 8, 0.35);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
 }
 
 .btn-gold:hover {
-  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+  background: var(--gradient-gold-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(234, 179, 8, 0.55);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.55);
 }
 
 .btn-icon-right {
