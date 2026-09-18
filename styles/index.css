@@ -2,6 +2,7 @@
 @import url('../assets/fontawesome/css/all.min.css');
 @import url('./components/navbar.css');
 @import url('./components/footer.css');
+@import url('./contact.css');
 
 * {
   box-sizing: border-box;
@@ -46,6 +47,12 @@ main.page-content {
   width: 100%;
   margin: 0 auto;
   padding: 0 0 3rem 0;
+}
+
+/* Páginas de sección completa (sin max-width) */
+main.page-content.page-full {
+  max-width: 100%;
+  padding: 0;
 }
 
 /* El contenido interior al main (no el banner) lleva padding lateral */

@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - RedBI4DT</title>
+  <title>Contacto - Red BI4DT | Informática Biomédica & Salud Digital</title>
+  <meta name="description" content="Ponte en contacto con la Red BI4DT. Estamos en búsqueda de investigadores, docentes e instituciones comprometidas con la transformación digital en salud.">
   <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/contact.css">
 </head>
 <body>
 
@@ -12,42 +14,243 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Contenido Principal -->
-  <main class="page-content">
-    <section class="hero">
-      <h1 class="hero-title">Página de Contacto</h1>
-      <p class="hero-subtitle">Comprobando cómo los componentes Navbar y Footer se cargan de forma limpia y sin duplicar código.</p>
+  <main class="contact-page page-content page-full">
+
+    <!-- ── Hero Banner ── -->
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
+        <span class="contact-hero-label">
+          <i class="fa-solid fa-minus"></i> PONERSE EN CONTACTO
+        </span>
+        <h1 class="contact-hero-title">Contacto</h1>
+      </div>
+      <div class="contact-hero-gold-line"></div>
     </section>
 
-    <section style="max-width: 600px; margin: 0 auto;">
-      <div class="card">
-        <form id="contact-form" onsubmit="event.preventDefault(); alert('Mensaje enviado (Simulación)');">
-          <div class="form-group">
-            <label for="name">Nombre</label>
-            <div class="form-input-container">
-              <input type="text" id="name" class="form-input" placeholder="Tu nombre..." required>
-              <i class="fa-solid fa-user form-input-icon"></i>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Correo Electrónico</label>
-            <div class="form-input-container">
-              <input type="email" id="email" class="form-input" placeholder="tu@email.com..." required>
-              <i class="fa-solid fa-envelope form-input-icon"></i>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje</label>
-            <div class="form-input-container">
-              <textarea id="message" class="form-input" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-              <i class="fa-solid fa-comment-dots form-input-icon" style="top: 1rem;"></i>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">
-            <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
-          </button>
-        </form>
+    <!-- ── Intro Banner ── -->
+    <section class="contact-intro-banner">
+      <div class="contact-intro-inner">
+        <p class="contact-intro-tag">
+          <i class="fa-solid fa-hand-holding-heart"></i> CONECTEMOS CONTIGO
+        </p>
+        <h2 class="contact-intro-title">
+          En la Red BI4DT, avanzamos gracias a la colaboración y la ciencia.
+        </h2>
+        <p class="contact-intro-desc">
+          Nuestro trabajo es posible gracias a la articulación entre universidades, institutos y socios internacionales.
+          Escríbenos si quieres sumarte a esta red y ser parte de la transformación digital en salud.
+        </p>
       </div>
     </section>
+
+    <!-- ── Mapa Placeholder ── -->
+    <section class="contact-map-section">
+      <div class="contact-map-wrapper">
+        <iframe
+          class="contact-map-iframe"
+          title="Ubicación Universidad Científica del Sur"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.7287043523585!2d-76.9780!3d-12.2059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8b74c7f4c3b%3A0x4f3b9e0c7b8a2e1d!2sUniversidad%20Cient%C3%ADfica%20del%20Sur!5e0!3m2!1ses!2spe!4v1699000000000!5m2!1ses!2spe"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="contact-map-pin">
+          <div class="map-pin-card">
+            <i class="fa-solid fa-location-dot map-pin-icon"></i>
+            <div>
+              <strong>Universidad Científica del Sur</strong>
+              <span>Panamericana Sur km 19, Lima</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Formulario + Info ── -->
+    <section class="contact-main-section">
+      <div class="contact-main-inner">
+
+        <!-- Panel izquierdo: Info -->
+        <div class="contact-info-panel">
+          <h2 class="contact-info-title">Conecta con Nosotros</h2>
+          <p class="contact-info-desc">
+            Estamos en constante búsqueda de investigadores, docentes e instituciones comprometidas
+            con la transformación digital en salud. Te invitamos a escribirnos y contarnos tu
+            interés en sumarte a la red. ¡Esperamos tu mensaje!
+          </p>
+
+          <div class="contact-info-items">
+            <div class="contact-info-item">
+              <div class="contact-item-icon-box">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-item-body">
+                <span class="contact-item-label">Correo</span>
+                <a href="mailto:investigacion@ucsur.edu.pe" class="contact-item-value">
+                  investigacion@ucsur.edu.pe
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-item-icon-box">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-item-body">
+                <span class="contact-item-label">Teléfono</span>
+                <span class="contact-item-value">(01) 610-6400</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-item-icon-box">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-item-body">
+                <span class="contact-item-label">Dirección</span>
+                <span class="contact-item-value">Carretera Panamericana Sur Km. 19, Villa El Salvador, Lima</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Red social quick -->
+          <div class="contact-socials">
+            <a href="#" class="contact-social-pill" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="contact-social-pill" aria-label="ResearchGate">
+              <i class="fa-brands fa-researchgate"></i>
+              <span>ResearchGate</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Panel derecho: Formulario -->
+        <div class="contact-form-panel">
+          <div class="contact-form-header">
+            <h3 class="contact-form-title">
+              <i class="fa-solid fa-paper-plane contact-form-title-icon"></i>
+              Envíanos un mensaje
+            </h3>
+            <p class="contact-form-subtitle">Te responderemos en menos de 48 horas hábiles.</p>
+          </div>
+
+          <form id="contact-form" class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="cform-row">
+              <div class="cform-group">
+                <label class="cform-label" for="cf-nombre">Nombre</label>
+                <div class="cform-input-wrap">
+                  <i class="fa-solid fa-user cform-icon"></i>
+                  <input
+                    type="text"
+                    id="cf-nombre"
+                    name="nombre"
+                    class="cform-input"
+                    placeholder="Tu nombre"
+                    required
+                    autocomplete="given-name"
+                  >
+                </div>
+              </div>
+              <div class="cform-group">
+                <label class="cform-label" for="cf-apellido">Apellido</label>
+                <div class="cform-input-wrap">
+                  <i class="fa-solid fa-user cform-icon"></i>
+                  <input
+                    type="text"
+                    id="cf-apellido"
+                    name="apellido"
+                    class="cform-input"
+                    placeholder="Tu apellido"
+                    required
+                    autocomplete="family-name"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="cform-row">
+              <div class="cform-group">
+                <label class="cform-label" for="cf-correo">Correo</label>
+                <div class="cform-input-wrap">
+                  <i class="fa-solid fa-envelope cform-icon"></i>
+                  <input
+                    type="email"
+                    id="cf-correo"
+                    name="correo"
+                    class="cform-input"
+                    placeholder="tu@correo.com"
+                    required
+                    autocomplete="email"
+                  >
+                </div>
+              </div>
+              <div class="cform-group">
+                <label class="cform-label" for="cf-telefono">Teléfono <span class="cform-optional">(opcional)</span></label>
+                <div class="cform-input-wrap">
+                  <i class="fa-solid fa-phone cform-icon"></i>
+                  <input
+                    type="tel"
+                    id="cf-telefono"
+                    name="telefono"
+                    class="cform-input"
+                    placeholder="+51 999 999 999"
+                    autocomplete="tel"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="cform-group cform-group--full">
+              <label class="cform-label" for="cf-institucion">Institución / Organización <span class="cform-optional">(opcional)</span></label>
+              <div class="cform-input-wrap">
+                <i class="fa-solid fa-building-columns cform-icon"></i>
+                <input
+                  type="text"
+                  id="cf-institucion"
+                  name="institucion"
+                  class="cform-input"
+                  placeholder="Tu universidad, hospital u organización"
+                  autocomplete="organization"
+                >
+              </div>
+            </div>
+
+            <div class="cform-group cform-group--full">
+              <label class="cform-label" for="cf-mensaje">Mensaje</label>
+              <div class="cform-input-wrap cform-input-wrap--textarea">
+                <i class="fa-solid fa-comment-dots cform-icon cform-icon--top"></i>
+                <textarea
+                  id="cf-mensaje"
+                  name="mensaje"
+                  class="cform-input cform-textarea"
+                  rows="5"
+                  placeholder="Cuéntanos sobre tu interés o consulta..."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Estado del formulario -->
+            <div id="cf-status" class="cform-status" aria-live="polite" hidden></div>
+
+            <div class="cform-footer">
+              <p class="cform-privacy">
+                <i class="fa-solid fa-shield-halved"></i>
+                Tu información es tratada con total confidencialidad.
+              </p>
+              <button type="submit" id="cf-submit-btn" class="cform-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Enviar mensaje</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- Componente Footer -->
@@ -56,5 +259,25 @@
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/index.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('cf-submit-btn');
+      const status = document.getElementById('cf-status');
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando…</span>';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Enviar mensaje</span>';
+        status.hidden = false;
+        status.className = 'cform-status cform-status--success';
+        status.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado con éxito! Te responderemos pronto.';
+        e.target.reset();
+        setTimeout(() => { status.hidden = true; }, 6000);
+      }, 1800);
+    }
+  </script>
 </body>
 </html>
