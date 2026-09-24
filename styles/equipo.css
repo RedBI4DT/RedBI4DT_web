@@ -1,0 +1,119 @@
+/* styles/equipo.css */
+@import url('colors.css');
+@import url('quienes.css'); /* Reutilizamos el header */
+
+.equipo-content-section {
+  background: #e2e8f0;
+  padding: 4rem 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 4px solid #f59e0b;
+  margin-bottom: -3rem; /* Para que embone con el footer */
+}
+
+.equipo-container {
+  max-width: 1280px;
+  width: 100%;
+}
+
+.equipo-category-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin: 3rem 0 2.5rem 0;
+}
+
+.equipo-category-title:first-child {
+  margin-top: 1rem;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  justify-items: start;
+}
+
+.equipo-member-card {
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1.1; /* Approx proportion in screenshot */
+  background: #000000;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.member-img-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: rgba(0,0,0,0.1);
+}
+
+.member-name {
+  color: #f59e0b;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.member-role {
+  color: #475569;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+  .equipo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .equipo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .equipo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .equipo-category-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipo-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .equipo-member-card {
+    align-items: center;
+    text-align: center;
+  }
+}
