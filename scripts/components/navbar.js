@@ -11,10 +11,10 @@ function initNavbar() {
 
   if (logoLink) logoLink.href = base + 'index.html';
   if (navInicio) navInicio.href = base + 'index.html';
-  if (navQuienesSomos) navQuienesSomos.href = base + 'quienes.html';
-  if (navEquipo) navEquipo.href = base + 'equipo.html';
+  if (navQuienesSomos) navQuienesSomos.href = base + 'pages/quienes.html';
+  if (navEquipo) navEquipo.href = base + 'pages/equipo.html';
   if (navProyectos) navProyectos.href = base + 'index.html#proyectos';
-  if (navContacto) navContacto.href = base + 'contacto.html';
+  if (navContacto) navContacto.href = base + 'pages/contacto.html';
 
   // Toggle Menú Móvil
   const toggleBtn = document.getElementById('mobile-menu-toggle');
