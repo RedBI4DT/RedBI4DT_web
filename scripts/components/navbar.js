@@ -14,7 +14,7 @@ function initNavbar() {
   if (navQuienesSomos) navQuienesSomos.href = base + 'quienes.html';
   if (navEquipo) navEquipo.href = base + 'equipo.html';
   if (navProyectos) navProyectos.href = base + 'index.html#proyectos';
-  if (navContacto) navContacto.href = base + 'pages/contact.html';
+  if (navContacto) navContacto.href = base + 'contacto.html';
 
   // Toggle Menú Móvil
   const toggleBtn = document.getElementById('mobile-menu-toggle');
@@ -57,7 +57,7 @@ function initNavbar() {
     if (link) link.classList.remove('active');
   });
 
-  if (currentPath.includes('contact.html')) {
+  if (currentPath.includes('contacto.html')) {
     if (navContacto) navContacto.classList.add('active');
   } else if (currentPath.includes('quienes.html')) {
     if (navQuienesSomos) navQuienesSomos.classList.add('active');

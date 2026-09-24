@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Red BI4DT</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/quienes.css">
+  <link rel="stylesheet" href="styles/contacto.css">
+</head>
+<body class="contacto-page">
+
+  <!-- Componente Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Contenido Principal -->
+  <main class="page-content page-full">
+
+    <!-- Header: Ponerse en contacto -->
+    <section class="quienes-header-section" style="margin-bottom: 0;">
+      <div class="quienes-header-container">
+         <span class="quienes-label">PONERSE EN CONTACTO</span>
+         <h1 class="quienes-title">Contacto</h1>
+      </div>
+    </section>
+    
+    <!-- Intro Banner -->
+    <section class="contacto-intro-banner">
+      <div class="contacto-intro-tag">CONECTEMOS CONTIGO</div>
+      <h2 class="contacto-intro-title">En la Red BI4DT, avanzamos gracias a la colaboración y la ciencia.</h2>
+      <p class="contacto-intro-desc">
+        Nuestro trabajo es posible gracias a la articulación entre universidades, institutos y socios internacionales. Escríbenos si quieres sumarte a esta red y ser parte de la transformación digital en salud.
+      </p>
+    </section>
+
+    <!-- Imagen Full Width -->
+    <section class="contacto-img-section">
+      <!-- Siguiendo Regla 9 de imágenes como lienzos -->
+      <img src="assets/images/Imagen_1.jpg" class="contacto-img">
+      <div class="contacto-img-overlay"></div>
+    </section>
+
+    <!-- Main Contact Info & Form -->
+    <section class="contacto-main-section">
+      
+      <!-- Lado Izquierdo: Info -->
+      <div class="contacto-info-panel">
+        <h2>Conecta con Nosotros</h2>
+        <p class="contacto-desc">
+          Estamos en constante búsqueda de investigadores, docentes e instituciones comprometidos con la transformación digital en salud. Te invitamos a escribirnos y contarnos tu interés en sumarte a la red. ¡Esperamos tu mensaje!
+        </p>
+        
+        <div class="contacto-item">
+          <span class="contacto-item-label">CORREO</span>
+          <a href="mailto:investigacion@ucsur.edu.pe" class="contacto-item-value">investigacion@ucsur.edu.pe</a>
+        </div>
+        
+        <div class="contacto-item">
+          <span class="contacto-item-label">TELÉFONO</span>
+          <span class="contacto-item-value">(01) 610-6400</span>
+        </div>
+        
+        <div class="contacto-item">
+          <span class="contacto-item-label">DIRECCIÓN</span>
+          <span class="contacto-item-value">Carretera Panamericana Sur Km. 19, Villa El Salvador, Lima</span>
+        </div>
+      </div>
+
+      <!-- Lado Derecho: Formulario -->
+      <form class="contacto-form" onsubmit="event.preventDefault();">
+        <div class="contacto-row">
+          <div class="contacto-group">
+            <label class="contacto-form-label" for="nombre">NOMBRE</label>
+            <input type="text" id="nombre" class="contacto-input" required>
+          </div>
+          <div class="contacto-group">
+            <label class="contacto-form-label" for="apellido">APELLIDO</label>
+            <input type="text" id="apellido" class="contacto-input" required>
+          </div>
+        </div>
+
+        <div class="contacto-row">
+          <div class="contacto-group">
+            <label class="contacto-form-label" for="correo">CORREO</label>
+            <input type="email" id="correo" class="contacto-input" required>
+          </div>
+          <div class="contacto-group">
+            <label class="contacto-form-label" for="telefono">TELÉFONO</label>
+            <input type="tel" id="telefono" class="contacto-input">
+          </div>
+        </div>
+
+        <div class="contacto-group">
+          <label class="contacto-form-label" for="mensaje">MENSAJE</label>
+          <textarea id="mensaje" class="contacto-input contacto-textarea" required></textarea>
+        </div>
+
+        <button type="submit" class="contacto-submit-btn">ENVIAR</button>
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- Componente Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="scripts/loadComponents.js"></script>
+</body>
+</html>
