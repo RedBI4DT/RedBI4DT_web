@@ -1,0 +1,239 @@
+/* styles/quienes.css */
+@import url('colors.css');
+
+.quienes-header-section {
+  background: linear-gradient(180deg, #1a3668 0%, #1e3a8a 100%);
+  padding: 3rem 50px 4rem 50px;
+  border-top: 4px solid #f59e0b;
+  border-bottom: 4px solid #f59e0b;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.quienes-header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.quienes-label {
+  color: #f59e0b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.quienes-label::before {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background-color: #f59e0b;
+}
+
+.quienes-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+/* Mission & Vision */
+.mission-vision-section {
+  background: #e2e8f0;
+  padding: 5rem 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: flex;
+  justify-content: center;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.mv-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.mv-card-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a3668;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.mv-card-title.vision {
+  color: #f59e0b;
+}
+
+.mv-card-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #1a3668;
+}
+
+.mv-card-title.vision::after {
+  background: #f59e0b;
+}
+
+.mv-card p {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Enfoque / Lineas de investigacion */
+.enfoque-section {
+  background: linear-gradient(180deg, #1e3a8a 0%, #1a3668 100%);
+  padding: 5rem 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  border-top: 4px solid #f59e0b;
+}
+
+.enfoque-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.enfoque-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.enfoque-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.enfoque-icon {
+  width: 48px;
+  height: 48px;
+  background: #1e3a8a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.enfoque-icon i {
+  color: #fcd34d;
+  font-size: 1.5rem;
+}
+
+.enfoque-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a3668;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.enfoque-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.enfoque-number {
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Mapa Section */
+.map-section {
+  background: #f8fafc;
+  padding: 4rem 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  border-bottom: 4px solid #f59e0b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -3rem; /* Para que embone con el footer */
+}
+
+.map-container {
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+}
+
+.map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-img-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .enfoque-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+  .enfoque-grid {
+    grid-template-columns: 1fr;
+  }
+  .quienes-title {
+    font-size: 2.5rem;
+  }
+  .mv-card-title {
+    font-size: 2rem;
+  }
+}

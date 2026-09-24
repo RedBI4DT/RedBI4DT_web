@@ -11,7 +11,7 @@ function initNavbar() {
 
   if (logoLink) logoLink.href = base + 'index.html';
   if (navInicio) navInicio.href = base + 'index.html';
-  if (navQuienesSomos) navQuienesSomos.href = base + 'index.html#quienes-somos';
+  if (navQuienesSomos) navQuienesSomos.href = base + 'quienes.html';
   if (navEquipo) navEquipo.href = base + 'index.html#equipo';
   if (navProyectos) navProyectos.href = base + 'index.html#proyectos';
   if (navContacto) navContacto.href = base + 'pages/contact.html';
@@ -59,7 +59,7 @@ function initNavbar() {
 
   if (currentPath.includes('contact.html')) {
     if (navContacto) navContacto.classList.add('active');
-  } else if (currentHash === '#quienes-somos') {
+  } else if (currentPath.includes('quienes.html')) {
     if (navQuienesSomos) navQuienesSomos.classList.add('active');
   } else if (currentHash === '#equipo') {
     if (navEquipo) navEquipo.classList.add('active');
