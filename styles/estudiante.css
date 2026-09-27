@@ -1,0 +1,40 @@
+/* styles/estudiante.css */
+/* Reutiliza la mayoria de estilos de investigacion.css, omitiendo la seccion de proyectos */
+@import url('colors.css');
+@import url('investigacion.css');
+
+/* Ajuste de acento para estudiantes: tono mas suave */
+.perfil-label {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  color: var(--color-white);
+}
+
+.perfil-linea-item {
+  border-left-color: #3b82f6;
+}
+
+.perfil-linea-item i {
+  color: #3b82f6;
+}
+
+.perfil-contacto-section {
+  border-top-color: #3b82f6;
+}
+
+.perfil-contacto-btn {
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+
+.perfil-contacto-btn:hover {
+  background: #3b82f6;
+  color: var(--color-white);
+}
+
+.perfil-contacto-section .perfil-section-title {
+  color: #60a5fa;
+}
+
+.perfil-error i {
+  color: #3b82f6;
+}
