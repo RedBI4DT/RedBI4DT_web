@@ -260,7 +260,359 @@ main.page-content.page-full {
   }
 }
 
+/* =====================================================
+   Sección: Entidad Ejecutora
+   ===================================================== */
+.executor-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #fffcfc; /* Fondo clarito como lienzo */
+  border-top: 2px solid #f59e0b; /* Borde amarillo/naranja */
+  border-bottom: 2px solid #f59e0b;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 3rem;
+}
 
+.executor-content {
+  flex: 1 1 50%;
+  padding: 4rem 3rem 4rem calc(50vw - 640px); /* Alineado con max-width 1280px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.executor-label-group {
+  margin-bottom: 1.25rem;
+}
+
+.executor-label {
+  color: #f59e0b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.executor-line {
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background-color: #f59e0b;
+}
+
+.executor-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #1a3668;
+  line-height: 1.2;
+}
+
+.executor-description {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 90%;
+  margin-bottom: 2rem;
+}
+
+.executor-link {
+  color: #1a3668;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.executor-link:hover {
+  opacity: 0.8;
+}
+
+.executor-link:hover i {
+  transform: translateX(4px);
+}
+
+.executor-image-container {
+  flex: 1 1 50%;
+  padding: 2.5rem calc(50vw - 640px) 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.executor-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.executor-img-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1300px) {
+  .executor-content {
+    padding-left: 50px;
+  }
+  .executor-image-container {
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 960px) {
+  .executor-section {
+    flex-direction: column;
+  }
+  .executor-content {
+    padding: 3rem 30px 1.5rem 30px;
+  }
+  .executor-image-container {
+    padding: 1.5rem 30px 3rem 30px;
+    width: 100%;
+  }
+  .executor-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .executor-content,
+  .executor-image-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .executor-title {
+    font-size: 1.7rem;
+  }
+}
+
+/* =====================================================
+   Sección: Instituciones de la Red (Alianzas)
+   ===================================================== */
+.network-institutions-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #fffcfc; /* Mismo fondo clarito */
+  /* border-bottom: 2px solid #f59e0b; Si el usuario lo desea */
+  padding: 4rem 0;
+  margin-bottom: 0;
+}
+
+.network-institutions-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.network-label-group {
+  margin-bottom: 2.5rem;
+}
+
+.network-label {
+  color: #f59e0b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.network-line {
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background-color: #f59e0b;
+}
+
+.network-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #1a3668;
+  line-height: 1.2;
+}
+
+.institutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.institution-card {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-decoration: none; /* Porque es un link */
+}
+
+.institution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.institution-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  /* El alto puede variar según el logo, por lo que object-fit: contain es lo mejor */
+  max-height: 120px; 
+}
+
+.institution-img-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+@media (max-width: 960px) {
+  .network-institutions-container {
+    padding: 0 30px;
+  }
+  .network-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .network-institutions-container {
+    padding: 0 20px;
+  }
+  .network-title {
+    font-size: 1.7rem;
+  }
+  .institutions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* =====================================================
+   Sección: CTA Banner (Conectar)
+   ===================================================== */
+.cta-banner-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 4px solid #f59e0b; /* Borde amarillo superior */
+  border-bottom: 4px solid #f59e0b; /* Borde amarillo inferior */
+  overflow: hidden;
+  margin-bottom: -3rem; /* Contrarresta el padding-bottom de main.page-content para empatar con el footer */
+}
+
+.cta-banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.cta-banner-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65); /* Overlay oscuro para legibilidad */
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cta-banner-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cta-title {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.btn-cta {
+  padding: 1rem 2.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  background: #f59e0b;
+  color: #0f172a;
+  border: none;
+}
+
+.btn-cta:hover {
+  background: #fbbf24;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+@media (max-width: 768px) {
+  .cta-banner-section {
+    min-height: 350px;
+  }
+  .cta-title {
+    font-size: 1.8rem;
+  }
+  .btn-cta {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
 
 /* Banner Principal (Hero Network Banner) */
 .banner-hero-wrapper {
