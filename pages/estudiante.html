@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Estudiante / Colaborador - Red BI4DT</title>
+  <meta name="description" content="Perfil de estudiante o colaborador de la Red BI4DT: áreas de interés y contacto.">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/quienes.css">
+  <link rel="stylesheet" href="../styles/estudiante.css">
+</head>
+<body>
+
+  <!-- Componente Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Contenido Principal -->
+  <main class="page-content">
+
+    <!-- Hero: Foto + Descripción -->
+    <section class="perfil-hero-section">
+      <div class="perfil-hero-container">
+        <div class="perfil-hero-img-wrapper">
+          <img src="" class="perfil-hero-img" id="perfil-foto">
+          <div class="perfil-hero-img-overlay"></div>
+        </div>
+        <div class="perfil-hero-info">
+          <span class="perfil-label" id="perfil-categoria">ESTUDIANTES Y COLABORADORES</span>
+          <h1 class="perfil-nombre" id="perfil-nombre">Cargando...</h1>
+          <p class="perfil-cargo" id="perfil-cargo"></p>
+          <p class="perfil-institucion" id="perfil-institucion"></p>
+          <p class="perfil-descripcion" id="perfil-descripcion"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Líneas de Interés -->
+    <section class="perfil-lineas-section">
+      <div class="perfil-section-container">
+        <h2 class="perfil-section-title">
+          <i class="fa-solid fa-graduation-cap"></i> Áreas de Interés
+        </h2>
+        <ul class="perfil-lineas-list" id="perfil-lineas"></ul>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="perfil-contacto-section">
+      <div class="perfil-section-container">
+        <h2 class="perfil-section-title">
+          <i class="fa-solid fa-envelope"></i> Contacto
+        </h2>
+        <div class="perfil-contacto-links" id="perfil-contacto"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Componente Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/loadComponents.js"></script>
+  <script src="../scripts/estudiante.js"></script>
+</body>
+</html>

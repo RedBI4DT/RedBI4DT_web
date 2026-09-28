@@ -1,0 +1,234 @@
+{
+  "investigadores": [
+    {
+      "id": "pamela-chacon",
+      "nombre": "Pamela Chacón",
+      "cargo": "Responsable Técnico",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigadora principal en Informática Biomédica con más de 10 años de experiencia en el desarrollo de soluciones tecnológicas para el sector salud. Lidera proyectos de interoperabilidad clínica e inteligencia artificial aplicada a diagnóstico médico.",
+      "lineas": ["Informática Biomédica", "Interoperabilidad Clínica (HL7 FHIR)", "Inteligencia Artificial en Salud"],
+      "contacto": { "email": "pchacon@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Sistema de Interoperabilidad FHIR", "descripcion": "Plataforma de intercambio de datos clínicos usando estándar HL7 FHIR para hospitales de Lima.", "anio": "2023–2025" },
+        { "titulo": "IA para Diagnóstico Temprano", "descripcion": "Modelo de aprendizaje profundo para detección temprana de enfermedades crónicas a partir de historias clínicas electrónicas.", "anio": "2024–2026" }
+      ]
+    },
+    {
+      "id": "david-villarreal",
+      "nombre": "David Villarreal",
+      "cargo": "Co-investigador",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Especialista en sistemas de información en salud y arquitecturas de software orientadas a servicios. Participa activamente en iniciativas de estandarización de datos clínicos a nivel nacional.",
+      "lineas": ["Sistemas de Información en Salud", "Arquitecturas SOA", "Estándares Clínicos"],
+      "contacto": { "email": "dvillarreal@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Historia Clínica Electrónica Nacional", "descripcion": "Diseño e implementación de una arquitectura nacional para la gestión unificada de historias clínicas electrónicas.", "anio": "2022–2024" }
+      ]
+    },
+    {
+      "id": "christian-reategui",
+      "nombre": "Christian Reátegui",
+      "cargo": "Responsable Técnico",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigador con experiencia en bioinformática y análisis de datos genómicos. Su trabajo se enfoca en la integración de datos ómicos para el estudio de enfermedades complejas.",
+      "lineas": ["Bioinformática", "Genómica Computacional", "Análisis de Datos Ómicos"],
+      "contacto": { "email": "creategui@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Análisis Genómico de Enfermedades Tropicales", "descripcion": "Estudio genómico de patógenos endémicos del Perú mediante técnicas de secuenciación de próxima generación.", "anio": "2023–2025" }
+      ]
+    },
+    {
+      "id": "henry-cardenas",
+      "nombre": "Henry Cárdenas",
+      "cargo": "Co-investigador",
+      "institucion": "Universidad San Francisco de Quito",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigador en salud global y epidemiología digital. Trabaja en el diseño de sistemas de vigilancia epidemiológica basados en tecnologías de la información.",
+      "lineas": ["Salud Global", "Epidemiología Digital", "Vigilancia Epidemiológica"],
+      "contacto": { "email": "hcardenas@usfq.edu.ec", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Red de Vigilancia Epidemiológica Digital", "descripcion": "Plataforma digital para monitoreo en tiempo real de brotes epidémicos en Latinoamérica.", "anio": "2024–2026" }
+      ]
+    },
+    {
+      "id": "irvin-dongo",
+      "nombre": "Irvin Dongo",
+      "cargo": "Co-investigador",
+      "institucion": "Universidad Católica San Pablo",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Especialista en procesamiento de lenguaje natural aplicado a textos clínicos. Su investigación busca extraer conocimiento estructurado de documentación médica no estructurada.",
+      "lineas": ["Procesamiento de Lenguaje Natural", "Minería de Textos Clínicos", "Extracción de Información"],
+      "contacto": { "email": "idongo@ucsp.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "NLP para Registros Médicos", "descripcion": "Sistema de extracción automática de entidades clínicas en notas médicas en español.", "anio": "2023–2025" }
+      ]
+    },
+    {
+      "id": "rafael-leal",
+      "nombre": "Rafael Leal",
+      "cargo": "Co-investigador",
+      "institucion": "Instituto Nacional de Salud",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigador del Instituto Nacional de Salud con enfoque en salud pública digital y análisis de grandes volúmenes de datos sanitarios a nivel nacional.",
+      "lineas": ["Salud Pública Digital", "Big Data en Salud", "Análisis Epidemiológico"],
+      "contacto": { "email": "rleal@ins.gob.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Plataforma Nacional de Datos Sanitarios", "descripcion": "Repositorio centralizado de datos de salud pública para análisis epidemiológico nacional.", "anio": "2022–2025" }
+      ]
+    },
+    {
+      "id": "oscar-huapaya",
+      "nombre": "Oscar Huapaya",
+      "cargo": "Co-investigador",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigador en telemedicina y sistemas de salud móvil. Desarrolla soluciones digitales para mejorar el acceso a servicios de salud en zonas rurales del Perú.",
+      "lineas": ["Telemedicina", "Salud Móvil (mHealth)", "Acceso a Salud en Zonas Rurales"],
+      "contacto": { "email": "ohuapaya@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Telesalud Rural Perú", "descripcion": "Plataforma de teleconsulta médica para comunidades alejadas con conectividad limitada.", "anio": "2024–2026" }
+      ]
+    },
+    {
+      "id": "javier-vargas",
+      "nombre": "Javier Vargas",
+      "cargo": "Co-investigador",
+      "institucion": "Universidad Nacional Mayor de San Marcos",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Especialista en ontologías biomédicas y representación del conocimiento clínico. Trabaja en la formalización de terminologías médicas para sistemas de decisión clínica.",
+      "lineas": ["Ontologías Biomédicas", "Representación del Conocimiento", "Sistemas de Decisión Clínica"],
+      "contacto": { "email": "jvargas@unmsm.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Ontología Nacional de Diagnósticos", "descripcion": "Desarrollo de una ontología formal de diagnósticos médicos adaptada al contexto peruano.", "anio": "2023–2025" }
+      ]
+    },
+    {
+      "id": "milagros-cahuana",
+      "nombre": "Milagros Cahuana",
+      "cargo": "Co-investigadora",
+      "institucion": "Universidad Católica San Pablo",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigadora en bioinformática clínica y medicina de precisión. Su trabajo integra datos clínicos y moleculares para el desarrollo de perfiles diagnósticos personalizados.",
+      "lineas": ["Bioinformática Clínica", "Medicina de Precisión", "Integración de Datos Clínico-Moleculares"],
+      "contacto": { "email": "mcahuana@ucsp.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Perfiles Moleculares para Cáncer", "descripcion": "Integración de datos de expresión génica y registros clínicos para estratificar pacientes oncológicos.", "anio": "2024–2026" }
+      ]
+    },
+    {
+      "id": "guido-bendezu",
+      "nombre": "Guido Bendezú",
+      "cargo": "Co-investigador",
+      "institucion": "Procesa Lab S.A.C.",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigador del sector privado con amplia experiencia en desarrollo de software biomédico y en la transferencia tecnológica entre academia e industria en el ámbito de la salud digital.",
+      "lineas": ["Software Biomédico", "Transferencia Tecnológica", "Salud Digital"],
+      "contacto": { "email": "gbendezu@procesalab.com", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Módulo de Gestión Clínica Inteligente", "descripcion": "Sistema de gestión hospitalaria con módulos de IA para optimización de recursos clínicos.", "anio": "2023–2025" }
+      ]
+    },
+    {
+      "id": "jose-florez",
+      "nombre": "José Flórez",
+      "cargo": "Co-investigador",
+      "institucion": "The University of Arizona",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigador internacional con experiencia en bioestadística y análisis de datos clínicos a gran escala. Colabora en proyectos de investigación comparativa en salud entre Latinoamérica y Norteamérica.",
+      "lineas": ["Bioestadística", "Análisis de Datos Clínicos", "Investigación Comparativa en Salud"],
+      "contacto": { "email": "jflorez@arizona.edu", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Estudio Comparativo Latinoamérica-EEUU", "descripcion": "Análisis estadístico comparativo de indicadores de salud materno-infantil entre países.", "anio": "2023–2026" }
+      ]
+    },
+    {
+      "id": "stefan-escobar",
+      "nombre": "Stefan Escobar",
+      "cargo": "Investigador RENACYT",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigador calificado RENACYT con especialización en visión computacional aplicada a imágenes médicas. Su trabajo se centra en el desarrollo de algoritmos para análisis automático de radiografías y tomografías.",
+      "lineas": ["Visión Computacional", "Análisis de Imágenes Médicas", "Aprendizaje Profundo"],
+      "contacto": { "email": "sescobar@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "IA para Análisis de Radiografías", "descripcion": "Sistema de visión computacional para detección automática de hallazgos patológicos en radiografías de tórax.", "anio": "2024–2026" }
+      ]
+    },
+    {
+      "id": "kelly-de-la-cruz",
+      "nombre": "Kelly De La Cruz",
+      "cargo": "Investigadora RENACYT",
+      "institucion": "Universidad Nacional Mayor de San Marcos",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Investigadora calificada RENACYT con enfoque en salud pública e informática epidemiológica. Desarrolla modelos predictivos para el seguimiento de enfermedades infecciosas en el Perú.",
+      "lineas": ["Informática Epidemiológica", "Modelos Predictivos", "Enfermedades Infecciosas"],
+      "contacto": { "email": "kdelacruz@unmsm.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Modelo Predictivo de Dengue", "descripcion": "Sistema de predicción de brotes de dengue en el Perú basado en datos climáticos y registros epidemiológicos históricos.", "anio": "2023–2025" }
+      ]
+    }
+  ],
+  "gestion": [
+    {
+      "id": "gerson-zapata",
+      "nombre": "Gerson Zapata",
+      "cargo": "Gestor de Proyectos",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Gestor de proyectos de investigación con experiencia en la administración de fondos concursables y coordinación de equipos multidisciplinarios en el ámbito de la salud digital.",
+      "lineas": ["Gestión de Proyectos de I+D", "Fondos Concursables", "Coordinación Multidisciplinaria"],
+      "contacto": { "email": "gzapata@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Coordinación Proyecto CONCYTEC", "descripcion": "Gestión administrativa y técnica del proyecto financiado por CONCYTEC en Informática Biomédica.", "anio": "2023–2026" }
+      ]
+    },
+    {
+      "id": "adriana-echevarria",
+      "nombre": "Adriana Echevarría",
+      "cargo": "Sector Productivo",
+      "institucion": "Instituto Nacional de Salud",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Profesional del sector público con rol de articulación entre la red de investigación y el sector productivo. Facilita la transferencia de conocimiento y la implementación de resultados de investigación en políticas de salud.",
+      "lineas": ["Articulación Academia-Estado", "Políticas de Salud Digital", "Transferencia de Conocimiento"],
+      "contacto": { "email": "aechevarria@ins.gob.pe", "linkedin": "https://www.linkedin.com/", "orcid": "https://orcid.org/" },
+      "proyectos": [
+        { "titulo": "Política Nacional de Salud Digital", "descripcion": "Asesoría técnica para el diseño de lineamientos de salud digital en el marco del Plan Nacional de Salud.", "anio": "2024–2025" }
+      ]
+    }
+  ],
+  "estudiantes": [
+    {
+      "id": "lizeth-guzman",
+      "nombre": "Lizeth Guzmán",
+      "cargo": "Colaboradora",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Colaboradora del grupo con participación en actividades de sistematización de información y apoyo en la gestión documental de proyectos de investigación.",
+      "lineas": ["Gestión Documental", "Sistematización de Información", "Apoyo a Proyectos de I+D"],
+      "contacto": { "email": "lguzman@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/" }
+    },
+    {
+      "id": "selene-salas",
+      "nombre": "Selene Salas",
+      "cargo": "Administradora de Bases de Datos",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Especialista en administración y modelado de bases de datos clínicas. Apoya en el diseño e implementación de repositorios de datos para los proyectos de investigación del grupo.",
+      "lineas": ["Bases de Datos Clínicas", "Modelado de Datos", "Administración de Sistemas"],
+      "contacto": { "email": "ssalas@ucientifica.edu.pe", "linkedin": "https://www.linkedin.com/" }
+    },
+    {
+      "id": "rodrigo-chacon",
+      "nombre": "Rodrigo Chacón",
+      "cargo": "Estudiante de Ing. Informática",
+      "institucion": "Universidad Ricardo Palma",
+      "foto": "../assets/images/Imagen_1.jpg",
+      "descripcion": "Estudiante de Ingeniería Informática con interés en el desarrollo de aplicaciones web para el sector salud. Colabora en el proyecto de diseño e implementación del portal web de la Red BI4DT.",
+      "lineas": ["Desarrollo Web", "Aplicaciones para Salud", "Interfaces de Usuario"],
+      "contacto": { "email": "rodrigo.chacon@urp.edu.pe", "linkedin": "https://www.linkedin.com/" }
+    }
+  ]
+}
