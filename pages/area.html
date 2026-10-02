@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eje Científico - Red BI4DT</title>
+  <meta name="description" content="Detalle del eje científico de la Red BI4DT: descripción, temas de investigación y proyectos relacionados.">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/area.css">
+</head>
+<body>
+
+  <!-- Componente Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Contenido Principal -->
+  <main class="page-content page-full" id="area-main">
+
+    <!-- Hero del Área -->
+    <section class="area-hero-section" id="area-hero">
+      <div class="area-hero-content">
+        <a href="../index.html#lineas-investigacion" class="area-back-link" id="area-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Líneas de Investigación
+        </a>
+        <div class="area-hero-numero" id="area-hero-numero">ÁREA</div>
+        <h1 class="area-hero-nombre" id="area-hero-nombre">Cargando...</h1>
+        <p class="area-hero-desc" id="area-hero-desc"></p>
+        <div class="area-hero-temas" id="area-hero-temas"></div>
+      </div>
+      <div class="area-hero-deco" id="area-hero-deco" aria-hidden="true">
+        <i class="fa-solid fa-database area-hero-icon" id="area-hero-icon"></i>
+      </div>
+    </section>
+
+    <!-- Sección: Proyectos Relacionados -->
+    <section class="area-proyectos-section">
+      <div class="area-section-container">
+        <div class="area-section-header">
+          <div class="area-section-label-group">
+            <span class="area-section-label" id="area-proyectos-label">
+              <span class="area-section-line" id="area-section-line"></span>
+              PROYECTOS RELACIONADOS
+            </span>
+            <h2 class="area-section-title">Investigaciones en curso y concluidas</h2>
+          </div>
+          <a href="proyectos.html" class="area-ver-todos-link">
+            Ver todos los proyectos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="area-proyectos-grid" id="area-proyectos-grid">
+          <!-- Se renderizan dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="area-cta-section">
+      <img src="../assets/images/Imagen_1.jpg" class="area-cta-img">
+      <div class="area-cta-img-overlay"></div>
+      <div class="area-cta-content">
+        <p class="area-cta-label">¿Trabajas en esta área?</p>
+        <h2 class="area-cta-title">Únete a la Red BI4DT y colabora con nuestros investigadores</h2>
+        <div class="area-cta-actions">
+          <a href="../pages/contacto.html" class="area-cta-btn area-cta-btn--primary" id="area-cta-contacto">
+            <i class="fa-solid fa-envelope"></i> Contáctanos
+          </a>
+          <a href="proyectos.html" class="area-cta-btn area-cta-btn--ghost">
+            <i class="fa-solid fa-folder-open"></i> Ver proyectos
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Componente Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/loadComponents.js"></script>
+  <script src="../scripts/area.js"></script>
+</body>
+</html>

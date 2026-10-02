@@ -13,7 +13,7 @@ function initNavbar() {
   if (navInicio) navInicio.href = base + 'index.html';
   if (navQuienesSomos) navQuienesSomos.href = base + 'pages/quienes.html';
   if (navEquipo) navEquipo.href = base + 'pages/equipo.html';
-  if (navProyectos) navProyectos.href = base + 'index.html#proyectos';
+  if (navProyectos) navProyectos.href = base + 'pages/proyectos.html';
   if (navContacto) navContacto.href = base + 'pages/contacto.html';
 
   // Toggle Menú Móvil
@@ -63,7 +63,7 @@ function initNavbar() {
     if (navQuienesSomos) navQuienesSomos.classList.add('active');
   } else if (currentPath.includes('equipo.html')) {
     if (navEquipo) navEquipo.classList.add('active');
-  } else if (currentHash === '#proyectos') {
+  } else if (currentPath.includes('proyectos.html') || currentPath.includes('area.html')) {
     if (navProyectos) navProyectos.classList.add('active');
   } else {
     if (navInicio) navInicio.classList.add('active');

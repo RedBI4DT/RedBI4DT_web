@@ -1,0 +1,40 @@
+﻿{
+  "areas": [
+    {
+      "id": "informatica-biomedica",
+      "numero": "\u00c1REA 01",
+      "nombre": "Inform\u00e1tica Biom\u00e9dica",
+      "icono": "fa-database",
+      "color_acento": "#F59E0B",
+      "color_acento_soft": "rgba(245, 158, 11, 0.12)",
+      "descripcion_corta": "Sistemas de informaci\u00f3n cl\u00ednica, est\u00e1ndares de interoperabilidad y tecnolog\u00edas para la gesti\u00f3n del dato en salud.",
+      "descripcion_larga": "La Inform\u00e1tica Biom\u00e9dica integra principios de ciencias de la computaci\u00f3n, ciencias de la informaci\u00f3n y ciencias de la salud para gestionar, analizar y optimizar la informaci\u00f3n cl\u00ednica. En la Red BI4DT, esta l\u00ednea abarca el dise\u00f1o e implementaci\u00f3n de sistemas de informaci\u00f3n hospitalaria, la adopci\u00f3n de est\u00e1ndares internacionales como HL7 FHIR y DICOM, y el desarrollo de historias cl\u00ednicas electr\u00f3nicas adaptadas al contexto latinoamericano. Buscamos mejorar la calidad de atenci\u00f3n al paciente a trav\u00e9s de tecnolog\u00edas que faciliten el acceso, la integraci\u00f3n y la seguridad de los datos cl\u00ednicos.",
+      "temas": ["HL7 FHIR", "Historia Cl\u00ednica Electr\u00f3nica", "Telemedicina", "Se\u00f1ales Biom\u00e9dicas", "Ontolog\u00edas Cl\u00ednicas"],
+      "proyectos_ids": ["fhir-interoperabilidad-2023", "hce-nacional-2022", "telesalud-rural-2024", "ontologia-diagnosticos-2023"]
+    },
+    {
+      "id": "ia-salud",
+      "numero": "\u00c1REA 02",
+      "nombre": "Inteligencia Artificial en Salud",
+      "icono": "fa-lightbulb",
+      "color_acento": "#6366F1",
+      "color_acento_soft": "rgba(99, 102, 241, 0.12)",
+      "descripcion_corta": "Modelos de aprendizaje autom\u00e1tico y profundo aplicados a diagn\u00f3stico asistido, an\u00e1lisis de im\u00e1genes m\u00e9dicas y NLP cl\u00ednico.",
+      "descripcion_larga": "La l\u00ednea de Inteligencia Artificial en Salud de la Red BI4DT explora el uso de t\u00e9cnicas avanzadas de machine learning y deep learning para transformar la pr\u00e1ctica cl\u00ednica. Nuestros proyectos abarcan sistemas de diagn\u00f3stico asistido por computadora, an\u00e1lisis automatizado de im\u00e1genes m\u00e9dicas (radiograf\u00edas, tomograf\u00edas), procesamiento de lenguaje natural aplicado a textos cl\u00ednicos en espa\u00f1ol, y modelos predictivos para vigilancia epidemiol\u00f3gica. El enfoque es desarrollar soluciones validadas cl\u00ednicamente, explicables y adaptadas a las realidades del sistema de salud peruano y latinoamericano.",
+      "temas": ["Deep Learning", "NLP Cl\u00ednico", "Diagn\u00f3stico Asistido", "Visi\u00f3n Computacional", "Modelos Predictivos", "Salud Global"],
+      "proyectos_ids": ["ia-diagnostico-2024", "nlp-registros-2023", "ia-radiografias-2024", "modelo-dengue-2023", "vigilancia-epi-2024"]
+    },
+    {
+      "id": "interoperabilidad",
+      "numero": "\u00c1REA 03",
+      "nombre": "Interoperabilidad y Gobernanza",
+      "icono": "fa-shield-halved",
+      "color_acento": "#10B981",
+      "color_acento_soft": "rgba(16, 185, 129, 0.12)",
+      "descripcion_corta": "Pol\u00edticas de datos en salud, est\u00e1ndares de intercambio, seguridad de la informaci\u00f3n cl\u00ednica y gobernanza de datos.",
+      "descripcion_larga": "La interoperabilidad en salud es la capacidad de los sistemas de informaci\u00f3n para comunicarse, intercambiar datos y utilizar la informaci\u00f3n compartida de manera efectiva. Esta l\u00ednea de la Red BI4DT se centra en la implementaci\u00f3n de marcos de gobernanza de datos cl\u00ednicos, el an\u00e1lisis y adopci\u00f3n de est\u00e1ndares internacionales (HL7, SNOMED-CT, ICD), la seguridad y privacidad de la informaci\u00f3n sanitaria, y el dise\u00f1o de pol\u00edticas de salud digital a nivel institucional y nacional. Trabajamos en articulaci\u00f3n con el sector p\u00fablico y privado para generar ecosistemas de salud digitalmente integrados.",
+      "temas": ["Est\u00e1ndares HL7", "SNOMED-CT", "Gobernanza de Datos", "Seguridad Cl\u00ednica", "Pol\u00edticas de Salud Digital", "DICOM"],
+      "proyectos_ids": ["fhir-interoperabilidad-2023", "politica-salud-digital-2024", "plataforma-datos-sanitarios-2022", "estudio-comparativo-2023"]
+    }
+  ]
+}

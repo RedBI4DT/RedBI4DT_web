@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos de Investigación - Red BI4DT</title>
+  <meta name="description" content="Catálogo de proyectos de investigación de la Red BI4DT en Informática Biomédica, Inteligencia Artificial en Salud e Interoperabilidad.">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/proyectos.css">
+</head>
+<body>
+
+  <!-- Componente Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Contenido Principal -->
+  <main class="page-content page-full">
+
+    <!-- Hero -->
+    <section class="proyectos-hero-section">
+      <div class="proyectos-hero-content">
+        <div class="proyectos-hero-label">
+          <span class="proyectos-hero-line"></span>
+          PORTAFOLIO DE INVESTIGACIÓN
+        </div>
+        <h1 class="proyectos-hero-title">Proyectos de la Red BI4DT</h1>
+        <p class="proyectos-hero-desc">
+          Exploramos y desarrollamos soluciones tecnológicas para la transformación digital en salud, articulando academia, sector público e instituciones estratégicas de Perú, Ecuador y Estados Unidos.
+        </p>
+        <div class="proyectos-hero-stats">
+          <div class="proyectos-stat">
+            <span class="proyectos-stat-num" id="stat-total">12</span>
+            <span class="proyectos-stat-label">Proyectos</span>
+          </div>
+          <div class="proyectos-stat-divider"></div>
+          <div class="proyectos-stat">
+            <span class="proyectos-stat-num">3</span>
+            <span class="proyectos-stat-label">Áreas de Investigación</span>
+          </div>
+          <div class="proyectos-stat-divider"></div>
+          <div class="proyectos-stat">
+            <span class="proyectos-stat-num">4</span>
+            <span class="proyectos-stat-label">Países</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filtros + Grid -->
+    <section class="proyectos-main-section">
+      <div class="proyectos-main-container">
+
+        <!-- Barra de filtros -->
+        <div class="proyectos-filtros" role="tablist" aria-label="Filtrar proyectos por área">
+          <button class="proyectos-filtro-btn active" data-filtro="todos" role="tab" aria-selected="true" id="filtro-todos">
+            <i class="fa-solid fa-grid-2"></i> Todos
+          </button>
+          <button class="proyectos-filtro-btn" data-filtro="informatica-biomedica" data-color="gold" role="tab" aria-selected="false" id="filtro-informatica">
+            <i class="fa-solid fa-database"></i> Informática Biomédica
+          </button>
+          <button class="proyectos-filtro-btn" data-filtro="ia-salud" data-color="indigo" role="tab" aria-selected="false" id="filtro-ia">
+            <i class="fa-solid fa-lightbulb"></i> IA en Salud
+          </button>
+          <button class="proyectos-filtro-btn" data-filtro="interoperabilidad" data-color="emerald" role="tab" aria-selected="false" id="filtro-interop">
+            <i class="fa-solid fa-shield-halved"></i> Interoperabilidad
+          </button>
+        </div>
+
+        <!-- Contador de resultados -->
+        <div class="proyectos-contador">
+          <span id="proyectos-count-label">Mostrando <strong id="proyectos-count">0</strong> proyectos</span>
+        </div>
+
+        <!-- Grid de proyectos -->
+        <div class="proyectos-grid" id="proyectos-grid">
+          <!-- Se renderizan dinámicamente -->
+        </div>
+
+        <!-- Estado vacío -->
+        <div class="proyectos-empty" id="proyectos-empty" hidden>
+          <i class="fa-solid fa-folder-open"></i>
+          <h3>Sin proyectos en esta área</h3>
+          <p>No hay proyectos registrados para el filtro seleccionado.</p>
+          <button class="proyectos-empty-btn" id="proyectos-empty-reset">Ver todos los proyectos</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="proyectos-cta-section">
+      <img src="../assets/images/Imagen_1.jpg" class="proyectos-cta-img">
+      <div class="proyectos-cta-img-overlay"></div>
+      <div class="proyectos-cta-content">
+        <p class="proyectos-cta-label">¿Tienes un proyecto de investigación?</p>
+        <h2 class="proyectos-cta-title">Conecta con la Red BI4DT y amplifica el impacto de tu investigación</h2>
+        <a href="contacto.html" class="proyectos-cta-btn" id="proyectos-cta-contacto">
+          <i class="fa-solid fa-paper-plane"></i> Contáctanos
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Componente Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/loadComponents.js"></script>
+  <script src="../scripts/proyectos.js"></script>
+</body>
+</html>
