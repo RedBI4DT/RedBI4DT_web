@@ -1,0 +1,32 @@
+[
+  {
+    "titulo": "TODO",
+    "autor": "TODO",
+    "fecha": "TODO (YYYY-MM-DD)",
+    "area": "dorado | indigo | esmeralda",
+    "areaLabel": "TODO (ej. Software, Aeroespacial, Datos)",
+    "linkedinEmbed": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7506144140020113408?collapsed=1",
+    "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7506144140020113408",
+    "altoEmbed": 627
+  },
+  {
+    "titulo": "TODO",
+    "autor": "TODO",
+    "fecha": "TODO",
+    "area": "TODO",
+    "areaLabel": "TODO",
+    "linkedinEmbed": "https://www.linkedin.com/embed/feed/update/urn:li:share:7484453709956059137?collapsed=1",
+    "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7484453709956059137",
+    "altoEmbed": 550
+  },
+  {
+    "titulo": "TODO",
+    "autor": "TODO",
+    "fecha": "TODO",
+    "area": "TODO",
+    "areaLabel": "TODO",
+    "linkedinEmbed": "https://www.linkedin.com/embed/feed/update/urn:li:share:7466553010111033344?collapsed=1",
+    "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7466553010111033344",
+    "altoEmbed": 669
+  }
+]

@@ -1,40 +1,45 @@
 /* styles/estudiante.css */
-/* Reutiliza la mayoria de estilos de investigacion.css, omitiendo la seccion de proyectos */
 @import url('colors.css');
 @import url('investigacion.css');
 
-/* Ajuste de acento para estudiantes: tono mas suave */
+/* Ajuste de acento para estudiantes y colaboradores */
 .perfil-label {
-  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-  color: var(--color-white);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: #ffffff;
 }
 
-.perfil-linea-item {
-  border-left-color: #3b82f6;
+.perfil-linea-link {
+  border-left-color: #2563eb;
 }
 
-.perfil-linea-item i {
-  color: #3b82f6;
+.perfil-linea-link:hover {
+  border-left-color: #1d4ed8;
+  color: #2563eb;
+}
+
+.perfil-linea-link i {
+  color: #2563eb;
 }
 
 .perfil-contacto-section {
-  border-top-color: #3b82f6;
+  border-bottom-color: #2563eb;
 }
 
 .perfil-contacto-btn {
-  border-color: #3b82f6;
-  color: #60a5fa;
+  color: #1e3a8a;
+  border-color: #bfdbfe;
 }
 
 .perfil-contacto-btn:hover {
-  background: #3b82f6;
-  color: var(--color-white);
+  background: #eff6ff;
+  border-color: #2563eb;
+  color: #2563eb;
 }
 
-.perfil-contacto-section .perfil-section-title {
-  color: #60a5fa;
+.perfil-contacto-btn i {
+  color: #2563eb;
 }
 
 .perfil-error i {
-  color: #3b82f6;
+  color: #2563eb;
 }

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiénes Somos - Red BI4DT</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo_r4.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
 </head>
@@ -20,105 +21,181 @@
       <div class="quienes-header-container">
          <span class="quienes-label">SOBRE NOSOTROS</span>
          <h1 class="quienes-title">Quiénes Somos</h1>
+         <p class="quienes-subtitle">Impulsando la transformación digital en salud mediante investigación aplicada, inteligencia artificial y articulación interinstitucional de excelencia.</p>
       </div>
     </section>
     
     <!-- Misión y Visión -->
     <section class="mission-vision-section">
       <div class="mv-grid">
-        <div class="mv-card">
-          <h2 class="mv-card-title">Misión</h2>
-          <p>
+        
+        <!-- Tarjeta de Misión -->
+        <div class="mv-card mv-card--mision">
+          <div class="mv-card-header">
+            <div class="mv-icon-box mv-icon-box--mision">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div class="mv-header-info">
+              <span class="mv-card-badge">PROPÓSITO DE LA RED</span>
+              <h2 class="mv-card-title">Misión</h2>
+            </div>
+          </div>
+          <p class="mv-card-text">
             Consolidar una red interinstitucional e intersectorial en informática biomédica que articule gobernanza, investigación aplicada, formación de capacidades CTI, difusión científica y sostenibilidad, para cerrar brechas de capacidades digitales en el sistema de salud.
           </p>
+          <div class="mv-highlights">
+            <span class="mv-tag"><i class="fa-solid fa-circle-check"></i> Articulación intersectorial</span>
+            <span class="mv-tag"><i class="fa-solid fa-circle-check"></i> Formación de capacidades CTI</span>
+            <span class="mv-tag"><i class="fa-solid fa-circle-check"></i> Cierre de brechas digitales</span>
+          </div>
         </div>
-        <div class="mv-card">
-          <h2 class="mv-card-title vision">Visión</h2>
-          <p>
+
+        <!-- Tarjeta de Visión -->
+        <div class="mv-card mv-card--vision">
+          <div class="mv-card-header">
+            <div class="mv-icon-box mv-icon-box--vision">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="mv-header-info">
+              <span class="mv-card-badge mv-card-badge--gold">HORIZONTE ESTRATÉGICO</span>
+              <h2 class="mv-card-title vision">Visión</h2>
+            </div>
+          </div>
+          <p class="mv-card-text">
             Ser una red de referencia en informática biomédica y salud digital en Perú y la región, reconocida por su articulación entre academia, Estado, prestadores y socios internacionales, y por su continuidad más allá del periodo de subvención.
           </p>
+          <div class="mv-highlights">
+            <span class="mv-tag mv-tag--gold"><i class="fa-solid fa-star"></i> Referencia en salud digital</span>
+            <span class="mv-tag mv-tag--gold"><i class="fa-solid fa-star"></i> Alianzas internacionales</span>
+            <span class="mv-tag mv-tag--gold"><i class="fa-solid fa-star"></i> Sostenibilidad continua</span>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Nuestro Enfoque / Líneas de Investigación -->
+    <!-- Ejes Científicos / Líneas de Investigación -->
     <section class="enfoque-section">
       <div class="enfoque-container">
-        <div class="quienes-label" style="margin-bottom: 1rem;">
-          NUESTRO ENFOQUE
+        <div class="enfoque-header">
+          <div class="enfoque-label-group">
+            <div class="quienes-label">NUESTRO ENFOQUE</div>
+            <h2 class="quienes-title">Líneas de Investigación</h2>
+          </div>
+          <a href="proyectos.html" class="enfoque-ver-proyectos">
+            Ver todos los proyectos <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
-        <h2 class="quienes-title">Líneas De Investigación</h2>
 
         <div class="enfoque-grid">
+
           <!-- Tarjeta 1 -->
-          <div class="enfoque-card">
-            <div class="enfoque-icon">
-              <i class="fa-solid fa-database"></i>
+          <a href="area.html?id=informatica-biomedica" class="enfoque-card enfoque-card--gold">
+            <div class="enfoque-card-top">
+              <div class="enfoque-icon enfoque-icon--gold">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <span class="enfoque-numero">01</span>
             </div>
             <h3 class="enfoque-card-title">Informática Biomédica y Salud Digital</h3>
             <p>Ciencia de datos y fortalecimiento de capacidades digitales para la salud pública y la atención sanitaria, con énfasis en historia clínica electrónica.</p>
-            <div class="enfoque-number">01</div>
-          </div>
-          
-          <!-- Tarjeta 2 -->
-          <div class="enfoque-card">
-            <div class="enfoque-icon">
-              <i class="fa-solid fa-database"></i>
+            <div class="enfoque-card-footer">
+              <span class="enfoque-ver-mas">Ver más <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </a>
+
+          <!-- Área 02: Inteligencia Artificial en Salud -->
+          <a href="area.html?id=ia-salud" class="enfoque-card enfoque-card--indigo">
+            <div class="enfoque-card-top">
+              <div class="enfoque-icon enfoque-icon--indigo">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <span class="enfoque-numero">02</span>
             </div>
             <h3 class="enfoque-card-title">Inteligencia Artificial en Salud</h3>
             <p>Analítica clínica y modelamiento predictivo aplicados a la prevención, vigilancia epidemiológica y gestión sanitaria basada en evidencia.</p>
-            <div class="enfoque-number">02</div>
-          </div>
+            <div class="enfoque-card-footer">
+              <span class="enfoque-ver-mas">Ver más <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </a>
 
-          <!-- Tarjeta 3 -->
-          <div class="enfoque-card">
-            <div class="enfoque-icon">
-              <i class="fa-solid fa-database"></i>
+          <!-- Área 03: Interoperabilidad y Gobernanza -->
+          <a href="area.html?id=interoperabilidad" class="enfoque-card enfoque-card--emerald">
+            <div class="enfoque-card-top">
+              <div class="enfoque-icon enfoque-icon--emerald">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <span class="enfoque-numero">03</span>
             </div>
             <h3 class="enfoque-card-title">Interoperabilidad y Gobernanza de Datos</h3>
             <p>Gestión, integración y calidad de datos en salud, junto con marcos de gobernanza de la información para sistemas sanitarios interoperables.</p>
-            <div class="enfoque-number">03</div>
-          </div>
+            <div class="enfoque-card-footer">
+              <span class="enfoque-ver-mas">Ver más <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </a>
 
           <!-- Tarjeta 4 -->
-          <div class="enfoque-card">
-            <div class="enfoque-icon">
-              <i class="fa-solid fa-database"></i>
+          <a href="proyectos.html" class="enfoque-card enfoque-card--violet">
+            <div class="enfoque-card-top">
+              <div class="enfoque-icon enfoque-icon--violet">
+                <i class="fa-solid fa-chart-bar"></i>
+              </div>
+              <span class="enfoque-numero">04</span>
             </div>
             <h3 class="enfoque-card-title">Visualización y Analítica de Datos</h3>
             <p>Visualización de datos, analítica visual y plataformas de apoyo a la toma de decisiones en salud.</p>
-            <div class="enfoque-number">04</div>
-          </div>
+            <div class="enfoque-card-footer">
+              <span class="enfoque-ver-mas">Ver proyectos <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </a>
 
           <!-- Tarjeta 5 -->
-          <div class="enfoque-card">
-            <div class="enfoque-icon">
-              <i class="fa-solid fa-database"></i>
+          <a href="proyectos.html" class="enfoque-card enfoque-card--rose">
+            <div class="enfoque-card-top">
+              <div class="enfoque-icon enfoque-icon--rose">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <span class="enfoque-numero">05</span>
             </div>
             <h3 class="enfoque-card-title">Evaluación Sociotécnica y Adopción</h3>
             <p>Experiencia de usuario, adopción, implementación y transferencia de innovación digital en salud.</p>
-            <div class="enfoque-number">05</div>
-          </div>
+            <div class="enfoque-card-footer">
+              <span class="enfoque-ver-mas">Ver proyectos <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </a>
 
           <!-- Tarjeta 6 -->
-          <div class="enfoque-card">
-            <div class="enfoque-icon">
-              <i class="fa-solid fa-database"></i>
+          <a href="proyectos.html" class="enfoque-card enfoque-card--sky">
+            <div class="enfoque-card-top">
+              <div class="enfoque-icon enfoque-icon--sky">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <span class="enfoque-numero">06</span>
             </div>
             <h3 class="enfoque-card-title">Salud Digital</h3>
             <p>Salud digital, gobernanza de la información y transformación de los sistemas de salud.</p>
-            <div class="enfoque-number">06</div>
-          </div>
+            <div class="enfoque-card-footer">
+              <span class="enfoque-ver-mas">Ver proyectos <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- Mapa -->
+    <!-- Mapa / Alcance de la Red -->
     <section class="map-section">
-      <div class="map-container">
-        <!-- Siguiendo Regla 9 de imágenes como lienzos -->
-        <img src="../assets/images/Imagen_1.jpg" class="map-img">
-        <div class="map-img-overlay"></div>
+      <div class="map-section-wrapper">
+        <div class="map-header">
+          <span class="quienes-label quienes-label--dark">ALCANCE Y PRESENCIA</span>
+          <h2 class="map-title">Red de Cooperación Nacional e Internacional</h2>
+          <p class="map-description">Articulamos con universidades, centros de investigación y prestadores de salud en Perú, Ecuador y Estados Unidos para potenciar la innovación biomédica.</p>
+        </div>
+        <div class="map-container">
+          <!-- Siguiendo Regla 9 de imágenes como lienzos -->
+          <img src="../assets/images/Imagen_1.jpg" class="map-img">
+          <div class="map-img-overlay"></div>
+        </div>
       </div>
     </section>
 

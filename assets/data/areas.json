@@ -1,0 +1,60 @@
+{
+  "areas": [
+    {
+      "id": "informatica-biomedica",
+      "numero": "ÁREA 01",
+      "nombre": "Informática Biomédica",
+      "icono": "fa-database",
+      "color_acento": "#F59E0B",
+      "color_acento_soft": "rgba(245, 158, 11, 0.12)",
+      "descripcion_corta": "Sistemas de información clínica, estándares de interoperabilidad y tecnologías para la gestión del dato en salud.",
+      "descripcion_larga": "La Informática Biomédica integra principios de ciencias de la computación, ciencias de la información y ciencias de la salud para gestionar, analizar y optimizar la información clínica. En la Red BI4DT, esta línea abarca el diseño e implementación de sistemas de información hospitalaria, la adopción de estándares internacionales como HL7 FHIR y DICOM, y el desarrollo de historias clínicas electrónicas adaptadas al contexto latinoamericano. Buscamos mejorar la calidad de atención al paciente a través de tecnologías que faciliten el acceso, la integración y la seguridad de los datos clínicos.",
+      "temas": ["HL7 FHIR", "Historia Clínica Electrónica", "Telemedicina", "Señales Biomédicas", "Ontologías Clínicas"],
+      "proyectos_ids": [
+        "fhir-interoperabilidad-2023",
+        "hce-nacional-2022",
+        "telesalud-rural-2024",
+        "ontologia-diagnosticos-2023",
+        "gestion-clinica-ia-2023"
+      ]
+    },
+    {
+      "id": "ia-salud",
+      "numero": "ÁREA 02",
+      "nombre": "Inteligencia Artificial en Salud",
+      "icono": "fa-lightbulb",
+      "color_acento": "#6366F1",
+      "color_acento_soft": "rgba(99, 102, 241, 0.12)",
+      "descripcion_corta": "Modelos de aprendizaje automático y profundo aplicados a diagnóstico asistido, análisis de imágenes médicas y NLP clínico.",
+      "descripcion_larga": "La línea de Inteligencia Artificial en Salud de la Red BI4DT explora el uso de técnicas avanzadas de machine learning y deep learning para transformar la práctica clínica. Nuestros proyectos abarcan sistemas de diagnóstico asistido por computadora, análisis automatizado de imágenes médicas (radiografías, tomografías), procesamiento de lenguaje natural aplicado a textos clínicos en español, y modelos predictivos para vigilancia epidemiológica. El enfoque es desarrollar soluciones validadas clínicamente, explicables y adaptadas a las realidades del sistema de salud peruano y latinoamericano.",
+      "temas": ["Deep Learning", "NLP Clínico", "Diagnóstico Asistido", "Visión Computacional", "Modelos Predictivos", "Genómica Computacional"],
+      "proyectos_ids": [
+        "ia-diagnostico-2024",
+        "nlp-registros-2023",
+        "ia-radiografias-2024",
+        "modelo-dengue-2023",
+        "vigilancia-epi-2024",
+        "genomica-tropical-2023",
+        "perfiles-moleculares-2024"
+      ]
+    },
+    {
+      "id": "interoperabilidad",
+      "numero": "ÁREA 03",
+      "nombre": "Interoperabilidad y Gobernanza",
+      "icono": "fa-shield-halved",
+      "color_acento": "#10B981",
+      "color_acento_soft": "rgba(16, 185, 129, 0.12)",
+      "descripcion_corta": "Políticas de datos en salud, estándares de intercambio, seguridad de la información clínica y gobernanza de datos.",
+      "descripcion_larga": "La interoperabilidad en salud es la capacidad de los sistemas de información para comunicarse, intercambiar datos y utilizar la información compartida de manera efectiva. Esta línea de la Red BI4DT se centra en la implementación de marcos de gobernanza de datos clínicos, el análisis y adopción de estándares internacionales (HL7, SNOMED-CT, ICD), la seguridad y privacidad de la información sanitaria, y el diseño de políticas de salud digital a nivel institucional y nacional. Trabajamos en articulación con el sector público y privado para generar ecosistemas de salud digitalmente integrados.",
+      "temas": ["Estándares HL7", "SNOMED-CT", "Gobernanza de Datos", "Seguridad Clínica", "Políticas de Salud Digital", "Gestión I+D"],
+      "proyectos_ids": [
+        "fhir-interoperabilidad-2023",
+        "politica-salud-digital-2024",
+        "plataforma-datos-sanitarios-2022",
+        "estudio-comparativo-2023",
+        "gestion-concytec-2023"
+      ]
+    }
+  ]
+}

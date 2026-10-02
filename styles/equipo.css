@@ -1,10 +1,10 @@
 /* styles/equipo.css */
 @import url('colors.css');
-@import url('quienes.css'); /* Reutilizamos el header */
+@import url('quienes.css'); /* Reutilizamos el header institucional */
 
 .equipo-content-section {
-  background: #e2e8f0;
-  padding: 4rem 50px;
+  background: #f8fafc;
+  padding: 4.5rem 50px 5.5rem;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -23,39 +23,76 @@
   width: 100%;
 }
 
+/* Encabezados de categorías */
+.equipo-category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 3.5rem 0 1.75rem 0;
+}
+
+.equipo-container > .equipo-category-header:first-child {
+  margin-top: 0.5rem;
+}
+
+.equipo-category-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(26, 54, 104, 0.08);
+  border: 1.5px solid rgba(26, 54, 104, 0.18);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a3668;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
 .equipo-category-title {
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: #0f172a;
-  text-align: center;
-  margin: 3rem 0 2.5rem 0;
+  color: #1a3668;
+  margin: 0;
+  line-height: 1.25;
 }
 
-.equipo-category-title:first-child {
-  margin-top: 1rem;
-}
-
+/* Cuadrícula de Miembros */
 .equipo-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2rem;
-  justify-items: start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
+/* Tarjeta de Miembro */
 .equipo-member-card {
-  width: 100%;
-  max-width: 220px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
 }
 
+.equipo-member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+/* Contenedor de Imagen */
 .member-image-container {
   width: 100%;
-  aspect-ratio: 1 / 1.1; /* Approx proportion in screenshot */
-  background: #000000;
-  margin-bottom: 1rem;
+  aspect-ratio: 1 / 1.1;
+  background: #0f172a;
+  margin-bottom: 0.85rem;
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .member-img {
@@ -63,21 +100,27 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.equipo-member-card:hover .member-img {
+  transform: scale(1.03);
 }
 
 .member-img-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 
+/* Nombre */
 .member-name {
-  color: #f59e0b;
+  color: #1a3668;
   font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
-  line-height: 1.2;
+  margin-bottom: 0.3rem;
+  line-height: 1.25;
 }
 
 /* Nombres que funcionan como enlace */
@@ -95,53 +138,79 @@ a.member-name-link::after {
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: #fbbf24;
+  background: #f59e0b;
   transition: width 0.25s ease;
 }
 
 a.member-name-link:hover {
-  color: #fbbf24;
+  color: #d97706;
 }
 
 a.member-name-link:hover::after {
   width: 100%;
 }
 
+/* Rol e Institución */
 .member-role {
-  color: #475569;
+  color: #64748b;
   font-size: 0.85rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-
-@media (max-width: 1200px) {
-  .equipo-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 960px) {
+/* Responsividad Tablet y Móvil */
+@media (max-width: 1100px) {
   .equipo-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  .equipo-content-section {
+    padding: 3rem 25px 3.5rem;
+  }
   .equipo-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .equipo-category-header {
+    margin: 2.5rem 0 1.25rem 0;
   }
   .equipo-category-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
+  .equipo-content-section {
+    padding: 2.25rem 1.25rem 2.75rem;
+  }
+  .equipo-category-header {
+    gap: 0.65rem;
+    margin: 2rem 0 1rem 0;
+  }
+  .equipo-category-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+  .equipo-category-title {
+    font-size: 1.3rem;
+  }
   .equipo-grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
   .equipo-member-card {
-    align-items: center;
-    text-align: center;
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
+  .member-name {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+  .member-role {
+    font-size: 0.76rem;
+    line-height: 1.35;
   }
 }

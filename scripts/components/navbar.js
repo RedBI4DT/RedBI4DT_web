@@ -3,6 +3,7 @@ function initNavbar() {
   
   // Elementos de navegación
   const logoLink = document.getElementById('logo-link');
+  const logoImg = document.getElementById('navbar-logo-img');
   const navInicio = document.getElementById('nav-inicio');
   const navQuienesSomos = document.getElementById('nav-quienes-somos');
   const navEquipo = document.getElementById('nav-equipo');
@@ -10,10 +11,11 @@ function initNavbar() {
   const navContacto = document.getElementById('nav-contacto');
 
   if (logoLink) logoLink.href = base + 'index.html';
+  if (logoImg) logoImg.src = base + 'assets/images/logo_r4.png';
   if (navInicio) navInicio.href = base + 'index.html';
   if (navQuienesSomos) navQuienesSomos.href = base + 'pages/quienes.html';
   if (navEquipo) navEquipo.href = base + 'pages/equipo.html';
-  if (navProyectos) navProyectos.href = base + 'index.html#proyectos';
+  if (navProyectos) navProyectos.href = base + 'pages/proyectos.html';
   if (navContacto) navContacto.href = base + 'pages/contacto.html';
 
   // Toggle Menú Móvil
@@ -63,7 +65,7 @@ function initNavbar() {
     if (navQuienesSomos) navQuienesSomos.classList.add('active');
   } else if (currentPath.includes('equipo.html')) {
     if (navEquipo) navEquipo.classList.add('active');
-  } else if (currentHash === '#proyectos') {
+  } else if (currentPath.includes('proyectos.html') || currentPath.includes('area.html')) {
     if (navProyectos) navProyectos.classList.add('active');
   } else {
     if (navInicio) navInicio.classList.add('active');

@@ -39,25 +39,36 @@
 .logo-icon-box {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(59, 130, 246, 0.25));
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 10px;
+  background: #0f172a;
+  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  border-radius: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .navbar-brand:hover .logo-icon-box {
   border-color: #38bdf8;
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
-  transform: scale(1.03);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
+  transform: scale(1.04);
 }
 
-.logo-icon {
-  color: #38bdf8;
-  font-size: 1.35rem;
+.navbar-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.navbar-logo-img-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .brand-text {

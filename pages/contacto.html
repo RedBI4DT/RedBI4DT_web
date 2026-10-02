@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - Red BI4DT</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo_r4.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/contacto.css">
@@ -21,23 +22,66 @@
       <div class="quienes-header-container">
          <span class="quienes-label">PONERSE EN CONTACTO</span>
          <h1 class="quienes-title">Contacto</h1>
+         <p class="quienes-subtitle">¿Tienes consultas, propuestas de investigación o deseas formar parte de nuestra red? Escríbenos y nos pondremos en contacto contigo.</p>
       </div>
     </section>
     
     <!-- Intro Banner -->
     <section class="contacto-intro-banner">
       <div class="contacto-intro-tag">CONECTEMOS CONTIGO</div>
-      <h2 class="contacto-intro-title">En la Red BI4DT, avanzamos gracias a la colaboración y la ciencia.</h2>
+      <h2 class="contacto-intro-title">En la Red BI4DT, avanzamos gracias a la colaboración y la ciencia</h2>
       <p class="contacto-intro-desc">
-        Nuestro trabajo es posible gracias a la articulación entre universidades, institutos y socios internacionales. Escríbenos si quieres sumarte a esta red y ser parte de la transformación digital en salud.
+        Nuestro trabajo es posible gracias a la articulación entre universidades, institutos y socios internacionales. Escríbenos si deseas sumarte a esta red y ser parte de la transformación digital en salud.
       </p>
     </section>
 
-    <!-- Imagen Full Width -->
-    <section class="contacto-img-section">
-      <!-- Siguiendo Regla 9 de imágenes como lienzos -->
-      <img src="../assets/images/Imagen_1.jpg" class="contacto-img">
-      <div class="contacto-img-overlay"></div>
+    <!-- Carrusel de imágenes -->
+    <section class="contacto-carousel-section" id="contacto-carousel" aria-label="Galería de imágenes">
+
+      <!-- Slides -->
+      <div class="carousel-track" id="carousel-track">
+
+        <div class="carousel-slide active">
+          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <div class="carousel-slide-overlay"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <div class="carousel-slide-overlay"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <div class="carousel-slide-overlay"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <div class="carousel-slide-overlay"></div>
+        </div>
+
+      </div>
+
+      <!-- Controles Prev / Next -->
+      <button class="carousel-btn carousel-btn--prev" id="carousel-prev" aria-label="Slide anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Slide siguiente">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- Indicadores (dots) -->
+      <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Indicadores de slide">
+        <button class="carousel-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+        <button class="carousel-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+        <button class="carousel-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+        <button class="carousel-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div class="carousel-progress" id="carousel-progress"></div>
+
     </section>
 
     <!-- Main Contact Info & Form -->
@@ -45,58 +89,83 @@
       
       <!-- Lado Izquierdo: Info -->
       <div class="contacto-info-panel">
-        <h2>Conecta con Nosotros</h2>
+        <span class="quienes-label quienes-label--dark">CANALES DE ATENCIÓN</span>
+        <h2 class="contacto-panel-title">Conecta con Nosotros</h2>
         <p class="contacto-desc">
-          Estamos en constante búsqueda de investigadores, docentes e instituciones comprometidos con la transformación digital en salud. Te invitamos a escribirnos y contarnos tu interés en sumarte a la red. ¡Esperamos tu mensaje!
+          Estamos en constante búsqueda de investigadores, docentes, instituciones y estudiantes comprometidos con la salud digital. Escríbenos y con gusto te atenderemos.
         </p>
         
-        <div class="contacto-item">
-          <span class="contacto-item-label">CORREO</span>
-          <a href="mailto:investigacion@ucsur.edu.pe" class="contacto-item-value">investigacion@ucsur.edu.pe</a>
-        </div>
-        
-        <div class="contacto-item">
-          <span class="contacto-item-label">TELÉFONO</span>
-          <span class="contacto-item-value">(01) 610-6400</span>
-        </div>
-        
-        <div class="contacto-item">
-          <span class="contacto-item-label">DIRECCIÓN</span>
-          <span class="contacto-item-value">Carretera Panamericana Sur Km. 19, Villa El Salvador, Lima</span>
+        <div class="contacto-items-container">
+          <div class="contacto-item">
+            <div class="contacto-item-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contacto-item-content">
+              <span class="contacto-item-label">CORREO ELECTRÓNICO</span>
+              <a href="mailto:investigacion@ucsur.edu.pe" class="contacto-item-value">investigacion@ucsur.edu.pe</a>
+            </div>
+          </div>
+          
+          <div class="contacto-item">
+            <div class="contacto-item-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contacto-item-content">
+              <span class="contacto-item-label">TELÉFONO INSTITUCIONAL</span>
+              <span class="contacto-item-value">(01) 610-6400</span>
+            </div>
+          </div>
+          
+          <div class="contacto-item">
+            <div class="contacto-item-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="contacto-item-content">
+              <span class="contacto-item-label">DIRECCIÓN Y SEDE</span>
+              <span class="contacto-item-value">Carretera Panamericana Sur Km. 19, Villa El Salvador, Lima - Perú</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Lado Derecho: Formulario -->
-      <form class="contacto-form" onsubmit="event.preventDefault();">
-        <div class="contacto-row">
-          <div class="contacto-group">
-            <label class="contacto-form-label" for="nombre">NOMBRE</label>
-            <input type="text" id="nombre" class="contacto-input" required>
+      <div class="contacto-form-wrapper">
+        <form class="contacto-form" id="contacto-form" onsubmit="event.preventDefault();">
+          <div class="contacto-row">
+            <div class="contacto-group">
+              <label class="contacto-form-label" for="nombre">Nombre *</label>
+              <input type="text" id="nombre" class="contacto-input" placeholder="Tu nombre" required>
+            </div>
+            <div class="contacto-group">
+              <label class="contacto-form-label" for="apellido">Apellido *</label>
+              <input type="text" id="apellido" class="contacto-input" placeholder="Tu apellido" required>
+            </div>
           </div>
-          <div class="contacto-group">
-            <label class="contacto-form-label" for="apellido">APELLIDO</label>
-            <input type="text" id="apellido" class="contacto-input" required>
-          </div>
-        </div>
 
-        <div class="contacto-row">
-          <div class="contacto-group">
-            <label class="contacto-form-label" for="correo">CORREO</label>
-            <input type="email" id="correo" class="contacto-input" required>
+          <div class="contacto-row">
+            <div class="contacto-group">
+              <label class="contacto-form-label" for="correo">Correo Electrónico *</label>
+              <input type="email" id="correo" class="contacto-input" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="contacto-group">
+              <label class="contacto-form-label" for="telefono">Teléfono (Opcional)</label>
+              <input type="tel" id="telefono" class="contacto-input" placeholder="+51 987 654 321">
+            </div>
           </div>
+
           <div class="contacto-group">
-            <label class="contacto-form-label" for="telefono">TELÉFONO</label>
-            <input type="tel" id="telefono" class="contacto-input">
+            <label class="contacto-form-label" for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." required></textarea>
           </div>
-        </div>
 
-        <div class="contacto-group">
-          <label class="contacto-form-label" for="mensaje">MENSAJE</label>
-          <textarea id="mensaje" class="contacto-input contacto-textarea" required></textarea>
-        </div>
+          <button type="submit" class="contacto-submit-btn">
+            <span>Enviar Mensaje</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
 
-        <button type="submit" class="contacto-submit-btn">ENVIAR</button>
-      </form>
+    </section>
 
     </section>
 
@@ -107,6 +176,95 @@
 
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
+  <script>
+    /* ── Carrusel Contacto (Vanilla JS) ───────────────── */
+    (function () {
+      const AUTOPLAY_MS = 5000;
+      const slides   = document.querySelectorAll('.carousel-slide');
+      const dots     = document.querySelectorAll('.carousel-dot');
+      const prevBtn  = document.getElementById('carousel-prev');
+      const nextBtn  = document.getElementById('carousel-next');
+      const progress = document.getElementById('carousel-progress');
+      const section  = document.getElementById('contacto-carousel');
+
+      let current  = 0;
+      let timer    = null;
+      let progTimer = null;
+
+      function goTo(index) {
+        slides[current].classList.remove('active', 'prev');
+        slides[current].classList.add('prev');
+        dots[current].classList.remove('active');
+        dots[current].setAttribute('aria-selected', 'false');
+
+        current = (index + slides.length) % slides.length;
+
+        slides[current].classList.add('active');
+        slides[current].classList.remove('prev');
+        dots[current].classList.add('active');
+        dots[current].setAttribute('aria-selected', 'true');
+
+        resetProgress();
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      function startAutoplay() {
+        stopAutoplay();
+        timer = setInterval(next, AUTOPLAY_MS);
+      }
+
+      function stopAutoplay() {
+        clearInterval(timer);
+        clearInterval(progTimer);
+        timer = null;
+      }
+
+      function resetProgress() {
+        if (!progress) return;
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            progress.style.transition = `width ${AUTOPLAY_MS}ms linear`;
+            progress.style.width = '100%';
+          });
+        });
+      }
+
+      // Eventos
+      if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+      if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          goTo(parseInt(dot.dataset.slide, 10));
+          startAutoplay();
+        });
+      });
+
+      // Pausa al hover
+      if (section) {
+        section.addEventListener('mouseenter', stopAutoplay);
+        section.addEventListener('mouseleave', () => { startAutoplay(); resetProgress(); });
+      }
+
+      // Swipe táctil
+      let touchStartX = 0;
+      if (section) {
+        section.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        section.addEventListener('touchend', e => {
+          const dx = e.changedTouches[0].clientX - touchStartX;
+          if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); startAutoplay(); }
+        });
+      }
+
+      // Arrancar
+      startAutoplay();
+      resetProgress();
+    })();
+  </script>
 </body>
 </html>
 
