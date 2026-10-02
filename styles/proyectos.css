@@ -335,13 +335,36 @@
 }
 
 .proy-footer-icon {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #94a3b8;
+  flex-shrink: 0;
 }
 
-.proy-investigador {
-  font-size: 0.8rem;
-  font-weight: 600;
+.proy-footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.proy-investigador-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a3668;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.proy-investigador-link:hover {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+.proy-investigador-nombre {
+  font-size: 0.82rem;
+  font-weight: 700;
   color: #475569;
 }
 

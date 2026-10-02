@@ -3,6 +3,7 @@ function initNavbar() {
   
   // Elementos de navegación
   const logoLink = document.getElementById('logo-link');
+  const logoImg = document.getElementById('navbar-logo-img');
   const navInicio = document.getElementById('nav-inicio');
   const navQuienesSomos = document.getElementById('nav-quienes-somos');
   const navEquipo = document.getElementById('nav-equipo');
@@ -10,6 +11,7 @@ function initNavbar() {
   const navContacto = document.getElementById('nav-contacto');
 
   if (logoLink) logoLink.href = base + 'index.html';
+  if (logoImg) logoImg.src = base + 'assets/images/logo_r4.png';
   if (navInicio) navInicio.href = base + 'index.html';
   if (navQuienesSomos) navQuienesSomos.href = base + 'pages/quienes.html';
   if (navEquipo) navEquipo.href = base + 'pages/equipo.html';

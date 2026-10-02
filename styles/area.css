@@ -551,13 +551,244 @@
   .area-section-container {
     padding: 0 1.5rem;
   }
-  .area-proyectos-section {
+  .area-proyectos-section,
+  .area-investigadores-section {
     padding: 3rem 0;
   }
   .area-cta-title {
     font-size: 1.6rem;
   }
-  .area-proyectos-grid {
+  .area-proyectos-grid,
+  .area-investigadores-grid {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Sección Investigadores del Eje ────────────── */
+.area-investigadores-section {
+  background: #ffffff;
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.area-investigadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.area-investigador-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-investigador-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.area-investigador-card--gold:hover { border-color: rgba(245, 158, 11, 0.4); }
+.area-investigador-card--indigo:hover { border-color: rgba(99, 102, 241, 0.4); }
+.area-investigador-card--emerald:hover { border-color: rgba(16, 185, 129, 0.4); }
+
+.area-inv-foto-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border: 2.5px solid #e2e8f0;
+}
+
+.area-investigador-card--gold .area-inv-foto-container { border-color: rgba(245, 158, 11, 0.5); }
+.area-investigador-card--indigo .area-inv-foto-container { border-color: rgba(99, 102, 241, 0.5); }
+.area-investigador-card--emerald .area-inv-foto-container { border-color: rgba(16, 185, 129, 0.5); }
+
+.area-inv-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.area-inv-img-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.area-inv-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.area-inv-nombre {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.area-inv-nombre:hover {
+  color: #d97706;
+}
+
+.area-inv-cargo {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.area-inv-institucion {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+.area-inv-link-perfil {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1a3668;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.area-inv-link-perfil:hover {
+  color: #d97706;
+  gap: 0.55rem;
+}
+
+/* ── Proyectos dentro del Área ─────────────────── */
+.area-proy-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-proy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
+}
+
+.area-proy-card--gold { border-top: 3.5px solid #F59E0B; }
+.area-proy-card--indigo { border-top: 3.5px solid #6366F1; }
+.area-proy-card--emerald { border-top: 3.5px solid #10B981; }
+
+.area-proy-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.area-proy-anio {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.area-proy-titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.area-proy-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.area-proy-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.area-proy-tag {
+  font-size: 0.68rem;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.area-proy-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.area-proy-icon {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.area-proy-footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.area-proy-inv-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a3668;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.area-proy-inv-link:hover {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+.area-proy-inv-nombre {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.area-proy-instituciones {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-left: auto;
+  text-align: right;
+  line-height: 1.3;
+}
+

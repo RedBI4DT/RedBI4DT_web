@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Red BI4DT - Informática Biomédica & Salud Global</title>
+  <link rel="icon" type="image/png" href="assets/images/logo_r4.png">
   <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
@@ -115,6 +116,29 @@
       </div>
     </section>
 
+    <!-- Sección: Últimas Noticias / Publicaciones (LinkedIn) -->
+    <section class="publicaciones-section" id="publicaciones">
+      <div class="publicaciones-container">
+        <div class="publicaciones-header">
+          <div class="publicaciones-label-group">
+            <span class="publicaciones-label">
+              <i class="fa-solid fa-minus"></i> ACTUALIDAD & DIFUSIÓN
+            </span>
+            <h2 class="publicaciones-title">Últimas Noticias / Publicaciones</h2>
+          </div>
+        </div>
+
+        <div id="publicaciones-grid" class="publicaciones-grid" aria-live="polite">
+          <!-- Las tarjetas de publicaciones se renderizan dinámicamente con scripts/publicaciones.js -->
+        </div>
+
+        <div id="publicaciones-error" class="publicaciones-error" hidden>
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <p>No fue posible cargar las publicaciones en este momento. Por favor, intenta de nuevo más tarde.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Sección: Entidad Ejecutora -->
     <section class="executor-section" id="entidad-ejecutora">
       <div class="executor-content">
@@ -196,6 +220,7 @@
   <!-- Scripts -->
   <script src="scripts/loadComponents.js"></script>
   <script src="scripts/index.js"></script>
+  <script src="scripts/publicaciones.js"></script>
 </body>
 </html>
 

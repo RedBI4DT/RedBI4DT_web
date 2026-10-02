@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Degradados -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1a3668" />
+      <stop offset="100%" stop-color="#0e2347" />
+    </linearGradient>
+    
+    <linearGradient id="rGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <linearGradient id="fourGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Sombras / Filtros -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Fondo: Squircle redondeado -->
+  <rect x="16" y="16" width="480" height="480" rx="110" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="12" />
+
+  <!-- Pulso sutil de fondo tecnológico/médico -->
+  <path d="M 40 370 L 150 370 L 175 320 L 205 410 L 235 340 L 255 370 L 472 370" 
+        fill="none" 
+        stroke="url(#goldAccent)" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        opacity="0.25" />
+
+  <!-- Letra 'R' -->
+  <g filter="url(#glow)">
+    <!-- Barra vertical de la R -->
+    <path d="M 125 150 L 125 360 L 175 360 L 175 150 Z" fill="url(#rGrad)" />
+    <!-- Bucle superior de la R -->
+    <path d="M 170 150 L 235 150 C 275 150, 295 170, 295 210 C 295 250, 275 270, 235 270 L 170 270 Z M 175 195 L 175 225 L 230 225 C 248 225, 255 220, 255 210 C 255 200, 248 195, 230 195 Z" fill="url(#rGrad)" />
+    <!-- Pata diagonal de la R con acento biomédico -->
+    <path d="M 215 260 L 290 360 L 345 360 L 260 250 Z" fill="url(#rGrad)" />
+  </g>
+
+  <!-- Número '4' estilizado con gradiente Cyan/Azul y pulso integrado -->
+  <g filter="url(#glow)">
+    <!-- Barra diagonal del 4 -->
+    <path d="M 360 150 L 275 285 L 275 325 L 360 325 L 360 150 Z M 325 285 L 360 225 L 360 285 Z" fill="url(#fourGrad)" />
+    <!-- Barra vertical principal del 4 -->
+    <path d="M 360 150 L 410 150 L 410 360 L 360 360 Z" fill="url(#fourGrad)" />
+    <!-- Barra horizontal que cruza el 4 con pulso ECG dinámico -->
+    <path d="M 265 295 L 440 295 L 440 335 L 265 335 Z" fill="url(#fourGrad)" />
+  </g>
+
+  <!-- Punto / Nodo tecnológico dorado -->
+  <circle cx="410" cy="150" r="14" fill="url(#goldAccent)" />
+  <circle cx="125" cy="150" r="10" fill="url(#goldAccent)" />
+  <circle cx="440" cy="315" r="8" fill="#38bdf8" />
+</svg>
