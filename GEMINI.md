@@ -32,8 +32,9 @@ Al ser un proyecto de archivos estáticos sin entorno de dependencias de servido
 - **JavaScript:** Organización modular, separando scripts de utilidad global o carga de componentes de la lógica específica de una vista.
 
 ## 6. Reglas para el agente
-- **NO modificar sin confirmación:** No alteres el diseño base, la paleta de colores (`colors.css`) ni la estructura de navegación inyectada sin consultar. 
-- **Validación de tareas:** Asegurarse de que no haya errores de consola tras modificar scripts y que los componentes dinámicos carguen correctamente al correr en un servidor HTTP local.
+- **Creación obligatoria de Artefactos previos:** Para cualquier cambio, actualización o rediseño que se vaya a realizar, el agente DEBE crear primero un artefacto (documento markdown interactivo) para que el usuario pueda leerlo, analizarlo y dar su aprobación antes de proceder con la implementación del código.
+- **Pruebas exclusivamente manuales:** NO ejecutar comandos de pruebas ni levantar servidores locales automáticos (como `python -m http.server` o `npx serve`). Todas las pruebas de visualización y funcionamiento serán realizadas manualmente por el usuario para optimizar el consumo de tokens.
+- **NO modificar sin confirmación:** No alteres el diseño base, la paleta de colores (`colors.css`) ni la estructura de navegación inyectada sin consultar previamente.
 - **Preferencias de commits:** Usar mensajes descriptivos, de preferencia en español para alinearse al contexto.
 - **Limitación Tecnológica:** Mantén el uso estricto de Vanilla JS y CSS. No introduzcas dependencias, empaquetadores (Webpack, Vite) ni frameworks a menos que el usuario lo solicite explícitamente.
 
