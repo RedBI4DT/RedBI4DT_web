@@ -35,8 +35,8 @@
           </div>
           <div class="proyectos-stat-divider"></div>
           <div class="proyectos-stat">
-            <span class="proyectos-stat-num">3</span>
-            <span class="proyectos-stat-label">Áreas de Investigación</span>
+            <span class="proyectos-stat-num">6</span>
+            <span class="proyectos-stat-label">Líneas de Investigación</span>
           </div>
           <div class="proyectos-stat-divider"></div>
           <div class="proyectos-stat">
@@ -51,20 +51,90 @@
     <section class="proyectos-main-section">
       <div class="proyectos-main-container">
 
-        <!-- Barra de filtros -->
-        <div class="proyectos-filtros" role="tablist" aria-label="Filtrar proyectos por área">
-          <button class="proyectos-filtro-btn active" data-filtro="todos" role="tab" aria-selected="true" id="filtro-todos">
-            <i class="fa-solid fa-grid-2"></i> Todos
-          </button>
-          <button class="proyectos-filtro-btn" data-filtro="informatica-biomedica" data-color="gold" role="tab" aria-selected="false" id="filtro-informatica">
-            <i class="fa-solid fa-database"></i> Informática Biomédica
-          </button>
-          <button class="proyectos-filtro-btn" data-filtro="ia-salud" data-color="indigo" role="tab" aria-selected="false" id="filtro-ia">
-            <i class="fa-solid fa-lightbulb"></i> IA en Salud
-          </button>
-          <button class="proyectos-filtro-btn" data-filtro="interoperabilidad" data-color="emerald" role="tab" aria-selected="false" id="filtro-interop">
-            <i class="fa-solid fa-shield-halved"></i> Interoperabilidad
-          </button>
+        <!-- Toolbar de Búsqueda y Filtros Avanzados -->
+        <div class="proyectos-toolbar-wrapper">
+          <div class="proyectos-search-bar">
+            <div class="proyectos-search-input-box">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="proyectos-search-input" placeholder="Buscar por título, temática, investigador, institución..." aria-label="Buscar proyectos">
+              <button type="button" id="proyectos-search-clear" class="btn-clear-search" aria-label="Limpiar búsqueda" hidden>
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <button type="button" id="btn-toggle-filtros" class="proyectos-btn-filtros" aria-expanded="false" aria-controls="proyectos-filtros-panel">
+              <i class="fa-solid fa-sliders"></i>
+              <span>Filtros</span>
+              <span id="filtros-badge-count" class="filtros-badge" hidden>0</span>
+              <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+            </button>
+
+            <button type="button" id="btn-reset-all" class="proyectos-btn-reset" title="Restablecer todos los filtros" hidden>
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Limpiar</span>
+            </button>
+          </div>
+
+          <!-- Panel Desplegable de Filtros Avanzados -->
+          <div id="proyectos-filtros-panel" class="proyectos-panel-filtros" hidden>
+            <div class="filtros-grid">
+              
+              <!-- Filtro Área / Línea de Investigación -->
+              <div class="filtro-group">
+                <label for="filtro-select-area" class="filtro-label">
+                  <i class="fa-solid fa-layer-group"></i> Línea de Investigación
+                </label>
+                <select id="filtro-select-area" class="filtro-select">
+                  <option value="todos">Todas las líneas</option>
+                  <option value="informatica-biomedica">Informática Biomédica y Salud Digital</option>
+                  <option value="ia-salud">Inteligencia Artificial en Salud</option>
+                  <option value="interoperabilidad">Interoperabilidad y Gobernanza de Datos</option>
+                  <option value="analitica-datos">Visualización y Analítica de Datos</option>
+                  <option value="sociotecnica-adopcion">Evaluación Sociotécnica y Adopción</option>
+                  <option value="salud-digital">Salud Digital</option>
+                </select>
+              </div>
+
+              <!-- Filtro País -->
+              <div class="filtro-group">
+                <label for="filtro-select-pais" class="filtro-label">
+                  <i class="fa-solid fa-earth-americas"></i> País
+                </label>
+                <select id="filtro-select-pais" class="filtro-select">
+                  <option value="todos">Todos los países</option>
+                  <option value="Perú">🇵🇪 Perú</option>
+                  <option value="Ecuador">🇪🇨 Ecuador</option>
+                  <option value="Estados Unidos">🇺🇸 Estados Unidos</option>
+                </select>
+              </div>
+
+              <!-- Filtro Institución -->
+              <div class="filtro-group">
+                <label for="filtro-select-institucion" class="filtro-label">
+                  <i class="fa-solid fa-building-columns"></i> Institución
+                </label>
+                <select id="filtro-select-institucion" class="filtro-select">
+                  <option value="todos">Todas las instituciones</option>
+                </select>
+              </div>
+
+              <!-- Filtro Estado -->
+              <div class="filtro-group">
+                <label for="filtro-select-estado" class="filtro-label">
+                  <i class="fa-solid fa-clock-rotate-left"></i> Estado
+                </label>
+                <select id="filtro-select-estado" class="filtro-select">
+                  <option value="todos">Todos los estados</option>
+                  <option value="En curso">En curso</option>
+                  <option value="Concluido">Concluido</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Chips de Filtros Activos -->
+          <div id="proyectos-active-chips" class="proyectos-active-chips" hidden></div>
         </div>
 
         <!-- Contador de resultados -->
@@ -79,10 +149,10 @@
 
         <!-- Estado vacío -->
         <div class="proyectos-empty" id="proyectos-empty" hidden>
-          <i class="fa-solid fa-folder-open"></i>
-          <h3>Sin proyectos en esta área</h3>
-          <p>No hay proyectos registrados para el filtro seleccionado.</p>
-          <button class="proyectos-empty-btn" id="proyectos-empty-reset">Ver todos los proyectos</button>
+          <i class="fa-solid fa-filter-circle-xmark"></i>
+          <h3>No se encontraron proyectos</h3>
+          <p>No hay proyectos que coincidan con los criterios de búsqueda o filtros seleccionados.</p>
+          <button type="button" class="proyectos-empty-btn" id="proyectos-empty-reset">Restablecer todos los filtros</button>
         </div>
 
       </div>
