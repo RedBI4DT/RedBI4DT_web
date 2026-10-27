@@ -11,7 +11,7 @@ function initNavbar() {
   const navContacto = document.getElementById('nav-contacto');
 
   if (logoLink) logoLink.href = base + 'index.html';
-  if (logoImg) logoImg.src = base + 'assets/images/logo_r4.png';
+  if (logoImg) logoImg.src = base + 'assets/images/bi4dt-logo.png';
   if (navInicio) navInicio.href = base + 'index.html';
   if (navQuienesSomos) navQuienesSomos.href = base + 'pages/quienes.html';
   if (navEquipo) navEquipo.href = base + 'pages/equipo.html';

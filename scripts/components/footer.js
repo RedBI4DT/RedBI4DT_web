@@ -5,7 +5,7 @@ function initFooter() {
   const footerLogo = document.getElementById('footer-logo-link');
   const footerLogoImg = document.getElementById('footer-logo-img');
   if (footerLogo) footerLogo.href = base + 'index.html';
-  if (footerLogoImg) footerLogoImg.src = base + 'assets/images/logo_r4.png';
+  if (footerLogoImg) footerLogoImg.src = base + 'assets/images/logo_red_web.png';
 
   // Navegación
   const footerMain = document.getElementById('footer-nav-main');

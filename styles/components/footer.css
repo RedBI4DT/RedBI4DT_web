@@ -50,9 +50,6 @@
 .footer-logo-icon-box {
   width: 42px;
   height: 42px;
-  background: #0f172a;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
