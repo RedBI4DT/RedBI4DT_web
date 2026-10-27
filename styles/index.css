@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html,
 body {
   width: 100%;

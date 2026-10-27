@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Poblar dinámicamente el selector de instituciones
     poblarInstituciones();
 
-    // Detectar filtros iniciales desde la URL (ej. ?filtro=ia-salud o ?area=ia-salud o ?pais=Ecuador)
+    // Detectar filtros iniciales desde la URL (ej. ?linea=ia-salud o ?filtro=ia-salud o ?area=ia-salud o ?pais=Ecuador)
     const params = new URLSearchParams(window.location.search);
-    const areaParam = params.get('filtro') || params.get('area');
+    const areaParam = params.get('linea') || params.get('filtro') || params.get('area');
     if (areaParam && AREA_LABELS[areaParam]) {
       estadoFiltros.area = areaParam;
       const selectArea = document.getElementById('filtro-select-area');
@@ -244,10 +244,9 @@ function aplicarFiltros() {
       }
     }
 
-    // 2. Línea de Investigación (evalúa área principal o líneas secundarias)
+    // 2. Línea de Investigación (estrictamente la línea principal asignada)
     if (estadoFiltros.area !== 'todos') {
-      const matchArea = p.area_id === estadoFiltros.area || (p.lineas && p.lineas.includes(estadoFiltros.area));
-      if (!matchArea) {
+      if (p.area_id !== estadoFiltros.area) {
         return false;
       }
     }
@@ -431,11 +430,17 @@ function renderProyectos(proyectos) {
 
   if (proyectos.length === 0) {
     grid.innerHTML = '';
-    if (emptyEl) emptyEl.removeAttribute('hidden');
+    if (emptyEl) {
+      emptyEl.removeAttribute('hidden');
+      emptyEl.style.display = 'flex';
+    }
     return;
   }
 
-  if (emptyEl) emptyEl.setAttribute('hidden', '');
+  if (emptyEl) {
+    emptyEl.setAttribute('hidden', '');
+    emptyEl.style.display = 'none';
+  }
 
   grid.innerHTML = proyectos.map((p, index) => {
     const color = COLOR_MAP[p.area_id] || 'gold';
@@ -444,38 +449,35 @@ function renderProyectos(proyectos) {
       : 'proy-estado--activo';
     const estadoLabel = p.estado || 'En curso';
 
-    // Insignias de países limpias con icono
-    const badgesPaises = (p.paises || []).map(pais => {
-      return `<span class="proy-pais-badge"><i class="fa-solid fa-location-dot"></i> ${pais}</span>`;
-    }).join('');
-
-    const tags = (p.tags || []).slice(0, 4).map(t =>
+    // Máximo 3 tags + indicador +N
+    const tagsArr = p.tags || [];
+    const tagsVisible = tagsArr.slice(0, 3).map(t =>
       `<span class="proy-tag">${t}</span>`
     ).join('');
+    const tagsExtra = tagsArr.length > 3
+      ? `<span class="proy-tag-more">+${tagsArr.length - 3}</span>`
+      : '';
+    const tagsHtml = tagsArr.length > 0
+      ? `<div class="proy-tags">${tagsVisible}${tagsExtra}</div>`
+      : '';
 
-    const institucionesTexto = (p.instituciones || []).join(' · ');
     const delay = (index % 9) * 40;
+    const textoResumen = p.resumen || p.descripcion || '';
 
     return `
-      <article class="proy-card" data-area="${p.area_id}" style="animation-delay:${delay}ms;">
+      <a href="proyecto-detalle.html?id=${p.id}" class="proy-card" data-area="${p.area_id}" style="animation-delay:${delay}ms;">
         <div class="proy-meta">
           <span class="proy-anio">${p.anio || ''}</span>
           <span class="proy-estado ${estadoClass}">${estadoLabel}</span>
-          ${badgesPaises}
-          <a href="area.html?id=${p.area_id}" class="proy-area-badge proy-area-badge--${color}" title="Ver eje científico">
-            ${p.area_nombre || ''}
-          </a>
         </div>
         <h3 class="proy-titulo">${p.titulo}</h3>
-        <p class="proy-desc">${p.descripcion}</p>
-        ${tags ? `<div class="proy-tags">${tags}</div>` : ''}
-        <a href="area.html?id=${p.area_id}" class="proy-area-link">
-          Ver línea de investigación <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i>
-        </a>
-        <div class="proy-footer">
-          <i class="fa-solid fa-building-columns proy-footer-icon" title="Institución participante"></i>
-          <span class="proy-footer-institucion">${institucionesTexto}</span>
+        <p class="proy-desc">${textoResumen}</p>
+        ${tagsHtml}
+        <div class="proy-footer-linea">
+          <span class="proy-area-badge proy-area-badge--${color}">
+            <span class="badge-dot"></span>${p.area_nombre || ''}
+          </span>
         </div>
-      </article>`;
+      </a>`;
   }).join('');
 }

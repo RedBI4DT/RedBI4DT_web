@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Proyecto - BI4DT Network</title>
+  <meta name="description" content="Información detallada del proyecto de investigación de la Red BI4DT: objetivos, equipo científico, instituciones asociadas y avances.">
+  <link rel="icon" type="image/png" href="../assets/images/logo_red_web.png">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/quienes.css">
+  <link rel="stylesheet" href="../styles/proyecto-detalle.css">
+</head>
+<body>
+
+  <!-- Componente Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Contenido Principal -->
+  <main class="page-content" id="main-content">
+
+    <!-- Hero del Proyecto -->
+    <section class="proyecto-hero-section">
+      <div class="proyecto-hero-container">
+        
+        <div class="proyecto-hero-nav">
+          <a href="proyectos.html" class="proyecto-back-link">
+            <i class="fa-solid fa-arrow-left"></i> Volver a proyectos
+          </a>
+        </div>
+
+        <h1 class="proyecto-hero-titulo" id="proy-titulo">Cargando proyecto...</h1>
+
+        <div class="proyecto-hero-periodo">
+          <i class="fa-regular fa-calendar"></i>
+          <span>Período: <strong id="proy-periodo">2023–2025</strong></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Cuerpo Principal: Descripción y Detalles -->
+    <section class="proyecto-body-section">
+      <div class="proyecto-body-container">
+
+        <!-- Columna Izquierda: Información Completa -->
+        <div class="proyecto-main-col">
+          
+          <div class="proyecto-info-block">
+            <h2 class="proyecto-block-title">
+              <i class="fa-solid fa-circle-info"></i> Descripción del Proyecto
+            </h2>
+            <div class="proyecto-descripcion-completa" id="proy-descripcion-larga">
+              <p>Cargando información del proyecto...</p>
+            </div>
+          </div>
+
+          <div class="proyecto-info-block">
+            <h2 class="proyecto-block-title">
+              <i class="fa-solid fa-tags"></i> Palabras Clave y Temáticas
+            </h2>
+            <div class="proyecto-tags-grid" id="proy-tags"></div>
+          </div>
+
+          <!-- Equipo del Proyecto -->
+          <div class="proyecto-info-block">
+            <h2 class="proyecto-block-title">
+              <i class="fa-solid fa-users"></i> Equipo Participante
+            </h2>
+            <div class="proyecto-equipo-grid" id="proy-equipo-grid"></div>
+          </div>
+
+        </div>
+
+        <!-- Columna Derecha / Sidebar: Instituciones, Trazabilidad y Metadatos -->
+        <aside class="proyecto-sidebar-col">
+
+          <div class="proyecto-card-sidebar">
+            <h3 class="proyecto-sidebar-title">
+              <i class="fa-solid fa-building-columns"></i> Instituciones
+            </h3>
+            <ul class="proyecto-instituciones-list" id="proy-instituciones-list"></ul>
+          </div>
+
+          <div class="proyecto-card-sidebar">
+            <h3 class="proyecto-sidebar-title">
+              <i class="fa-solid fa-share-nodes"></i> Trazabilidad
+            </h3>
+            <p class="proyecto-sidebar-note">Este proyecto es parte de las líneas científicas de la Red BI4DT.</p>
+            <a href="proyectos.html" class="proyecto-sidebar-btn" id="proy-filtro-linea-link">
+              <i class="fa-solid fa-filter"></i> Ver proyectos de la misma línea
+            </a>
+          </div>
+
+          <!-- Metadatos del Proyecto -->
+          <div class="proyecto-card-sidebar">
+            <h3 class="proyecto-sidebar-title">
+              <i class="fa-solid fa-circle-check"></i> Ficha del Proyecto
+            </h3>
+            <div class="proyecto-ficha-list">
+              <div class="proyecto-ficha-row">
+                <span class="ficha-label"><i class="fa-solid fa-signal"></i> Estado</span>
+                <span class="proy-estado-badge" id="proy-estado-badge">En curso</span>
+              </div>
+              <div class="proyecto-ficha-row">
+                <span class="ficha-label"><i class="fa-solid fa-microscope"></i> Línea de Investigación</span>
+                <span class="ficha-valor-linea" id="proy-linea-badge">Línea</span>
+              </div>
+              <div class="proyecto-ficha-row">
+                <span class="ficha-label"><i class="fa-solid fa-location-dot"></i> Ubicación</span>
+                <span class="ficha-valor" id="proy-pais-badge">
+                  <span id="proy-pais-text">Perú</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- Sección Inferior: Otros Proyectos en esta Línea -->
+    <section class="proyectos-relacionados-section">
+      <div class="proyectos-relacionados-container">
+        <h2 class="proyecto-block-title">
+          <i class="fa-solid fa-diagram-project"></i> Otros Proyectos en esta Línea
+        </h2>
+        <div class="proyectos-relacionados-grid" id="proy-relacionados-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Componente Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/loadComponents.js"></script>
+  <script src="../scripts/proyecto-detalle.js"></script>
+</body>
+</html>
