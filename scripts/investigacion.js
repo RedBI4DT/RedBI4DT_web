@@ -74,11 +74,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // Obtener proyectos trazables reales del archivo de proyectos
+    // Obtener proyectos asociados por ID o por integración directa
     const todosProyectos = datosProyectos.proyectos || [];
-    const proyectosDelInvestigador = todosProyectos.filter(
-      p => p.investigador_principal === miembro.id || (p.investigador_nombre && p.investigador_nombre.toLowerCase() === miembro.nombre.toLowerCase())
-    );
+    const idsAsociados = Array.isArray(miembro.proyectos) ? miembro.proyectos : [];
+    const proyectosDelInvestigador = todosProyectos.filter(p => {
+      if (idsAsociados.includes(p.id)) return true;
+      if (p.investigador_principal === miembro.id) return true;
+      if (Array.isArray(p.integrantes) && p.integrantes.includes(miembro.id)) return true;
+      if (p.investigador_nombre && p.investigador_nombre.toLowerCase() === miembro.nombre.toLowerCase()) return true;
+      return false;
+    });
 
     renderPerfil(miembro, categoria, proyectosDelInvestigador);
 
@@ -92,6 +97,15 @@ function normalizarTexto(texto) {
   return (texto || '').toLowerCase().trim();
 }
 
+const COLOR_MAP = {
+  'informatica-biomedica': 'gold',
+  'ia-salud': 'indigo',
+  'interoperabilidad': 'emerald',
+  'analitica-datos': 'violet',
+  'sociotecnica-adopcion': 'rose',
+  'salud-digital': 'sky'
+};
+
 function renderPerfil(m, categoria, proyectosReales) {
   // Actualizar título del navegador
   document.title = `${m.nombre} - Perfil de Investigación | Red BI4DT`;
@@ -104,11 +118,11 @@ function renderPerfil(m, categoria, proyectosReales) {
       : 'EQUIPO DE INVESTIGACIÓN';
   }
 
-  // Foto
+  // Foto (Regla 9)
   const fotoEl = document.getElementById('perfil-foto');
   if (fotoEl && m.foto) {
     fotoEl.src = m.foto;
-    fotoEl.removeAttribute('alt'); // Regla 9 del proyecto
+    fotoEl.removeAttribute('alt');
   }
 
   // Datos básicos
@@ -117,77 +131,56 @@ function renderPerfil(m, categoria, proyectosReales) {
   setTexto('perfil-institucion', m.institucion);
   setTexto('perfil-descripcion', m.descripcion);
 
-  // Líneas de investigación interactivas trazables
-  const lineasEl = document.getElementById('perfil-lineas');
-  if (lineasEl && m.lineas) {
-    lineasEl.innerHTML = m.lineas.map(lineaTexto => {
-      const lineaNorm = normalizarTexto(lineaTexto);
-      const areaId = MAPA_LINEAS_A_AREAS[lineaNorm];
-
-      if (areaId) {
-        return `
-          <li class="perfil-linea-item">
-            <a href="area.html?id=${areaId}" class="perfil-linea-link" title="Ver eje científico: ${lineaTexto}">
-              <i class="fa-solid fa-arrow-right"></i>
-              <span>${lineaTexto}</span>
-              <span class="perfil-linea-badge">Eje Científico</span>
-            </a>
-          </li>
-        `;
+  // Chips temáticos en el hero derivados de sus proyectos asociados
+  const chipsEl = document.getElementById('perfil-chips');
+  if (chipsEl) {
+    const lineasMap = new Map();
+    (proyectosReales || []).forEach(p => {
+      if (p.area_id && p.area_nombre && !lineasMap.has(p.area_id)) {
+        lineasMap.set(p.area_id, { id: p.area_id, nombre: p.area_nombre });
       }
-
-      return `
-        <li class="perfil-linea-item">
-          <a href="proyectos.html" class="perfil-linea-link" title="Ver proyectos relacionados">
-            <i class="fa-solid fa-chevron-right"></i>
-            <span>${lineaTexto}</span>
-          </a>
-        </li>
-      `;
-    }).join('');
-  }
-
-  // Proyectos Relacionados (Trazabilidad Real)
-  const proyectosEl = document.getElementById('perfil-proyectos');
-  if (proyectosEl) {
-    // Si tenemos proyectos reales asociados en proyectos.json, usamos esos con toda su riqueza de datos
-    if (proyectosReales && proyectosReales.length > 0) {
-      proyectosEl.innerHTML = proyectosReales.map(p => {
-        const areaColor = p.area_id === 'ia-salud' ? 'indigo' : (p.area_id === 'interoperabilidad' ? 'emerald' : 'gold');
-        const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
-        const tagsHtml = (p.tags || []).slice(0, 3).map(t => `<span class="perfil-proy-tag">${t}</span>`).join('');
-
+    });
+    const lineasUnicas = Array.from(lineasMap.values()).slice(0, 3);
+    if (lineasUnicas.length > 0) {
+      chipsEl.innerHTML = lineasUnicas.map(l => {
+        const color = COLOR_MAP[l.id] || 'gold';
         return `
-          <article class="perfil-proyecto-card">
-            <div class="perfil-proyecto-header">
-              <span class="perfil-proyecto-anio">${p.anio || ''}</span>
-              <span class="proy-estado ${estadoClass}">${p.estado || 'En curso'}</span>
-              <a href="area.html?id=${p.area_id}" class="perfil-proy-area-badge perfil-proy-area-badge--${areaColor}">
-                ${p.area_nombre || 'Ver Eje'}
-              </a>
-            </div>
-            <h3 class="perfil-proyecto-titulo">${p.titulo}</h3>
-            <p class="perfil-proyecto-desc">${p.descripcion}</p>
-            ${tagsHtml ? `<div class="perfil-proy-tags">${tagsHtml}</div>` : ''}
-            <div class="perfil-proyecto-footer">
-              <a href="area.html?id=${p.area_id}" class="perfil-proyecto-ver-linea">
-                Ver línea de investigación <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
+          <a href="proyectos.html?linea=${l.id}" class="perfil-hero-chip perfil-hero-chip--${color}" title="Ver proyectos en: ${l.nombre}">
+            <span class="chip-dot"></span>${l.nombre}
+          </a>
         `;
       }).join('');
-    } else if (m.proyectos && m.proyectos.length > 0) {
-      // Fallback a los proyectos listados en el miembro
-      proyectosEl.innerHTML = m.proyectos.map(p => `
-        <article class="perfil-proyecto-card">
-          <div class="perfil-proyecto-header">
-            <span class="perfil-proyecto-anio">${p.anio || ''}</span>
-          </div>
-          <h3 class="perfil-proyecto-titulo">${p.titulo}</h3>
-          <p class="perfil-proyecto-desc">${p.descripcion}</p>
-        </article>
-      `).join('');
+    } else {
+      chipsEl.innerHTML = '';
+    }
+  }
+
+  // Proyectos Relacionados (Cards mínimas según arquitectura: año, estado, 1 tag línea, título, flecha -> detalle)
+  const proyectosEl = document.getElementById('perfil-proyectos');
+  if (proyectosEl) {
+    if (proyectosReales && proyectosReales.length > 0) {
+      proyectosEl.innerHTML = proyectosReales.map(p => {
+        const color = COLOR_MAP[p.area_id] || 'gold';
+        const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
+
+        return `
+          <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proyecto-card perfil-proyecto-card--${color}">
+            <div class="perfil-proyecto-top">
+              <span class="perfil-proyecto-anio">${p.anio || ''}</span>
+              <span class="proy-estado ${estadoClass}">${p.estado || 'En curso'}</span>
+            </div>
+            <div class="perfil-proyecto-linea-row">
+              <span class="perfil-proy-linea-tag perfil-proy-linea-tag--${color}">
+                <span class="linea-dot"></span>${p.area_nombre || 'Línea de Investigación'}
+              </span>
+            </div>
+            <h3 class="perfil-proyecto-titulo">${p.titulo}</h3>
+            <div class="perfil-proyecto-action">
+              <span class="perfil-proyecto-flecha"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </a>
+        `;
+      }).join('');
     } else {
       proyectosEl.innerHTML = '<p class="perfil-empty">Sin proyectos registrados actualmente.</p>';
     }

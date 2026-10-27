@@ -76,12 +76,20 @@
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .equipo-member-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
   border-color: rgba(245, 158, 11, 0.5);
+}
+
+.equipo-member-card a.member-name-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 
 /* Contenedor de Imagen */

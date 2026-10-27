@@ -1,9 +1,12 @@
 /* Navbar Styles - Red BI4DT */
 .navbar-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.94);
+  background: rgba(8, 16, 36, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
@@ -13,7 +16,7 @@
 .navbar-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0.85rem 2rem;
+  padding: 0.6rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,12 +25,10 @@
 
 /* Brand / Logo Section */
 .navbar-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.85rem;
   text-decoration: none;
-  color: #ffffff;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.25s ease, opacity 0.2s ease;
   flex-shrink: 0;
 }
 
@@ -36,70 +37,31 @@
   transform: translateY(-1px);
 }
 
-.logo-icon-box {
-  width: 44px;
-  height: 44px;
-  background: #0f172a;
-  border: 1.5px solid rgba(56, 189, 248, 0.35);
-  border-radius: 11px;
-  display: flex;
+.navbar-logo-wrapper {
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.navbar-brand:hover .logo-icon-box {
-  border-color: #38bdf8;
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
-  transform: scale(1.04);
 }
 
 .navbar-logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 60px;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
   display: block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+}
+
+.navbar-brand:hover .navbar-logo-img {
+  transform: scale(1.03);
+  filter: drop-shadow(0 2px 10px rgba(56, 189, 248, 0.3));
 }
 
 .navbar-logo-img-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.brand-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.4px;
-  line-height: 1.2;
-}
-
-.logo-accent {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-}
-
-.brand-subtitle {
-  font-size: 0.72rem;
-  color: #94a3b8;
-  font-weight: 400;
-  line-height: 1.3;
-  margin-top: 2px;
-  max-width: 460px;
-  letter-spacing: -0.1px;
 }
 
 /* Nav Links Section */
@@ -110,7 +72,7 @@
 }
 
 .nav-link {
-  color: #cbd5e1;
+  color: #dde1e6;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.92rem;
@@ -199,19 +161,9 @@
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 1080px) {
-  .brand-subtitle {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    max-width: 300px;
-  }
-}
-
 @media (max-width: 880px) {
-  .brand-subtitle {
-    display: none;
+  .navbar-logo-img {
+    height: 44px;
   }
 
   .mobile-toggle {
@@ -250,4 +202,16 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 580px) {
+  .navbar-container {
+    padding: 0.5rem 1.25rem;
+  }
+
+  .navbar-logo-img {
+    height: 38px;
+    max-width: 190px;
+  }
+}
+
 

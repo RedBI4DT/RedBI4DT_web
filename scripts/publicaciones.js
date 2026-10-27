@@ -149,7 +149,11 @@ function normalizarClaseArea(area) {
  */
 function crearElementoTarjetaPublicacion(publicacion, indice) {
   const tarjeta = document.createElement('article');
-  tarjeta.className = 'publicacion-card';
+  tarjeta.className = 'publicacion-card reveal-on-scroll';
+
+  // Añadir retardo escalonado (stagger) para las tarjetas
+  const delayIndex = (indice % 3) + 1;
+  tarjeta.classList.add(`reveal-delay-${delayIndex}`);
 
   // Asignar clase de color del área para el borde izquierdo
   const claseColorArea = normalizarClaseArea(publicacion.area);
@@ -281,4 +285,10 @@ function renderizarPublicaciones(publicaciones, contenedor) {
     const elementoTarjeta = crearElementoTarjetaPublicacion(publicacion, indice);
     contenedor.appendChild(elementoTarjeta);
   });
+
+  // Notificar al observador de animaciones si está disponible
+  if (typeof window.observeRevealElements === 'function') {
+    window.observeRevealElements(contenedor);
+  }
 }
+
