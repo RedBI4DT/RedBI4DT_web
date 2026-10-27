@@ -1,77 +1,20 @@
 /* styles/proyectos.css */
 @import url("colors.css");
+@import url("quienes.css"); /* Header institucional unificado */
 
 /* =====================================================
    Pagina: Catalogo de Proyectos
    ===================================================== */
 
-/* Hero */
-.proyectos-hero-section {
-  background: var(--gradient-hero-dark);
-  padding: 5.5rem 80px 4.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.proyectos-hero-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(245, 158, 11, 0.4), transparent);
-}
-
-.proyectos-hero-content {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.proyectos-hero-label {
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-
-.proyectos-hero-line {
-  display: inline-block;
-  width: 28px;
-  height: 2px;
-  background: var(--color-gold);
-  border-radius: 2px;
-}
-
-.proyectos-hero-title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: var(--color-white);
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-  margin-bottom: 1.25rem;
-  max-width: 700px;
-}
-
-.proyectos-hero-desc {
-  color: var(--color-gray-soft);
-  font-size: 1.05rem;
-  line-height: 1.75;
-  max-width: 620px;
-  margin-bottom: 3rem;
-}
-
-/* Estadísticas */
+/* Estadísticas dentro del Header Institucional */
 .proyectos-hero-stats {
   display: flex;
   align-items: center;
   gap: 2.5rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .proyectos-stat {
@@ -83,14 +26,14 @@
 .proyectos-stat-num {
   font-size: 2.4rem;
   font-weight: 800;
-  color: var(--color-gold);
+  color: #f59e0b;
   line-height: 1;
   letter-spacing: -1px;
 }
 
 .proyectos-stat-label {
   font-size: 0.78rem;
-  color: var(--color-gray-muted);
+  color: rgba(255, 255, 255, 0.78);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -99,7 +42,7 @@
 .proyectos-stat-divider {
   width: 1px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Seccion principal */
@@ -731,13 +674,10 @@
 
 /* Responsive */
 @media (max-width: 1100px) {
-  .proyectos-hero-section { padding: 4rem 40px 3.5rem; }
   .proyectos-main-container { padding: 0 40px; }
 }
 
 @media (max-width: 768px) {
-  .proyectos-hero-title { font-size: 2.2rem; }
-  .proyectos-hero-section { padding: 3.5rem 1.5rem 3rem; }
   .proyectos-main-container { padding: 0 1.5rem; }
   .proyectos-search-bar { flex-direction: column; align-items: stretch; }
   .proyectos-search-input-box { width: 100%; min-width: 0; }
@@ -747,7 +687,6 @@
 }
 
 @media (max-width: 480px) {
-  .proyectos-hero-title { font-size: 1.8rem; }
   .proyectos-hero-stats { gap: 1.5rem; }
   .proyectos-stat-num { font-size: 1.9rem; }
 }
