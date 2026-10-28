@@ -18,8 +18,10 @@ async function loadComponent(elementId, htmlUrl, cssUrl, jsUrl, initFnName) {
   const placeholder = document.getElementById(elementId);
   if (!placeholder) return;
 
-  // Iniciar componente en modo invisible para evitar parpadeos no estilizados
-  placeholder.classList.add('component-loading');
+  // Para otros componentes se puede marcar loading, pero el navbar se mantiene continuo
+  if (elementId !== 'navbar-placeholder') {
+    placeholder.classList.add('component-loading');
+  }
 
   try {
     // 1. Precargar CSS si no estuviera importado previamente
