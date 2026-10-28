@@ -34,7 +34,7 @@ body {
 
 /* Reserva de espacio para evitar desfasamiento visual / Layout Shift (CLS) */
 #navbar-placeholder {
-  min-height: 70px;
+  min-height: 50px;
   display: block;
   transition: opacity 0.15s ease-in-out;
 }
