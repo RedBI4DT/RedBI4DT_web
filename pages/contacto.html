@@ -42,22 +42,27 @@
       <div class="carousel-track" id="carousel-track">
 
         <div class="carousel-slide active">
-          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <img src="../assets/images/moments_bi4dt/1.webp" class="carousel-slide-img">
           <div class="carousel-slide-overlay"></div>
         </div>
 
         <div class="carousel-slide">
-          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <img src="../assets/images/moments_bi4dt/2.webp" class="carousel-slide-img">
           <div class="carousel-slide-overlay"></div>
         </div>
 
         <div class="carousel-slide">
-          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <img src="../assets/images/moments_bi4dt/3.webp" class="carousel-slide-img">
           <div class="carousel-slide-overlay"></div>
         </div>
 
         <div class="carousel-slide">
-          <img src="../assets/images/Imagen_1.jpg" class="carousel-slide-img">
+          <img src="../assets/images/moments_bi4dt/4.webp" class="carousel-slide-img">
+          <div class="carousel-slide-overlay"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="../assets/images/moments_bi4dt/5.webp" class="carousel-slide-img">
           <div class="carousel-slide-overlay"></div>
         </div>
 
@@ -77,6 +82,7 @@
         <button class="carousel-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
         <button class="carousel-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
         <button class="carousel-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+        <button class="carousel-dot" data-slide="4" role="tab" aria-selected="false" aria-label="Slide 5"></button>
       </div>
 
       <!-- Barra de progreso -->
@@ -130,42 +136,61 @@
 
       <!-- Lado Derecho: Formulario -->
       <div class="contacto-form-wrapper">
-        <form class="contacto-form" id="contacto-form" onsubmit="event.preventDefault();">
+        <form 
+          class="contacto-form" 
+          id="contacto-form" 
+          action="https://forms.zohopublic.com/rodrigochacon2064gm1/form/BI4DTForm/formperma/BGlaAUKLfSxIl_c7N6xYno3IpwBKZ0tTjXKVlyS05Y8/htmlRecords/submit" 
+          name="form" 
+          method="POST" 
+          accept-charset="UTF-8" 
+          enctype="multipart/form-data" 
+          target="zoho-submit-frame"
+          novalidate>
+          
+          <!-- Campos Ocultos de Configuración de Zoho Forms -->
+          <input type="hidden" name="zf_referrer_name" value="">
+          <input type="hidden" name="zf_redirect_url" value="">
+          <input type="hidden" name="zc_gad" value="">
+
           <div class="contacto-row">
             <div class="contacto-group">
               <label class="contacto-form-label" for="nombre">Nombre *</label>
-              <input type="text" id="nombre" class="contacto-input" placeholder="Tu nombre" required>
+              <input type="text" id="nombre" name="Name_First" maxlength="255" class="contacto-input" placeholder="Tu nombre" required>
             </div>
             <div class="contacto-group">
               <label class="contacto-form-label" for="apellido">Apellido *</label>
-              <input type="text" id="apellido" class="contacto-input" placeholder="Tu apellido" required>
+              <input type="text" id="apellido" name="Name_Last" maxlength="255" class="contacto-input" placeholder="Tu apellido" required>
             </div>
           </div>
 
           <div class="contacto-row">
             <div class="contacto-group">
               <label class="contacto-form-label" for="correo">Correo Electrónico *</label>
-              <input type="email" id="correo" class="contacto-input" placeholder="ejemplo@correo.com" required>
+              <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" required>
             </div>
             <div class="contacto-group">
               <label class="contacto-form-label" for="telefono">Teléfono (Opcional)</label>
-              <input type="tel" id="telefono" class="contacto-input" placeholder="+51 987 654 321">
+              <input type="tel" id="telefono" name="PhoneNumber_countrycode" compname="PhoneNumber" phoneFormat="1" isCountryCodeEnabled="false" maxlength="20" class="contacto-input" placeholder="+51 987 654 321">
             </div>
           </div>
 
           <div class="contacto-group">
             <label class="contacto-form-label" for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." required></textarea>
+            <textarea id="mensaje" name="MultiLine" maxlength="65535" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." required></textarea>
           </div>
 
-          <button type="submit" class="contacto-submit-btn">
+          <!-- Mensaje de estado / feedback accesible -->
+          <div id="contacto-status" class="contacto-status" role="alert" style="display: none;"></div>
+
+          <button type="submit" class="contacto-submit-btn" id="contacto-submit-btn">
             <span>Enviar Mensaje</span>
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </form>
-      </div>
 
-    </section>
+        <!-- Iframe oculto para procesar el envío sin recargar la página ni sufrir bloqueos CORS -->
+        <iframe name="zoho-submit-frame" id="zoho-submit-frame" title="Envío de formulario Zoho" style="display:none;" tabindex="-1" aria-hidden="true"></iframe>
+      </div>
 
     </section>
 
@@ -176,6 +201,7 @@
 
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
+  <script src="../scripts/contact.js"></script>
   <script>
     /* ── Carrusel Contacto (Vanilla JS) ───────────────── */
     (function () {

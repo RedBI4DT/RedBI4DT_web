@@ -5,7 +5,7 @@
       "nombre": "Pamela Chacón",
       "cargo": "Responsable Técnico",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Pamela Chacon.webp",
       "descripcion": "Investigadora principal en Informática Biomédica con más de 10 años de experiencia en soluciones tecnológicas para el sector salud. Lidera proyectos de interoperabilidad clínica e inteligencia artificial aplicada a diagnóstico médico.",
       "contacto": {
         "email": "pchacon@ucientifica.edu.pe",
@@ -22,7 +22,7 @@
       "nombre": "David Villarreal",
       "cargo": "Co-investigador",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/David Villareal.webp",
       "descripcion": "Especialista en sistemas de información en salud y arquitecturas orientadas a servicios (SOA). Participa activamente en iniciativas de estandarización de historias clínicas y datos de salud a nivel nacional.",
       "contacto": {
         "email": "dvillarreal@ucientifica.edu.pe",
@@ -39,7 +39,7 @@
       "nombre": "Christian Reátegui",
       "cargo": "Responsable Técnico",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Mahony Reategui.webp",
       "descripcion": "Investigador con amplia experiencia en bioinformática computacional y análisis de datos genómicos. Su trabajo se enfoca en la integración de datos ómicos para el estudio de patógenos tropicales complejos.",
       "contacto": {
         "email": "creategui@ucientifica.edu.pe",
@@ -55,7 +55,7 @@
       "nombre": "Henry Cárdenas",
       "cargo": "Co-investigador",
       "institucion": "Universidad San Francisco de Quito",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Henry Cardenas.webp",
       "descripcion": "Investigador en salud global y epidemiología digital. Trabaja en el diseño de plataformas binacionales de vigilancia epidemiológica basadas en fuentes de datos digitales en tiempo real.",
       "contacto": {
         "email": "hcardenas@usfq.edu.ec",
@@ -71,7 +71,7 @@
       "nombre": "Irvin Dongo",
       "cargo": "Co-investigador",
       "institucion": "Universidad Católica San Pablo",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Irvin Dongo.webp",
       "descripcion": "Especialista en procesamiento de lenguaje natural (PLN) aplicado a textos médicos y notas clínicas no estructuradas en español, facilitando la extracción automatizada de conocimiento clínico.",
       "contacto": {
         "email": "idongo@ucsp.edu.pe",
@@ -87,7 +87,7 @@
       "nombre": "Rafael Leal",
       "cargo": "Co-investigador",
       "institucion": "Instituto Nacional de Salud",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Investigador del Instituto Nacional de Salud con enfoque en repositorios sanitarios de big data, anonimización y análisis epidemiológico para la formulación de políticas de salud pública.",
       "contacto": {
         "email": "rleal@ins.gob.pe",
@@ -103,7 +103,7 @@
       "nombre": "Oscar Huapaya",
       "cargo": "Co-investigador",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Oscar Huapaya.webp",
       "descripcion": "Investigador en telemedicina y soluciones de mHealth para el acceso a la atención médica en poblaciones vulnerables y zonas rurales con baja conectividad.",
       "contacto": {
         "email": "ohuapaya@ucientifica.edu.pe",
@@ -119,7 +119,7 @@
       "nombre": "Javier Vargas",
       "cargo": "Co-investigador",
       "institucion": "Universidad Nacional Mayor de San Marcos",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Especialista en ontologías biomédicas y representación del conocimiento clínico. Desarrolla modelos terminológicos formales para estandarizar diagnósticos en sistemas asistenciales.",
       "contacto": {
         "email": "jvargas@unmsm.edu.pe",
@@ -135,7 +135,7 @@
       "nombre": "Milagros Cahuana",
       "cargo": "Co-investigadora",
       "institucion": "Universidad Católica San Pablo",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Milagros Cahuana.webp",
       "descripcion": "Investigadora en bioinformática clínica y medicina de precisión. Desarrolla algoritmos de integración entre datos clínicos y moleculares para la estratificación de pacientes oncológicos.",
       "contacto": {
         "email": "mcahuana@ucsp.edu.pe",
@@ -151,7 +151,7 @@
       "nombre": "Guido Bendezú",
       "cargo": "Co-investigador",
       "institucion": "Procesa Lab S.A.C.",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Investigador y líder tecnológico con experiencia en el desarrollo de software biomédico y en la transferencia tecnológica entre la academia y la industria de salud digital.",
       "contacto": {
         "email": "gbendezu@procesalab.com",
@@ -167,7 +167,7 @@
       "nombre": "José Flórez",
       "cargo": "Co-investigador",
       "institucion": "The University of Arizona",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Jose Florez.webp",
       "descripcion": "Investigador internacional con experiencia en bioestadística y análisis comparativo a gran escala de indicadores de salud pública materno-infantil entre Latinoamérica y Norteamérica.",
       "contacto": {
         "email": "jflorez@arizona.edu",
@@ -183,7 +183,7 @@
       "nombre": "Stefan Escobar",
       "cargo": "Investigador RENACYT",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Stefan Escobar.webp",
       "descripcion": "Investigador calificado RENACYT especializado en visión computacional y aprendizaje profundo aplicados al análisis automatizado de radiografías y diagnóstico asistido por computadora.",
       "contacto": {
         "email": "sescobar@ucientifica.edu.pe",
@@ -199,7 +199,7 @@
       "nombre": "Kelly De La Cruz",
       "cargo": "Investigadora RENACYT",
       "institucion": "Universidad Nacional Mayor de San Marcos",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Investigadora calificada RENACYT con enfoque en epidemiología matemática y modelamiento predictivo de enfermedades infecciosas y metaxénicas mediante analítica de datos.",
       "contacto": {
         "email": "kdelacruz@unmsm.edu.pe",
@@ -217,7 +217,7 @@
       "nombre": "Gerson Zapata",
       "cargo": "Gestor de Proyectos",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Gestor de proyectos de I+D con amplia experiencia en administración de fondos concursables, articulación interinstitucional y seguimiento técnico-financiero en salud digital.",
       "contacto": {
         "email": "gzapata@ucientifica.edu.pe",
@@ -233,7 +233,7 @@
       "nombre": "Adriana Echevarría",
       "cargo": "Sector Productivo",
       "institucion": "Instituto Nacional de Salud",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Adriana Echevarria.webp",
       "descripcion": "Profesional del sector público encargada de la articulación entre la red científica y el sector productivo, orientada al diseño normativo y políticas públicas de salud digital.",
       "contacto": {
         "email": "aechevarria@ins.gob.pe",
@@ -251,7 +251,7 @@
       "nombre": "Lizeth Guzmán",
       "cargo": "Colaboradora",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Colaboradora del grupo con participación activa en actividades de sistematización documental y soporte en la gestión de proyectos de investigación.",
       "contacto": {
         "email": "lguzman@ucientifica.edu.pe",
@@ -264,7 +264,7 @@
       "nombre": "Selene Salas",
       "cargo": "Administradora de Bases de Datos",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Especialista en administración y modelado de bases de datos clínicas y repositorios de investigación en salud.",
       "contacto": {
         "email": "ssalas@ucientifica.edu.pe",
@@ -277,7 +277,7 @@
       "nombre": "Rodrigo Chacón",
       "cargo": "Estudiante de Ing. Informática",
       "institucion": "Universidad Ricardo Palma",
-      "foto": "../assets/images/Imagen_1.jpg",
+      "foto": "../assets/images/members_bi4dt/Rodrigo Chacon.webp",
       "descripcion": "Estudiante de Ingeniería Informática enfocado en desarrollo de aplicaciones web y arquitectura de interfaces interactivas para salud digital en la Red BI4DT.",
       "contacto": {
         "email": "rodrigo.chacon@urp.edu.pe",

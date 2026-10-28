@@ -48,7 +48,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  height: 420px;
+  height: 600px;
   overflow: hidden;
   background: #0f172a;
 }
@@ -362,6 +362,118 @@ a.contacto-item-value:hover {
   color: #0f172a;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+}
+
+.contacto-submit-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Feedback y Estados del Formulario ──────────── */
+.contacto-status {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  line-height: 1.5;
+  animation: fadeInStatus 0.3s ease;
+}
+
+@keyframes fadeInStatus {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contacto-status-icon {
+  font-size: 1.25rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contacto-status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1;
+}
+
+.contacto-status-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: auto;
+  font-size: 1.15rem;
+  color: inherit;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.contacto-status-close:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.contacto-status-close:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.contacto-status-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.contacto-status-desc {
+  font-size: 0.88rem;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.contacto-status--success {
+  background-color: #ecfdf5;
+  border: 1.5px solid #a7f3d0;
+  color: #065f46;
+}
+
+.contacto-status--success .contacto-status-icon {
+  color: #10b981;
+}
+
+.contacto-status--error {
+  background-color: #fef2f2;
+  border: 1.5px solid #fecaca;
+  color: #991b1b;
+}
+
+.contacto-status--error .contacto-status-icon {
+  color: #ef4444;
+}
+
+.contacto-status--loading {
+  background-color: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1e40af;
+}
+
+.contacto-status--loading .contacto-status-icon {
+  color: #3b82f6;
 }
 
 /* Responsividad Tablet y Móvil */
