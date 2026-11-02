@@ -4,15 +4,6 @@
  * Conecta bidireccionalmente con integrantes (Nivel 2) y catálogo general filtrado (Nivel 3).
  */
 
-const COLOR_MAP = {
-  'informatica-biomedica': 'gold',
-  'ia-salud': 'indigo',
-  'interoperabilidad': 'emerald',
-  'analitica-datos': 'violet',
-  'sociotecnica-adopcion': 'rose',
-  'salud-digital': 'sky'
-};
-
 document.addEventListener('DOMContentLoaded', async () => {
   const params = new URLSearchParams(window.location.search);
   const idProyecto = params.get('id');
@@ -53,13 +44,11 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   // Actualizar título en pestaña
   document.title = `${p.titulo} - Proyecto | BI4DT Network`;
 
-  const color = COLOR_MAP[p.area_id] || 'gold';
-
   // 1. Hero Metadata
   const lineaBadge = document.getElementById('proy-linea-badge');
   if (lineaBadge) {
     lineaBadge.textContent = p.area_nombre || 'Línea Científica';
-    lineaBadge.className = `ficha-valor-linea ficha-valor-linea--${color}`;
+    lineaBadge.href = p.area_id ? `area.html?id=${p.area_id}` : 'lineas.html';
   }
 
   const estadoBadge = document.getElementById('proy-estado-badge');
@@ -84,18 +73,7 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
     descEl.innerHTML = `<p>${contenido}</p>`;
   }
 
-  // 3. Palabras clave / Tags
-  const tagsEl = document.getElementById('proy-tags');
-  if (tagsEl) {
-    const tags = p.tags || [];
-    if (tags.length > 0) {
-      tagsEl.innerHTML = tags.map(t => `<span class="proyecto-tag-item">${t}</span>`).join('');
-    } else {
-      tagsEl.innerHTML = '<span class="proyecto-tag-item">General</span>';
-    }
-  }
-
-  // 4. Equipo participante (Búsqueda en miembros.json)
+  // 3. Equipo participante (Búsqueda en miembros.json)
   const equipoGrid = document.getElementById('proy-equipo-grid');
   if (equipoGrid) {
     const todosMiembros = [
@@ -120,8 +98,8 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
             </div>
             <div class="proyecto-miembro-info">
               <span class="proyecto-miembro-nombre">${m.nombre}</span>
-              <span class="proyecto-miembro-cargo">${m.cargo}</span>
-              <span class="proyecto-miembro-inst">${m.institucion}</span>
+              ${m.cargo ? `<span class="proyecto-miembro-cargo">${m.cargo}</span>` : ''}
+              <span class="proyecto-miembro-inst">${m.institucion || ''}</span>
             </div>
           </a>
         `;
@@ -140,14 +118,13 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
     }
   }
 
-  // 5. Instituciones
+  // 4. Instituciones (sin iconos repetitivos)
   const instList = document.getElementById('proy-instituciones-list');
   if (instList) {
     const instituciones = p.instituciones || [];
     if (instituciones.length > 0) {
       instList.innerHTML = instituciones.map(inst => `
         <li class="proyecto-inst-item">
-          <i class="fa-solid fa-landmark"></i>
           <span>${inst}</span>
         </li>
       `).join('');
@@ -156,42 +133,10 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
     }
   }
 
-  // 6. Enlace en sidebar a proyectos de la misma línea
+  // 5. Enlace del único botón CTA "Ver proyectos similares"
   const filtroLink = document.getElementById('proy-filtro-linea-link');
   if (filtroLink && p.area_id) {
     filtroLink.href = `proyectos.html?linea=${p.area_id}`;
-  }
-
-  // 7. Proyectos Relacionados (misma línea, excluyendo el actual)
-  const relGrid = document.getElementById('proy-relacionados-grid');
-  if (relGrid) {
-    const relacionados = todosProyectos
-      .filter(item => item.id !== p.id && item.area_id === p.area_id)
-      .slice(0, 3);
-
-    if (relacionados.length > 0) {
-      relGrid.innerHTML = relacionados.map(rel => {
-        const relColor = COLOR_MAP[rel.area_id] || 'gold';
-        const estadoClass = rel.estado === 'Concluido' ? 'proy-estado-badge--concluido' : 'proy-estado-badge--activo';
-
-        return `
-          <a href="proyecto-detalle.html?id=${rel.id}" class="proy-relacionado-card proy-relacionado-card--${relColor}">
-            <div class="proy-relacionado-top">
-              <span class="proy-relacionado-anio">${rel.anio || ''}</span>
-              <span class="proy-estado-badge ${estadoClass}">${rel.estado || 'En curso'}</span>
-            </div>
-            <h3 class="proy-relacionado-titulo">${rel.titulo}</h3>
-            <div class="proy-relacionado-footer">
-              <span class="proy-relacionado-link-text">Ver detalle</span>
-              <span class="proy-relacionado-flecha"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </a>
-        `;
-      }).join('');
-    } else {
-      const relSection = document.querySelector('.proyectos-relacionados-section');
-      if (relSection) relSection.style.display = 'none';
-    }
   }
 }
 

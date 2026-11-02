@@ -77,19 +77,20 @@
   }
 }
 
-/* Tarjeta de Miembro */
+/* Tarjeta de Miembro (Opción A: Fondo Navy Surface con tipografía adaptada) */
 .equipo-member-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  background: #152c4f;
+  border: none;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 26px rgba(15, 23, 42, 0.14);
   display: flex;
   flex-direction: column;
   animation: cardFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
   position: relative;
   cursor: pointer;
+  will-change: transform;
 }
 
 /* Cascada rítmica y pausada en la cuadrícula */
@@ -108,11 +109,9 @@
 .equipo-member-card:nth-child(13) { animation-delay: 0.89s; }
 
 .equipo-member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
-  border-color: rgba(245, 158, 11, 0.5);
+  transform: scale(1.035);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.25);
 }
-
 
 .equipo-member-card a.member-name-link::before {
   content: '';
@@ -125,11 +124,11 @@
 .member-image-container {
   width: 100%;
   aspect-ratio: 1 / 1.1;
-  background: #0f172a;
-  margin-bottom: 0.85rem;
+  background: #0b1329;
+  margin-bottom: 0.95rem;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .member-img {
@@ -148,20 +147,21 @@
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.08);
 }
 
-/* Nombre */
+/* Nombre (Blanco Puro de Alto Contraste) */
 .member-name {
-  color: #1a3668;
+  color: #ffffff;
   font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
   line-height: 1.25;
 }
 
 /* Nombres que funcionan como enlace */
 a.member-name-link {
+  color: #ffffff;
   text-decoration: none;
   display: inline-block;
   position: relative;
@@ -175,22 +175,24 @@ a.member-name-link::after {
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: #f59e0b;
+  background: var(--color-celeste-network, #38bdf8);
   transition: width 0.25s ease;
 }
 
-a.member-name-link:hover {
-  color: #d97706;
+a.member-name-link:hover,
+.equipo-member-card:hover a.member-name-link {
+  color: var(--color-celeste-network, #38bdf8);
 }
 
-a.member-name-link:hover::after {
+a.member-name-link:hover::after,
+.equipo-member-card:hover a.member-name-link::after {
   width: 100%;
 }
 
-/* Rol e Institución */
+/* Rol e Institución (Gris suave de alta legibilidad) */
 .member-role {
-  color: #64748b;
-  font-size: 0.85rem;
+  color: #94a3b8;
+  font-size: 0.86rem;
   line-height: 1.45;
 }
 

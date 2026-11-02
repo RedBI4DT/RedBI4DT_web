@@ -41,52 +41,6 @@
   transform: translateX(-4px);
 }
 
-.proyecto-hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-
-.proy-estado-badge {
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.proy-estado-badge--activo {
-  background: #ecfdf5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
-}
-
-.proy-estado-badge--concluido {
-  background: #f1f5f9;
-  color: #475569;
-  border: 1px solid #cbd5e1;
-}
-
-.proyecto-pais-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.proyecto-pais-badge i {
-  color: #f59e0b;
-}
-
 .proyecto-hero-titulo {
   font-size: 2.35rem;
   font-weight: 800;
@@ -108,9 +62,31 @@
   color: var(--color-gold);
 }
 
+/* ── Estado y Metadatos ───────────────────────────────── */
+.proy-estado-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.proy-estado-badge--activo {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.proy-estado-badge--concluido {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
 /* ── Cuerpo Principal ─────────────────────────────────── */
 .proyecto-body-section {
-  padding: 4rem 50px 3rem;
+  padding: 4rem 50px 4.5rem;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -146,13 +122,6 @@
   font-weight: 700;
   color: #1a3668;
   margin: 0 0 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.proyecto-block-title i {
-  color: #f59e0b;
 }
 
 .proyecto-descripcion-completa {
@@ -167,23 +136,6 @@
 
 .proyecto-descripcion-completa p:last-child {
   margin-bottom: 0;
-}
-
-/* ── Palabras Clave ──────────────────────────────────── */
-.proyecto-tags-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.proyecto-tag-item {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #1e293b;
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  padding: 0.35rem 0.85rem;
-  border-radius: 6px;
 }
 
 /* ── Equipo Participante (Mini Cards) ─────────────────── */
@@ -202,13 +154,13 @@
   border-radius: 10px;
   padding: 1rem;
   text-decoration: none;
-  transition: all 0.22s ease;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
 .proyecto-miembro-card:hover {
   transform: translateY(-3px);
-  border-color: #f59e0b;
-  box-shadow: 0 10px 24px rgba(245, 158, 11, 0.12);
+  border-color: var(--color-blue-hover);
+  box-shadow: 0 10px 24px rgba(34, 110, 224, 0.12);
 }
 
 .proyecto-miembro-img-wrapper {
@@ -217,7 +169,7 @@
   height: 56px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-blue-hover);
   flex-shrink: 0;
 }
 
@@ -250,7 +202,7 @@
 
 .proyecto-miembro-cargo {
   font-size: 0.78rem;
-  color: #d97706;
+  color: var(--color-blue-hover);
   font-weight: 600;
   margin-bottom: 0.15rem;
 }
@@ -277,19 +229,13 @@
 }
 
 .proyecto-sidebar-title {
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #1a3668;
   margin: 0 0 1.15rem;
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
 }
 
-.proyecto-sidebar-title i {
-  color: #f59e0b;
-}
-
+/* Instituciones */
 .proyecto-instituciones-list {
   list-style: none;
   padding: 0;
@@ -300,49 +246,23 @@
 }
 
 .proyecto-inst-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 500;
   color: #334155;
   line-height: 1.45;
+  padding-left: 0.85rem;
+  position: relative;
 }
 
-.proyecto-inst-item i {
-  color: #1a3668;
-  margin-top: 0.2rem;
-  font-size: 0.85rem;
-}
-
-.proyecto-sidebar-note {
-  font-size: 0.85rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0 0 1rem;
-}
-
-.proyecto-sidebar-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  background: #ffffff;
-  border: 1.5px solid #1a3668;
-  color: #1a3668;
-  font-size: 0.88rem;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.22s ease;
-}
-
-.proyecto-sidebar-btn:hover {
-  background: #1a3668;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(26, 54, 104, 0.15);
+.proyecto-inst-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-blue-hover);
 }
 
 /* ── Ficha del Proyecto en Sidebar ───────────────────── */
@@ -369,180 +289,66 @@
 }
 
 .ficha-label {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.ficha-label i {
-  color: #94a3b8;
-  font-size: 0.75rem;
 }
 
 .ficha-valor {
   font-size: 0.95rem;
   font-weight: 600;
   color: #1e293b;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
 }
 
 .ficha-valor-linea {
   font-size: 0.92rem;
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.4;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.ficha-valor-linea::before {
-  content: "";
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.ficha-valor-linea--gold::before    { background-color: #f59e0b; }
-.ficha-valor-linea--indigo::before  { background-color: #6366f1; }
-.ficha-valor-linea--emerald::before { background-color: #10b981; }
-.ficha-valor-linea--violet::before  { background-color: #8b5cf6; }
-.ficha-valor-linea--rose::before    { background-color: #f43f5e; }
-.ficha-valor-linea--sky::before     { background-color: #0284c7; }
-
-/* ── Proyectos Relacionados (Tarjetas Rediseñadas) ────── */
-.proyectos-relacionados-section {
-  padding: 3.5rem 50px 5rem;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-  background: #ffffff;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 4px solid var(--color-gold);
-  margin-bottom: -3rem;
-}
-
-.proyectos-relacionados-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.proyectos-relacionados-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
-.proy-relacionado-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--color-blue-hover);
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.proy-relacionado-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3.5px;
-  border-radius: 14px 14px 0 0;
-  opacity: 0.9;
-}
-
-.proy-relacionado-card--gold::before    { background: #f59e0b; }
-.proy-relacionado-card--indigo::before  { background: #6366f1; }
-.proy-relacionado-card--emerald::before { background: #10b981; }
-.proy-relacionado-card--violet::before  { background: #8b5cf6; }
-.proy-relacionado-card--rose::before    { background: #f43f5e; }
-.proy-relacionado-card--sky::before     { background: #0284c7; }
-
-.proy-relacionado-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
-  border-color: #cbd5e1;
-}
-
-.proy-relacionado-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.proy-relacionado-anio {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #64748b;
-  letter-spacing: 0.04em;
-}
-
-.proy-relacionado-titulo {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0f172a;
   line-height: 1.4;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 2.8em;
   transition: color 0.2s ease;
 }
 
-.proy-relacionado-card:hover .proy-relacionado-titulo {
-  color: #1a3668;
+.ficha-valor-linea:hover {
+  color: var(--color-navy-subtitles);
+  text-decoration: underline;
 }
 
-.proy-relacionado-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 0.85rem;
-  border-top: 1px solid #f1f5f9;
-}
-
-.proy-relacionado-link-text {
-  font-size: 0.85rem;
+/* ── Botón CTA Único en Sidebar (Dorado Institucional) ─ */
+.btn-proy-similares-cta {
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  color: #1a3668;
-  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--gradient-gold);
+  color: #0f172a;
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+  transition: all 0.25s ease;
 }
 
-.proy-relacionado-flecha {
-  color: #94a3b8;
-  font-size: 0.95rem;
-  transition: transform 0.2s ease, color 0.2s ease;
+.btn-proy-similares-cta:hover {
+  background: var(--gradient-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5);
+  color: #0f172a;
 }
 
-.proy-relacionado-card:hover .proy-relacionado-link-text {
-  color: #f59e0b;
+.btn-proy-similares-cta i.btn-icon-right {
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
 }
 
-.proy-relacionado-card:hover .proy-relacionado-flecha {
-  color: #f59e0b;
+.btn-proy-similares-cta:hover i.btn-icon-right {
   transform: translateX(4px);
 }
 
@@ -559,8 +365,7 @@
 
 @media (max-width: 600px) {
   .proyecto-hero-section,
-  .proyecto-body-section,
-  .proyectos-relacionados-section {
+  .proyecto-body-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
@@ -568,9 +373,6 @@
     font-size: 1.6rem;
   }
   .proyecto-equipo-grid {
-    grid-template-columns: 1fr;
-  }
-  .proyectos-relacionados-grid {
     grid-template-columns: 1fr;
   }
 }

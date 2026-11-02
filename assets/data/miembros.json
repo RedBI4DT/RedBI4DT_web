@@ -3,19 +3,20 @@
     {
       "id": "pamela-chacon",
       "nombre": "Pamela Chacón",
-      "cargo": "Responsable Técnico",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Pamela Chacon.webp",
-      "descripcion": "Investigadora principal en Informática Biomédica con más de 10 años de experiencia en soluciones tecnológicas para el sector salud. Lidera proyectos de interoperabilidad clínica e inteligencia artificial aplicada a diagnóstico médico.",
+      "descripcion": "Investigadora principal en Informática Biomédica. Lidera proyectos de interoperabilidad clínica e IA en salud.",
       "contacto": {
         "email": "pchacon@ucientifica.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "fhir-interoperabilidad-2023",
         "ia-diagnostico-2024"
-      ]
+      ],
+      "cargo": "Investigadora Principal"
     },
     {
       "id": "david-villarreal",
@@ -23,11 +24,12 @@
       "cargo": "Co-investigador",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/David Villareal.webp",
-      "descripcion": "Especialista en sistemas de información en salud y arquitecturas orientadas a servicios (SOA). Participa activamente en iniciativas de estandarización de historias clínicas y datos de salud a nivel nacional.",
+      "descripcion": "Especialista en sistemas de información en salud y SOA. Desarrolla iniciativas de estandarización de historias clínicas.",
       "contacto": {
         "email": "dvillarreal@ucientifica.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "hce-nacional-2022",
@@ -40,11 +42,12 @@
       "cargo": "Responsable Técnico",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Mahony Reategui.webp",
-      "descripcion": "Investigador con amplia experiencia en bioinformática computacional y análisis de datos genómicos. Su trabajo se enfoca en la integración de datos ómicos para el estudio de patógenos tropicales complejos.",
+      "descripcion": "Investigador en bioinformática computacional y datos genómicos. Integra datos ómicos para el estudio de patógenos.",
       "contacto": {
         "email": "creategui@ucientifica.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "genomica-tropical-2023"
@@ -56,11 +59,12 @@
       "cargo": "Co-investigador",
       "institucion": "Universidad San Francisco de Quito",
       "foto": "../assets/images/members_bi4dt/Henry Cardenas.webp",
-      "descripcion": "Investigador en salud global y epidemiología digital. Trabaja en el diseño de plataformas binacionales de vigilancia epidemiológica basadas en fuentes de datos digitales en tiempo real.",
+      "descripcion": "Investigador en salud global y epidemiología digital. Diseña plataformas binacionales de vigilancia epidemiológica.",
       "contacto": {
         "email": "hcardenas@usfq.edu.ec",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "vigilancia-epi-2024"
@@ -72,11 +76,12 @@
       "cargo": "Co-investigador",
       "institucion": "Universidad Católica San Pablo",
       "foto": "../assets/images/members_bi4dt/Irvin Dongo.webp",
-      "descripcion": "Especialista en procesamiento de lenguaje natural (PLN) aplicado a textos médicos y notas clínicas no estructuradas en español, facilitando la extracción automatizada de conocimiento clínico.",
+      "descripcion": "Especialista en procesamiento de lenguaje natural (PLN) para la extracción de conocimiento en textos médicos.",
       "contacto": {
         "email": "idongo@ucsp.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "nlp-registros-2023"
@@ -88,11 +93,12 @@
       "cargo": "Co-investigador",
       "institucion": "Instituto Nacional de Salud",
       "foto": "../assets/images/members_bi4dt/user.webp",
-      "descripcion": "Investigador del Instituto Nacional de Salud con enfoque en repositorios sanitarios de big data, anonimización y análisis epidemiológico para la formulación de políticas de salud pública.",
+      "descripcion": "Investigador en repositorios de big data sanitario, anonimización y análisis epidemiológico para salud pública.",
       "contacto": {
         "email": "rleal@ins.gob.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "plataforma-datos-sanitarios-2022"
@@ -104,11 +110,12 @@
       "cargo": "Co-investigador",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Oscar Huapaya.webp",
-      "descripcion": "Investigador en telemedicina y soluciones de mHealth para el acceso a la atención médica en poblaciones vulnerables y zonas rurales con baja conectividad.",
+      "descripcion": "Investigador en telemedicina y soluciones de mHealth para el acceso a la salud en poblaciones vulnerables y rurales.",
       "contacto": {
         "email": "ohuapaya@ucientifica.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "telesalud-rural-2024"
@@ -120,11 +127,12 @@
       "cargo": "Co-investigador",
       "institucion": "Universidad Nacional Mayor de San Marcos",
       "foto": "../assets/images/members_bi4dt/user.webp",
-      "descripcion": "Especialista en ontologías biomédicas y representación del conocimiento clínico. Desarrolla modelos terminológicos formales para estandarizar diagnósticos en sistemas asistenciales.",
+      "descripcion": "Especialista en ontologías biomédicas. Desarrolla modelos terminológicos formales para estandarizar diagnósticos.",
       "contacto": {
         "email": "jvargas@unmsm.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "ontologia-diagnosticos-2023"
@@ -136,11 +144,12 @@
       "cargo": "Co-investigadora",
       "institucion": "Universidad Católica San Pablo",
       "foto": "../assets/images/members_bi4dt/Milagros Cahuana.webp",
-      "descripcion": "Investigadora en bioinformática clínica y medicina de precisión. Desarrolla algoritmos de integración entre datos clínicos y moleculares para la estratificación de pacientes oncológicos.",
+      "descripcion": "Investigadora en bioinformática clínica. Desarrolla algoritmos de integración clínico-molecular en pacientes oncológicos.",
       "contacto": {
         "email": "mcahuana@ucsp.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "perfiles-moleculares-2024"
@@ -152,11 +161,12 @@
       "cargo": "Co-investigador",
       "institucion": "Procesa Lab S.A.C.",
       "foto": "../assets/images/members_bi4dt/user.webp",
-      "descripcion": "Investigador y líder tecnológico con experiencia en el desarrollo de software biomédico y en la transferencia tecnológica entre la academia y la industria de salud digital.",
+      "descripcion": "Líder tecnológico en desarrollo de software biomédico y transferencia tecnológica entre academia y salud digital.",
       "contacto": {
         "email": "gbendezu@procesalab.com",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "gestion-clinica-ia-2023"
@@ -168,11 +178,12 @@
       "cargo": "Co-investigador",
       "institucion": "The University of Arizona",
       "foto": "../assets/images/members_bi4dt/Jose Florez.webp",
-      "descripcion": "Investigador internacional con experiencia en bioestadística y análisis comparativo a gran escala de indicadores de salud pública materno-infantil entre Latinoamérica y Norteamérica.",
+      "descripcion": "Investigador en bioestadística y análisis a gran escala de indicadores de salud pública materno-infantil en las Américas.",
       "contacto": {
         "email": "jflorez@arizona.edu",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "estudio-comparativo-2023"
@@ -184,11 +195,12 @@
       "cargo": "Investigador RENACYT",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Stefan Escobar.webp",
-      "descripcion": "Investigador calificado RENACYT especializado en visión computacional y aprendizaje profundo aplicados al análisis automatizado de radiografías y diagnóstico asistido por computadora.",
+      "descripcion": "Investigador RENACYT en visión computacional y aprendizaje profundo para el análisis automatizado de radiografías.",
       "contacto": {
         "email": "sescobar@ucientifica.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "ia-radiografias-2024"
@@ -200,11 +212,12 @@
       "cargo": "Investigadora RENACYT",
       "institucion": "Universidad Nacional Mayor de San Marcos",
       "foto": "../assets/images/members_bi4dt/user.webp",
-      "descripcion": "Investigadora calificada RENACYT con enfoque en epidemiología matemática y modelamiento predictivo de enfermedades infecciosas y metaxénicas mediante analítica de datos.",
+      "descripcion": "Investigadora RENACYT en epidemiología matemática y modelamiento predictivo de enfermedades infecciosas y metaxénicas.",
       "contacto": {
         "email": "kdelacruz@unmsm.edu.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/",
+        "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
         "modelo-dengue-2023"
@@ -218,7 +231,7 @@
       "cargo": "Gestor de Proyectos",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/user.webp",
-      "descripcion": "Gestor de proyectos de I+D con amplia experiencia en administración de fondos concursables, articulación interinstitucional y seguimiento técnico-financiero en salud digital.",
+      "descripcion": "Gestor de proyectos de I+D con experiencia en administración de fondos concursables y seguimiento en salud digital.",
       "contacto": {
         "email": "gzapata@ucientifica.edu.pe",
         "linkedin": "https://www.linkedin.com/",
@@ -234,7 +247,7 @@
       "cargo": "Sector Productivo",
       "institucion": "Instituto Nacional de Salud",
       "foto": "../assets/images/members_bi4dt/Adriana Echevarria.webp",
-      "descripcion": "Profesional del sector público encargada de la articulación entre la red científica y el sector productivo, orientada al diseño normativo y políticas públicas de salud digital.",
+      "descripcion": "Especialista en articulación con el sector productivo, orientada al diseño normativo y políticas públicas de salud digital.",
       "contacto": {
         "email": "aechevarria@ins.gob.pe",
         "linkedin": "https://www.linkedin.com/",
@@ -252,10 +265,11 @@
       "cargo": "Colaboradora",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/user.webp",
-      "descripcion": "Colaboradora del grupo con participación activa en actividades de sistematización documental y soporte en la gestión de proyectos de investigación.",
+      "descripcion": "Colaboradora activa en sistematización documental y soporte en la gestión de proyectos de investigación en salud.",
       "contacto": {
         "email": "lguzman@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": "https://www.linkedin.com/",
+        "orcid": ""
       },
       "proyectos": []
     },
@@ -268,7 +282,8 @@
       "descripcion": "Especialista en administración y modelado de bases de datos clínicas y repositorios de investigación en salud.",
       "contacto": {
         "email": "ssalas@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": "https://www.linkedin.com/",
+        "orcid": ""
       },
       "proyectos": []
     },
@@ -278,10 +293,11 @@
       "cargo": "Estudiante de Ing. Informática",
       "institucion": "Universidad Ricardo Palma",
       "foto": "../assets/images/members_bi4dt/Rodrigo Chacon.webp",
-      "descripcion": "Estudiante de Ingeniería Informática enfocado en desarrollo de aplicaciones web y arquitectura de interfaces interactivas para salud digital en la Red BI4DT.",
+      "descripcion": "Estudiante de Ing. Informática enfocado en desarrollo de aplicaciones web y arquitectura de interfaces para la Red BI4DT.",
       "contacto": {
         "email": "rodrigo.chacon@urp.edu.pe",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": "https://www.linkedin.com/",
+        "orcid": ""
       },
       "proyectos": []
     }

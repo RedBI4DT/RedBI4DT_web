@@ -35,9 +35,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function renderPerfil(m) {
+  // Validación de longitud estricta de descripción (≤ 150 caracteres)
+  if (m.descripcion && m.descripcion.length > 150) {
+    console.warn(`[Red BI4DT] Advertencia: La descripción de "${m.nombre}" supera los 150 caracteres (${m.descripcion.length} caracteres).`);
+  }
+
   // Foto
   const fotoEl = document.getElementById('perfil-foto');
-  if (fotoEl && m.foto) fotoEl.src = m.foto;
+  if (fotoEl && m.foto) {
+    fotoEl.src = m.foto;
+    fotoEl.removeAttribute('alt');
+  }
 
   // Datos básicos
   setTexto('perfil-nombre', m.nombre);
@@ -45,26 +53,33 @@ function renderPerfil(m) {
   setTexto('perfil-institucion', m.institucion);
   setTexto('perfil-descripcion', m.descripcion);
 
-  // Líneas de interés
+  // Líneas de interés (Columna 3 - List Bullet)
   const lineasEl = document.getElementById('perfil-lineas');
-  if (lineasEl && m.lineas) {
+  if (lineasEl && Array.isArray(m.lineas) && m.lineas.length > 0) {
     lineasEl.innerHTML = m.lineas.map(l =>
-      `<li class="perfil-linea-item"><i class="fa-solid fa-chevron-right"></i> ${l}</li>`
+      `<li><span class="perfil-linea-link-text">${l}</span></li>`
     ).join('');
+  } else if (lineasEl) {
+    lineasEl.innerHTML = '';
   }
 
-  // Contacto
+  // Contacto (Solo logos/íconos, tamaño uniforme 36px, sin texto visible)
   const contactoEl = document.getElementById('perfil-contacto');
   if (contactoEl && m.contacto) {
     let links = '';
     if (m.contacto.email) {
-      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" id="btn-email">
-        <i class="fa-solid fa-envelope"></i> ${m.contacto.email}
+      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" aria-label="Correo electrónico de ${m.nombre}">
+        <i class="fa-solid fa-envelope"></i>
       </a>`;
     }
     if (m.contacto.linkedin) {
-      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener" class="perfil-contacto-btn" id="btn-linkedin">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="LinkedIn de ${m.nombre}">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>`;
+    }
+    if (m.contacto.orcid) {
+      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="ORCID de ${m.nombre}">
+        <i class="fa-brands fa-orcid"></i>
       </a>`;
     }
     contactoEl.innerHTML = links;

@@ -381,6 +381,7 @@
   right: 0;
   height: 3.5px;
   border-radius: 16px 16px 0 0;
+  background: var(--color-blue-hover);
   opacity: 0.8;
   transition: opacity 0.25s ease;
 }
@@ -388,24 +389,12 @@
 .proy-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-blue-hover);
 }
 
 .proy-card:hover::before { opacity: 1; }
 
-/* Acentos por area */
-.proy-card[data-area="informatica-biomedica"]::before { background: #F59E0B; }
-.proy-card[data-area="ia-salud"]::before              { background: #6366F1; }
-.proy-card[data-area="interoperabilidad"]::before     { background: #10B981; }
-.proy-card[data-area="analitica-datos"]::before       { background: #8B5CF6; }
-.proy-card[data-area="sociotecnica-adopcion"]::before { background: #F43F5E; }
-.proy-card[data-area="salud-digital"]::before         { background: #0284C7; }
-
-.proy-card[data-area="informatica-biomedica"]:hover  { border-color: rgba(245, 158, 11, 0.3);  }
-.proy-card[data-area="ia-salud"]:hover               { border-color: rgba(99, 102, 241, 0.3);  }
-.proy-card[data-area="interoperabilidad"]:hover      { border-color: rgba(16, 185, 129, 0.3);  }
-.proy-card[data-area="analitica-datos"]:hover        { border-color: rgba(139, 92, 246, 0.3);  }
-.proy-card[data-area="sociotecnica-adopcion"]:hover  { border-color: rgba(244, 63, 94, 0.3);   }
-.proy-card[data-area="salud-digital"]:hover          { border-color: rgba(2, 132, 199, 0.3);   }
+/* Acento unificado con --color-blue-hover */
 
 /* Meta: anio + estado (solo estos dos arriba) */
 .proy-meta {
@@ -454,7 +443,7 @@
 }
 
 .proy-card:hover .proy-titulo {
-  color: #1a3668;
+  color: var(--color-blue-hover);
 }
 
 .proy-desc {
@@ -506,41 +495,24 @@
 }
 
 .proy-area-badge {
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
   letter-spacing: 0.02em;
   text-decoration: none;
+  background: rgba(34, 110, 224, 0.08);
+  color: var(--color-blue-hover);
+  border: 1px solid rgba(34, 110, 224, 0.2);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.proy-area-badge .badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
+.proy-card:hover .proy-area-badge {
+  background: rgba(34, 110, 224, 0.14);
+  border-color: rgba(34, 110, 224, 0.35);
 }
-
-.proy-area-badge--gold    { background: rgba(245, 158, 11, 0.1); color: #b45309; border: 1px solid rgba(245, 158, 11, 0.25); }
-.proy-area-badge--gold .badge-dot { background: #f59e0b; }
-
-.proy-area-badge--indigo  { background: rgba(99, 102, 241, 0.1); color: #4338ca; border: 1px solid rgba(99, 102, 241, 0.25); }
-.proy-area-badge--indigo .badge-dot { background: #6366f1; }
-
-.proy-area-badge--emerald { background: rgba(16, 185, 129, 0.1); color: #047857; border: 1px solid rgba(16, 185, 129, 0.25); }
-.proy-area-badge--emerald .badge-dot { background: #10b981; }
-
-.proy-area-badge--violet  { background: rgba(139, 92, 246, 0.1); color: #7c3aed; border: 1px solid rgba(139, 92, 246, 0.25); }
-.proy-area-badge--violet .badge-dot { background: #8b5cf6; }
-
-.proy-area-badge--rose    { background: rgba(244, 63, 94, 0.1); color: #e11d48; border: 1px solid rgba(244, 63, 94, 0.25); }
-.proy-area-badge--rose .badge-dot { background: #f43f5e; }
-
-.proy-area-badge--sky     { background: rgba(2, 132, 199, 0.1); color: #0284c7; border: 1px solid rgba(2, 132, 199, 0.25); }
-.proy-area-badge--sky .badge-dot { background: #0284c7; }
 
 /* Estado vacio */
 [hidden],

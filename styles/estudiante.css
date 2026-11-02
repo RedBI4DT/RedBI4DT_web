@@ -2,44 +2,7 @@
 @import url('colors.css');
 @import url('investigacion.css');
 
-/* Ajuste de acento para estudiantes y colaboradores */
-.perfil-label {
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-  color: #ffffff;
-}
-
-.perfil-linea-link {
-  border-left-color: #2563eb;
-}
-
-.perfil-linea-link:hover {
-  border-left-color: #1d4ed8;
-  color: #2563eb;
-}
-
-.perfil-linea-link i {
-  color: #2563eb;
-}
-
-.perfil-contacto-section {
-  border-bottom-color: #2563eb;
-}
-
-.perfil-contacto-btn {
-  color: #1e3a8a;
-  border-color: #bfdbfe;
-}
-
-.perfil-contacto-btn:hover {
-  background: #eff6ff;
-  border-color: #2563eb;
-  color: #2563eb;
-}
-
-.perfil-contacto-btn i {
-  color: #2563eb;
-}
-
+/* Hereda la estructura y el sistema de variables de investigacion.css */
 .perfil-error i {
-  color: #2563eb;
+  color: var(--color-iconos);
 }

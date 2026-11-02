@@ -443,40 +443,23 @@ function renderProyectos(proyectos) {
   }
 
   grid.innerHTML = proyectos.map((p, index) => {
-    const color = COLOR_MAP[p.area_id] || 'gold';
     const estadoClass = p.estado === 'Concluido'
       ? 'proy-estado--concluido'
       : 'proy-estado--activo';
     const estadoLabel = p.estado || 'En curso';
-
-    // Máximo 3 tags + indicador +N
-    const tagsArr = p.tags || [];
-    const tagsVisible = tagsArr.slice(0, 3).map(t =>
-      `<span class="proy-tag">${t}</span>`
-    ).join('');
-    const tagsExtra = tagsArr.length > 3
-      ? `<span class="proy-tag-more">+${tagsArr.length - 3}</span>`
-      : '';
-    const tagsHtml = tagsArr.length > 0
-      ? `<div class="proy-tags">${tagsVisible}${tagsExtra}</div>`
-      : '';
-
     const delay = (index % 9) * 40;
     const textoResumen = p.resumen || p.descripcion || '';
 
     return `
-      <a href="proyecto-detalle.html?id=${p.id}" class="proy-card" data-area="${p.area_id}" style="animation-delay:${delay}ms;">
+      <a href="proyecto-detalle.html?id=${p.id}" class="proy-card" style="animation-delay:${delay}ms;">
         <div class="proy-meta">
           <span class="proy-anio">${p.anio || ''}</span>
           <span class="proy-estado ${estadoClass}">${estadoLabel}</span>
         </div>
         <h3 class="proy-titulo">${p.titulo}</h3>
         <p class="proy-desc">${textoResumen}</p>
-        ${tagsHtml}
         <div class="proy-footer-linea">
-          <span class="proy-area-badge proy-area-badge--${color}">
-            <span class="badge-dot"></span>${p.area_nombre || ''}
-          </span>
+          <span class="proy-area-badge">${p.area_nombre || ''}</span>
         </div>
       </a>`;
   }).join('');

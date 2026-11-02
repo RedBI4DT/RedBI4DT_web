@@ -9,17 +9,21 @@
 const COLORES = {
   'informatica-biomedica': 'gold',
   'ia-salud': 'indigo',
-  'interoperabilidad': 'emerald'
+  'interoperabilidad': 'emerald',
+  'analitica-datos': 'violet',
+  'sociotecnica-adopcion': 'rose',
+  'salud-digital': 'sky'
 };
 
 const MAPA_LINEAS_A_AREAS = {
+  'informática biomédica y salud digital': 'informatica-biomedica',
   'informática biomédica': 'informatica-biomedica',
   'informatica biomedica': 'informatica-biomedica',
   'sistemas de información en salud': 'informatica-biomedica',
   'sistemas de informacion en salud': 'informatica-biomedica',
   'estándares clínicos': 'informatica-biomedica',
   'estandares clinicos': 'informatica-biomedica',
-  'telemedicina': 'informatica-biomedica',
+  'telemedicina': 'salud-digital',
   'ontologías biomédicas': 'informatica-biomedica',
   'ontologias biomedicas': 'informatica-biomedica',
   'software biomédico': 'informatica-biomedica',
@@ -30,22 +34,26 @@ const MAPA_LINEAS_A_AREAS = {
   'visión computacional': 'ia-salud',
   'vision computacional': 'ia-salud',
   'bioinformática': 'ia-salud',
-  'bioinformatica': 'ia-salud',
-  'bioinformática clínica': 'ia-salud',
-  'bioinformatica clinica': 'ia-salud',
-  'epidemiología digital': 'ia-salud',
-  'epidemiologia digital': 'ia-salud',
-  'informática epidemiológica': 'ia-salud',
-  'informatica epidemiologica': 'ia-salud',
+  'bioinformática clínica': 'analitica-datos',
+  'bioinformática computacional': 'ia-salud',
+  'genómica computacional': 'ia-salud',
+  'interoperabilidad y gobernanza de datos': 'interoperabilidad',
   'interoperabilidad clínica (hl7 fhir)': 'interoperabilidad',
   'interoperabilidad': 'interoperabilidad',
   'gobernanza': 'interoperabilidad',
-  'políticas de salud digital': 'interoperabilidad',
-  'politicas de salud digital': 'interoperabilidad',
-  'salud pública digital': 'interoperabilidad',
-  'salud publica digital': 'interoperabilidad',
-  'gestión de proyectos de i+d': 'interoperabilidad',
-  'gestion de proyectos de i+d': 'interoperabilidad'
+  'visualización y analítica de datos': 'analitica-datos',
+  'visualizacion y analitica de datos': 'analitica-datos',
+  'analítica de datos': 'analitica-datos',
+  'bioestadística': 'analitica-datos',
+  'epidemiología matemática': 'analitica-datos',
+  'evaluación sociotécnica y adopción': 'sociotecnica-adopcion',
+  'evaluacion sociotecnica y adopcion': 'sociotecnica-adopcion',
+  'gestión de proyectos de i+d': 'sociotecnica-adopcion',
+  'sector productivo': 'sociotecnica-adopcion',
+  'políticas de salud digital': 'sociotecnica-adopcion',
+  'salud digital': 'salud-digital',
+  'salud global y epidemiología digital': 'salud-digital',
+  'epidemiología digital': 'salud-digital'
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -120,42 +128,10 @@ function renderArea(area, proyectos, investigadores) {
   // Título de la pestaña
   document.title = `${area.nombre} - Eje Científico | Red BI4DT`;
 
-  // Número y Nombre
+  // Número, Nombre y Descripción
   setHtml('area-hero-numero', area.numero);
   setHtml('area-hero-nombre', area.nombre);
   setHtml('area-hero-desc', area.descripcion_larga);
-
-  // Temas / Badges en el Hero
-  const temasEl = document.getElementById('area-hero-temas');
-  if (temasEl && area.temas) {
-    temasEl.innerHTML = area.temas.map(tema =>
-      `<span class="area-tema-badge" data-color="${color}">
-        <i class="fa-solid fa-circle" style="font-size:0.4rem;opacity:0.7;"></i>
-        ${tema}
-      </span>`
-    ).join('');
-  }
-
-  // Ícono decorativo
-  const iconEl = document.getElementById('area-hero-icon');
-  if (iconEl) {
-    iconEl.className = `fa-solid ${area.icono} area-hero-icon`;
-  }
-
-  // Colores de acento para etiquetas de sección
-  const lineProy = document.getElementById('area-section-line');
-  const labelProy = document.getElementById('area-proyectos-label');
-  if (lineProy && labelProy) {
-    lineProy.style.background = area.color_acento;
-    labelProy.style.color = area.color_acento;
-  }
-
-  const lineInv = document.getElementById('area-investigadores-line');
-  const labelInv = document.getElementById('area-investigadores-label');
-  if (lineInv && labelInv) {
-    lineInv.style.background = area.color_acento;
-    labelInv.style.color = area.color_acento;
-  }
 
   // 1. Renderizar Investigadores del Área
   renderInvestigadores(investigadores, color);
@@ -176,9 +152,10 @@ function renderInvestigadores(investigadores, color) {
   grid.innerHTML = investigadores.map(m => {
     const foto = m.foto || '../assets/images/Imagen_1.jpg';
     const linkPerfil = `investigacion.html?id=${m.id}&cat=${m.categoria || 'investigadores'}`;
+    const cargoHtml = m.cargo ? `<span class="area-inv-cargo">${m.cargo}</span>` : '';
 
     return `
-      <article class="area-investigador-card area-investigador-card--${color}">
+      <article class="area-investigador-card">
         <div class="area-inv-foto-container">
           <img src="${foto}" class="area-inv-img">
           <div class="area-inv-img-overlay"></div>
@@ -187,8 +164,8 @@ function renderInvestigadores(investigadores, color) {
           <a href="${linkPerfil}" class="area-inv-nombre" title="Ver perfil de ${m.nombre}">
             ${m.nombre}
           </a>
-          <span class="area-inv-cargo">${m.cargo}</span>
-          <span class="area-inv-institucion">${m.institucion}</span>
+          ${cargoHtml}
+          <span class="area-inv-institucion">${m.institucion || ''}</span>
           <a href="${linkPerfil}" class="area-inv-link-perfil">
             <span>Ver perfil completo</span>
             <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i>
@@ -217,32 +194,21 @@ function renderProyectos(proyectos, color) {
 
   grid.innerHTML = proyectos.map((p, index) => {
     const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
-    const tagsHtml = (p.tags || []).slice(0, 3).map(t => `<span class="area-proy-tag">${t}</span>`).join('');
-    const instituciones = (p.instituciones || []).slice(0, 2).join(' • ');
-
-    const linkInvestigador = p.investigador_principal
-      ? `<a href="investigacion.html?id=${p.investigador_principal}&cat=${p.categoria_miembro || 'investigadores'}" class="area-proy-inv-link" title="Ver perfil del investigador">
-          ${p.investigador_nombre || ''}
-        </a>`
-      : `<span class="area-proy-inv-nombre">${p.investigador_nombre || ''}</span>`;
+    const badgeHtml = p.area_nombre ? `<span class="proy-area-badge">${p.area_nombre}</span>` : '';
 
     return `
-      <article class="area-proy-card area-proy-card--${color}" style="animation-delay:${index * 50}ms;">
+      <a href="proyecto-detalle.html?id=${p.id}" class="area-proy-card" style="animation-delay:${index * 50}ms;">
         <div class="area-proy-top">
           <span class="area-proy-anio">${p.anio || ''}</span>
           <span class="proy-estado ${estadoClass}">${p.estado || 'En curso'}</span>
         </div>
         <h3 class="area-proy-titulo">${p.titulo}</h3>
-        <p class="area-proy-desc">${p.descripcion}</p>
-        ${tagsHtml ? `<div class="area-proy-tags">${tagsHtml}</div>` : ''}
-        <div class="area-proy-footer">
-          <i class="fa-solid fa-user-tie area-proy-icon"></i>
-          <div class="area-proy-footer-info">
-            ${linkInvestigador}
-            <span class="area-proy-instituciones">${instituciones}</span>
-          </div>
+        <p class="area-proy-desc">${p.descripcion || ''}</p>
+        <div class="area-proy-action">
+          ${badgeHtml}
+          <span class="area-proy-flecha"><i class="fa-solid fa-arrow-right"></i></span>
         </div>
-      </article>`;
+      </a>`;
   }).join('');
 }
 
