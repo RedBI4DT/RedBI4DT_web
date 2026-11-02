@@ -7,10 +7,11 @@
   /* ── Colores Principales (Navy & Superficies) ── */
   --color-dark-bg: #0F172A;         /* Fondo Oscuro Principal (Navy Dark) */
   --color-navy-surface: #162036;    /* Superficie Navy Elevada (Cards / Dropdowns) */
-  --color-navy-subtitles: #0F172A;  /* Azul Oscuro Uniforme para Subtítulos */
+  --color-navy-subtitles: #1a3668;  /* Azul Marino Institucional Uniforme para Subtítulos H2 */
   --color-white: #FFFFFF;           /* Blanco Puro */
   
-  /* ── Accentos Dorados Institucionales (Insignias / Activos) ── */
+  /* ── Accentos y Acciones ── */
+  --color-blue-hover: #226ee0;      /* Azul Vibrante para Hover de Tarjetas */
   --color-gold: #f59e0b;            /* Dorado Institucional Sobrio */
   --color-gold-light: #fbbf24;      /* Dorado Claro / Hover */
 
