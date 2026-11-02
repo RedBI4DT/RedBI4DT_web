@@ -6,13 +6,9 @@
    ============================================================ */
 
 .bi4dt-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* ── Nivel 1: Topbar Blanca (LOGO PRINCIPAL CENTRADO) ── */
@@ -70,9 +66,22 @@
 
 /* ── Nivel 2: Barra Navy (ENLACES AL EXTREMO IZQUIERDO) ── */
 .bi4dt-navbar {
-  background: #001A4D;
   width: 100%;
+  background: #001A4D;
   border-bottom: 3px solid var(--color-cta-amber);
+  position: relative;
+  z-index: 1000;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Solo la barra azul se queda fija arriba al hacer scroll */
+.bi4dt-navbar.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .bi4dt-navbar-container {

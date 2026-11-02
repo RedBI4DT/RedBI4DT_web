@@ -32,22 +32,10 @@ body {
   line-height: 1.6;
 }
 
-/* Reserva de espacio para el header fijo (evita Layout Shift al cargar) */
+/* Placeholder de Navbar (en flujo normal para navegacion sticky) */
 #navbar-placeholder {
-  min-height: 132px; /* Desktop: topbar (84px) + navbar (48px) */
   display: block;
-}
-
-@media (max-width: 880px) {
-  #navbar-placeholder {
-    min-height: 90px;
-  }
-}
-
-@media (max-width: 580px) {
-  #navbar-placeholder {
-    min-height: 80px;
-  }
+  min-height: 0;
 }
 
 #footer-placeholder {
@@ -68,7 +56,7 @@ main.page-content {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 30px 0 3rem 0;
+  padding: 0 0 3rem 0;
 }
 
 /* Páginas de sección completa (sin max-width) */

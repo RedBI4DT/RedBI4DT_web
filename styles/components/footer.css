@@ -1,71 +1,78 @@
 /* ============================================================
    Footer Styles - Red BI4DT
-   FOO-01: LinkedIn + GitHub + Correo
-   FOO-02: Columna "Entidad Ejecutora" eliminada → grid 2 cols
-   FOO-03: Texto descripción reducido a < 10 palabras
+   Estructura: Cuerpo 2 columnas (Marca a la izq / Contacto a la der)
    ============================================================ */
 
+:root {
+  --fondo-footer: #0d1526;
+  --fondo-tile: rgba(255, 255, 255, 0.05);       /* logo y cuadros base */
+  --texto: #ffffff;
+  --texto-suave: #94a3b8;
+  --acento: var(--color-gold, #f59e0b);           /* línea superior del footer */
+  --linkedin: #0077b5;
+  --github: #ffffff;
+  --correo: #f59e0b;
+}
+
 .site-footer {
-  background: #0d1526;
-  color: #94a3b8;
+  background: var(--fondo-footer);
+  color: var(--texto);
   font-family: inherit;
-  border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, #001A4D, #D4AF37, #F59E0B, #D4AF37, #001A4D) 1;
+  border-top: 3px solid var(--acento);
+  width: 100%;
+  position: relative;
 }
 
-/* ─── Área principal ─── */
-.footer-inner {
-  padding: 4rem 2rem 3rem; /* Más alto, sin espacios muertos */
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* ─── Cuerpo Principal: Grid de 2 Columnas ─── */
+.cuerpo {
   display: grid;
-  grid-template-columns: 1.8fr 1fr; /* FOO-02: 3 cols → 2 cols */
-  gap: 2.5rem 5rem;
-  align-items: start;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding: 44px 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* ═══════════════════════════
-   COLUMNA 1 — Brand
-   ═══════════════════════════ */
-.footer-brand-col {
+/* ─── Zona Izquierda: Marca y Lema ─── */
+.izq {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 20px;
+}
+
+/* Fila 1: Logo + Nombre y Subtítulo */
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .footer-logo-link {
   display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
   text-decoration: none;
-  color: #ffffff;
-  transition: opacity 0.2s ease;
-  width: fit-content;
 }
 
-.footer-logo-link:hover {
-  opacity: 0.88;
-}
-
-.footer-logo-icon-box {
-  width: 52px;
-  height: 52px;
+.footer-logo-tile {
+  width: 64px;
+  height: 64px;
+  background: var(--fondo-tile);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   overflow: hidden;
   position: relative;
+  flex-shrink: 0;
 }
 
 .footer-logo-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  padding: 6px;
 }
 
 .footer-logo-img-overlay {
@@ -74,233 +81,115 @@
   pointer-events: none;
 }
 
-.footer-brand-text {
+.marca-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
-.footer-brand-title {
-  font-size: 1.35rem;
+.marca-nombre {
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.3px;
+  color: var(--texto);
   line-height: 1.2;
 }
 
-.footer-logo-accent {
-  font-weight: 800;
-  color: #ffffff;
+.marca-subtitulo {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  line-height: 1.3;
 }
 
-.footer-brand-sub {
-  font-size: 0.72rem;
-  color: #64748b;
-  font-weight: 400;
-}
-
-.footer-desc {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: #7a8fa6;
-  max-width: 340px;
+/* Fila 2: Lema (< 10 palabras) */
+.lema {
+  font-size: 1.05rem;
+  color: var(--texto-suave);
+  line-height: 1.4;
   margin: 0;
 }
 
-/* Botones sociales (FOO-01: LinkedIn + GitHub + Correo) */
-.footer-social-icons {
+/* ─── Zona Derecha: Contacto (3 tarjetas cuadradas de 72x72) ─── */
+.der {
   display: flex;
-  gap: 0.55rem;
-  margin-top: 0.1rem;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-.footer-social-btn {
-  width: 36px;
-  height: 36px;
+.social-tile-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-tile-link:hover {
+  transform: translateY(-2px);
+}
+
+.social-tile-link:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.tile {
+  width: 72px;
+  height: 72px;
+  background: var(--fondo-tile);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  color: #ffffff;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 1.75rem;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.footer-social-linkedin { background: #0A66C2; }
-.footer-social-linkedin:hover { background: #004182; transform: translateY(-2px); }
-
-.footer-social-github { background: #24292E; }
-.footer-social-github:hover { background: #000000; transform: translateY(-2px); }
-
-.footer-social-email { background: #2563EB; }
-.footer-social-email:hover { background: #1d4ed8; transform: translateY(-2px); }
-
-/* ═══════════════════════════
-   COLUMNA 2 — Navegación
-   ═══════════════════════════ */
-.footer-nav-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.footer-col-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #f59e0b;
-  margin: 0 0 0.5rem;
-}
-
-.footer-nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.footer-nav-link {
-  display: block;
-  color: #8da0b5;
-  text-decoration: none;
-  font-size: 0.9rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  transition: color 0.2s ease, padding-left 0.2s ease;
-}
-
-.footer-nav-list li:last-child .footer-nav-link {
-  border-bottom: none;
-}
-
-.footer-nav-link:hover {
-  color: #e2e8f0;
-  padding-left: 0.4rem;
-}
-
-/* ═══════════════════════════
-   BARRA INFERIOR
-   ═══════════════════════════ */
-.footer-bottom-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 1.25rem 2rem;
+.tile-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--texto-suave);
   text-align: center;
 }
 
-.footer-copy {
-  font-size: 0.85rem;
-  color: #64748b;
-  margin: 0;
+/* Colores de íconos por red usando variables de :root */
+.tile-linkedin i {
+  color: var(--linkedin);
 }
 
-/* ═══════════════════════════
-   RESPONSIVE
-   ═══════════════════════════ */
-@media (max-width: 720px) {
-  .footer-container {
+.tile-github i {
+  color: var(--github);
+}
+
+.tile-correo i {
+  color: var(--correo);
+}
+
+/* ─── Barra Copyright ─── */
+.copy {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+  padding: 16px 32px;
+  background: rgba(130, 128, 128, 0.511); /* Ligeramente más oscuro que el fondo del footer */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ─── Responsive (Menos de 768px) ─── */
+@media (max-width: 768px) {
+  .cuerpo {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 28px;
+    padding: 32px 20px;
   }
 
-  .footer-inner {
-    padding: 2.5rem 1.5rem 2rem;
+  .der {
+    justify-content: flex-start;
   }
 
-  .footer-desc {
-    max-width: 100%;
-  }
-
-  .footer-nav-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.2rem 1rem;
-  }
-
-  .footer-nav-link {
-    font-size: 0.85rem;
-    padding: 0.3rem 0;
-    border-bottom: none;
-  }
-
-  .footer-bottom-bar {
-    padding: 0.85rem 1rem;
-  }
-
-  .footer-copy {
-    font-size: 0.78rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .footer-logo-icon-box {
-    width: 40px;
-    height: 40px;
-  }
-
-  .footer-brand-title {
-    font-size: 1.15rem;
-  }
-
-  .footer-social-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.82rem;
-  }
-}
-
-/* =====================================================
-   Botón Flotante: Volver Arriba (Universal)
-   ===================================================== */
-.back-to-top-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #1a3668;
-  color: #f59e0b;
-  border: 1.5px solid #f59e0b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.4);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.back-to-top-btn.is-visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.back-to-top-btn:hover {
-  background: #f59e0b;
-  color: #0f172a;
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-}
-
-.back-to-top-btn:active {
-  transform: translateY(-1px);
-}
-
-@media (max-width: 580px) {
-  .back-to-top-btn {
-    bottom: 18px;
-    right: 18px;
-    width: 42px;
-    height: 42px;
-    font-size: 1rem;
+  .copy {
+    padding: 16px 20px;
   }
 }

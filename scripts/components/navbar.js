@@ -103,4 +103,21 @@ function initNavbar() {
   else if (currentPath.includes('equipo.html'))                                                              { if (navEquipo)       navEquipo.classList.add('active'); }
   else if (currentPath.includes('proyectos.html') || currentPath.includes('area.html') || currentPath.includes('proyecto-detalle.html')) { if (navProyectos) navProyectos.classList.add('active'); }
   else                                                                                                       { if (navInicio)       navInicio.classList.add('active'); }
+  // ── Fijación exclusiva de la barra azul al hacer scroll ──────
+  const navbarElement = document.querySelector(".bi4dt-navbar");
+  const topbarElement = document.querySelector(".bi4dt-topbar");
+
+  if (navbarElement && topbarElement) {
+    const handleScroll = () => {
+      const topbarHeight = topbarElement.offsetHeight;
+      if (window.scrollY >= topbarHeight) {
+        navbarElement.classList.add("is-fixed");
+      } else {
+        navbarElement.classList.remove("is-fixed");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+  }
 }

@@ -1,53 +1,56 @@
 <footer class="site-footer">
-
-  <div class="footer-inner">
-    <div class="footer-container">
-
-      <!-- Columna 1: Brand (FOO-01, FOO-03) -->
-      <div class="footer-brand-col">
-        <a href="#" class="footer-logo-link" id="footer-logo-link">
-          <div class="footer-logo-icon-box">
-            <img src="assets/images/logo_red_web.png" class="footer-logo-img" id="footer-logo-img">
+  <div class="cuerpo">
+    <!-- Zona Izquierda: Marca y Lema -->
+    <div class="izq">
+      <!-- Fila 1: Logo + Nombre y Subtítulo -->
+      <div class="marca">
+        <a href="#" class="footer-logo-link" id="footer-logo-link" aria-label="Ir al inicio">
+          <div class="footer-logo-tile">
+            <img src="assets/images/logo_red/logo_icon.png" class="footer-logo-img" id="footer-logo-img">
             <div class="footer-logo-img-overlay"></div>
           </div>
-          <div class="footer-brand-text">
-            <span class="footer-brand-title">
-              <span class="footer-logo-accent">BI4DT</span> Network
-            </span>
-            <span class="footer-brand-sub">Informática Biomédica · Salud Digital</span>
-          </div>
         </a>
-
-        <!-- FOO-03: Texto reducido a < 10 palabras -->
-        <p class="footer-desc">
-          Ciencia e IA al servicio de la salud global.
-        </p>
-
-        <!-- FOO-01: LinkedIn + GitHub + Correo -->
-        <div class="footer-social-icons">
-          <a href="#" class="footer-social-btn footer-social-linkedin" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/RedBI4DT" target="_blank" rel="noopener noreferrer"
-             class="footer-social-btn footer-social-github" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="mailto:investigacion@ucsur.edu.pe" class="footer-social-btn footer-social-email" aria-label="Correo">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
+        <div class="marca-info">
+          <span class="marca-nombre">BI4DT Network</span>
+          <span class="marca-subtitulo">Informática Biomédica y Salud Digital</span>
         </div>
       </div>
+      <!-- Fila 2: Lema (<10 palabras) -->
+      <p class="lema">Ciencia e IA al servicio de la salud global.</p>
     </div>
+
+    <!-- Zona Derecha: Contacto (3 tarjetas cuadradas de 72x72) -->
+    <nav class="der" aria-label="Enlaces de contacto y redes sociales">
+      <!-- 1. LinkedIn -->
+      <a href="https://www.linkedin.com/company/red-bi4dt" target="_blank" rel="noopener noreferrer" class="social-tile-link" aria-label="LinkedIn">
+        <div class="tile tile-linkedin">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+      </a>
+
+      <!-- 2. GitHub -->
+      <a href="https://github.com/RedBI4DT" target="_blank" rel="noopener noreferrer" class="social-tile-link" aria-label="GitHub">
+        <div class="tile tile-github">
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </a>
+
+      <!-- 3. Correo -->
+      <a href="mailto:investigacion@ucsur.edu.pe" class="social-tile-link" aria-label="Correo">
+        <div class="tile tile-correo">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+      </a>
+    </nav>
   </div>
 
-  <!-- Barra inferior -->
-  <div class="footer-bottom-bar">
-    <p class="footer-copy">&copy; 2026 BI4DT Network. Todos los derechos reservados.</p>
+  <!-- Barra Copyright -->
+  <div class="copy">
+    © 2026 BI4DT Network. Todos los derechos reservados.
   </div>
 
-  <!-- Botón Flotante: Volver Arriba (Universal) -->
+  <!-- Botón Flotante: Volver Arriba -->
   <button id="btn-back-to-top" class="back-to-top-btn" aria-label="Volver arriba al inicio de la página">
     <i class="fa-solid fa-chevron-up"></i>
   </button>
-
 </footer>
