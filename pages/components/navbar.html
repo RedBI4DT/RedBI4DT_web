@@ -1,43 +1,49 @@
-<header class="navbar-header">
-  <div class="navbar-container">
-    <!-- Branding / Logo -->
-    <a href="#" class="navbar-brand" id="logo-link">
-      <div class="navbar-logo-wrapper">
-        <img src="assets/images/bi4dt-logo.png" class="navbar-logo-img" id="navbar-logo-img">
-        <div class="navbar-logo-img-overlay"></div>
-      </div>
-    </a>
-
-    <!-- Main Navigation Links -->
-    <nav class="navbar-links" id="navbar-nav-links">
-      <a href="#" class="nav-link" id="nav-inicio">
-        <span>Inicio</span>
+<header class="bi4dt-header" id="navbar-header">
+  
+  <!-- Nivel 1: Header Superior Blanco - LOGO PRINCIPAL CENTRADO -->
+  <div class="bi4dt-topbar">
+    <div class="bi4dt-topbar-container">
+      <a href="#" class="bi4dt-logo-link" id="logo-link" aria-label="Ir al inicio - Red BI4DT">
+        <div class="bi4dt-logo-wrapper">
+          <img src="assets/images/logo_red/logo_main.png" class="bi4dt-logo-main-img" id="navbar-logo-img">
+          <div class="bi4dt-logo-main-img-overlay"></div>
+        </div>
       </a>
-      <a href="#" class="nav-link" id="nav-quienes-somos">
-        <span>Quiénes somos</span>
-      </a>
-      <a href="#" class="nav-link" id="nav-equipo">
-        <span>Equipo</span>
-      </a>
-      <a href="#" class="nav-link" id="nav-proyectos">
-        <span>Proyectos</span>
-      </a>
-      <a href="#" class="nav-link" id="nav-contacto">
-        <span>Contacto</span>
-      </a>
-    </nav>
-
-    <!-- Mobile Menu Toggle Button -->
-    <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-    </button>
+    </div>
   </div>
 
-  <!-- Golden Accent Bottom Bar -->
-  <div class="navbar-gold-line"></div>
+  <!-- Nivel 2: Barra de Navegación Azul Marina - SOLO ENLACES A LA IZQUIERDA -->
+  <nav class="bi4dt-navbar" aria-label="Navegación principal">
+    <div class="bi4dt-navbar-container">
+
+      <!-- Enlaces a la Izquierda -->
+      <div class="bi4dt-nav-links" id="navbar-nav-links">
+        <a href="#" class="bi4dt-nav-link" id="nav-inicio">INICIO</a>
+        <a href="#" class="bi4dt-nav-link" id="nav-quienes-somos">QUIÉNES SOMOS</a>
+        <a href="#" class="bi4dt-nav-link" id="nav-equipo">EQUIPO</a>
+        <!-- Dropdown Investigación (Continuo ARC) -->
+        <div class="bi4dt-dropdown" id="nav-dropdown-investigacion">
+          <button type="button" class="bi4dt-nav-link bi4dt-dropdown-btn" id="nav-investigacion-btn" aria-expanded="false" aria-haspopup="true">
+            <span>INVESTIGACIÓN</span>
+            <i class="fa-solid fa-chevron-down bi4dt-arrow" aria-hidden="true"></i>
+          </button>
+          <div class="bi4dt-dropdown-menu" id="nav-investigacion-menu" aria-label="Submenú de Investigación">
+            <a href="#" class="bi4dt-dropdown-item" id="nav-sub-lineas">LÍNEAS DE INVESTIGACIÓN</a>
+            <a href="#" class="bi4dt-dropdown-item" id="nav-sub-proyectos">PROYECTOS</a>
+            <a href="#" class="bi4dt-dropdown-item" id="nav-sub-articulos">ARTÍCULOS Y PUBLICACIONES</a>
+          </div>
+        </div>   
+        <a href="#" class="bi4dt-nav-link" id="nav-contacto">CONTACTO</a>
+      </div>
+
+      <!-- Toggle Móvil (Aparece al extremo derecho en pantallas pequeñas) -->
+      <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Alternar menú de navegación" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+    </div>
+  </nav>
+
 </header>
-
-
-

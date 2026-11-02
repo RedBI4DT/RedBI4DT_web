@@ -1,28 +1,36 @@
 /* ============================================================
    Colores Base y Variables de Diseño - Red BI4DT
-   Basado en la paleta oficial de Figma
+   Basado en la paleta oficial calibrada para investigación institucional
    ============================================================ */
 
 :root {
-  /* ── Colores Principales (Figma Palette) ── */
+  /* ── Colores Principales (Navy & Superficies) ── */
   --color-dark-bg: #0F172A;         /* Fondo Oscuro Principal (Navy Dark) */
+  --color-navy-surface: #162036;    /* Superficie Navy Elevada (Cards / Dropdowns) */
+  --color-navy-subtitles: #0F172A;  /* Azul Oscuro Uniforme para Subtítulos */
   --color-white: #FFFFFF;           /* Blanco Puro */
   
-  /* ── Accentos Dorados / Ámbar (Figma Palette) ── */
-  --color-gold: #F59E0B;            /* Dorado / Ámbar Primario */
-  --color-gold-light: #FBBF24;      /* Dorado Claro / Hover / Highlight */
+  /* ── Accentos Dorados Institucionales (Insignias / Activos) ── */
+  --color-gold: #f59e0b;            /* Dorado Institucional Sobrio */
+  --color-gold-light: #fbbf24;      /* Dorado Claro / Hover */
+
+  /* ── Llamada a la Acción (CTA Buttons) ── */
+  --color-cta-amber: #f59e0b;       /* Ámbar Cálido de Alto Contraste para CTA */
+  --color-cta-amber-hover: #d97706; /* Ámbar Profundo en Hover */
   
-  /* ── Gamas de Gris (Figma Palette) ── */
-  --color-gray-muted: #A4A3A3;      /* Gris Muted / Subtextos */
+  /* ── Gamas de Gris y Texto ── */
+  --color-gray-text: #E2E8F0;       /* Texto Claro de Alta Legibilidad */
+  --color-gray-muted: #94A3B8;      /* Gris Muted / Subtextos / Descripciones */
   --color-gray-neutral: #BABABA;    /* Gris Neutro */
   --color-gray-soft: #D0CACA;       /* Gris Suave */
-  --color-gray-border: #D9D9D9;     /* Gris de Bordes y Separadores */
+  --color-gray-border: rgba(255, 255, 255, 0.08); /* Separadores Sutiles */
 
-  /* ── Gradientes (Figma Linear Gradients) ── */
-  --gradient-gold: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
-  --gradient-gold-hover: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  /* ── Gradientes Institucionales ── */
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #FBBF24 100%);
+  --gradient-gold-hover: linear-gradient(135deg, #FBBF24 0%, #D4AF37 100%);
+  --gradient-cta: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
   --gradient-hero-dark: linear-gradient(135deg, #0F172A 0%, #1A3668 60%, #1E3A7A 100%);
-  --gradient-surface: linear-gradient(180deg, rgba(26, 54, 104, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(22, 32, 54, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
 
   /* ── Aliases Semánticos de Conveniencia ── */
   --bg-main: var(--color-dark-bg);
