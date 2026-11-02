@@ -1,10 +1,18 @@
+.section-title-navy {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-navy-subtitles, #1a3668);
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
 /* styles/quienes.css */
 @import url('colors.css');
 
 .quienes-header-section {
   background: linear-gradient(180deg, #1a3668 0%, #1e3a8a 100%);
   padding: 3rem 50px 4rem 50px;
-  border-top: 4px solid #f59e0b;
   border-bottom: 4px solid #f59e0b;
   width: 100vw;
   position: relative;
@@ -65,7 +73,7 @@
 /* Mission & Vision */
 .mission-vision-section {
   background: #f8fafc;
-  padding: 4.5rem 50px 5rem;
+  padding: 4rem 50px 4.5rem;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -87,101 +95,47 @@
 
 .mv-card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 2.75rem 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .mv-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.mv-card--mision {
-  border-top: 4.5px solid #1a3668;
-}
-.mv-card--mision:hover {
-  border-color: rgba(26, 54, 104, 0.35);
-  border-top-color: #1a3668;
-}
-
-.mv-card--vision {
-  border-top: 4.5px solid #f59e0b;
-}
-.mv-card--vision:hover {
-  border-color: rgba(245, 158, 11, 0.4);
-  border-top-color: #f59e0b;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
 }
 
 .mv-card-header {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-.mv-icon-box {
-  width: 60px;
-  height: 60px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  flex-shrink: 0;
-  transition: transform 0.25s ease;
-}
-
-.mv-card:hover .mv-icon-box {
-  transform: scale(1.08) rotate(3deg);
-}
-
-.mv-icon-box--mision {
-  background: rgba(26, 54, 104, 0.08);
-  color: #1a3668;
-  border: 1.5px solid rgba(26, 54, 104, 0.2);
-}
-
-.mv-icon-box--vision {
-  background: rgba(245, 158, 11, 0.12);
-  color: #d97706;
-  border: 1.5px solid rgba(245, 158, 11, 0.3);
+  margin-bottom: 1.25rem;
 }
 
 .mv-header-info {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.35rem;
 }
 
 .mv-card-badge {
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #1a3668;
-}
-
-.mv-card-badge--gold {
-  color: #d97706;
+  color: #64748b;
 }
 
 .mv-card-title {
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 700;
   color: #1a3668;
   margin: 0;
-  line-height: 1.15;
-}
-
-.mv-card-title.vision {
-  color: #d97706;
+  line-height: 1.2;
 }
 
 .mv-card-text {
@@ -231,324 +185,559 @@
   }
 }
 
-/* Enfoque / Lineas de investigacion */
-.enfoque-section {
-  background: linear-gradient(180deg, #0b1329 0%, #0f172a 100%);
-  padding: 3.8rem 50px;
+/* Sección: Momentos de la Red (Carrusel) */
+.moments-section {
+  background: #ffffff;
+  padding: 3rem 1.25rem;
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  border-top: 4px solid #f59e0b;
-}
-
-.enfoque-container {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-/* Header con link "Ver todos" */
-.enfoque-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 2rem;
-  gap: 1rem;
-}
-
-.enfoque-label-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.enfoque-ver-proyectos {
-  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.55rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 500;
-  padding-bottom: 3px;
-  border-bottom: 1px solid transparent;
-  transition: all 0.2s ease;
-  white-space: nowrap;
+  border-bottom: 4px solid #f59e0b;
+  margin-bottom: -3rem; /* Para que embone con el footer */
 }
 
-.enfoque-ver-proyectos:hover {
-  color: #fbbf24;
-  border-bottom-color: #fbbf24;
-  gap: 0.85rem;
+.moments-wrapper {
+  max-width: 1100px;
+  width: 100%;
 }
 
-/* =====================================================
-   Mosaico Bento / Tetris Sombrío (Dark Glassmorphism)
-   ===================================================== */
-.tetris-enfoque-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.15rem;
+.moments-header {
+  margin-bottom: 2.25rem;
 }
 
-.tetris-card {
-  background: rgba(17, 28, 53, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 1.15rem 1.35rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 140px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.28s ease,
-              background 0.28s ease;
+.moments-title {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-navy-subtitles, #1a3668);
+  margin: 0.25rem 0 0.5rem 0;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.moments-description {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 760px;
+}
+
+/* Marco del Carrusel idéntico al del mapa (.map-container) */
+.moments-carousel-frame {
+  width: 100%;
   position: relative;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+  border: 1.5px solid #cbd5e1;
+  background: #0f172a;
+  height: 500px;
 }
 
-/* Tarjetas panorámicas (Span 2 columnas) */
-.tetris-card--wide {
-  grid-column: span 2;
+/* Track */
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-/* Efecto de línea inferior sutil con resplandor */
-.tetris-card::after {
-  content: "";
+/* Slide */
+.carousel-slide {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2.5px;
-  opacity: 0.45;
-  transition: opacity 0.25s ease, height 0.25s ease;
-  border-radius: 0 0 12px 12px;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
 }
 
-.tetris-card:hover {
-  transform: translateY(-4px);
-  background: rgba(22, 36, 68, 0.92);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
-}
-
-.tetris-card:hover::after {
+.carousel-slide.active {
   opacity: 1;
-  height: 3.5px;
+  visibility: visible;
+  z-index: 2;
 }
 
-/* Header de la tarjeta */
-.tetris-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.45rem;
+.carousel-slide.prev {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
 }
 
-.tetris-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+/* Imagen del slide */
+.carousel-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 8s ease;
+}
+
+.carousel-slide.active .carousel-slide-img {
+  transform: scale(1.05);
+}
+
+/* Overlay sutil */
+.carousel-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.25);
+  pointer-events: none;
+}
+
+/* Botones Prev / Next */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.carousel-btn:hover {
+  background: #f59e0b;
+  color: #0f172a;
+  border-color: transparent;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+}
+
+.carousel-btn--prev { left: 2rem; }
+.carousel-btn--next { right: 2rem; }
+
+/* Dots indicadores */
+.carousel-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #F59E0B;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.carousel-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* Barra de progreso */
+.carousel-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, #F59E0B, #FBBF24);
+  z-index: 10;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── Sección Principal: Info y Formulario ────────── */
+.contacto-main-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4.5rem 50px 5.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 3.5rem;
+  align-items: start;
+  background: #ffffff;
+}
+
+/* Panel de Información Izquierdo */
+.contacto-info-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-panel-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a3668;
+  margin: 0.25rem 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+.contacto-info-panel p.contacto-desc {
+  color: #64748b;
   font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.contacto-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contacto-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contacto-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(26, 54, 104, 0.08);
+  border: 1.5px solid rgba(26, 54, 104, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a3668;
+  font-size: 1.15rem;
   flex-shrink: 0;
-  transition: transform 0.25s ease;
+  margin-top: 2px;
 }
 
-.tetris-card:hover .tetris-icon {
-  transform: scale(1.08);
-}
-
-.tetris-number {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.15);
-  letter-spacing: -0.5px;
-  line-height: 1;
-  transition: color 0.25s ease;
-}
-
-.tetris-card:hover .tetris-number {
-  color: rgba(255, 255, 255, 0.35);
-}
-
-/* Cuerpo de la tarjeta */
-.tetris-card-body {
+.contacto-item-content {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  margin-bottom: 0.55rem;
 }
 
-.tetris-category-tag {
-  font-size: 0.65rem;
+.contacto-item-label {
+  display: block;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  color: #d97706;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.tetris-card-title {
-  font-size: 1.08rem;
-  font-weight: 600;
-  color: #f8fafc;
-  line-height: 1.25;
-  margin: 0;
+.contacto-item-value {
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
-/* Footer con enlace */
-.tetris-card-footer {
-  margin-top: auto;
-  padding-top: 0.45rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+a.contacto-item-value:hover {
+  color: #d97706;
 }
 
-.tetris-link-text {
-  font-size: 0.76rem;
-  font-weight: 600;
+/* Panel del Formulario Derecho */
+.contacto-form-wrapper {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.contacto-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.contacto-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contacto-form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.contacto-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.contacto-input::placeholder {
+  color: #94a3b8;
+}
+
+.contacto-input:focus {
+  outline: none;
+  border-color: #1a3668;
+  box-shadow: 0 0 0 3.5px rgba(26, 54, 104, 0.12);
+}
+
+.contacto-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.contacto-submit-btn {
+  align-self: flex-start;
+  background: #1a3668;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: gap 0.2s ease;
+  gap: 0.6rem;
+  box-shadow: 0 4px 12px rgba(26, 54, 104, 0.2);
 }
 
-.tetris-link-text i {
-  font-size: 0.7rem;
-  transition: transform 0.2s ease;
+.contacto-submit-btn:hover {
+  background: #f59e0b;
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
 }
 
-.tetris-card:hover .tetris-link-text {
-  gap: 0.65rem;
+.contacto-submit-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-.tetris-card:hover .tetris-link-text i {
-  transform: translateX(2px);
+/* ── Feedback y Estados del Formulario ──────────── */
+.contacto-status {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  line-height: 1.5;
+  animation: fadeInStatus 0.3s ease;
 }
 
-/* Variantes de Color Sombrías con Glow Temático */
-/* 01: Gold */
-.tetris-card--gold {
-  background: linear-gradient(145deg, rgba(245, 158, 11, 0.16) 0%, rgba(17, 28, 53, 0.88) 100%);
-  border-color: rgba(245, 158, 11, 0.32);
-}
-.tetris-card--gold .tetris-category-tag { color: #fbbf24; }
-.tetris-icon--gold { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); color: #fbbf24; }
-.tetris-card--gold::after { background: #f59e0b; box-shadow: 0 0 10px rgba(245, 158, 11, 0.5); }
-.tetris-card--gold:hover {
-  background: linear-gradient(145deg, rgba(245, 158, 11, 0.26) 0%, rgba(22, 36, 68, 0.95) 100%);
-  border-color: rgba(245, 158, 11, 0.65);
-  box-shadow: 0 14px 32px rgba(245, 158, 11, 0.15);
-}
-.tetris-card--gold .tetris-link-text { color: #fbbf24; }
-
-/* 02: Indigo */
-.tetris-card--indigo {
-  background: linear-gradient(145deg, rgba(99, 102, 241, 0.18) 0%, rgba(17, 28, 53, 0.88) 100%);
-  border-color: rgba(99, 102, 241, 0.32);
-}
-.tetris-card--indigo .tetris-category-tag { color: #a5b4fc; }
-.tetris-icon--indigo { background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.35); color: #a5b4fc; }
-.tetris-card--indigo::after { background: #818cf8; box-shadow: 0 0 10px rgba(99, 102, 241, 0.5); }
-.tetris-card--indigo:hover {
-  background: linear-gradient(145deg, rgba(99, 102, 241, 0.28) 0%, rgba(22, 36, 68, 0.95) 100%);
-  border-color: rgba(99, 102, 241, 0.65);
-  box-shadow: 0 14px 32px rgba(99, 102, 241, 0.18);
-}
-.tetris-card--indigo .tetris-link-text { color: #a5b4fc; }
-
-/* 03: Emerald */
-.tetris-card--emerald {
-  background: linear-gradient(145deg, rgba(16, 185, 129, 0.16) 0%, rgba(17, 28, 53, 0.88) 100%);
-  border-color: rgba(16, 185, 129, 0.32);
-}
-.tetris-card--emerald .tetris-category-tag { color: #6ee7b7; }
-.tetris-icon--emerald { background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); color: #6ee7b7; }
-.tetris-card--emerald::after { background: #34d399; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
-.tetris-card--emerald:hover {
-  background: linear-gradient(145deg, rgba(16, 185, 129, 0.26) 0%, rgba(22, 36, 68, 0.95) 100%);
-  border-color: rgba(16, 185, 129, 0.65);
-  box-shadow: 0 14px 32px rgba(16, 185, 129, 0.15);
-}
-.tetris-card--emerald .tetris-link-text { color: #6ee7b7; }
-
-/* 04: Violet */
-.tetris-card--violet {
-  background: linear-gradient(145deg, rgba(124, 58, 237, 0.18) 0%, rgba(17, 28, 53, 0.88) 100%);
-  border-color: rgba(124, 58, 237, 0.32);
-}
-.tetris-card--violet .tetris-category-tag { color: #c4b5fd; }
-.tetris-icon--violet { background: rgba(124, 58, 237, 0.12); border: 1px solid rgba(124, 58, 237, 0.35); color: #c4b5fd; }
-.tetris-card--violet::after { background: #a78bfa; box-shadow: 0 0 10px rgba(124, 58, 237, 0.5); }
-.tetris-card--violet:hover {
-  background: linear-gradient(145deg, rgba(124, 58, 237, 0.28) 0%, rgba(22, 36, 68, 0.95) 100%);
-  border-color: rgba(124, 58, 237, 0.65);
-  box-shadow: 0 14px 32px rgba(124, 58, 237, 0.18);
-}
-.tetris-card--violet .tetris-link-text { color: #c4b5fd; }
-
-/* 05: Rose */
-.tetris-card--rose {
-  background: linear-gradient(145deg, rgba(225, 29, 72, 0.18) 0%, rgba(17, 28, 53, 0.88) 100%);
-  border-color: rgba(225, 29, 72, 0.32);
-}
-.tetris-card--rose .tetris-category-tag { color: #fda4af; }
-.tetris-icon--rose { background: rgba(225, 29, 72, 0.12); border: 1px solid rgba(225, 29, 72, 0.35); color: #fda4af; }
-.tetris-card--rose::after { background: #fb7185; box-shadow: 0 0 10px rgba(225, 29, 72, 0.5); }
-.tetris-card--rose:hover {
-  background: linear-gradient(145deg, rgba(225, 29, 72, 0.28) 0%, rgba(22, 36, 68, 0.95) 100%);
-  border-color: rgba(225, 29, 72, 0.65);
-  box-shadow: 0 14px 32px rgba(225, 29, 72, 0.18);
-}
-.tetris-card--rose .tetris-link-text { color: #fda4af; }
-
-/* 06: Sky */
-.tetris-card--sky {
-  background: linear-gradient(145deg, rgba(2, 132, 199, 0.18) 0%, rgba(17, 28, 53, 0.88) 100%);
-  border-color: rgba(2, 132, 199, 0.32);
-}
-.tetris-card--sky .tetris-category-tag { color: #7dd3fc; }
-.tetris-icon--sky { background: rgba(2, 132, 199, 0.12); border: 1px solid rgba(2, 132, 199, 0.35); color: #7dd3fc; }
-.tetris-card--sky::after { background: #38bdf8; box-shadow: 0 0 10px rgba(2, 132, 199, 0.5); }
-.tetris-card--sky:hover {
-  background: linear-gradient(145deg, rgba(2, 132, 199, 0.28) 0%, rgba(22, 36, 68, 0.95) 100%);
-  border-color: rgba(2, 132, 199, 0.65);
-  box-shadow: 0 14px 32px rgba(2, 132, 199, 0.18);
-}
-.tetris-card--sky .tetris-link-text { color: #7dd3fc; }
-
-/* Responsividad Tetris */
-@media (max-width: 992px) {
-  .tetris-enfoque-grid {
-    grid-template-columns: repeat(2, 1fr);
+@keyframes fadeInStatus {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
   }
-  .tetris-card--wide {
-    grid-column: span 1;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 600px) {
-  .tetris-enfoque-grid {
+.contacto-status-icon {
+  font-size: 1.25rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contacto-status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1;
+}
+
+.contacto-status-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: auto;
+  font-size: 1.15rem;
+  color: inherit;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.contacto-status-close:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.contacto-status-close:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.contacto-status-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.contacto-status-desc {
+  font-size: 0.88rem;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.contacto-status--success {
+  background-color: #ecfdf5;
+  border: 1.5px solid #a7f3d0;
+  color: #065f46;
+}
+
+.contacto-status--success .contacto-status-icon {
+  color: #10b981;
+}
+
+.contacto-status--error {
+  background-color: #fef2f2;
+  border: 1.5px solid #fecaca;
+  color: #991b1b;
+}
+
+.contacto-status--error .contacto-status-icon {
+  color: #ef4444;
+}
+
+.contacto-status--loading {
+  background-color: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1e40af;
+}
+
+.contacto-status--loading .contacto-status-icon {
+  color: #3b82f6;
+}
+
+/* Responsividad Tablet y Móvil */
+@media (max-width: 960px) {
+  .contacto-main-section {
     grid-template-columns: 1fr;
-    gap: 0.9rem;
+    gap: 2.5rem;
+    padding: 3rem 25px 4rem;
   }
-  .tetris-card {
-    padding: 1.1rem 1.25rem;
-    min-height: auto;
+  .contacto-form-wrapper {
+    padding: 2rem 1.5rem;
   }
-  .tetris-card-title {
-    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .contacto-intro-banner {
+    padding: 3rem 20px 3.5rem;
+  }
+  .contacto-intro-title {
+    font-size: 1.85rem;
+  }
+  .moments-carousel-frame {
+    height: 360px;
+  }
+  .carousel-btn--prev { left: 1rem; }
+  .carousel-btn--next { right: 1rem; }
+}
+
+@media (max-width: 580px) {
+  .contacto-intro-banner {
+    padding: 2.25rem 1.25rem 2.5rem;
+  }
+  .contacto-intro-title {
+    font-size: 1.5rem;
+  }
+  .contacto-intro-desc {
+    font-size: 0.92rem;
+  }
+  .moments-carousel-frame {
+    height: 260px;
+  }
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+  .contacto-main-section {
+    padding: 2.25rem 1.25rem 3rem;
+  }
+  .contacto-panel-title {
+    font-size: 1.6rem;
+  }
+  .contacto-desc {
+    font-size: 0.92rem;
+  }
+  .contacto-item {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  .contacto-item-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+  .contacto-item-value {
+    font-size: 0.88rem;
+  }
+  .contacto-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .contacto-form-wrapper {
+    padding: 1.5rem 1.25rem;
+  }
+  .contacto-submit-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -562,11 +751,12 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  border-bottom: 4px solid #f59e0b;
+  border-top: 3px solid #f59e0b;
+  border-bottom: 3px solid #f59e0b;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -3rem; /* Para que embone con el footer */
+  margin-bottom: 0;
 }
 
 .map-section-wrapper {
@@ -579,11 +769,13 @@
 }
 
 .map-title {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
-  color: #1a3668;
+  color: var(--color-navy-subtitles, #1a3668);
   margin: 0.25rem 0 0.5rem 0;
   line-height: 1.25;
+  letter-spacing: -0.4px;
 }
 
 .map-description {
@@ -609,6 +801,11 @@
   width: 100%;
   height: 500px;
   z-index: 1;
+}
+
+/* Acabado plano monocromático institucional sin marcas de agua (MAP-01) */
+#map-opentopo .leaflet-tile-pane {
+  filter: grayscale(100%) contrast(88%) brightness(102%);
 }
 
 /* Botón flotante para reiniciar vista del mapa */
@@ -809,15 +1006,10 @@
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: #94a3b8;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.map-sidebar-section-title i {
-  color: #38bdf8;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
 .map-sidebar-institutions {
@@ -830,30 +1022,21 @@
 }
 
 .map-sidebar-institutions li {
-  font-size: 0.82rem;
-  color: #e2e8f0;
+  font-size: 0.84rem;
+  color: #f1f5f9;
   font-weight: 500;
-  padding: 0.55rem 0.7rem;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  line-height: 1.35;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
+  border-left: 3px solid var(--color-celeste-network, #38bdf8);
+  border-radius: 6px;
+  line-height: 1.4;
   transition: all 0.2s ease;
 }
 
 .map-sidebar-institutions li:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(56, 189, 248, 0.3);
-}
-
-.map-sidebar-institutions li i {
-  color: #38bdf8;
-  font-size: 0.75rem;
-  margin-top: 0.2rem;
-  flex-shrink: 0;
+  border-color: rgba(56, 189, 248, 0.4);
 }
 
 /* Responsividad para Móviles */

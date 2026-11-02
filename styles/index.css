@@ -19,7 +19,7 @@ html,
 body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -32,10 +32,9 @@ body {
   line-height: 1.6;
 }
 
-/* Placeholder de Navbar (en flujo normal para navegacion sticky) */
+/* Placeholder de Navbar (desenrollado contextualmente para sticky continuo) */
 #navbar-placeholder {
-  display: block;
-  min-height: 0;
+  display: contents;
 }
 
 #footer-placeholder {
@@ -854,7 +853,7 @@ main.page-content.page-full {
 }
 
 .banner-hero-img {
-  width: 100%;
+  width: 120%;
   height: 100%;
   object-fit: cover;
   object-position: center;
@@ -864,7 +863,7 @@ main.page-content.page-full {
 .banner-hero-overlay {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0px;
   bottom: 0;
   width: 50%;
   background: linear-gradient(to right, #1a3668 0%, rgba(26, 54, 104, 0) 100%);

@@ -1,136 +1,139 @@
 /**
  * scripts/quienes.js
- * Integración de OpenTopoMap con Panel Lateral Desplegable
- * Puntos limpios en el mapa, rueda de zoom activa y botón de reinicio de vista.
+ * Fase 3 - Mapa de la Red BI4DT
+ * - Capa plana monocromática neutral con OpenStreetMap + filtro CSS
+ * - Nodos y cartillas agrupados estrictamente por PAÍS (Perú, Ecuador, Estados Unidos)
+ * - Color único celeste institucional (--color-celeste-network: #38bdf8)
+ * - Conexión de red entre nodos con polilíneas estilo red de datos
+ * - Panel lateral sin íconos decorativos
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initOpenTopoMap();
+  initNetworkMap();
 });
 
-function initOpenTopoMap() {
+function initNetworkMap() {
   const mapElement = document.getElementById('map-opentopo');
   const sidebarElement = document.getElementById('map-sidebar');
   const resetBtn = document.getElementById('btn-reset-map');
 
   if (!mapElement || typeof L === 'undefined') return;
 
-  // 1. Datos de los 4 Nodos: Instituciones exclusivas (Sin nombres de personas)
-  const NODOS = {
-    lima: {
-      id: 'lima',
-      ciudad: 'Lima',
+  const COLOR_CELESTE = '#38bdf8';
+  const COLOR_HALO = 'rgba(56, 189, 248, 0.32)';
+
+  // 1. Datos de la Red agrupados estrictamente por PAÍS
+  const PAISES_RED = {
+    peru: {
+      id: 'peru',
       pais: 'Perú',
-      bandera: '🇵🇪',
-      coords: [-12.0464, -77.0428],
-      color: '#f59e0b',
-      rol: 'Sede Principal',
+      puntos: [
+        { nombre: 'Lima (Sede Principal)', coords: [-12.0464, -77.0428], isMain: true },
+      ],
       instituciones: [
-        'Universidad Científica del Sur',
+        'Universidad Científica del Sur (UCSUR)',
         'Universidad Nacional Mayor de San Marcos (UNMSM)',
         'Instituto Nacional de Salud (INS)',
+        'Universidad Católica San Pablo (UCSP)',
         'Procesa Lab S.A.C.',
         'Universidad Ricardo Palma (URP)'
       ]
     },
-    arequipa: {
-      id: 'arequipa',
-      ciudad: 'Arequipa',
-      pais: 'Perú',
-      bandera: '🇵🇪',
-      coords: [-16.4090, -71.5375],
-      color: '#10b981',
-      rol: 'Nodo Sur',
-      instituciones: [
-        'Universidad Católica San Pablo (UCSP)'
-      ]
-    },
-    quito: {
-      id: 'quito',
-      ciudad: 'Quito',
+    ecuador: {
+      id: 'ecuador',
       pais: 'Ecuador',
       bandera: '🇪🇨',
-      coords: [-0.1807, -78.4678],
-      color: '#0284c7',
       rol: 'Nodo Internacional',
+      puntos: [
+        { nombre: 'Quito', coords: [-0.1807, -78.4678], isMain: false }
+      ],
       instituciones: [
         'Universidad San Francisco de Quito (USFQ)'
       ]
     },
-    tucson: {
-      id: 'tucson',
-      ciudad: 'Tucson, Arizona',
+    usa: {
+      id: 'usa',
       pais: 'Estados Unidos',
       bandera: '🇺🇸',
-      coords: [32.2226, -110.9747],
-      color: '#6366f1',
       rol: 'Nodo Internacional',
+      puntos: [
+        { nombre: 'Tucson, Arizona', coords: [32.2226, -110.9747], isMain: false }
+      ],
       instituciones: [
         'The University of Arizona'
       ]
     }
   };
 
-  // 2. Inicialización de Leaflet con zoom por rueda habilitado y controles de zoom (+ / -)
+  // 2. Inicialización de Leaflet
   const map = L.map('map-opentopo', {
-    scrollWheelZoom: true, // Rueda del mouse habilitada
-    zoomControl: true,     // Botones de zoom visibles
+    scrollWheelZoom: true,
+    zoomControl: true,
     minZoom: 2,
-    maxZoom: 17
+    maxZoom: 18
   });
 
-  // Mover el control de zoom para que quede ordenado en la esquina superior izquierda
   map.zoomControl.setPosition('topleft');
 
-  // 3. Capa de teselas oficial de OpenTopoMap
-  L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    maxZoom: 17,
-    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org" target="_blank" rel="noopener">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
+  // 3. Capa de teselas OpenStreetMap (estilizada monocromática con CSS en styles/quienes.css)
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  // 4. Marcadores tipo Punto (Sin etiquetas de texto sobre el mapa)
-  const markers = {};
+  // 4. Marcadores celestes en el mapa
   const allCoords = [];
+  const coordsMap = {
+    lima: [-12.0464, -77.0428],
+    arequipa: [-16.4090, -71.5375],
+    quito: [-0.1807, -78.4678],
+    tucson: [32.2226, -110.9747]
+  };
 
-  Object.keys(NODOS).forEach((key) => {
-    const nodo = NODOS[key];
-    allCoords.push(nodo.coords);
+  Object.keys(PAISES_RED).forEach((paisKey) => {
+    const paisData = PAISES_RED[paisKey];
 
-    const pointIcon = L.divIcon({
-      className: 'topo-marker-clean',
-      html: `
-        <div class="topo-dot-wrapper" data-node="${nodo.id}">
-          <div class="topo-dot-beacon" style="border-color: ${nodo.color}; background: ${nodo.color}33;"></div>
-          <div class="topo-dot-core" style="background: ${nodo.color};"></div>
-        </div>
-      `,
-      iconSize: [28, 28],
-      iconAnchor: [14, 14]
+    paisData.puntos.forEach((punto) => {
+      allCoords.push(punto.coords);
+
+      const wrapperSize = punto.isMain ? 34 : 26;
+      const coreSize = punto.isMain ? 14 : 10;
+      const beaconSize = punto.isMain ? 36 : 28;
+
+      const pointIcon = L.divIcon({
+        className: 'topo-marker-clean',
+        html: `
+          <div class="topo-dot-wrapper ${punto.isMain ? 'topo-dot--large' : 'topo-dot--regular'}" data-pais="${paisData.id}" style="width: ${wrapperSize}px; height: ${wrapperSize}px;">
+            <div class="topo-dot-beacon" style="width: ${beaconSize}px; height: ${beaconSize}px; margin-top: -${beaconSize / 2}px; margin-left: -${beaconSize / 2}px; border-color: ${COLOR_CELESTE}; background: ${COLOR_HALO};"></div>
+            <div class="topo-dot-core" style="width: ${coreSize}px; height: ${coreSize}px; background: ${COLOR_CELESTE};"></div>
+          </div>
+        `,
+        iconSize: [wrapperSize, wrapperSize],
+        iconAnchor: [wrapperSize / 2, wrapperSize / 2]
+      });
+
+      const marker = L.marker(punto.coords, { icon: pointIcon }).addTo(map);
+
+      // Al hacer clic en cualquier punto del país, se despliega la cartilla de ese país
+      marker.on('click', (e) => {
+        L.DomEvent.stopPropagation(e);
+        activarCartillaPais(paisData.id);
+      });
     });
-
-    const marker = L.marker(nodo.coords, { icon: pointIcon }).addTo(map);
-
-    // Al hacer clic: levantar el panel lateral al costado sin zoom brusco
-    marker.on('click', (e) => {
-      L.DomEvent.stopPropagation(e);
-      activarNodo(nodo.id);
-    });
-
-    markers[key] = marker;
   });
 
-  // 5. Arcos de cooperación en red (Polylines sutiles entre Lima y los demás nodos)
-  const redConnections = [
-    [NODOS.lima.coords, NODOS.tucson.coords],
-    [NODOS.lima.coords, NODOS.quito.coords],
-    [NODOS.lima.coords, NODOS.arequipa.coords]
+  // 5. Conexiones de Red entre los nodos (Líneas celestes continuas / punteadas)
+  const networkLines = [
+    [coordsMap.lima], // Red Nacional Perú
+    [coordsMap.lima, coordsMap.quito],    // Conexión Perú - Ecuador
+    [coordsMap.lima, coordsMap.tucson]    // Conexión Perú - Estados Unidos
   ];
 
-  redConnections.forEach(lineCoords => {
+  networkLines.forEach((lineCoords) => {
     L.polyline(lineCoords, {
-      color: '#0284c7',
+      color: COLOR_CELESTE,
       weight: 2,
-      opacity: 0.6,
+      opacity: 0.7,
       dashArray: '6, 8',
       lineCap: 'round'
     }).addTo(map);
@@ -143,44 +146,39 @@ function initOpenTopoMap() {
     maxZoom: 4
   });
 
-  // 7. Lógica del Panel Lateral
-  function activarNodo(nodoId) {
-    const nodo = NODOS[nodoId];
-    if (!nodo || !sidebarElement) return;
+  // 7. Lógica de la Cartilla Lateral agrupada por PAÍS
+  function activarCartillaPais(paisId) {
+    const pais = PAISES_RED[paisId];
+    if (!pais || !sidebarElement) return;
 
-    // Resaltar visualmente el punto activo
+    // Resaltar visualmente todos los puntos pertenecientes a este país
     document.querySelectorAll('.topo-dot-wrapper').forEach(el => {
-      if (el.getAttribute('data-node') === nodoId) {
+      if (el.getAttribute('data-pais') === paisId) {
         el.classList.add('is-active');
       } else {
         el.classList.remove('is-active');
       }
     });
 
-    // Inyectar el menú lateral con las instituciones
+    // Inyectar cartilla agrupada por PAÍS con acento celeste uniforme
     sidebarElement.innerHTML = `
       <div class="map-sidebar-inner">
-        <button class="map-sidebar-close" id="btn-close-sidebar" aria-label="Cerrar menú lateral">
+        <button class="map-sidebar-close" id="btn-close-sidebar" aria-label="Cerrar panel institucional">
           <i class="fa-solid fa-xmark"></i>
         </button>
 
-        <div class="map-sidebar-header" style="border-left: 4px solid ${nodo.color};">
-          <div class="map-sidebar-flag-row">
-            <span class="map-sidebar-flag">${nodo.bandera}</span>
-            <span class="map-sidebar-badge">${nodo.rol}</span>
-          </div>
-          <h3 class="map-sidebar-title">${nodo.ciudad}, ${nodo.pais}</h3>
+        <div class="map-sidebar-header" style="border-left: 3px solid ${COLOR_CELESTE};">
+          <h3 class="map-sidebar-title">${pais.pais}</h3>
         </div>
 
         <div class="map-sidebar-body">
           <span class="map-sidebar-section-title">
-            <i class="fa-solid fa-building-columns"></i> Instituciones Afiliadas (${nodo.instituciones.length})
+            Instituciones de la Red en ${pais.pais} (${pais.instituciones.length})
           </span>
           <ul class="map-sidebar-institutions">
-            ${nodo.instituciones.map(inst => `
+            ${pais.instituciones.map(inst => `
               <li>
-                <i class="fa-solid fa-shield-halved"></i>
-                <span>${inst}</span>
+                <span class="institution-name">${inst}</span>
               </li>
             `).join('')}
           </ul>
@@ -190,7 +188,6 @@ function initOpenTopoMap() {
 
     sidebarElement.classList.add('is-open');
 
-    // Botón de cerrar del panel
     const closeBtn = document.getElementById('btn-close-sidebar');
     if (closeBtn) {
       closeBtn.addEventListener('click', (e) => {
@@ -209,12 +206,10 @@ function initOpenTopoMap() {
     });
   }
 
-  // Cerrar panel lateral al hacer clic en un área vacía del mapa
   map.on('click', () => {
     cerrarPanelLateral();
   });
 
-  // 8. Botón de Reiniciar Vista del Mapa
   if (resetBtn) {
     resetBtn.addEventListener('click', (e) => {
       e.stopPropagation();

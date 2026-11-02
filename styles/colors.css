@@ -14,6 +14,9 @@
   --color-blue-hover: #226ee0;      /* Azul Vibrante para Hover de Tarjetas */
   --color-gold: #f59e0b;            /* Dorado Institucional Sobrio */
   --color-gold-light: #fbbf24;      /* Dorado Claro / Hover */
+  --color-celeste-network: #38bdf8; /* Celeste Institucional para Red y Nodos */
+  --color-celeste-halo: rgba(56, 189, 248, 0.28);
+  --color-celeste-line: rgba(56, 189, 248, 0.65);
 
   /* ── Llamada a la Acción (CTA Buttons) ── */
   --color-cta-amber: #f59e0b;       /* Ámbar Cálido de Alto Contraste para CTA */

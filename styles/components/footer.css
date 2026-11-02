@@ -57,7 +57,6 @@
 .footer-logo-tile {
   width: 64px;
   height: 64px;
-  background: var(--fondo-tile);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -172,7 +171,7 @@
   font-size: 0.82rem;
   color: var(--texto-suave);
   padding: 16px 32px;
-  background: rgba(130, 128, 128, 0.511); /* Ligeramente más oscuro que el fondo del footer */
+  background: rgba(24, 23, 23, 0.511); /* Ligeramente más oscuro que el fondo del footer */
   width: 100%;
   box-sizing: border-box;
 }
