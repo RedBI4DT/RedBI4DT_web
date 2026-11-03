@@ -91,7 +91,7 @@
   position: relative;
   left: 50%;
   margin-left: -50vw;
-  background: #f8fafc;
+  background: #f1f5f9;
 }
 
 .proyecto-body-container {
@@ -111,10 +111,10 @@
 
 .proyecto-info-block {
   background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
   padding: 2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .proyecto-block-title {
@@ -150,8 +150,8 @@
   align-items: center;
   gap: 1rem;
   background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
   padding: 1rem;
   text-decoration: none;
   transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
@@ -222,10 +222,10 @@
 
 .proyecto-card-sidebar {
   background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
   padding: 1.75rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .proyecto-sidebar-title {
@@ -316,40 +316,164 @@
   text-decoration: underline;
 }
 
-/* ── Botón CTA Único en Sidebar (Dorado Institucional) ─ */
+/* ── Botón CTA Único en Sidebar (Dorado Institucional Sólido) ─ */
 .btn-proy-similares-cta {
   width: 100%;
   margin-top: 1.25rem;
-  padding: 0.85rem 1.25rem;
-  font-size: 0.92rem;
+  padding: 0.95rem 1.35rem;
+  font-size: 0.95rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  background: var(--gradient-gold);
+  gap: 0.65rem;
+  background: var(--color-gold);
   color: #0f172a;
-  border: 1px solid rgba(251, 191, 36, 0.5);
-  border-radius: 10px;
+  border: none;
+  border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
-  transition: all 0.25s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  letter-spacing: -0.2px;
 }
 
 .btn-proy-similares-cta:hover {
-  background: var(--gradient-gold-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5);
-  color: #0f172a;
+  transform: scale(1.04);
 }
 
 .btn-proy-similares-cta i.btn-icon-right {
   font-size: 0.8rem;
-  transition: transform 0.2s ease;
 }
 
-.btn-proy-similares-cta:hover i.btn-icon-right {
-  transform: translateX(4px);
+/* ── Publicaciones del Proyecto ───────────────────────── */
+.proy-pub-count {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-left: 0.35rem;
+}
+
+.proy-pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scroll interno si hay más de 8 publicaciones */
+.proy-pub-list.has-scroll {
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.proy-pub-list::-webkit-scrollbar {
+  width: 6px;
+}
+.proy-pub-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.proy-pub-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.proy-pub-item:first-child {
+  padding-top: 0;
+}
+
+.proy-pub-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.proy-pub-icon-box {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-hover, #226ee0);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.proy-pub-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.proy-pub-link {
+  color: #0f172a;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline;
+}
+
+.proy-pub-link:hover {
+  color: var(--color-blue-hover, #226ee0);
+  text-decoration: underline;
+}
+
+.proy-pub-link:focus-visible {
+  outline: 2px solid var(--color-blue-hover, #226ee0);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.proy-pub-ext-icon {
+  font-size: 0.85em;
+  color: #94a3b8;
+  margin-left: 0.25rem;
+  display: inline-block;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.proy-pub-link:hover .proy-pub-ext-icon {
+  color: var(--color-blue-hover, #226ee0);
+  transform: translate(2px, -2px);
+}
+
+.proy-pub-meta {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.proy-pub-empty {
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+/* Accesibilidad: texto oculto para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /* ── Responsive ──────────────────────────────────────── */

@@ -1,3 +1,5 @@
+@import url("../colors.css");
+
 /* ============================================================
    Footer Styles - Red BI4DT
    Estructura: Cuerpo 2 columnas (Marca a la izq / Contacto a la der)
@@ -9,9 +11,7 @@
   --texto: #ffffff;
   --texto-suave: #94a3b8;
   --acento: var(--color-gold, #f59e0b);           /* línea superior del footer */
-  --linkedin: #0077b5;
-  --github: #ffffff;
-  --correo: #f59e0b;
+  --color-social-icon: var(--color-celeste-network, #38bdf8);
 }
 
 .site-footer {
@@ -137,6 +137,7 @@
   width: 72px;
   height: 72px;
   background: var(--fondo-tile);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -152,17 +153,21 @@
   text-align: center;
 }
 
-/* Colores de íconos por red usando variables de :root */
-.tile-linkedin i {
-  color: var(--linkedin);
+/* Colores de íconos de redes unificados en Celeste Institucional */
+.tile i {
+  color: var(--color-social-icon, #38bdf8);
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.tile-github i {
-  color: var(--github);
+.social-tile-link:hover .tile {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.2);
 }
 
-.tile-correo i {
-  color: var(--correo);
+.social-tile-link:hover .tile i {
+  color: #ffffff;
+  transform: scale(1.08);
 }
 
 /* ─── Barra Copyright ─── */

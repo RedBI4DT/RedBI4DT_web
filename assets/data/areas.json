@@ -2,7 +2,6 @@
   "areas": [
     {
       "id": "informatica-biomedica",
-      "numero": "ÁREA 01",
       "nombre": "Informática Biomédica y Salud Digital",
       "icono": "fa-database",
       "color_acento": "#F59E0B",
@@ -16,7 +15,6 @@
     },
     {
       "id": "ia-salud",
-      "numero": "ÁREA 02",
       "nombre": "Inteligencia Artificial en Salud",
       "icono": "fa-lightbulb",
       "color_acento": "#6366F1",
@@ -32,7 +30,6 @@
     },
     {
       "id": "interoperabilidad",
-      "numero": "ÁREA 03",
       "nombre": "Interoperabilidad y Gobernanza de Datos",
       "icono": "fa-shield-halved",
       "color_acento": "#10B981",
@@ -46,7 +43,6 @@
     },
     {
       "id": "analitica-datos",
-      "numero": "ÁREA 04",
       "nombre": "Visualización y Analítica de Datos",
       "icono": "fa-chart-bar",
       "color_acento": "#8B5CF6",
@@ -62,7 +58,6 @@
     },
     {
       "id": "sociotecnica-adopcion",
-      "numero": "ÁREA 05",
       "nombre": "Evaluación Sociotécnica y Adopción",
       "icono": "fa-users-gear",
       "color_acento": "#F43F5E",
@@ -76,7 +71,6 @@
     },
     {
       "id": "salud-digital",
-      "numero": "ÁREA 06",
       "nombre": "Salud Digital",
       "icono": "fa-heart-pulse",
       "color_acento": "#0284C7",

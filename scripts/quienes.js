@@ -8,11 +8,11 @@
  * - Panel lateral sin íconos decorativos
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  initNetworkMap();
+document.addEventListener('DOMContentLoaded', async () => {
+  await initNetworkMap();
 });
 
-function initNetworkMap() {
+async function initNetworkMap() {
   const mapElement = document.getElementById('map-opentopo');
   const sidebarElement = document.getElementById('map-sidebar');
   const resetBtn = document.getElementById('btn-reset-map');
@@ -22,7 +22,19 @@ function initNetworkMap() {
   const COLOR_CELESTE = '#38bdf8';
   const COLOR_HALO = 'rgba(56, 189, 248, 0.32)';
 
-  // 1. Datos de la Red agrupados estrictamente por PAÍS
+  // 1. Cargar dinámicamente instituciones desde assets/data/instituciones.json
+  const base = window.location.pathname.includes('/pages/') ? '../' : './';
+  let institucionesData = [];
+  try {
+    const res = await fetch(`${base}assets/data/instituciones.json`);
+    if (res.ok) {
+      const data = await res.json();
+      institucionesData = data.instituciones || [];
+    }
+  } catch (err) {
+    console.warn('Usando configuración fallback de instituciones para mapa:', err);
+  }
+
   const PAISES_RED = {
     peru: {
       id: 'peru',
@@ -30,14 +42,7 @@ function initNetworkMap() {
       puntos: [
         { nombre: 'Lima (Sede Principal)', coords: [-12.0464, -77.0428], isMain: true },
       ],
-      instituciones: [
-        'Universidad Científica del Sur (UCSUR)',
-        'Universidad Nacional Mayor de San Marcos (UNMSM)',
-        'Instituto Nacional de Salud (INS)',
-        'Universidad Católica San Pablo (UCSP)',
-        'Procesa Lab S.A.C.',
-        'Universidad Ricardo Palma (URP)'
-      ]
+      instituciones: institucionesData.filter(i => i.pais_id === 'peru').map(i => i.nombre_completo || i.nombre)
     },
     ecuador: {
       id: 'ecuador',
@@ -47,9 +52,7 @@ function initNetworkMap() {
       puntos: [
         { nombre: 'Quito', coords: [-0.1807, -78.4678], isMain: false }
       ],
-      instituciones: [
-        'Universidad San Francisco de Quito (USFQ)'
-      ]
+      instituciones: institucionesData.filter(i => i.pais_id === 'ecuador').map(i => i.nombre_completo || i.nombre)
     },
     usa: {
       id: 'usa',
@@ -59,10 +62,26 @@ function initNetworkMap() {
       puntos: [
         { nombre: 'Tucson, Arizona', coords: [32.2226, -110.9747], isMain: false }
       ],
-      instituciones: [
-        'The University of Arizona'
-      ]
+      instituciones: institucionesData.filter(i => i.pais_id === 'usa').map(i => i.nombre_completo || i.nombre)
     }
+  };
+
+  // Fallback de contingencia si no se pudo cargar el JSON
+  if (PAISES_RED.peru.instituciones.length === 0) {
+    PAISES_RED.peru.instituciones = [
+      'Universidad Científica del Sur (UCSUR)',
+      'Universidad Nacional Mayor de San Marcos (UNMSM)',
+      'Instituto Nacional de Salud (INS)',
+      'Universidad Católica San Pablo (UCSP)',
+      'Procesa Lab S.A.C.',
+      'Universidad Ricardo Palma (URP)'
+    ];
+  }
+  if (PAISES_RED.ecuador.instituciones.length === 0) {
+    PAISES_RED.ecuador.instituciones = ['Universidad San Francisco de Quito (USFQ)'];
+  }
+  if (PAISES_RED.usa.instituciones.length === 0) {
+    PAISES_RED.usa.instituciones = ['The University of Arizona'];
   };
 
   // 2. Inicialización de Leaflet

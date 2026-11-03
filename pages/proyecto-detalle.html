@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalle del Proyecto - BI4DT Network</title>
   <meta name="description" content="Información detallada del proyecto de investigación de la Red BI4DT: objetivos, equipo científico, instituciones asociadas y avances.">
-  <link rel="icon" type="image/png" href="../assets/images/logo_red_web.png">
+  <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/proyecto-detalle.css">
@@ -59,6 +59,16 @@
             <div class="proyecto-equipo-grid" id="proy-equipo-grid"></div>
           </div>
 
+          <!-- Publicaciones del Proyecto -->
+          <section class="proyecto-info-block" aria-labelledby="proy-publicaciones-title">
+            <h2 class="proyecto-block-title" id="proy-publicaciones-title">
+              Publicaciones <span class="proy-pub-count" id="proy-pub-count">(0)</span>
+            </h2>
+            <div id="proy-publicaciones-container">
+              <!-- Renderizado dinámicamente -->
+            </div>
+          </section>
+
         </div>
 
         <!-- Columna Derecha / Sidebar: Ficha e Instituciones -->
@@ -85,7 +95,7 @@
             </div>
 
             <!-- Único Botón de Acción con Relleno Dorado Institucional -->
-            <a href="proyectos.html" class="btn-banner btn-gold btn-proy-similares-cta" id="proy-filtro-linea-link">
+            <a href="proyectos.html" class="btn-proy-similares-cta" id="proy-filtro-linea-link">
               Ver proyectos similares <i class="fa-solid fa-arrow-right btn-icon-right"></i>
             </a>
           </div>

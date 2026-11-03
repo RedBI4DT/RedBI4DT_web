@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - Red BI4DT</title>
-  <link rel="icon" type="image/png" href="../assets/images/logo_red_web.png">
+  <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/contacto.css">
@@ -20,29 +20,16 @@
     <!-- Header: Ponerse en contacto -->
     <section class="quienes-header-section" style="margin-bottom: 0;">
       <div class="quienes-header-container">
-         <span class="quienes-label">PONERSE EN CONTACTO</span>
          <h1 class="quienes-title">Contacto</h1>
          <p class="quienes-subtitle">¿Tienes consultas, propuestas de investigación o deseas formar parte de nuestra red? Escríbenos y nos pondremos en contacto contigo.</p>
       </div>
     </section>
-    
-    <!-- Intro Banner -->
-    <section class="contacto-intro-banner">
-      <div class="contacto-intro-tag">CONECTEMOS CONTIGO</div>
-      <h2 class="contacto-intro-title">En la Red BI4DT, avanzamos gracias a la colaboración y la ciencia</h2>
-      <p class="contacto-intro-desc">
-        Nuestro trabajo es posible gracias a la articulación entre universidades, institutos y socios internacionales. Escríbenos si deseas sumarte a esta red y ser parte de la transformación digital en salud.
-      </p>
-    </section>
-
-
 
     <!-- Main Contact Info & Form -->
     <section class="contacto-main-section">
       
       <!-- Lado Izquierdo: Info -->
       <div class="contacto-info-panel">
-        <span class="quienes-label quienes-label--dark">CANALES DE ATENCIÓN</span>
         <h2 class="contacto-panel-title">Conecta con Nosotros</h2>
         <p class="contacto-desc">
           Estamos en constante búsqueda de investigadores, docentes, instituciones y estudiantes comprometidos con la salud digital. Escríbenos y con gusto te atenderemos.
@@ -66,16 +53,6 @@
             <div class="contacto-item-content">
               <span class="contacto-item-label">TELÉFONO INSTITUCIONAL</span>
               <span class="contacto-item-value">(01) 610-6400</span>
-            </div>
-          </div>
-          
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div class="contacto-item-content">
-              <span class="contacto-item-label">DIRECCIÓN Y SEDE</span>
-              <span class="contacto-item-value">Carretera Panamericana Sur Km. 19, Villa El Salvador, Lima - Perú</span>
             </div>
           </div>
         </div>
@@ -110,15 +87,9 @@
             </div>
           </div>
 
-          <div class="contacto-row">
-            <div class="contacto-group">
-              <label class="contacto-form-label" for="correo">Correo Electrónico *</label>
-              <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" required>
-            </div>
-            <div class="contacto-group">
-              <label class="contacto-form-label" for="telefono">Teléfono (Opcional)</label>
-              <input type="tel" id="telefono" name="PhoneNumber_countrycode" compname="PhoneNumber" phoneFormat="1" isCountryCodeEnabled="false" maxlength="20" class="contacto-input" placeholder="+51 987 654 321">
-            </div>
+          <div class="contacto-group">
+            <label class="contacto-form-label" for="correo">Correo Electrónico *</label>
+            <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" required>
           </div>
 
           <div class="contacto-group">
@@ -148,96 +119,6 @@
 
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
-  
-  <script>
-    /* ── Carrusel Contacto (Vanilla JS) ───────────────── */
-    (function () {
-      const AUTOPLAY_MS = 5000;
-      const slides   = document.querySelectorAll('.carousel-slide');
-      const dots     = document.querySelectorAll('.carousel-dot');
-      const prevBtn  = document.getElementById('carousel-prev');
-      const nextBtn  = document.getElementById('carousel-next');
-      const progress = document.getElementById('carousel-progress');
-      const section  = document.getElementById('contacto-carousel');
-
-      let current  = 0;
-      let timer    = null;
-      let progTimer = null;
-
-      function goTo(index) {
-        slides[current].classList.remove('active', 'prev');
-        slides[current].classList.add('prev');
-        dots[current].classList.remove('active');
-        dots[current].setAttribute('aria-selected', 'false');
-
-        current = (index + slides.length) % slides.length;
-
-        slides[current].classList.add('active');
-        slides[current].classList.remove('prev');
-        dots[current].classList.add('active');
-        dots[current].setAttribute('aria-selected', 'true');
-
-        resetProgress();
-      }
-
-      function next() { goTo(current + 1); }
-      function prev() { goTo(current - 1); }
-
-      function startAutoplay() {
-        stopAutoplay();
-        timer = setInterval(next, AUTOPLAY_MS);
-      }
-
-      function stopAutoplay() {
-        clearInterval(timer);
-        clearInterval(progTimer);
-        timer = null;
-      }
-
-      function resetProgress() {
-        if (!progress) return;
-        progress.style.transition = 'none';
-        progress.style.width = '0%';
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            progress.style.transition = `width ${AUTOPLAY_MS}ms linear`;
-            progress.style.width = '100%';
-          });
-        });
-      }
-
-      // Eventos
-      if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
-      if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
-
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          goTo(parseInt(dot.dataset.slide, 10));
-          startAutoplay();
-        });
-      });
-
-      // Pausa al hover
-      if (section) {
-        section.addEventListener('mouseenter', stopAutoplay);
-        section.addEventListener('mouseleave', () => { startAutoplay(); resetProgress(); });
-      }
-
-      // Swipe táctil
-      let touchStartX = 0;
-      if (section) {
-        section.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-        section.addEventListener('touchend', e => {
-          const dx = e.changedTouches[0].clientX - touchStartX;
-          if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); startAutoplay(); }
-        });
-      }
-
-      // Arrancar
-      startAutoplay();
-      resetProgress();
-    })();
-  </script>
+  <script src="../scripts/contact.js"></script>
 </body>
 </html>
-

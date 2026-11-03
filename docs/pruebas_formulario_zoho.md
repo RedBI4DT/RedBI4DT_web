@@ -24,7 +24,6 @@ El formulario de contacto institucional se encuentra conectado al servicio de **
 | **Nombre** | `#nombre` | `Name_First` | `maxlength="255"`, `fieldType="7"` | Obligatorio, texto no vacío |
 | **Apellido** | `#apellido` | `Name_Last` | `maxlength="255"`, `fieldType="7"` | Obligatorio, texto no vacío |
 | **Correo** | `#correo` | `Email` | `maxlength="255"`, `fieldType="9"` | Obligatorio, formato email estándar |
-| **Teléfono** | `#telefono` | `PhoneNumber_countrycode` | `maxlength="20"`, `fieldType="11"` | Opcional; si existe, formato numérico válido |
 | **Mensaje** | `#mensaje` | `MultiLine` | `maxlength="65535"` | Obligatorio, texto no vacío |
 | *Oculto (Referrer)* | — | `zf_referrer_name` | String | Requerido por Zoho (valor vacío) |
 | *Oculto (Redirect)* | — | `zf_redirect_url` | String | Requerido por Zoho (valor vacío) |
@@ -40,7 +39,6 @@ El formulario de contacto institucional se encuentra conectado al servicio de **
   - **Nombre:** `Ana María`
   - **Apellido:** `Torres Vega`
   - **Correo:** `ana.torres@ejemplo.com`
-  - **Teléfono:** `+51 987654321`
   - **Mensaje:** `Consulta sobre las líneas de investigación en Inteligencia Artificial en Salud de la Red BI4DT.`
 - **Resultado esperado:**
   - Botón muestra `Enviando...` con icono spinner giratorio.
@@ -50,20 +48,7 @@ El formulario de contacto institucional se encuentra conectado al servicio de **
 
 ---
 
-### TC-02: Envío exitoso con campo opcional omitido (sin teléfono)
-- **Propósito:** Validar que el campo Teléfono es estrictamente opcional.
-- **Datos de prueba:**
-  - **Nombre:** `Carlos`
-  - **Apellido:** `Mendoza`
-  - **Correo:** `cmendoza@universidad.edu.pe`
-  - **Teléfono:** *(dejar en blanco)*
-  - **Mensaje:** `Interés en articulación interinstitucional para proyectos biomédicos.`
-- **Resultado esperado:**
-  - Envío exitoso, banner de confirmación verde y registro guardado en Zoho con teléfono vacío.
-
----
-
-### TC-03: Validación de campos obligatorios vacíos
+### TC-02: Validación de campos obligatorios vacíos
 - **Propósito:** Impedir el envío cuando falte alguno de los campos requeridos.
 - **Escenarios de prueba:**
   1. Nombre vacío.
@@ -78,7 +63,7 @@ El formulario de contacto institucional se encuentra conectado al servicio de **
 
 ---
 
-### TC-04: Validación de formato de correo electrónico
+### TC-03: Validación de formato de correo electrónico
 - **Propósito:** Verificar que solo se admitan direcciones de email válidas.
 - **Datos de prueba (inválidos):**
   - `correo_sin_arroba.com`
@@ -90,17 +75,7 @@ El formulario de contacto institucional se encuentra conectado al servicio de **
 
 ---
 
-### TC-05: Validación de formato de teléfono
-- **Propósito:** Evitar caracteres no telefónicos en el campo opcional.
-- **Datos de prueba (inválidos):**
-  - `abc12345`
-  - `telefono--falso!!`
-- **Resultado esperado:**
-  - Banner rojo de error: *"Teléfono no válido: Por favor, ingresa un número de teléfono con formato válido o déjalo en blanco"*.
-
----
-
-### TC-06: Prevención de doble clic y control de concurrencia
+### TC-04: Prevención de doble clic y control de concurrencia
 - **Propósito:** Evitar registros duplicados si el usuario presiona repetidamente el botón de envío.
 - **Acción:**
   - Completar los datos de prueba válidos y hacer clic varias veces rápidamente en "Enviar Mensaje".
@@ -110,26 +85,24 @@ El formulario de contacto institucional se encuentra conectado al servicio de **
 
 ---
 
-### TC-07: Verificación en el Panel de Zoho Forms
+### TC-05: Verificación en el Panel de Zoho Forms
 - **Propósito:** Confirmar que los datos son recibidos correctamente por el backend de Zoho.
 - **Pasos:**
   1. Ingresar a [Zoho Forms](https://forms.zoho.com).
   2. Seleccionar el formulario **BI4DTForm** (o **BI4DT_Form**).
   3. Ir a la pestaña **Entries / Registros / All Entries**.
 - **Resultado esperado:**
-  - El nuevo registro debe figurar con `First Name`, `Last Name`, `Email`, `Phone Number` y `Multi Line` exactamente como fueron ingresados.
+  - El nuevo registro debe figurar con `First Name`, `Last Name`, `Email` y `Multi Line` exactamente como fueron ingresados.
 
 ---
 
-### TC-08: Cierre manual de notificaciones (Botón X)
+### TC-06: Cierre manual de notificaciones (Botón X)
 - **Propósito:** Permitir al usuario descartar manualmente cualquier banner de éxito o error.
 - **Acción:**
   - Provocar un aviso (por ejemplo, clic en "Enviar Mensaje" con campos vacíos o realizar un envío exitoso).
   - Al visualizarse la notificación, hacer clic en el icono "X" en la esquina superior derecha del banner.
 - **Resultado esperado:**
   - La notificación desaparece de la vista inmediatamente y el formulario queda listo para su uso continuo.
-
----
 
 ## 4. Instrucciones para la Ejecución Manual por el Usuario
 
@@ -159,11 +132,8 @@ Conforme a las directrices del proyecto (`GEMINI.md`), todas las pruebas de visu
 | Caso | Descripción | Estado (Pasó / Falló) | Observaciones |
 | :--- | :--- | :---: | :--- |
 | **TC-01** | Envío completo con todos los campos | [ ] | |
-| **TC-02** | Envío sin campo opcional (teléfono) | [ ] | |
-| **TC-03** | Bloqueo ante campos vacíos obligatorios | [ ] | |
-| **TC-04** | Bloqueo ante email con formato inválido | [ ] | |
-| **TC-05** | Bloqueo ante teléfono no válido | [ ] | |
-| **TC-06** | Deshabilitación de botón / anti doble envío | [ ] | |
-| **TC-07** | Registro recibido en panel de Zoho Forms | [ ] | |
-| **TC-08** | Cierre manual de notificación con botón X | [ ] | |
-
+| **TC-02** | Bloqueo ante campos vacíos obligatorios | [ ] | |
+| **TC-03** | Bloqueo ante email con formato inválido | [ ] | |
+| **TC-04** | Deshabilitación de botón / anti doble envío | [ ] | |
+| **TC-05** | Registro recibido en panel de Zoho Forms | [ ] | |
+| **TC-06** | Cierre manual de notificación con botón X | [ ] | |

@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nombreInput = document.getElementById('nombre');
   const apellidoInput = document.getElementById('apellido');
   const correoInput = document.getElementById('correo');
-  const telefonoInput = document.getElementById('telefono');
   const mensajeInput = document.getElementById('mensaje');
 
   let isSubmitting = false;
@@ -29,15 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     return re.test(email);
-  }
-
-  /**
-   * Valida formato de teléfono (números, espacios, guiones, paréntesis y opcional signo +)
-   */
-  function isValidPhone(phone) {
-    if (!phone) return true;
-    const re = /^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{5,18}$/;
-    return re.test(phone.trim());
   }
 
   /**
@@ -121,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const nombre = nombreInput ? nombreInput.value.trim() : '';
     const apellido = apellidoInput ? apellidoInput.value.trim() : '';
     const correo = correoInput ? correoInput.value.trim() : '';
-    const telefono = telefonoInput ? telefonoInput.value.trim() : '';
     const mensaje = mensajeInput ? mensajeInput.value.trim() : '';
 
     if (!nombre) {
@@ -148,11 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
 
-    if (telefono && !isValidPhone(telefono)) {
-      showStatus('error', 'Teléfono no válido', 'Por favor, ingresa un número de teléfono con formato válido o déjalo en blanco.');
-      if (telefonoInput) telefonoInput.focus();
-      return false;
-    }
 
     if (!mensaje) {
       showStatus('error', 'Campo requerido', 'Por favor, escribe tu mensaje o consulta antes de enviar.');
@@ -228,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Limpiar mensaje de error cuando el usuario vuelva a interactuar con los campos
-  [nombreInput, apellidoInput, correoInput, telefonoInput, mensajeInput].forEach(input => {
+  [nombreInput, apellidoInput, correoInput, mensajeInput].forEach(input => {
     if (input) {
       input.addEventListener('input', () => {
         if (!isSubmitting && statusBox.classList.contains('contacto-status--error')) {

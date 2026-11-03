@@ -49,9 +49,11 @@ async function inicializarPublicaciones() {
  * Intenta cargar desde 'data/publicaciones.json' o 'assets/data/publicaciones.json'
  */
 async function cargarPublicacionesDesdeJson() {
+  const base = window.location.pathname.includes('/pages/') ? '../' : './';
   const rutasPosibles = [
-    'data/publicaciones.json',
-    'assets/data/publicaciones.json'
+    `${base}assets/data/publicaciones.json`,
+    'assets/data/publicaciones.json',
+    '../assets/data/publicaciones.json'
   ];
 
   for (const ruta of rutasPosibles) {

@@ -678,7 +678,7 @@ main.page-content.page-full {
 }
 
 .btn-cta:hover {
-  background: #fbbf24;
+  background: #f59e0b;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
 }
@@ -745,7 +745,7 @@ main.page-content.page-full {
   display: flex;
   background: #1a3668;
   border: none;
-  border-bottom: 4px solid #F59E0B;
+  border-bottom: 4px solid #f59e0b;
   border-radius: 0;
   overflow: hidden;
   box-shadow: none;
@@ -812,7 +812,7 @@ main.page-content.page-full {
 }
 
 .btn-gold {
-  background: var(--gradient-gold);
+  background: var(--color-gold);
   color: var(--color-dark-bg);
   font-weight: 700;
   border: 1px solid rgba(251, 191, 36, 0.5);
@@ -820,7 +820,6 @@ main.page-content.page-full {
 }
 
 .btn-gold:hover {
-  background: var(--gradient-gold-hover);
   transform: translateY(-2px);
 }
 

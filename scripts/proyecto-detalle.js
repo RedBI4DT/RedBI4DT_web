@@ -138,6 +138,9 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   if (filtroLink && p.area_id) {
     filtroLink.href = `proyectos.html?linea=${p.area_id}`;
   }
+
+  // 6. Publicaciones del Proyecto
+  renderPublicaciones(p.publicaciones || []);
 }
 
 function setTexto(id, valor) {
@@ -159,4 +162,59 @@ function mostrarError(mensaje) {
       </section>
     `;
   }
+}
+
+
+function renderPublicaciones(publicaciones) {
+  const container = document.getElementById('proy-publicaciones-container');
+  const countEl = document.getElementById('proy-pub-count');
+
+  const pubs = Array.isArray(publicaciones) ? [...publicaciones] : [];
+
+  if (countEl) {
+    countEl.textContent = `(${pubs.length})`;
+  }
+
+  if (!container) return;
+
+  if (pubs.length === 0) {
+    container.innerHTML = '<p class="proy-pub-empty">Este proyecto aún no tiene publicaciones registradas.</p>';
+    return;
+  }
+
+  // Orden: año descendente. Las que no tengan año van al final.
+  pubs.sort((a, b) => {
+    const anioA = a.anio ? Number(a.anio) : -Infinity;
+    const anioB = b.anio ? Number(b.anio) : -Infinity;
+    return anioB - anioA;
+  });
+
+  const hasScrollClass = pubs.length > 8 ? ' has-scroll' : '';
+
+  container.innerHTML = `
+    <ul class="proy-pub-list${hasScrollClass}">
+      ${pubs.map(pub => {
+        const metaParts = [];
+        if (pub.anio) metaParts.push(pub.anio);
+        if (pub.revista) metaParts.push(pub.revista);
+        const metaString = metaParts.join(' - ');
+
+        return `
+          <li class="proy-pub-item">
+            <div class="proy-pub-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <div class="proy-pub-content">
+              <a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="proy-pub-link">
+                <span>${pub.titulo}</span>
+                <span class="proy-pub-ext-icon" aria-hidden="true">↗</span>
+                <span class="sr-only">(se abre en una pestaña nueva)</span>
+              </a>
+              ${metaString ? `<span class="proy-pub-meta">${metaString}</span>` : ''}
+            </div>
+          </li>
+        `;
+      }).join('')}
+    </ul>
+  `;
 }
