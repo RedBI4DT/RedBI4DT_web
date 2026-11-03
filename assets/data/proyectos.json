@@ -12,14 +12,48 @@
       "estado": "En curso",
       "area_id": "interoperabilidad",
       "area_nombre": "Interoperabilidad y Gobernanza de Datos",
-      "lineas": ["interoperabilidad"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Científica del Sur", "Instituto Nacional de Salud"],
+      "lineas": [
+        "interoperabilidad"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Científica del Sur",
+        "Instituto Nacional de Salud"
+      ],
       "investigador_principal": "pamela-chacon",
       "investigador_nombre": "Pamela Chacón",
-      "integrantes": ["pamela-chacon", "david-villarreal"],
+      "integrantes": [
+        "pamela-chacon",
+        "david-villarreal"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["FHIR", "Interoperabilidad", "HL7", "Hospital"]
+      "tags": [
+        "FHIR",
+        "Interoperabilidad",
+        "HL7",
+        "Hospital"
+      ],
+      "publicaciones": [
+        {
+          "titulo": "Implementation of HL7 FHIR Standard for Clinical Data Interoperability in Metropolitan Hospitals",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38291024/",
+          "anio": 2024,
+          "revista": "Journal of Medical Internet Research"
+        },
+        {
+          "titulo": "Architectural Design and Middleware Evaluation for Cross-Institutional Health Records Exchange",
+          "url": "https://doi.org/10.1186/s12911-023-02340-1",
+          "anio": 2023,
+          "revista": "BMC Medical Informatics and Decision Making"
+        },
+        {
+          "titulo": "Estandarización y Gobernanza de Datos Clínicos en el Sistema Hospitalario Peruano",
+          "url": "https://rpmesp.ins.gob.pe/index.php/rpmesp/article/view/11245",
+          "revista": "Revista Peruana de Medicina Experimental y Salud Pública"
+        }
+      ]
     },
     {
       "id": "hce-nacional-2022",
@@ -33,14 +67,34 @@
       "estado": "Concluido",
       "area_id": "informatica-biomedica",
       "area_nombre": "Informática Biomédica y Salud Digital",
-      "lineas": ["informatica-biomedica"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Científica del Sur"],
+      "lineas": [
+        "informatica-biomedica"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "david-villarreal",
       "investigador_nombre": "David Villarreal",
-      "integrantes": ["david-villarreal"],
+      "integrantes": [
+        "david-villarreal"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["HCE", "Arquitectura SOA", "Estándares Clínicos"]
+      "tags": [
+        "HCE",
+        "Arquitectura SOA",
+        "Estándares Clínicos"
+      ],
+      "publicaciones": [
+        {
+          "titulo": "A National Service-Oriented Architecture Framework for Electronic Health Records in Developing Nations",
+          "url": "https://doi.org/10.1016/j.ijmedinf.2023.105122",
+          "anio": 2023,
+          "revista": "International Journal of Medical Informatics"
+        }
+      ]
     },
     {
       "id": "telesalud-rural-2024",
@@ -54,14 +108,26 @@
       "estado": "En curso",
       "area_id": "salud-digital",
       "area_nombre": "Salud Digital",
-      "lineas": ["salud-digital"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Científica del Sur"],
+      "lineas": [
+        "salud-digital"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "oscar-huapaya",
       "investigador_nombre": "Oscar Huapaya",
-      "integrantes": ["oscar-huapaya"],
+      "integrantes": [
+        "oscar-huapaya"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Telemedicina", "Salud Rural", "mHealth"]
+      "tags": [
+        "Telemedicina",
+        "Salud Rural",
+        "mHealth"
+      ]
     },
     {
       "id": "ontologia-diagnosticos-2023",
@@ -75,14 +141,27 @@
       "estado": "En curso",
       "area_id": "informatica-biomedica",
       "area_nombre": "Informática Biomédica y Salud Digital",
-      "lineas": ["informatica-biomedica"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Nacional Mayor de San Marcos"],
+      "lineas": [
+        "informatica-biomedica"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Nacional Mayor de San Marcos"
+      ],
       "investigador_principal": "javier-vargas",
       "investigador_nombre": "Javier Vargas",
-      "integrantes": ["javier-vargas"],
+      "integrantes": [
+        "javier-vargas"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Ontologías", "SNOMED-CT", "ICD-11", "Conocimiento Clínico"]
+      "tags": [
+        "Ontologías",
+        "SNOMED-CT",
+        "ICD-11",
+        "Conocimiento Clínico"
+      ]
     },
     {
       "id": "gestion-clinica-ia-2023",
@@ -96,14 +175,27 @@
       "estado": "En curso",
       "area_id": "analitica-datos",
       "area_nombre": "Visualización y Analítica de Datos",
-      "lineas": ["analitica-datos"],
-      "paises": ["Perú"],
-      "instituciones": ["Procesa Lab S.A.C.", "Universidad Científica del Sur"],
+      "lineas": [
+        "analitica-datos"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Procesa Lab S.A.C.",
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "guido-bendezu",
       "investigador_nombre": "Guido Bendezú",
-      "integrantes": ["guido-bendezu"],
+      "integrantes": [
+        "guido-bendezu"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Software Biomédico", "Gestión Hospitalaria", "Transferencia Tecnológica"]
+      "tags": [
+        "Software Biomédico",
+        "Gestión Hospitalaria",
+        "Transferencia Tecnológica"
+      ]
     },
     {
       "id": "ia-diagnostico-2024",
@@ -117,14 +209,27 @@
       "estado": "En curso",
       "area_id": "ia-salud",
       "area_nombre": "Inteligencia Artificial en Salud",
-      "lineas": ["ia-salud"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Científica del Sur"],
+      "lineas": [
+        "ia-salud"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "pamela-chacon",
       "investigador_nombre": "Pamela Chacón",
-      "integrantes": ["pamela-chacon"],
+      "integrantes": [
+        "pamela-chacon"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Deep Learning", "Enfermedades Crónicas", "HCE", "Predicción"]
+      "tags": [
+        "Deep Learning",
+        "Enfermedades Crónicas",
+        "HCE",
+        "Predicción"
+      ]
     },
     {
       "id": "nlp-registros-2023",
@@ -138,14 +243,27 @@
       "estado": "En curso",
       "area_id": "ia-salud",
       "area_nombre": "Inteligencia Artificial en Salud",
-      "lineas": ["ia-salud"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Católica San Pablo"],
+      "lineas": [
+        "ia-salud"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Católica San Pablo"
+      ],
       "investigador_principal": "irvin-dongo",
       "investigador_nombre": "Irvin Dongo",
-      "integrantes": ["irvin-dongo"],
+      "integrantes": [
+        "irvin-dongo"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["NLP", "Minería de Textos", "Español Clínico", "Entidades Médicas"]
+      "tags": [
+        "NLP",
+        "Minería de Textos",
+        "Español Clínico",
+        "Entidades Médicas"
+      ]
     },
     {
       "id": "ia-radiografias-2024",
@@ -159,14 +277,27 @@
       "estado": "En curso",
       "area_id": "ia-salud",
       "area_nombre": "Inteligencia Artificial en Salud",
-      "lineas": ["ia-salud"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Científica del Sur"],
+      "lineas": [
+        "ia-salud"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "stefan-escobar",
       "investigador_nombre": "Stefan Escobar",
-      "integrantes": ["stefan-escobar"],
+      "integrantes": [
+        "stefan-escobar"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Visión Computacional", "Radiografía", "Tórax", "RENACYT"]
+      "tags": [
+        "Visión Computacional",
+        "Radiografía",
+        "Tórax",
+        "RENACYT"
+      ]
     },
     {
       "id": "modelo-dengue-2023",
@@ -180,14 +311,27 @@
       "estado": "En curso",
       "area_id": "analitica-datos",
       "area_nombre": "Visualización y Analítica de Datos",
-      "lineas": ["analitica-datos"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Nacional Mayor de San Marcos"],
+      "lineas": [
+        "analitica-datos"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Nacional Mayor de San Marcos"
+      ],
       "investigador_principal": "kelly-de-la-cruz",
       "investigador_nombre": "Kelly De La Cruz",
-      "integrantes": ["kelly-de-la-cruz"],
+      "integrantes": [
+        "kelly-de-la-cruz"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Epidemiología", "Dengue", "Series Temporales", "Salud Pública"]
+      "tags": [
+        "Epidemiología",
+        "Dengue",
+        "Series Temporales",
+        "Salud Pública"
+      ]
     },
     {
       "id": "vigilancia-epi-2024",
@@ -201,14 +345,29 @@
       "estado": "En curso",
       "area_id": "salud-digital",
       "area_nombre": "Salud Digital",
-      "lineas": ["salud-digital"],
-      "paises": ["Ecuador", "Perú"],
-      "instituciones": ["Universidad San Francisco de Quito", "Universidad Científica del Sur"],
+      "lineas": [
+        "salud-digital"
+      ],
+      "paises": [
+        "Ecuador",
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad San Francisco de Quito",
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "henry-cardenas",
       "investigador_nombre": "Henry Cárdenas",
-      "integrantes": ["henry-cardenas"],
+      "integrantes": [
+        "henry-cardenas"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Vigilancia Epidemiológica", "Tiempo Real", "Latinoamérica", "Salud Global"]
+      "tags": [
+        "Vigilancia Epidemiológica",
+        "Tiempo Real",
+        "Latinoamérica",
+        "Salud Global"
+      ]
     },
     {
       "id": "genomica-tropical-2023",
@@ -222,14 +381,26 @@
       "estado": "En curso",
       "area_id": "ia-salud",
       "area_nombre": "Inteligencia Artificial en Salud",
-      "lineas": ["ia-salud"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Científica del Sur"],
+      "lineas": [
+        "ia-salud"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "christian-reategui",
       "investigador_nombre": "Christian Reátegui",
-      "integrantes": ["christian-reategui"],
+      "integrantes": [
+        "christian-reategui"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Bioinformática", "Genómica Computacional", "Datos Ómicos"]
+      "tags": [
+        "Bioinformática",
+        "Genómica Computacional",
+        "Datos Ómicos"
+      ]
     },
     {
       "id": "perfiles-moleculares-2024",
@@ -243,14 +414,26 @@
       "estado": "En curso",
       "area_id": "analitica-datos",
       "area_nombre": "Visualización y Analítica de Datos",
-      "lineas": ["analitica-datos"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Católica San Pablo"],
+      "lineas": [
+        "analitica-datos"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Católica San Pablo"
+      ],
       "investigador_principal": "milagros-cahuana",
       "investigador_nombre": "Milagros Cahuana",
-      "integrantes": ["milagros-cahuana"],
+      "integrantes": [
+        "milagros-cahuana"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Bioinformática Clínica", "Medicina de Precisión", "Datos Clínico-Moleculares"]
+      "tags": [
+        "Bioinformática Clínica",
+        "Medicina de Precisión",
+        "Datos Clínico-Moleculares"
+      ]
     },
     {
       "id": "politica-salud-digital-2024",
@@ -264,14 +447,27 @@
       "estado": "En curso",
       "area_id": "sociotecnica-adopcion",
       "area_nombre": "Evaluación Sociotécnica y Adopción",
-      "lineas": ["sociotecnica-adopcion"],
-      "paises": ["Perú"],
-      "instituciones": ["Instituto Nacional de Salud"],
+      "lineas": [
+        "sociotecnica-adopcion"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Instituto Nacional de Salud"
+      ],
       "investigador_principal": "adriana-echevarria",
       "investigador_nombre": "Adriana Echevarría",
-      "integrantes": ["adriana-echevarria"],
+      "integrantes": [
+        "adriana-echevarria"
+      ],
       "categoria_miembro": "gestion",
-      "tags": ["Política Pública", "Gobernanza", "Salud Digital", "MINSA"]
+      "tags": [
+        "Política Pública",
+        "Gobernanza",
+        "Salud Digital",
+        "MINSA"
+      ]
     },
     {
       "id": "plataforma-datos-sanitarios-2022",
@@ -285,14 +481,27 @@
       "estado": "En curso",
       "area_id": "interoperabilidad",
       "area_nombre": "Interoperabilidad y Gobernanza de Datos",
-      "lineas": ["interoperabilidad"],
-      "paises": ["Perú"],
-      "instituciones": ["Instituto Nacional de Salud"],
+      "lineas": [
+        "interoperabilidad"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Instituto Nacional de Salud"
+      ],
       "investigador_principal": "rafael-leal",
       "investigador_nombre": "Rafael Leal",
-      "integrantes": ["rafael-leal"],
+      "integrantes": [
+        "rafael-leal"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Big Data", "Repositorio Nacional", "Epidemiología", "Anonimización"]
+      "tags": [
+        "Big Data",
+        "Repositorio Nacional",
+        "Epidemiología",
+        "Anonimización"
+      ]
     },
     {
       "id": "estudio-comparativo-2023",
@@ -306,14 +515,29 @@
       "estado": "En curso",
       "area_id": "analitica-datos",
       "area_nombre": "Visualización y Analítica de Datos",
-      "lineas": ["analitica-datos"],
-      "paises": ["Estados Unidos", "Perú"],
-      "instituciones": ["The University of Arizona", "Universidad Científica del Sur"],
+      "lineas": [
+        "analitica-datos"
+      ],
+      "paises": [
+        "Estados Unidos",
+        "Perú"
+      ],
+      "instituciones": [
+        "The University of Arizona",
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "jose-florez",
       "investigador_nombre": "José Flórez",
-      "integrantes": ["jose-florez"],
+      "integrantes": [
+        "jose-florez"
+      ],
       "categoria_miembro": "investigadores",
-      "tags": ["Bioestadística", "Salud Materno-Infantil", "Comparativo", "Internacional"]
+      "tags": [
+        "Bioestadística",
+        "Salud Materno-Infantil",
+        "Comparativo",
+        "Internacional"
+      ]
     },
     {
       "id": "gestion-concytec-2023",
@@ -327,14 +551,26 @@
       "estado": "En curso",
       "area_id": "sociotecnica-adopcion",
       "area_nombre": "Evaluación Sociotécnica y Adopción",
-      "lineas": ["sociotecnica-adopcion"],
-      "paises": ["Perú"],
-      "instituciones": ["Universidad Científica del Sur"],
+      "lineas": [
+        "sociotecnica-adopcion"
+      ],
+      "paises": [
+        "Perú"
+      ],
+      "instituciones": [
+        "Universidad Científica del Sur"
+      ],
       "investigador_principal": "gerson-zapata",
       "investigador_nombre": "Gerson Zapata",
-      "integrantes": ["gerson-zapata"],
+      "integrantes": [
+        "gerson-zapata"
+      ],
       "categoria_miembro": "gestion",
-      "tags": ["Gestión I+D", "Fondos Concursables", "Articulación Institucional"]
+      "tags": [
+        "Gestión I+D",
+        "Fondos Concursables",
+        "Articulación Institucional"
+      ]
     }
   ]
 }

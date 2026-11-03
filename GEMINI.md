@@ -79,3 +79,24 @@ Ejemplo real de referencia:
 - Usar `background-image` en CSS para estos espacios
 - Cambiar el orden `<img>` → `<div class="...-overlay">`
 - Omitir el overlay
+
+## 10. Estandarización Tipográfica de Encabezados (H2) - Regla Obligatoria
+Para mantener consistencia visual en todas las páginas del portal, todos los encabezados principales de sección `<h2>` DEBEN compartir exactamente esta tipografía:
+
+**✅ Estándar de marcado HTML:**
+```html
+<h2 class="section-title-navy [clase-especifica]">Título de la Sección</h2>
+```
+
+**✅ Propiedades CSS oficiales:**
+- `font-family`: `'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;`
+- `font-size`: `2.2rem` (desktop) / `1.85rem` (tablet) / `1.6rem` (mobile).
+- `font-weight`: `700` (Bold).
+- `color`: `var(--color-navy-subtitles)` (`#1a3668` Azul Marino Institucional).
+- `line-height`: `1.25`.
+- `letter-spacing`: `-0.4px`.
+
+**Prohibido:**
+- Usar colores de subtítulo que no sean `var(--color-navy-subtitles)`.
+- Usar fuentes distintas a 'Inter' para títulos `<h2>` de sección.
+- Omitir la clase base `.section-title-navy`.

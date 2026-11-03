@@ -1,0 +1,13 @@
+<!--
+  Pega aquí el código iframe de LinkedIn. El más nuevo ARRIBA.
+  La web muestra solo los 3 primeros.
+  LinkedIn: menú ··· del post > "Insertar esta publicación" > copiar código.
+  El post debe ser público.
+-->
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459973984114196480?collapsed=1" height="534" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7484453709956059137?collapsed=1" height="550" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7466553010111033344?collapsed=1" height="669" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+

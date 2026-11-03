@@ -1,0 +1,109 @@
+{
+  "instituciones": [
+    {
+      "id": "ucsur",
+      "nombre": "Universidad Científica del Sur",
+      "sigla": "UCSUR",
+      "nombre_completo": "Universidad Científica del Sur (UCSUR)",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Lima",
+      "tipo": "Universidad",
+      "es_sede_principal": true,
+      "coords": [
+        -12.0464,
+        -77.0428
+      ]
+    },
+    {
+      "id": "unmsm",
+      "nombre": "Universidad Nacional Mayor de San Marcos",
+      "sigla": "UNMSM",
+      "nombre_completo": "Universidad Nacional Mayor de San Marcos (UNMSM)",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Lima",
+      "tipo": "Universidad",
+      "es_sede_principal": false,
+      "coords": [
+        -12.0560,
+        -77.0844
+      ]
+    },
+    {
+      "id": "ins",
+      "nombre": "Instituto Nacional de Salud",
+      "sigla": "INS",
+      "nombre_completo": "Instituto Nacional de Salud (INS)",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Lima",
+      "tipo": "Instituto Público de Investigación",
+      "es_sede_principal": false,
+      "coords": [
+        -12.0886,
+        -77.0044
+      ]
+    },
+    {
+      "id": "ucsp",
+      "nombre": "Universidad Católica San Pablo",
+      "sigla": "UCSP",
+      "nombre_completo": "Universidad Católica San Pablo (UCSP)",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Arequipa",
+      "tipo": "Universidad",
+      "es_sede_principal": false,
+      "coords": [
+        -16.4090,
+        -71.5375
+      ]
+    },
+    {
+      "id": "procesa-lab",
+      "nombre": "Procesa Lab S.A.C.",
+      "sigla": "Procesa Lab",
+      "nombre_completo": "Procesa Lab S.A.C.",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Lima",
+      "tipo": "Empresa / Centro I+D",
+      "es_sede_principal": false,
+      "coords": [
+        -12.1192,
+        -77.0290
+      ]
+    },
+    {
+      "id": "usfq",
+      "nombre": "Universidad San Francisco de Quito",
+      "sigla": "USFQ",
+      "nombre_completo": "Universidad San Francisco de Quito (USFQ)",
+      "pais": "Ecuador",
+      "pais_id": "ecuador",
+      "ciudad": "Quito",
+      "tipo": "Universidad",
+      "es_sede_principal": false,
+      "coords": [
+        -0.1807,
+        -78.4678
+      ]
+    },
+    {
+      "id": "arizona",
+      "nombre": "The University of Arizona",
+      "sigla": "UofA",
+      "nombre_completo": "The University of Arizona",
+      "pais": "Estados Unidos",
+      "pais_id": "usa",
+      "ciudad": "Tucson, Arizona",
+      "tipo": "Universidad",
+      "es_sede_principal": false,
+      "coords": [
+        32.2226,
+        -110.9747
+      ]
+    }
+  ]
+}

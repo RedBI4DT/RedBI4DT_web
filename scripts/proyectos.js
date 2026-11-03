@@ -1,7 +1,7 @@
 /**
  * scripts/proyectos.js
- * Catálogo completo de proyectos con buscador en tiempo real, filtros avanzados multifactoriales
- * (6 Líneas de Investigación, Países, Instituciones, Estado) y footer con instituciones participantes.
+ * Catálogo completo de proyectos con buscador en tiempo real, filtros compactos
+ * (Línea de Investigación y Estado) y footer con instituciones participantes.
  */
 
 const COLOR_MAP = {
@@ -27,8 +27,6 @@ let todosProyectos = [];
 const estadoFiltros = {
   busqueda: '',
   area: 'todos',
-  pais: 'todos',
-  institucion: 'todos',
   estado: 'todos'
 };
 
@@ -44,25 +42,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     const statEl = document.getElementById('stat-total');
     if (statEl) statEl.textContent = todosProyectos.length;
 
-    // Poblar dinámicamente el selector de instituciones
-    poblarInstituciones();
-
-    // Detectar filtros iniciales desde la URL (ej. ?linea=ia-salud o ?filtro=ia-salud o ?area=ia-salud o ?pais=Ecuador)
+    // Detectar filtro inicial desde la URL (ej. ?linea=ia-salud o ?filtro=ia-salud o ?area=ia-salud)
     const params = new URLSearchParams(window.location.search);
     const areaParam = params.get('linea') || params.get('filtro') || params.get('area');
     if (areaParam && AREA_LABELS[areaParam]) {
       estadoFiltros.area = areaParam;
       const selectArea = document.getElementById('filtro-select-area');
       if (selectArea) selectArea.value = areaParam;
-      abrirPanelFiltros();
     }
 
-    const paisParam = params.get('pais');
-    if (paisParam && (paisParam === 'Perú' || paisParam === 'Ecuador' || paisParam === 'Estados Unidos')) {
-      estadoFiltros.pais = paisParam;
-      const selectPais = document.getElementById('filtro-select-pais');
-      if (selectPais) selectPais.value = paisParam;
-      abrirPanelFiltros();
+    const estadoParam = params.get('estado');
+    if (estadoParam && (estadoParam === 'En curso' || estadoParam === 'Concluido')) {
+      estadoFiltros.estado = estadoParam;
+      const selectEstado = document.getElementById('filtro-select-estado');
+      if (selectEstado) selectEstado.value = estadoParam;
     }
 
     initEventosToolbar();
@@ -80,45 +73,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-function poblarInstituciones() {
-  const selectInst = document.getElementById('filtro-select-institucion');
-  if (!selectInst) return;
-
-  const setInst = new Set();
-  todosProyectos.forEach(p => {
-    (p.instituciones || []).forEach(inst => setInst.add(inst));
-  });
-
-  const ordenadas = Array.from(setInst).sort((a, b) => a.localeCompare(b, 'es'));
-  ordenadas.forEach(inst => {
-    const opt = document.createElement('option');
-    opt.value = inst;
-    opt.textContent = inst;
-    selectInst.appendChild(opt);
-  });
-}
-
-function abrirPanelFiltros() {
-  const panel = document.getElementById('proyectos-filtros-panel');
-  const btnToggle = document.getElementById('btn-toggle-filtros');
-  if (panel && btnToggle) {
-    panel.removeAttribute('hidden');
-    btnToggle.classList.add('open');
-    btnToggle.setAttribute('aria-expanded', 'true');
-  }
-}
-
 function initEventosToolbar() {
   const inputSearch = document.getElementById('proyectos-search-input');
   const btnClearSearch = document.getElementById('proyectos-search-clear');
-  const btnToggleFiltros = document.getElementById('btn-toggle-filtros');
-  const panelFiltros = document.getElementById('proyectos-filtros-panel');
   const btnResetAll = document.getElementById('btn-reset-all');
   const btnEmptyReset = document.getElementById('proyectos-empty-reset');
 
   const selectArea = document.getElementById('filtro-select-area');
-  const selectPais = document.getElementById('filtro-select-pais');
-  const selectInst = document.getElementById('filtro-select-institucion');
   const selectEstado = document.getElementById('filtro-select-estado');
 
   // Input de búsqueda
@@ -145,40 +106,10 @@ function initEventosToolbar() {
     });
   }
 
-  // Toggle de panel de filtros avanzados
-  if (btnToggleFiltros && panelFiltros) {
-    btnToggleFiltros.addEventListener('click', () => {
-      const isOpen = !panelFiltros.hasAttribute('hidden');
-      if (isOpen) {
-        panelFiltros.setAttribute('hidden', '');
-        btnToggleFiltros.classList.remove('open');
-        btnToggleFiltros.setAttribute('aria-expanded', 'false');
-      } else {
-        panelFiltros.removeAttribute('hidden');
-        btnToggleFiltros.classList.add('open');
-        btnToggleFiltros.setAttribute('aria-expanded', 'true');
-      }
-    });
-  }
-
-  // Cambios en los selects
+  // Cambios en los selects compactos
   if (selectArea) {
     selectArea.addEventListener('change', (e) => {
       estadoFiltros.area = e.target.value;
-      aplicarFiltros();
-    });
-  }
-
-  if (selectPais) {
-    selectPais.addEventListener('change', (e) => {
-      estadoFiltros.pais = e.target.value;
-      aplicarFiltros();
-    });
-  }
-
-  if (selectInst) {
-    selectInst.addEventListener('change', (e) => {
-      estadoFiltros.institucion = e.target.value;
       aplicarFiltros();
     });
   }
@@ -190,11 +121,12 @@ function initEventosToolbar() {
     });
   }
 
-  // Botón limpiar todos los filtros
+  // Botón limpiar filtros (tacho 36x36)
   if (btnResetAll) {
     btnResetAll.addEventListener('click', resetearFiltros);
   }
 
+  // Botón en mensaje de resultados vacíos
   if (btnEmptyReset) {
     btnEmptyReset.addEventListener('click', resetearFiltros);
   }
@@ -203,8 +135,6 @@ function initEventosToolbar() {
 function resetearFiltros() {
   estadoFiltros.busqueda = '';
   estadoFiltros.area = 'todos';
-  estadoFiltros.pais = 'todos';
-  estadoFiltros.institucion = 'todos';
   estadoFiltros.estado = 'todos';
 
   const inputSearch = document.getElementById('proyectos-search-input');
@@ -215,12 +145,6 @@ function resetearFiltros() {
 
   const selectArea = document.getElementById('filtro-select-area');
   if (selectArea) selectArea.value = 'todos';
-
-  const selectPais = document.getElementById('filtro-select-pais');
-  if (selectPais) selectPais.value = 'todos';
-
-  const selectInst = document.getElementById('filtro-select-institucion');
-  if (selectInst) selectInst.value = 'todos';
 
   const selectEstado = document.getElementById('filtro-select-estado');
   if (selectEstado) selectEstado.value = 'todos';
@@ -244,28 +168,14 @@ function aplicarFiltros() {
       }
     }
 
-    // 2. Línea de Investigación (estrictamente la línea principal asignada)
+    // 2. Línea de Investigación
     if (estadoFiltros.area !== 'todos') {
       if (p.area_id !== estadoFiltros.area) {
         return false;
       }
     }
 
-    // 3. País
-    if (estadoFiltros.pais !== 'todos') {
-      if (!p.paises || !p.paises.includes(estadoFiltros.pais)) {
-        return false;
-      }
-    }
-
-    // 4. Institución
-    if (estadoFiltros.institucion !== 'todos') {
-      if (!p.instituciones || !p.instituciones.includes(estadoFiltros.institucion)) {
-        return false;
-      }
-    }
-
-    // 5. Estado
+    // 3. Estado
     if (estadoFiltros.estado !== 'todos' && p.estado !== estadoFiltros.estado) {
       return false;
     }
@@ -279,14 +189,21 @@ function aplicarFiltros() {
 
 function actualizarChipsYBadges() {
   const chipsContainer = document.getElementById('proyectos-active-chips');
-  const badgeCount = document.getElementById('filtros-badge-count');
   const btnResetAll = document.getElementById('btn-reset-all');
+  const selectArea = document.getElementById('filtro-select-area');
+  const selectEstado = document.getElementById('filtro-select-estado');
 
-  let filtrosContador = 0;
+  // Resaltar borde del select con valor activo
+  if (selectArea) {
+    selectArea.classList.toggle('is-active', estadoFiltros.area !== 'todos');
+  }
+  if (selectEstado) {
+    selectEstado.classList.toggle('is-active', estadoFiltros.estado !== 'todos');
+  }
+
   const chips = [];
 
   if (estadoFiltros.busqueda) {
-    filtrosContador++;
     chips.push({
       tipo: 'busqueda',
       label: `"${estadoFiltros.busqueda}"`,
@@ -295,7 +212,6 @@ function actualizarChipsYBadges() {
   }
 
   if (estadoFiltros.area !== 'todos') {
-    filtrosContador++;
     chips.push({
       tipo: 'area',
       label: AREA_LABELS[estadoFiltros.area] || estadoFiltros.area,
@@ -303,26 +219,7 @@ function actualizarChipsYBadges() {
     });
   }
 
-  if (estadoFiltros.pais !== 'todos') {
-    filtrosContador++;
-    chips.push({
-      tipo: 'pais',
-      label: estadoFiltros.pais,
-      icono: 'fa-location-dot'
-    });
-  }
-
-  if (estadoFiltros.institucion !== 'todos') {
-    filtrosContador++;
-    chips.push({
-      tipo: 'institucion',
-      label: estadoFiltros.institucion,
-      icono: 'fa-building-columns'
-    });
-  }
-
   if (estadoFiltros.estado !== 'todos') {
-    filtrosContador++;
     chips.push({
       tipo: 'estado',
       label: estadoFiltros.estado,
@@ -330,63 +227,34 @@ function actualizarChipsYBadges() {
     });
   }
 
-  // Actualizar Badge en el botón de filtros
-  if (badgeCount) {
-    const filtrosEnPanel = (estadoFiltros.area !== 'todos' ? 1 : 0) +
-      (estadoFiltros.pais !== 'todos' ? 1 : 0) +
-      (estadoFiltros.institucion !== 'todos' ? 1 : 0) +
-      (estadoFiltros.estado !== 'todos' ? 1 : 0);
-
-    if (filtrosEnPanel > 0) {
-      badgeCount.textContent = filtrosEnPanel;
-      badgeCount.removeAttribute('hidden');
-    } else {
-      badgeCount.setAttribute('hidden', '');
-    }
-  }
-
-  // Botón Limpiar general
+  // El botón tacho se deshabilita cuando no hay nada que limpiar
   if (btnResetAll) {
-    if (filtrosContador > 0) {
-      btnResetAll.removeAttribute('hidden');
-    } else {
-      btnResetAll.setAttribute('hidden', '');
-    }
+    btnResetAll.disabled = (chips.length === 0);
   }
 
-  // Renderizar chips
+  // Renderizar chips de filtros activos
   if (chipsContainer) {
     if (chips.length === 0) {
       chipsContainer.setAttribute('hidden', '');
       chipsContainer.innerHTML = '';
     } else {
       chipsContainer.removeAttribute('hidden');
-      chipsContainer.innerHTML = `
-        <span style="font-size:0.75rem; color:#64748b; font-weight:600;">Filtros activos:</span>
-        ${chips.map(chip => `
-          <span class="proy-chip">
-            <i class="fa-solid ${chip.icono}" style="font-size:0.7rem; color:#64748b;"></i>
-            <span>${chip.label}</span>
-            <button type="button" class="proy-chip-btn" data-tipo="${chip.tipo}" aria-label="Eliminar filtro">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </span>
-        `).join('')}
-        <button type="button" class="proy-chip-clear-all" id="btn-clear-all-chips">Limpiar todo</button>
-      `;
+      chipsContainer.innerHTML = chips.map(chip => `
+        <span class="proy-chip">
+          <i class="fa-solid ${chip.icono}" style="font-size:0.7rem; color:#64748b;"></i>
+          <span>${chip.label}</span>
+          <button type="button" class="proy-chip-btn" data-tipo="${chip.tipo}" aria-label="Eliminar filtro ${chip.label}">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </span>
+      `).join('');
 
       // Eventos para eliminar chips individuales
       chipsContainer.querySelectorAll('.proy-chip-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          const tipo = btn.dataset.tipo;
-          eliminarFiltro(tipo);
+          eliminarFiltro(btn.dataset.tipo);
         });
       });
-
-      const btnClearAllChips = document.getElementById('btn-clear-all-chips');
-      if (btnClearAllChips) {
-        btnClearAllChips.addEventListener('click', resetearFiltros);
-      }
     }
   }
 }
@@ -402,14 +270,6 @@ function eliminarFiltro(tipo) {
     estadoFiltros.area = 'todos';
     const selectArea = document.getElementById('filtro-select-area');
     if (selectArea) selectArea.value = 'todos';
-  } else if (tipo === 'pais') {
-    estadoFiltros.pais = 'todos';
-    const selectPais = document.getElementById('filtro-select-pais');
-    if (selectPais) selectPais.value = 'todos';
-  } else if (tipo === 'institucion') {
-    estadoFiltros.institucion = 'todos';
-    const selectInst = document.getElementById('filtro-select-institucion');
-    if (selectInst) selectInst.value = 'todos';
   } else if (tipo === 'estado') {
     estadoFiltros.estado = 'todos';
     const selectEstado = document.getElementById('filtro-select-estado');
@@ -443,40 +303,23 @@ function renderProyectos(proyectos) {
   }
 
   grid.innerHTML = proyectos.map((p, index) => {
-    const color = COLOR_MAP[p.area_id] || 'gold';
     const estadoClass = p.estado === 'Concluido'
       ? 'proy-estado--concluido'
       : 'proy-estado--activo';
     const estadoLabel = p.estado || 'En curso';
-
-    // Máximo 3 tags + indicador +N
-    const tagsArr = p.tags || [];
-    const tagsVisible = tagsArr.slice(0, 3).map(t =>
-      `<span class="proy-tag">${t}</span>`
-    ).join('');
-    const tagsExtra = tagsArr.length > 3
-      ? `<span class="proy-tag-more">+${tagsArr.length - 3}</span>`
-      : '';
-    const tagsHtml = tagsArr.length > 0
-      ? `<div class="proy-tags">${tagsVisible}${tagsExtra}</div>`
-      : '';
-
     const delay = (index % 9) * 40;
     const textoResumen = p.resumen || p.descripcion || '';
 
     return `
-      <a href="proyecto-detalle.html?id=${p.id}" class="proy-card" data-area="${p.area_id}" style="animation-delay:${delay}ms;">
+      <a href="proyecto-detalle.html?id=${p.id}" class="proy-card" style="animation-delay:${delay}ms;">
         <div class="proy-meta">
           <span class="proy-anio">${p.anio || ''}</span>
           <span class="proy-estado ${estadoClass}">${estadoLabel}</span>
         </div>
         <h3 class="proy-titulo">${p.titulo}</h3>
         <p class="proy-desc">${textoResumen}</p>
-        ${tagsHtml}
         <div class="proy-footer-linea">
-          <span class="proy-area-badge proy-area-badge--${color}">
-            <span class="badge-dot"></span>${p.area_nombre || ''}
-          </span>
+          <span class="proy-area-badge">${p.area_nombre || ''}</span>
         </div>
       </a>`;
   }).join('');

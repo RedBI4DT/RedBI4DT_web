@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalle del Proyecto - BI4DT Network</title>
   <meta name="description" content="Información detallada del proyecto de investigación de la Red BI4DT: objetivos, equipo científico, instituciones asociadas y avances.">
-  <link rel="icon" type="image/png" href="../assets/images/logo_red_web.png">
+  <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/proyecto-detalle.css">
@@ -16,7 +16,7 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Contenido Principal -->
-  <main class="page-content" id="main-content">
+  <main class="page-content page-full" id="main-content">
 
     <!-- Hero del Proyecto -->
     <section class="proyecto-hero-section">
@@ -42,90 +42,72 @@
     <section class="proyecto-body-section">
       <div class="proyecto-body-container">
 
-        <!-- Columna Izquierda: Información Completa -->
+        <!-- Columna Izquierda: Información Principal -->
         <div class="proyecto-main-col">
           
+          <!-- Descripción del Proyecto -->
           <div class="proyecto-info-block">
-            <h2 class="proyecto-block-title">
-              <i class="fa-solid fa-circle-info"></i> Descripción del Proyecto
-            </h2>
+            <h2 class="proyecto-block-title">Descripción del Proyecto</h2>
             <div class="proyecto-descripcion-completa" id="proy-descripcion-larga">
               <p>Cargando información del proyecto...</p>
             </div>
           </div>
 
-          <div class="proyecto-info-block">
-            <h2 class="proyecto-block-title">
-              <i class="fa-solid fa-tags"></i> Palabras Clave y Temáticas
-            </h2>
-            <div class="proyecto-tags-grid" id="proy-tags"></div>
-          </div>
-
           <!-- Equipo del Proyecto -->
           <div class="proyecto-info-block">
-            <h2 class="proyecto-block-title">
-              <i class="fa-solid fa-users"></i> Equipo Participante
-            </h2>
+            <h2 class="proyecto-block-title">Equipo Participante</h2>
             <div class="proyecto-equipo-grid" id="proy-equipo-grid"></div>
           </div>
 
+          <!-- Publicaciones del Proyecto -->
+          <section class="proyecto-info-block" aria-labelledby="proy-publicaciones-title">
+            <h2 class="proyecto-block-title" id="proy-publicaciones-title">
+              Publicaciones <span class="proy-pub-count" id="proy-pub-count">(0)</span>
+            </h2>
+            <div id="proy-publicaciones-container">
+              <!-- Renderizado dinámicamente -->
+            </div>
+          </section>
+
         </div>
 
-        <!-- Columna Derecha / Sidebar: Instituciones, Trazabilidad y Metadatos -->
+        <!-- Columna Derecha / Sidebar: Ficha e Instituciones -->
         <aside class="proyecto-sidebar-col">
-
-          <div class="proyecto-card-sidebar">
-            <h3 class="proyecto-sidebar-title">
-              <i class="fa-solid fa-building-columns"></i> Instituciones
-            </h3>
-            <ul class="proyecto-instituciones-list" id="proy-instituciones-list"></ul>
-          </div>
-
-          <div class="proyecto-card-sidebar">
-            <h3 class="proyecto-sidebar-title">
-              <i class="fa-solid fa-share-nodes"></i> Trazabilidad
-            </h3>
-            <p class="proyecto-sidebar-note">Este proyecto es parte de las líneas científicas de la Red BI4DT.</p>
-            <a href="proyectos.html" class="proyecto-sidebar-btn" id="proy-filtro-linea-link">
-              <i class="fa-solid fa-filter"></i> Ver proyectos de la misma línea
-            </a>
-          </div>
 
           <!-- Metadatos del Proyecto -->
           <div class="proyecto-card-sidebar">
-            <h3 class="proyecto-sidebar-title">
-              <i class="fa-solid fa-circle-check"></i> Ficha del Proyecto
-            </h3>
+            <h3 class="proyecto-sidebar-title">Ficha del Proyecto</h3>
             <div class="proyecto-ficha-list">
               <div class="proyecto-ficha-row">
-                <span class="ficha-label"><i class="fa-solid fa-signal"></i> Estado</span>
+                <span class="ficha-label">Estado</span>
                 <span class="proy-estado-badge" id="proy-estado-badge">En curso</span>
               </div>
               <div class="proyecto-ficha-row">
-                <span class="ficha-label"><i class="fa-solid fa-microscope"></i> Línea de Investigación</span>
-                <span class="ficha-valor-linea" id="proy-linea-badge">Línea</span>
+                <span class="ficha-label">Línea de Investigación</span>
+                <a href="#" class="ficha-valor-linea" id="proy-linea-badge">Línea</a>
               </div>
               <div class="proyecto-ficha-row">
-                <span class="ficha-label"><i class="fa-solid fa-location-dot"></i> Ubicación</span>
+                <span class="ficha-label">Ubicación</span>
                 <span class="ficha-valor" id="proy-pais-badge">
                   <span id="proy-pais-text">Perú</span>
                 </span>
               </div>
             </div>
+
+            <!-- Único Botón de Acción con Relleno Dorado Institucional -->
+            <a href="proyectos.html" class="btn-proy-similares-cta" id="proy-filtro-linea-link">
+              Ver proyectos similares <i class="fa-solid fa-arrow-right btn-icon-right"></i>
+            </a>
+          </div>
+
+          <!-- Instituciones Participantes -->
+          <div class="proyecto-card-sidebar">
+            <h3 class="proyecto-sidebar-title">Instituciones</h3>
+            <ul class="proyecto-instituciones-list" id="proy-instituciones-list"></ul>
           </div>
 
         </aside>
 
-      </div>
-    </section>
-
-    <!-- Sección Inferior: Otros Proyectos en esta Línea -->
-    <section class="proyectos-relacionados-section">
-      <div class="proyectos-relacionados-container">
-        <h2 class="proyecto-block-title">
-          <i class="fa-solid fa-diagram-project"></i> Otros Proyectos en esta Línea
-        </h2>
-        <div class="proyectos-relacionados-grid" id="proy-relacionados-grid"></div>
       </div>
     </section>
 

@@ -7,7 +7,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="icon" type="image/png" href="../assets/images/logo_red_web.png">
+  <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/estudiante.css">
@@ -20,39 +20,29 @@
   <!-- Contenido Principal -->
   <main class="page-content">
 
-    <!-- Hero: Foto + Descripción -->
+    <!-- Hero: Foto + Contenido + Líneas de Interés -->
     <section class="perfil-hero-section">
       <div class="perfil-hero-container">
+        <!-- Columna 1: Foto fija 300x300 -->
         <div class="perfil-hero-img-wrapper">
           <img src="" class="perfil-hero-img" id="perfil-foto">
           <div class="perfil-hero-img-overlay"></div>
         </div>
-        <div class="perfil-hero-info">
-          <span class="perfil-label" id="perfil-categoria">ESTUDIANTES Y COLABORADORES</span>
+
+        <!-- Columna 2 (Arriba): Nombre, Institución, Descripción -->
+        <div class="perfil-hero-main-info">
           <h1 class="perfil-nombre" id="perfil-nombre">&nbsp;</h1>
-          <p class="perfil-cargo" id="perfil-cargo"></p>
           <p class="perfil-institucion" id="perfil-institucion"></p>
           <p class="perfil-descripcion" id="perfil-descripcion"></p>
         </div>
-      </div>
-    </section>
 
-    <!-- Líneas de Interés -->
-    <section class="perfil-lineas-section">
-      <div class="perfil-section-container">
-        <h2 class="perfil-section-title">
-          <i class="fa-solid fa-graduation-cap"></i> Áreas de Interés
-        </h2>
-        <ul class="perfil-lineas-list" id="perfil-lineas"></ul>
-      </div>
-    </section>
+        <!-- Columna 3: Líneas de Interés -->
+        <div class="perfil-hero-lineas-col">
+          <h3 class="perfil-lineas-title">Áreas de Interés</h3>
+          <ul class="perfil-lineas-bullet-list" id="perfil-lineas"></ul>
+        </div>
 
-    <!-- Contacto -->
-    <section class="perfil-contacto-section">
-      <div class="perfil-section-container">
-        <h2 class="perfil-section-title">
-          <i class="fa-solid fa-envelope"></i> Contacto
-        </h2>
+        <!-- Columna 2 (Abajo): Íconos de contacto anclados a la base -->
         <div class="perfil-contacto-links" id="perfil-contacto"></div>
       </div>
     </section>

@@ -6,13 +6,14 @@
  */
 
 const MAPA_LINEAS_A_AREAS = {
+  'informática biomédica y salud digital': 'informatica-biomedica',
   'informática biomédica': 'informatica-biomedica',
   'informatica biomedica': 'informatica-biomedica',
   'sistemas de información en salud': 'informatica-biomedica',
   'sistemas de informacion en salud': 'informatica-biomedica',
   'estándares clínicos': 'informatica-biomedica',
   'estandares clinicos': 'informatica-biomedica',
-  'telemedicina': 'informatica-biomedica',
+  'telemedicina': 'salud-digital',
   'ontologías biomédicas': 'informatica-biomedica',
   'ontologias biomedicas': 'informatica-biomedica',
   'inteligencia artificial en salud': 'ia-salud',
@@ -21,22 +22,23 @@ const MAPA_LINEAS_A_AREAS = {
   'visión computacional': 'ia-salud',
   'vision computacional': 'ia-salud',
   'bioinformática': 'ia-salud',
-  'bioinformatica': 'ia-salud',
-  'bioinformática clínica': 'ia-salud',
-  'bioinformatica clinica': 'ia-salud',
-  'epidemiología digital': 'ia-salud',
-  'epidemiologia digital': 'ia-salud',
-  'informática epidemiológica': 'ia-salud',
-  'informatica epidemiologica': 'ia-salud',
+  'bioinformática clínica': 'analitica-datos',
+  'bioinformática computacional': 'ia-salud',
+  'interoperabilidad y gobernanza de datos': 'interoperabilidad',
   'interoperabilidad clínica (hl7 fhir)': 'interoperabilidad',
   'interoperabilidad': 'interoperabilidad',
   'gobernanza': 'interoperabilidad',
-  'políticas de salud digital': 'interoperabilidad',
-  'politicas de salud digital': 'interoperabilidad',
-  'salud pública digital': 'interoperabilidad',
-  'salud publica digital': 'interoperabilidad',
-  'gestión de proyectos de i+d': 'interoperabilidad',
-  'gestion de proyectos de i+d': 'interoperabilidad'
+  'visualización y analítica de datos': 'analitica-datos',
+  'visualizacion y analitica de datos': 'analitica-datos',
+  'analítica de datos': 'analitica-datos',
+  'bioestadística': 'analitica-datos',
+  'epidemiología matemática': 'analitica-datos',
+  'evaluación sociotécnica y adopción': 'sociotecnica-adopcion',
+  'evaluacion sociotecnica y adopcion': 'sociotecnica-adopcion',
+  'políticas de salud digital': 'sociotecnica-adopcion',
+  'salud digital': 'salud-digital',
+  'salud global y epidemiología digital': 'salud-digital',
+  'epidemiología digital': 'salud-digital'
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -125,29 +127,42 @@ function renderPerfil(m, categoria, proyectosReales) {
     fotoEl.removeAttribute('alt');
   }
 
+  // Validación de longitud estricta de descripción (≤ 150 caracteres)
+  if (m.descripcion && m.descripcion.length > 150) {
+    console.warn(`[Red BI4DT] Advertencia: La descripción de "${m.nombre}" supera los 150 caracteres (${m.descripcion.length} caracteres).`);
+  }
+
   // Datos básicos
   setTexto('perfil-nombre', m.nombre);
   setTexto('perfil-cargo', m.cargo);
   setTexto('perfil-institucion', m.institucion);
   setTexto('perfil-descripcion', m.descripcion);
 
-  // Chips temáticos en el hero derivados de sus proyectos asociados
+  // Líneas de investigación (Columna 3 - Un solo color, discretas, sin puntos)
   const chipsEl = document.getElementById('perfil-chips');
   if (chipsEl) {
     const lineasMap = new Map();
+    if (Array.isArray(m.lineas)) {
+      m.lineas.forEach(lin => {
+        if (lin) lineasMap.set(lin, { id: '', nombre: lin });
+      });
+    }
     (proyectosReales || []).forEach(p => {
       if (p.area_id && p.area_nombre && !lineasMap.has(p.area_id)) {
         lineasMap.set(p.area_id, { id: p.area_id, nombre: p.area_nombre });
       }
     });
-    const lineasUnicas = Array.from(lineasMap.values()).slice(0, 3);
+    const lineasUnicas = Array.from(lineasMap.values());
     if (lineasUnicas.length > 0) {
       chipsEl.innerHTML = lineasUnicas.map(l => {
-        const color = COLOR_MAP[l.id] || 'gold';
+        const areaId = l.id || MAPA_LINEAS_A_AREAS[(l.nombre || '').toLowerCase().trim()];
+        const href = areaId ? `area.html?id=${areaId}` : 'lineas.html';
         return `
-          <a href="proyectos.html?linea=${l.id}" class="perfil-hero-chip perfil-hero-chip--${color}" title="Ver proyectos en: ${l.nombre}">
-            <span class="chip-dot"></span>${l.nombre}
-          </a>
+          <li>
+            <a href="${href}" class="perfil-linea-link-text" title="${l.nombre}">
+              ${l.nombre}
+            </a>
+          </li>
         `;
       }).join('');
     } else {
@@ -164,15 +179,13 @@ function renderPerfil(m, categoria, proyectosReales) {
         const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
 
         return `
-          <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proyecto-card perfil-proyecto-card--${color}">
+          <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proyecto-card">
             <div class="perfil-proyecto-top">
               <span class="perfil-proyecto-anio">${p.anio || ''}</span>
               <span class="proy-estado ${estadoClass}">${p.estado || 'En curso'}</span>
             </div>
             <div class="perfil-proyecto-linea-row">
-              <span class="perfil-proy-linea-tag perfil-proy-linea-tag--${color}">
-                <span class="linea-dot"></span>${p.area_nombre || 'Línea de Investigación'}
-              </span>
+              <span class="perfil-proy-linea-tag">${p.area_nombre || 'Línea de Investigación'}</span>
             </div>
             <h3 class="perfil-proyecto-titulo">${p.titulo}</h3>
             <div class="perfil-proyecto-action">
@@ -186,26 +199,31 @@ function renderPerfil(m, categoria, proyectosReales) {
     }
   }
 
-  // Contacto
+  // Contacto (Solo logos/íconos, tamaño uniforme 36px, sin texto visible)
   const contactoEl = document.getElementById('perfil-contacto');
   if (contactoEl && m.contacto) {
     let links = '';
     if (m.contacto.email) {
-      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" id="btn-email">
-        <i class="fa-solid fa-envelope"></i> ${m.contacto.email}
+      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" aria-label="Correo electrónico de ${m.nombre}">
+        <i class="fa-solid fa-envelope"></i>
       </a>`;
     }
     if (m.contacto.linkedin) {
-      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" id="btn-linkedin">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="LinkedIn de ${m.nombre}">
+        <i class="fa-brands fa-linkedin"></i>
       </a>`;
     }
     if (m.contacto.orcid) {
-      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" id="btn-orcid">
-        <i class="fa-solid fa-graduation-cap"></i> ORCID
+      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="ORCID de ${m.nombre}">
+        <i class="fa-brands fa-orcid"></i>
       </a>`;
     }
-    contactoEl.innerHTML = links || '<p class="perfil-empty">Información de contacto no disponible.</p>';
+    if (m.contacto.scholar) {
+      links += `<a href="${m.contacto.scholar}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="Google Scholar de ${m.nombre}">
+        <i class="fa-brands fa-google-scholar"></i>
+      </a>`;
+    }
+    contactoEl.innerHTML = links;
   }
 }
 
