@@ -209,11 +209,9 @@ function aplicarFiltros() {
     // 1. Búsqueda de texto libre
     if (q) {
       const inTitulo = (p.titulo || '').toLowerCase().includes(q);
-      const inDesc = (p.descripcion || '').toLowerCase().includes(q);
-      const inTags = (p.tags || []).some(t => t.toLowerCase().includes(q));
+      const inDesc = (p.resumen || p.descripcion_larga || '').toLowerCase().includes(q);
       const inInst = (p.instituciones || []).some(inst => inst.toLowerCase().includes(q));
-      const inPaises = (p.paises || []).some(pais => pais.toLowerCase().includes(q));
-      if (!inTitulo && !inDesc && !inTags && !inInst && !inPaises) {
+      if (!inTitulo && !inDesc && !inInst) {
         return false;
       }
     }
@@ -390,7 +388,7 @@ function renderProyectosPaginados() {
       : 'proy-estado--activo';
     const estadoLabel = p.estado || 'En curso';
     const delay = (index % itemsPorPagina) * 35;
-    const textoResumen = p.resumen || p.descripcion || '';
+    const textoResumen = p.resumen || '';
     const anioInicio = p.anio_inicio || (p.anio ? String(p.anio).split(/[-–—]/)[0].trim() : '');
 
     return `

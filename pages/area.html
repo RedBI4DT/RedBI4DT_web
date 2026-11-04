@@ -32,7 +32,7 @@
     <section class="area-investigadores-section" id="area-investigadores-section">
       <div class="area-section-container">
         <div class="area-section-header">
-          <h2 class="section-title-navy area-section-title">Integrantes vinculados a este eje</h2>
+          <h2 class="section-title-navy area-section-title">Integrantes</h2>
           <a href="equipo.html" class="area-ver-todos-link" id="area-ver-equipo-link">
             Ver todo el equipo <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -43,29 +43,38 @@
       </div>
     </section>
 
-    <!-- Sección: Proyectos Relacionados -->
+    <!-- Sección: Proyectos Relacionados (Vista en Lista Limpia) -->
     <section class="area-proyectos-section">
       <div class="area-section-container">
-        <div class="area-section-header">
-          <h2 class="section-title-navy area-section-title">Investigaciones y Proyectos</h2>
-          <a href="proyectos.html" class="area-ver-todos-link">
-            Ver todos los proyectos <i class="fa-solid fa-arrow-right"></i>
-          </a>
+        <div class="area-proyectos-header-bar">
+          <div class="area-proyectos-header-left">
+            <h2 class="section-title-navy area-section-title">
+              Proyectos Relacionados <span id="area-proyectos-total-badge" class="proy-total-badge">(0)</span>
+            </h2>
+          </div>
+          <div class="area-proyectos-header-controls">
+            <a href="proyectos.html" class="area-ver-todos-link" id="area-ver-todos-proy-link">
+              Ver todos los proyectos <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="proyectos-per-page-wrapper">
+              <label for="area-proy-per-page" class="proy-per-page-label">Mostrar:</label>
+              <select id="area-proy-per-page" class="proy-per-page-select">
+                <option value="5" selected>5</option>
+                <option value="7">7</option>
+                <option value="10">10</option>
+              </select>
+              <span class="proy-per-page-suffix">por página</span>
+            </div>
+          </div>
         </div>
-        <div class="area-proyectos-grid" id="area-proyectos-grid">
-          <!-- Se renderizan dinámicamente -->
-        </div>
-      </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="area-cta-section">
-      <img src="../assets/images/Imagen_1.jpg" class="area-cta-img">
-      <div class="area-cta-img-overlay"></div>
-      <div class="area-cta-content">
-        <a href="contacto.html" class="area-cta-btn-single">
-          ¿Deseas contactar con nosotros?
-        </a>
+        <!-- Contenedor en Lista Limpia -->
+        <div class="perfil-proyectos-list" id="area-proyectos-list">
+          <!-- Filas renderizadas dinámicamente -->
+        </div>
+
+        <!-- Barra de Paginación -->
+        <div class="proyectos-pagination-bar" id="area-proyectos-pagination"></div>
       </div>
     </section>
 
