@@ -84,10 +84,6 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
     estadoBadge.className = `proy-estado-badge ${esConcluido ? 'proy-estado-badge--concluido' : 'proy-estado-badge--activo'}`;
   }
 
-  const paisText = document.getElementById('proy-pais-text');
-  if (paisText) {
-    paisText.textContent = Array.isArray(p.paises) ? p.paises.join(', ') : (p.pais || 'Perú');
-  }
 
   setTexto('proy-titulo', p.titulo);
   setTexto('proy-periodo', p.anio || `${p.anio_inicio || ''}–${p.anio_fin || ''}`);
@@ -95,7 +91,7 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   // 2. Descripción completa
   const descEl = document.getElementById('proy-descripcion-larga');
   if (descEl) {
-    const contenido = p.descripcion_larga || p.descripcion || p.resumen || 'Sin descripción disponible.';
+    const contenido = p.descripcion_larga || p.resumen || 'Sin descripción disponible.';
     descEl.innerHTML = `<p>${contenido}</p>`;
   }
 
@@ -108,9 +104,7 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
       ...(datosMiembros.estudiantes || []).map(m => ({ ...m, categoria: 'estudiantes' }))
     ];
 
-    const idsEquipo = Array.isArray(p.integrantes) && p.integrantes.length > 0
-      ? p.integrantes
-      : (p.investigador_principal ? [p.investigador_principal] : []);
+    const idsEquipo = Array.isArray(p.integrantes) ? p.integrantes : [];
 
     const miembrosEncontrados = idsEquipo.map(id => todosMiembros.find(m => m.id === id)).filter(Boolean);
 
@@ -133,15 +127,6 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
           </a>
         `;
       }).join('');
-    } else if (p.investigador_nombre) {
-      equipoGrid.innerHTML = `
-        <div class="proyecto-miembro-card">
-          <div class="proyecto-miembro-info">
-            <span class="proyecto-miembro-nombre">${p.investigador_nombre}</span>
-            <span class="proyecto-miembro-inst">${p.institucion_principal || p.institucion || ''}</span>
-          </div>
-        </div>
-      `;
     } else {
       equipoGrid.innerHTML = '<p class="perfil-empty">Equipo en proceso de registro.</p>';
     }

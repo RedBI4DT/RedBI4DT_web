@@ -66,9 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const idsAsociados = Array.isArray(miembro.proyectos) ? miembro.proyectos : [];
     const proyectosDelEstudiante = todosProyectos.filter(p => {
       if (idsAsociados.includes(p.id)) return true;
-      if (p.investigador_principal === miembro.id) return true;
       if (Array.isArray(p.integrantes) && p.integrantes.includes(miembro.id)) return true;
-      if (p.investigador_nombre && p.investigador_nombre.toLowerCase() === miembro.nombre.toLowerCase()) return true;
       return false;
     });
 

@@ -4,7 +4,6 @@
       "id": "fhir-interoperabilidad-2023",
       "titulo": "Sistema de Interoperabilidad FHIR",
       "resumen": "Plataforma de intercambio de datos clínicos usando el estándar HL7 FHIR para optimizar la comunicación entre sistemas hospitalarios de Lima.",
-      "descripcion": "Plataforma de intercambio de datos clínicos usando el estándar HL7 FHIR para optimizar la comunicación entre sistemas hospitalarios de Lima.",
       "descripcion_larga": "Plataforma de intercambio de datos clínicos estandarizados bajo el estándar HL7 FHIR orientada a hospitales del sistema de salud de Lima Metropolitana. El proyecto contempla el diseño e implementación de un middleware de integración que traduce historias clínicas heterogéneas a recursos FHIR R4, garantizando privacidad, trazabilidad y continuidad de la atención médica entre establecimientos de salud públicos y privados.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -16,15 +15,10 @@
         "interoperabilidad",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur",
         "Instituto Nacional de Salud"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacón",
       "integrantes": [
         "pamela-chacon",
         "david-villarreal",
@@ -34,13 +28,6 @@
         "rodrigo-chacon",
         "selene-salas",
         "lizeth-guzman"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "FHIR",
-        "Interoperabilidad",
-        "HL7",
-        "Hospital"
       ],
       "publicaciones": [
         {
@@ -66,7 +53,6 @@
       "id": "hce-nacional-2022",
       "titulo": "Historia Clínica Electrónica Nacional",
       "resumen": "Diseño e implementación de una arquitectura nacional orientada a servicios para la gestión unificada de historias clínicas electrónicas en el Perú.",
-      "descripcion": "Diseño e implementación de una arquitectura nacional orientada a servicios para la gestión unificada de historias clínicas electrónicas en el Perú.",
       "descripcion_larga": "Investigación aplicada orientada al diseño y prototipado de una arquitectura informática nacional para la gestión unificada e interoperable de historias clínicas electrónicas. El proyecto establece lineamientos arquitecturales SOA, estándares de persistencia y protocolos de intercambio seguro de datos para profesionales de salud en los tres niveles de atención sanitaria.",
       "anio": "2022–2024",
       "anio_inicio": 2022,
@@ -77,23 +63,12 @@
       "lineas": [
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "selene-salas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "HCE",
-        "Arquitectura SOA",
-        "Estándares Clínicos"
       ],
       "publicaciones": [
         {
@@ -108,7 +83,6 @@
       "id": "telesalud-rural-2024",
       "titulo": "Telesalud Rural Perú",
       "resumen": "Plataforma de teleconsulta médica y triaje digital adaptada para comunidades rurales y alejadas con conectividad intermitente.",
-      "descripcion": "Plataforma de teleconsulta médica y triaje digital adaptada para comunidades rurales y alejadas con conectividad intermitente.",
       "descripcion_larga": "Plataforma integral de teleconsulta y referencia electrónica diseñada específicamente para establecimientos de salud en zonas rurales y de frontera con conectividad limitada. Cuenta con almacenamiento local resiliente, sincronización asíncrona de datos clínicos, algoritmos de triaje médico digital y mecanismos de teleorientación para médicos serumistas y enfermeros.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -120,24 +94,13 @@
         "salud-digital",
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "oscar-huapaya",
-      "investigador_nombre": "Oscar Huapaya",
       "integrantes": [
         "oscar-huapaya",
         "rodrigo-chacon",
         "lizeth-guzman"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Telemedicina",
-        "Salud Rural",
-        "mHealth"
       ],
       "publicaciones": [
         {
@@ -158,7 +121,6 @@
       "id": "ontologia-diagnosticos-2023",
       "titulo": "Ontología Nacional de Diagnósticos",
       "resumen": "Desarrollo de una ontología formal de diagnósticos médicos adaptada al contexto peruano, integrando SNOMED-CT e ICD-11.",
-      "descripcion": "Desarrollo de una ontología formal de diagnósticos médicos adaptada al contexto peruano, integrando SNOMED-CT e ICD-11.",
       "descripcion_larga": "Formalización ontológica del conocimiento clínico diagnóstico para estandarizar terminologías médicas heterogéneas utilizadas en el sistema de salud peruano. La investigación mapea nomenclaturas clínicas locales con terminologías internacionales de referencia (SNOMED-CT, ICD-11, LOINC), sentando las bases para sistemas avanzados de apoyo a la decisión clínica (CDSS).",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -170,24 +132,12 @@
         "informatica-biomedica",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Nacional Mayor de San Marcos"
       ],
-      "investigador_principal": "javier-vargas",
-      "investigador_nombre": "Javier Vargas",
       "integrantes": [
         "javier-vargas",
         "selene-salas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Ontologías",
-        "SNOMED-CT",
-        "ICD-11",
-        "Conocimiento Clínico"
       ],
       "publicaciones": [
         {
@@ -208,7 +158,6 @@
       "id": "gestion-clinica-ia-2023",
       "titulo": "Módulo de Gestión Clínica Inteligente",
       "resumen": "Sistema analítico hospitalario con interfaces inteligentes para optimización de flujos y asignación de recursos clínicos.",
-      "descripcion": "Sistema analítico hospitalario con interfaces inteligentes para optimización de flujos y asignación de recursos clínicos.",
       "descripcion_larga": "Iniciativa de transferencia tecnológica academia-empresa que desarrolla módulos analíticos e interfaces inteligentes para la optimización de flujos operativos y gestión de camas y quirófanos en centros hospitalarios. Integra algoritmos predictivos para anticipar picos de demanda y mejorar la asignación de recursos asistenciales.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -220,24 +169,13 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Procesa Lab S.A.C.",
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "guido-bendezu",
-      "investigador_nombre": "Guido Bendezú",
       "integrantes": [
         "guido-bendezu",
         "rodrigo-chacon"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Software Biomédico",
-        "Gestión Hospitalaria",
-        "Transferencia Tecnológica"
       ],
       "publicaciones": [
         {
@@ -258,7 +196,6 @@
       "id": "ia-diagnostico-2024",
       "titulo": "IA para Diagnóstico Temprano de Enfermedades Crónicas",
       "resumen": "Modelo de aprendizaje profundo para detección precoz de factores de riesgo y comorbilidades crónicas a partir de historias clínicas electrónicas.",
-      "descripcion": "Modelo de aprendizaje profundo para detección precoz de factores de riesgo y comorbilidades crónicas a partir de historias clínicas electrónicas.",
       "descripcion_larga": "Desarrollo de modelos predictivos de deep learning y procesamiento de series temporales clínicas para la detección temprana de diabetes tipo 2, hipertensión arterial y enfermedad renal crónica. Utiliza registros longitudinales anonimizados de historias clínicas electrónicas para estratificar pacientes según su riesgo de progresión y sugerir alertas preventivas oportunas.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -269,23 +206,11 @@
       "lineas": [
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacón",
       "integrantes": [
         "pamela-chacon"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Deep Learning",
-        "Enfermedades Crónicas",
-        "HCE",
-        "Predicción"
       ],
       "publicaciones": [
         {
@@ -300,7 +225,6 @@
       "id": "nlp-registros-2023",
       "titulo": "NLP para Registros Médicos en Español",
       "resumen": "Extracción automática de entidades clínicas, diagnósticos y posologías en notas médicas no estructuradas redactadas en español.",
-      "descripcion": "Extracción automática de entidades clínicas, diagnósticos y posologías en notas médicas no estructuradas redactadas en español.",
       "descripcion_larga": "Investigación en Procesamiento de Lenguaje Natural (PLN) enfocada en el dominio biomédico latinoamericano. Desarrolla modelos de lenguaje ajustados finamente (fine-tuned) para la extracción y estructuración automatizada de diagnósticos, medicamentos, dosis y procedimientos a partir de la narrativa libre registrada por profesionales de la salud en las historias clínicas.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -312,24 +236,12 @@
         "ia-salud",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Católica San Pablo"
       ],
-      "investigador_principal": "irvin-dongo",
-      "investigador_nombre": "Irvin Dongo",
       "integrantes": [
         "irvin-dongo",
         "selene-salas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "NLP",
-        "Minería de Textos",
-        "Español Clínico",
-        "Entidades Médicas"
       ],
       "publicaciones": [
         {
@@ -350,7 +262,6 @@
       "id": "ia-radiografias-2024",
       "titulo": "IA para Análisis Automático de Radiografías de Tórax",
       "resumen": "Visión computacional para la detección automatizada de patrones patológicos como tuberculosis y neumonía en radiografías de tórax.",
-      "descripcion": "Visión computacional para la detección automatizada de patrones patológicos como tuberculosis y neumonía en radiografías de tórax.",
       "descripcion_larga": "Sistema de soporte al diagnóstico radiológico basado en redes neuronales convolucionales profundas. El modelo analiza radiografías de tórax digitales para identificar rápidamente consolidaciones pulmonares, infiltrados y cavidades sugerentes de tuberculosis o neumonía, priorizando la lista de lectura en salas de emergencia de centros periféricos.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -361,23 +272,11 @@
       "lineas": [
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "stefan-escobar",
-      "investigador_nombre": "Stefan Escobar",
       "integrantes": [
         "stefan-escobar"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Visión Computacional",
-        "Radiografía",
-        "Tórax",
-        "RENACYT"
       ],
       "publicaciones": [
         {
@@ -392,7 +291,6 @@
       "id": "modelo-dengue-2023",
       "titulo": "Modelo Predictivo de Brotes de Dengue",
       "resumen": "Sistema de predicción espaciotemporal de brotes de dengue integrando registros epidemiológicos, variables climáticas y movilidad humana.",
-      "descripcion": "Sistema de predicción espaciotemporal de brotes de dengue integrando registros epidemiológicos, variables climáticas y movilidad humana.",
       "descripcion_larga": "Modelo bioestadístico y de analítica predictiva que combina series temporales de casos notificados de dengue, datos climáticos satelitales (temperatura, precipitación, humedad) y matrices de movilidad interurbana. Permite proyectar con hasta 4 semanas de anticipación la probabilidad de brotes epidémicos a nivel distrital en la costa norte y selva peruana.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -404,23 +302,11 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Nacional Mayor de San Marcos"
       ],
-      "investigador_principal": "kelly-de-la-cruz",
-      "investigador_nombre": "Kelly De La Cruz",
       "integrantes": [
         "kelly-de-la-cruz"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Epidemiología",
-        "Dengue",
-        "Series Temporales",
-        "Salud Pública"
       ],
       "publicaciones": [
         {
@@ -441,7 +327,6 @@
       "id": "vigilancia-epi-2024",
       "titulo": "Red de Vigilancia Epidemiológica Digital",
       "resumen": "Plataforma binacional para el monitoreo continuo de alertas sanitarias y brotes epidémicos en tiempo real en Latinoamérica.",
-      "descripcion": "Plataforma binacional para el monitoreo continuo de alertas sanitarias y brotes epidémicos en tiempo real en Latinoamérica.",
       "descripcion_larga": "Iniciativa de cooperación internacional entre instituciones de Ecuador y Perú para la creación de un sistema de vigilancia epidemiológica basada en eventos digitales. La plataforma procesa feeds de datos institucionales, reportes clínicos comunitarios y señales de medios digitales para fortalecer la capacidad de respuesta temprana ante amenazas infecciosas transfronterizas.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -453,26 +338,13 @@
         "salud-digital",
         "analitica-datos"
       ],
-      "paises": [
-        "Ecuador",
-        "Perú"
-      ],
       "instituciones": [
         "Universidad San Francisco de Quito",
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "henry-cardenas",
-      "investigador_nombre": "Henry Cárdenas",
       "integrantes": [
         "henry-cardenas",
         "lizeth-guzman"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Vigilancia Epidemiológica",
-        "Tiempo Real",
-        "Latinoamérica",
-        "Salud Global"
       ],
       "publicaciones": [
         {
@@ -493,7 +365,6 @@
       "id": "genomica-tropical-2023",
       "titulo": "Análisis Genómico de Enfermedades Tropicales",
       "resumen": "Caracterización bioinformática y análisis de secuenciación masiva de patógenos endémicos prevalentes en el Perú.",
-      "descripcion": "Caracterización bioinformática y análisis de secuenciación masiva de patógenos endémicos prevalentes en el Perú.",
       "descripcion_larga": "Investigación en genómica computacional orientada a caracterizar variantes genéticas y perfiles de resistencia farmacológica en patógenos tropicales como Leishmania, Bartonella y Mycobacterium tuberculosis. Utiliza pipelines de bioinformática reproducibles en entornos de computación de alto rendimiento para informar intervenciones de salud pública.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -505,22 +376,11 @@
         "ia-salud",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "christian-reategui",
-      "investigador_nombre": "Christian Reátegui",
       "integrantes": [
         "christian-reategui"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Bioinformática",
-        "Genómica Computacional",
-        "Datos Ómicos"
       ],
       "publicaciones": [
         {
@@ -541,7 +401,6 @@
       "id": "perfiles-moleculares-2024",
       "titulo": "Perfiles Moleculares para Cáncer y Medicina de Precisión",
       "resumen": "Estratificación de pacientes oncológicos mediante integración bioinformática de datos clínicos y perfiles de expresión génica.",
-      "descripcion": "Estratificación de pacientes oncológicos mediante integración bioinformática de datos clínicos y perfiles de expresión génica.",
       "descripcion_larga": "Proyecto enfocado en la integración de datos multiómicos con historias clínicas oncológicas. El objetivo es identificar firmas moleculares predictivas de respuesta a terapias dirigidas en cánceres de alta incidencia local (gástrico y mama), sentando bases prácticas para la medicina personalizada en el sistema sanitario regional.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -552,22 +411,11 @@
       "lineas": [
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Católica San Pablo"
       ],
-      "investigador_principal": "milagros-cahuana",
-      "investigador_nombre": "Milagros Cahuana",
       "integrantes": [
         "milagros-cahuana"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Bioinformática Clínica",
-        "Medicina de Precisión",
-        "Datos Clínico-Moleculares"
       ],
       "publicaciones": [
         {
@@ -582,7 +430,6 @@
       "id": "politica-salud-digital-2024",
       "titulo": "Política Nacional de Salud Digital",
       "resumen": "Asesoría técnica para lineamientos normativos de gobernanza de datos y adopción de tecnologías sanitarias en el marco del Plan Nacional de Salud.",
-      "descripcion": "Asesoría técnica para lineamientos normativos de gobernanza de datos y adopción de tecnologías sanitarias en el marco del Plan Nacional de Salud.",
       "descripcion_larga": "Formulación de propuestas técnicas e instrumentos de política pública para la gobernanza del dato de salud, interoperabilidad obligatoria y ciberseguridad en el sector sanitario nacional. Articula la visión de la academia con los requerimientos regulatorios del Ministerio de Salud y el Instituto Nacional de Salud.",
       "anio": "2024–2025",
       "anio_inicio": 2024,
@@ -594,24 +441,12 @@
         "sociotecnica-adopcion",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Instituto Nacional de Salud"
       ],
-      "investigador_principal": "adriana-echevarria",
-      "investigador_nombre": "Adriana Echevarría",
       "integrantes": [
         "adriana-echevarria",
         "lizeth-guzman"
-      ],
-      "categoria_miembro": "gestion",
-      "tags": [
-        "Política Pública",
-        "Gobernanza",
-        "Salud Digital",
-        "MINSA"
       ],
       "publicaciones": [
         {
@@ -632,7 +467,6 @@
       "id": "plataforma-datos-sanitarios-2022",
       "titulo": "Plataforma Nacional de Datos Sanitarios",
       "resumen": "Repositorio centralizado de datos de salud pública con anonimización y control de acceso seguro para análisis epidemiológico.",
-      "descripcion": "Repositorio centralizado de datos de salud pública con anonimización y control de acceso seguro para análisis epidemiológico.",
       "descripcion_larga": "Diseño y despliegue de una infraestructura de repositorio centralizado para consolidar datos de salud pública a nivel nacional. Implementa estándares avanzados de anonimización de identificadores directos e indirectos, control de acceso basado en roles (RBAC) y auditoría exhaustiva para facilitar la investigación epidemiológica sin vulnerar la privacidad del ciudadano.",
       "anio": "2022–2025",
       "anio_inicio": 2022,
@@ -643,24 +477,12 @@
       "lineas": [
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Instituto Nacional de Salud"
       ],
-      "investigador_principal": "rafael-leal",
-      "investigador_nombre": "Rafael Leal",
       "integrantes": [
         "rafael-leal",
         "rodrigo-chacon"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Big Data",
-        "Repositorio Nacional",
-        "Epidemiología",
-        "Anonimización"
       ],
       "publicaciones": [
         {
@@ -675,7 +497,6 @@
       "id": "estudio-comparativo-2023",
       "titulo": "Estudio Comparativo Latinoamérica-EEUU en Salud Materno-Infantil",
       "resumen": "Análisis bioestadístico comparativo de indicadores materno-infantiles entre cohortes de Latinoamérica y Estados Unidos.",
-      "descripcion": "Análisis bioestadístico comparativo de indicadores materno-infantiles entre cohortes de Latinoamérica y Estados Unidos.",
       "descripcion_larga": "Estudio bioestadístico internacional que armoniza conjuntos de datos clínicos y sociodemográficos de salud materno-infantil entre Estados Unidos y países de América Latina. Mediante modelos multinivel y estandarización metodológica, se identifican determinantes estructurales del acceso y calidad de la atención prenatal y neonatal.",
       "anio": "2023–2026",
       "anio_inicio": 2023,
@@ -687,26 +508,13 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Estados Unidos",
-        "Perú"
-      ],
       "instituciones": [
         "The University of Arizona",
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "jose-florez",
-      "investigador_nombre": "José Flórez",
       "integrantes": [
         "jose-florez",
         "selene-salas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Bioestadística",
-        "Salud Materno-Infantil",
-        "Comparativo",
-        "Internacional"
       ],
       "publicaciones": [
         {
@@ -727,7 +535,6 @@
       "id": "gestion-concytec-2023",
       "titulo": "Coordinación y Articulación Proyecto CONCYTEC",
       "resumen": "Gestión administrativa, técnica y de transferencia tecnológica de la red financiada por PROCIENCIA / CONCYTEC en Informática Biomédica.",
-      "descripcion": "Gestión administrativa, técnica y de transferencia tecnológica de la red financiada por PROCIENCIA / CONCYTEC en Informática Biomédica.",
       "descripcion_larga": "Liderazgo en la gestión integral, gobernanza, rendición técnica y financiera, y articulación multiactor del proyecto de red temática de investigación financiado por PROCIENCIA / CONCYTEC. Fomenta el intercambio científico entre universidades, centros asistenciales y el sector productivo para acelerar la transformación digital en salud.",
       "anio": "2023–2026",
       "anio_inicio": 2023,
@@ -739,22 +546,11 @@
         "sociotecnica-adopcion",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "gerson-zapata",
-      "investigador_nombre": "Gerson Zapata",
       "integrantes": [
         "gerson-zapata"
-      ],
-      "categoria_miembro": "gestion",
-      "tags": [
-        "Gestión I+D",
-        "Fondos Concursables",
-        "Articulación Institucional"
       ],
       "publicaciones": [
         {
@@ -775,7 +571,6 @@
       "id": "interoperabilidad-01-2023",
       "titulo": "Intercambio Transfronterizo de Datos Clínicos Andinos",
       "resumen": "Investigación aplicada sobre intercambio transfronterizo de datos clínicos andinos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en intercambio transfronterizo de datos clínicos andinos.",
       "descripcion_larga": "El proyecto 'Intercambio Transfronterizo de Datos Clínicos Andinos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -787,23 +582,12 @@
         "interoperabilidad",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "david-villarreal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -824,7 +608,6 @@
       "id": "interoperabilidad-02-2022",
       "titulo": "Marco de Gobernanza de Datos de Salud para Redes Integradas",
       "resumen": "Investigación aplicada sobre marco de gobernanza de datos de salud para redes integradas para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en marco de gobernanza de datos de salud para redes integradas.",
       "descripcion_larga": "El proyecto 'Marco de Gobernanza de Datos de Salud para Redes Integradas' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -835,23 +618,12 @@
       "lineas": [
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "christian-reategui"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -866,7 +638,6 @@
       "id": "interoperabilidad-03-2024",
       "titulo": "Implementación de Perfiles FHIR para Oncología de Precisión",
       "resumen": "Investigación aplicada sobre implementación de perfiles fhir para oncología de precisión para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en implementación de perfiles fhir para oncología de precisión.",
       "descripcion_larga": "El proyecto 'Implementación de Perfiles FHIR para Oncología de Precisión' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -878,23 +649,12 @@
         "interoperabilidad",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "christian-reategui",
-      "investigador_nombre": "Christian Reategui",
       "integrantes": [
         "christian-reategui",
         "henry-cardenas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -915,7 +675,6 @@
       "id": "interoperabilidad-04-2021",
       "titulo": "Mapeo Semántico de Catálogos Farmacéuticos a RxNorm y SNOMED CT",
       "resumen": "Investigación aplicada sobre mapeo semántico de catálogos farmacéuticos a rxnorm y snomed ct para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en mapeo semántico de catálogos farmacéuticos a rxnorm y snomed ct.",
       "descripcion_larga": "El proyecto 'Mapeo Semántico de Catálogos Farmacéuticos a RxNorm y SNOMED CT' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -926,23 +685,12 @@
       "lineas": [
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "irvin-dongo"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -957,7 +705,6 @@
       "id": "interoperabilidad-05-2023",
       "titulo": "Integración de Dispositivos Médicos IoT a Servidores HAPI-FHIR",
       "resumen": "Investigación aplicada sobre integración de dispositivos médicos iot a servidores hapi-fhir para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en integración de dispositivos médicos iot a servidores hapi-fhir.",
       "descripcion_larga": "El proyecto 'Integración de Dispositivos Médicos IoT a Servidores HAPI-FHIR' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -969,23 +716,12 @@
         "interoperabilidad",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "rafael-leal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1006,7 +742,6 @@
       "id": "interoperabilidad-06-2024",
       "titulo": "Gobernanza Federada para Repositorios de Imágenes DICOM",
       "resumen": "Investigación aplicada sobre gobernanza federada para repositorios de imágenes dicom para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en gobernanza federada para repositorios de imágenes dicom.",
       "descripcion_larga": "El proyecto 'Gobernanza Federada para Repositorios de Imágenes DICOM' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -1018,23 +753,12 @@
         "interoperabilidad",
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "rafael-leal",
-      "investigador_nombre": "Rafael Leal",
       "integrantes": [
         "rafael-leal",
         "oscar-huapaya"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1055,7 +779,6 @@
       "id": "interoperabilidad-07-2022",
       "titulo": "Trazabilidad de Consentimiento Informado Dinámico en Redes de Salud",
       "resumen": "Investigación aplicada sobre trazabilidad de consentimiento informado dinámico en redes de salud para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en trazabilidad de consentimiento informado dinámico en redes de salud.",
       "descripcion_larga": "El proyecto 'Trazabilidad de Consentimiento Informado Dinámico en Redes de Salud' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -1067,23 +790,12 @@
         "interoperabilidad",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "javier-vargas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1104,7 +816,6 @@
       "id": "interoperabilidad-08-2021",
       "titulo": "Estandarización de Registros de Vacunación bajo Guías HL7",
       "resumen": "Investigación aplicada sobre estandarización de registros de vacunación bajo guías hl7 para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en estandarización de registros de vacunación bajo guías hl7.",
       "descripcion_larga": "El proyecto 'Estandarización de Registros de Vacunación bajo Guías HL7' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -1115,23 +826,12 @@
       "lineas": [
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "javier-vargas",
-      "investigador_nombre": "Javier Vargas",
       "integrantes": [
         "javier-vargas",
         "milagros-cahuana"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1146,7 +846,6 @@
       "id": "interoperabilidad-09-2023",
       "titulo": "Middleware Seguro para Intercambio de Resultados de Laboratorio",
       "resumen": "Investigación aplicada sobre middleware seguro para intercambio de resultados de laboratorio para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en middleware seguro para intercambio de resultados de laboratorio.",
       "descripcion_larga": "El proyecto 'Middleware Seguro para Intercambio de Resultados de Laboratorio' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -1158,23 +857,12 @@
         "interoperabilidad",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "guido-bendezu"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1195,7 +883,6 @@
       "id": "interoperabilidad-10-2024",
       "titulo": "Auditoría Automatizada de Calidad de Datos Clínicos Electrónicos",
       "resumen": "Investigación aplicada sobre auditoría automatizada de calidad de datos clínicos electrónicos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en auditoría automatizada de calidad de datos clínicos electrónicos.",
       "descripcion_larga": "El proyecto 'Auditoría Automatizada de Calidad de Datos Clínicos Electrónicos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en interoperabilidad y gobernanza de datos. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -1206,23 +893,12 @@
       "lineas": [
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "jose-florez"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Interoperabilidad",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1237,7 +913,6 @@
       "id": "ia-salud-11-2022",
       "titulo": "Detección Temprana de Retinopatía Diabética con Redes Convolucionales",
       "resumen": "Investigación aplicada sobre detección temprana de retinopatía diabética con redes convolucionales para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en detección temprana de retinopatía diabética con redes convolucionales.",
       "descripcion_larga": "El proyecto 'Detección Temprana de Retinopatía Diabética con Redes Convolucionales' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -1249,23 +924,12 @@
         "ia-salud",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "jose-florez",
-      "investigador_nombre": "Jose Florez",
       "integrantes": [
         "jose-florez",
         "stefan-escobar"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1286,7 +950,6 @@
       "id": "ia-salud-12-2023",
       "titulo": "Modelo Predictivo de Riesgo Cardiovascular Basado en Grafos de Conocimiento",
       "resumen": "Investigación aplicada sobre modelo predictivo de riesgo cardiovascular basado en grafos de conocimiento para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en modelo predictivo de riesgo cardiovascular basado en grafos de conocimiento.",
       "descripcion_larga": "El proyecto 'Modelo Predictivo de Riesgo Cardiovascular Basado en Grafos de Conocimiento' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -1298,23 +961,12 @@
         "ia-salud",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "stefan-escobar",
-      "investigador_nombre": "Stefan Escobar",
       "integrantes": [
         "stefan-escobar",
         "kelly-de-la-cruz"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1335,7 +987,6 @@
       "id": "ia-salud-13-2024",
       "titulo": "Segmentación Automática de Lesiones Pulmonares en Tomografías de Tórax",
       "resumen": "Investigación aplicada sobre segmentación automática de lesiones pulmonares en tomografías de tórax para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en segmentación automática de lesiones pulmonares en tomografías de tórax.",
       "descripcion_larga": "El proyecto 'Segmentación Automática de Lesiones Pulmonares en Tomografías de Tórax' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -1347,23 +998,12 @@
         "ia-salud",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "pamela-chacon"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1384,7 +1024,6 @@
       "id": "ia-salud-14-2021",
       "titulo": "Clasificación Asistida por IA de Frotis Sanguíneos para Malaria",
       "resumen": "Investigación aplicada sobre clasificación asistida por ia de frotis sanguíneos para malaria para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en clasificación asistida por ia de frotis sanguíneos para malaria.",
       "descripcion_larga": "El proyecto 'Clasificación Asistida por IA de Frotis Sanguíneos para Malaria' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -1395,23 +1034,12 @@
       "lineas": [
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "david-villarreal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1426,7 +1054,6 @@
       "id": "ia-salud-15-2024",
       "titulo": "Modelos Generativos para Aumento de Datos en Imágenes Médicas Raras",
       "resumen": "Investigación aplicada sobre modelos generativos para aumento de datos en imágenes médicas raras para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en modelos generativos para aumento de datos en imágenes médicas raras.",
       "descripcion_larga": "El proyecto 'Modelos Generativos para Aumento de Datos en Imágenes Médicas Raras' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -1438,23 +1065,12 @@
         "ia-salud",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "christian-reategui"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1475,7 +1091,6 @@
       "id": "ia-salud-16-2023",
       "titulo": "Algoritmo de Triaje Inteligente para Servicios de Emergencia Hospitalaria",
       "resumen": "Investigación aplicada sobre algoritmo de triaje inteligente para servicios de emergencia hospitalaria para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en algoritmo de triaje inteligente para servicios de emergencia hospitalaria.",
       "descripcion_larga": "El proyecto 'Algoritmo de Triaje Inteligente para Servicios de Emergencia Hospitalaria' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -1486,23 +1101,12 @@
       "lineas": [
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "henry-cardenas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1517,7 +1121,6 @@
       "id": "ia-salud-17-2022",
       "titulo": "Predicción de Reingreso Hospitalario en Pacientes Crónicos Complejos",
       "resumen": "Investigación aplicada sobre predicción de reingreso hospitalario en pacientes crónicos complejos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en predicción de reingreso hospitalario en pacientes crónicos complejos.",
       "descripcion_larga": "El proyecto 'Predicción de Reingreso Hospitalario en Pacientes Crónicos Complejos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -1529,23 +1132,12 @@
         "ia-salud",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "irvin-dongo"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1566,7 +1158,6 @@
       "id": "ia-salud-18-2023",
       "titulo": "Procesamiento de Lenguaje Natural para Detección de Reacciones Adversas",
       "resumen": "Investigación aplicada sobre procesamiento de lenguaje natural para detección de reacciones adversas para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en procesamiento de lenguaje natural para detección de reacciones adversas.",
       "descripcion_larga": "El proyecto 'Procesamiento de Lenguaje Natural para Detección de Reacciones Adversas' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -1578,23 +1169,12 @@
         "ia-salud",
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "irvin-dongo",
-      "investigador_nombre": "Irvin Dongo",
       "integrantes": [
         "irvin-dongo",
         "rafael-leal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1615,7 +1195,6 @@
       "id": "ia-salud-19-2021",
       "titulo": "Detección de Arritmias en Señales ECG con Redes Recurrentes Bidireccionales",
       "resumen": "Investigación aplicada sobre detección de arritmias en señales ecg con redes recurrentes bidireccionales para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en detección de arritmias en señales ecg con redes recurrentes bidireccionales.",
       "descripcion_larga": "El proyecto 'Detección de Arritmias en Señales ECG con Redes Recurrentes Bidireccionales' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -1627,23 +1206,12 @@
         "ia-salud",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "oscar-huapaya"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1664,7 +1232,6 @@
       "id": "ia-salud-20-2024",
       "titulo": "Evaluación de Sesgos Algorítmicos en Modelos Diagnósticos Clínicos",
       "resumen": "Investigación aplicada sobre evaluación de sesgos algorítmicos en modelos diagnósticos clínicos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en evaluación de sesgos algorítmicos en modelos diagnósticos clínicos.",
       "descripcion_larga": "El proyecto 'Evaluación de Sesgos Algorítmicos en Modelos Diagnósticos Clínicos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en inteligencia artificial en salud. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -1675,23 +1242,12 @@
       "lineas": [
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "oscar-huapaya",
-      "investigador_nombre": "Oscar Huapaya",
       "integrantes": [
         "oscar-huapaya",
         "javier-vargas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Inteligencia",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1706,7 +1262,6 @@
       "id": "informatica-biomedica-21-2022",
       "titulo": "Ontología Biomédica para Fenotipos de Enfermedades Raras",
       "resumen": "Investigación aplicada sobre ontología biomédica para fenotipos de enfermedades raras para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en ontología biomédica para fenotipos de enfermedades raras.",
       "descripcion_larga": "El proyecto 'Ontología Biomédica para Fenotipos de Enfermedades Raras' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -1718,23 +1273,12 @@
         "informatica-biomedica",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "milagros-cahuana"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1755,7 +1299,6 @@
       "id": "informatica-biomedica-22-2023",
       "titulo": "Plataforma de Prescripción Electrónica con Soporte de Decisiones Clínicas",
       "resumen": "Investigación aplicada sobre plataforma de prescripción electrónica con soporte de decisiones clínicas para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en plataforma de prescripción electrónica con soporte de decisiones clínicas.",
       "descripcion_larga": "El proyecto 'Plataforma de Prescripción Electrónica con Soporte de Decisiones Clínicas' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -1766,23 +1309,12 @@
       "lineas": [
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "guido-bendezu"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1797,7 +1329,6 @@
       "id": "informatica-biomedica-23-2021",
       "titulo": "Sistema de Registro Clínico Especializado en Salud Materno-Perinatal",
       "resumen": "Investigación aplicada sobre sistema de registro clínico especializado en salud materno-perinatal para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en sistema de registro clínico especializado en salud materno-perinatal.",
       "descripcion_larga": "El proyecto 'Sistema de Registro Clínico Especializado en Salud Materno-Perinatal' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -1809,23 +1340,12 @@
         "informatica-biomedica",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "guido-bendezu",
-      "investigador_nombre": "Guido Bendezu",
       "integrantes": [
         "guido-bendezu",
         "jose-florez"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1846,7 +1366,6 @@
       "id": "informatica-biomedica-24-2023",
       "titulo": "Armonización Terminológica de Conceptos Clínicos Locales a LOINC",
       "resumen": "Investigación aplicada sobre armonización terminológica de conceptos clínicos locales a loinc para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en armonización terminológica de conceptos clínicos locales a loinc.",
       "descripcion_larga": "El proyecto 'Armonización Terminológica de Conceptos Clínicos Locales a LOINC' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -1858,23 +1377,12 @@
         "informatica-biomedica",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "jose-florez",
-      "investigador_nombre": "Jose Florez",
       "integrantes": [
         "jose-florez",
         "stefan-escobar"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1895,7 +1403,6 @@
       "id": "informatica-biomedica-25-2024",
       "titulo": "Diseño de Interfaz Centrada en el Usuario para Sistemas de Gestión Clínica",
       "resumen": "Investigación aplicada sobre diseño de interfaz centrada en el usuario para sistemas de gestión clínica para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en diseño de interfaz centrada en el usuario para sistemas de gestión clínica.",
       "descripcion_larga": "El proyecto 'Diseño de Interfaz Centrada en el Usuario para Sistemas de Gestión Clínica' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -1907,23 +1414,12 @@
         "informatica-biomedica",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "kelly-de-la-cruz"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1944,7 +1440,6 @@
       "id": "informatica-biomedica-26-2022",
       "titulo": "Infraestructura de Datos para Ensayos Clínicos Descentralizados",
       "resumen": "Investigación aplicada sobre infraestructura de datos para ensayos clínicos descentralizados para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en infraestructura de datos para ensayos clínicos descentralizados.",
       "descripcion_larga": "El proyecto 'Infraestructura de Datos para Ensayos Clínicos Descentralizados' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -1955,23 +1450,12 @@
       "lineas": [
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "kelly-de-la-cruz",
-      "investigador_nombre": "Kelly De La Cruz",
       "integrantes": [
         "kelly-de-la-cruz",
         "pamela-chacon"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -1986,7 +1470,6 @@
       "id": "informatica-biomedica-27-2023",
       "titulo": "Portal del Paciente Interoperable para Autogestión de Enfermedades Crónicas",
       "resumen": "Investigación aplicada sobre portal del paciente interoperable para autogestión de enfermedades crónicas para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en portal del paciente interoperable para autogestión de enfermedades crónicas.",
       "descripcion_larga": "El proyecto 'Portal del Paciente Interoperable para Autogestión de Enfermedades Crónicas' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -1998,23 +1481,12 @@
         "informatica-biomedica",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "david-villarreal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2035,7 +1507,6 @@
       "id": "informatica-biomedica-28-2024",
       "titulo": "Sistema Móvil para Monitoreo de Parámetros Fisiológicos en Altura",
       "resumen": "Investigación aplicada sobre sistema móvil para monitoreo de parámetros fisiológicos en altura para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en sistema móvil para monitoreo de parámetros fisiológicos en altura.",
       "descripcion_larga": "El proyecto 'Sistema Móvil para Monitoreo de Parámetros Fisiológicos en Altura' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -2046,23 +1517,12 @@
       "lineas": [
         "informatica-biomedica"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "christian-reategui"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2077,7 +1537,6 @@
       "id": "informatica-biomedica-29-2021",
       "titulo": "Integración de Fichas Familiares Comunitarias al Sistema Hospitalario",
       "resumen": "Investigación aplicada sobre integración de fichas familiares comunitarias al sistema hospitalario para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en integración de fichas familiares comunitarias al sistema hospitalario.",
       "descripcion_larga": "El proyecto 'Integración de Fichas Familiares Comunitarias al Sistema Hospitalario' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -2089,23 +1548,12 @@
         "informatica-biomedica",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "henry-cardenas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2126,7 +1574,6 @@
       "id": "informatica-biomedica-30-2022",
       "titulo": "Bancos de Datos Moleculares Integrados a la Historia Clínica Digital",
       "resumen": "Investigación aplicada sobre bancos de datos moleculares integrados a la historia clínica digital para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en bancos de datos moleculares integrados a la historia clínica digital.",
       "descripcion_larga": "El proyecto 'Bancos de Datos Moleculares Integrados a la Historia Clínica Digital' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en informática biomédica y salud digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -2138,23 +1585,12 @@
         "informatica-biomedica",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "henry-cardenas",
-      "investigador_nombre": "Henry Cardenas",
       "integrantes": [
         "henry-cardenas",
         "irvin-dongo"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Informática",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2175,7 +1611,6 @@
       "id": "analitica-datos-31-2023",
       "titulo": "Pipeline Bioinformático para Análisis de Variantes Genómicas en Tuberculosis",
       "resumen": "Investigación aplicada sobre pipeline bioinformático para análisis de variantes genómicas en tuberculosis para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en pipeline bioinformático para análisis de variantes genómicas en tuberculosis.",
       "descripcion_larga": "El proyecto 'Pipeline Bioinformático para Análisis de Variantes Genómicas en Tuberculosis' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -2187,23 +1622,12 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "rafael-leal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2224,7 +1648,6 @@
       "id": "analitica-datos-32-2021",
       "titulo": "Dashboard de Inteligencia Sanitaria para Camas UCI y Recursos Críticos",
       "resumen": "Investigación aplicada sobre dashboard de inteligencia sanitaria para camas uci y recursos críticos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en dashboard de inteligencia sanitaria para camas uci y recursos críticos.",
       "descripcion_larga": "El proyecto 'Dashboard de Inteligencia Sanitaria para Camas UCI y Recursos Críticos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -2235,23 +1658,12 @@
       "lineas": [
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "rafael-leal",
-      "investigador_nombre": "Rafael Leal",
       "integrantes": [
         "rafael-leal",
         "oscar-huapaya"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2266,7 +1678,6 @@
       "id": "analitica-datos-33-2024",
       "titulo": "Modelamiento Espacio-Temporal de Brotes de Arbovirus en la Amazonía",
       "resumen": "Investigación aplicada sobre modelamiento espacio-temporal de brotes de arbovirus en la amazonía para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en modelamiento espacio-temporal de brotes de arbovirus en la amazonía.",
       "descripcion_larga": "El proyecto 'Modelamiento Espacio-Temporal de Brotes de Arbovirus en la Amazonía' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -2278,23 +1689,12 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "javier-vargas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2315,7 +1715,6 @@
       "id": "analitica-datos-34-2022",
       "titulo": "Análisis Metagenómico de Patógenos Intrahospitalarios Resistentes",
       "resumen": "Investigación aplicada sobre análisis metagenómico de patógenos intrahospitalarios resistentes para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en análisis metagenómico de patógenos intrahospitalarios resistentes.",
       "descripcion_larga": "El proyecto 'Análisis Metagenómico de Patógenos Intrahospitalarios Resistentes' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -2326,23 +1725,12 @@
       "lineas": [
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "milagros-cahuana"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2357,7 +1745,6 @@
       "id": "analitica-datos-35-2023",
       "titulo": "Plataforma de Vigilancia Genómica en Tiempo Real para Virus Respiratorios",
       "resumen": "Investigación aplicada sobre plataforma de vigilancia genómica en tiempo real para virus respiratorios para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en plataforma de vigilancia genómica en tiempo real para virus respiratorios.",
       "descripcion_larga": "El proyecto 'Plataforma de Vigilancia Genómica en Tiempo Real para Virus Respiratorios' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -2369,23 +1756,12 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "milagros-cahuana",
-      "investigador_nombre": "Milagros Cahuana",
       "integrantes": [
         "milagros-cahuana",
         "guido-bendezu"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2406,7 +1782,6 @@
       "id": "analitica-datos-36-2024",
       "titulo": "Minería de Procesos Clínicos para Optimización de Tiempos Quirúrgicos",
       "resumen": "Investigación aplicada sobre minería de procesos clínicos para optimización de tiempos quirúrgicos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en minería de procesos clínicos para optimización de tiempos quirúrgicos.",
       "descripcion_larga": "El proyecto 'Minería de Procesos Clínicos para Optimización de Tiempos Quirúrgicos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -2418,23 +1793,12 @@
         "analitica-datos",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "guido-bendezu",
-      "investigador_nombre": "Guido Bendezu",
       "integrantes": [
         "guido-bendezu",
         "jose-florez"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2455,7 +1819,6 @@
       "id": "analitica-datos-37-2022",
       "titulo": "Bioestadística Bayesiana Aplicada a Ensayos Clínicos Multicéntricos",
       "resumen": "Investigación aplicada sobre bioestadística bayesiana aplicada a ensayos clínicos multicéntricos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en bioestadística bayesiana aplicada a ensayos clínicos multicéntricos.",
       "descripcion_larga": "El proyecto 'Bioestadística Bayesiana Aplicada a Ensayos Clínicos Multicéntricos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -2467,23 +1830,12 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "stefan-escobar"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2504,7 +1856,6 @@
       "id": "analitica-datos-38-2023",
       "titulo": "Visualización Interactiva de Indicadores de Salud Materna a Nivel Distrital",
       "resumen": "Investigación aplicada sobre visualización interactiva de indicadores de salud materna a nivel distrital para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en visualización interactiva de indicadores de salud materna a nivel distrital.",
       "descripcion_larga": "El proyecto 'Visualización Interactiva de Indicadores de Salud Materna a Nivel Distrital' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -2515,23 +1866,12 @@
       "lineas": [
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "stefan-escobar",
-      "investigador_nombre": "Stefan Escobar",
       "integrantes": [
         "stefan-escobar",
         "kelly-de-la-cruz"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2546,7 +1886,6 @@
       "id": "analitica-datos-39-2021",
       "titulo": "Predicción de Demanda Farmacológica Hospitalaria mediante Series de Tiempo",
       "resumen": "Investigación aplicada sobre predicción de demanda farmacológica hospitalaria mediante series de tiempo para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en predicción de demanda farmacológica hospitalaria mediante series de tiempo.",
       "descripcion_larga": "El proyecto 'Predicción de Demanda Farmacológica Hospitalaria mediante Series de Tiempo' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -2558,23 +1897,12 @@
         "analitica-datos",
         "ia-salud"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "kelly-de-la-cruz",
-      "investigador_nombre": "Kelly De La Cruz",
       "integrantes": [
         "kelly-de-la-cruz",
         "pamela-chacon"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2595,7 +1923,6 @@
       "id": "analitica-datos-40-2024",
       "titulo": "Análisis de Supervivencia en Cohortes Oncológicas mediante Machine Learning",
       "resumen": "Investigación aplicada sobre análisis de supervivencia en cohortes oncológicas mediante machine learning para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en análisis de supervivencia en cohortes oncológicas mediante machine learning.",
       "descripcion_larga": "El proyecto 'Análisis de Supervivencia en Cohortes Oncológicas mediante Machine Learning' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en analítica de datos y bioinformática. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -2606,23 +1933,12 @@
       "lineas": [
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "david-villarreal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Analítica",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2637,7 +1953,6 @@
       "id": "sociotecnica-adopcion-41-2022",
       "titulo": "Evaluación de la Usabilidad de Sistemas HCE en Centros de Salud Rurales",
       "resumen": "Investigación aplicada sobre evaluación de la usabilidad de sistemas hce en centros de salud rurales para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en evaluación de la usabilidad de sistemas hce en centros de salud rurales.",
       "descripcion_larga": "El proyecto 'Evaluación de la Usabilidad de Sistemas HCE en Centros de Salud Rurales' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -2649,23 +1964,12 @@
         "sociotecnica-adopcion",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "christian-reategui"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2686,7 +1990,6 @@
       "id": "sociotecnica-adopcion-42-2023",
       "titulo": "Medición de Madurez Digital Hospitalaria en Establecimientos de Nivel III",
       "resumen": "Investigación aplicada sobre medición de madurez digital hospitalaria en establecimientos de nivel iii para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en medición de madurez digital hospitalaria en establecimientos de nivel iii.",
       "descripcion_larga": "El proyecto 'Medición de Madurez Digital Hospitalaria en Establecimientos de Nivel III' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -2698,23 +2001,12 @@
         "sociotecnica-adopcion",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "christian-reategui",
-      "investigador_nombre": "Christian Reategui",
       "integrantes": [
         "christian-reategui",
         "henry-cardenas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2735,7 +2027,6 @@
       "id": "sociotecnica-adopcion-43-2021",
       "titulo": "Factores Sociotécnicos en la Resistencia al Cambio de Profesionales Médicos",
       "resumen": "Investigación aplicada sobre factores sociotécnicos en la resistencia al cambio de profesionales médicos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en factores sociotécnicos en la resistencia al cambio de profesionales médicos.",
       "descripcion_larga": "El proyecto 'Factores Sociotécnicos en la Resistencia al Cambio de Profesionales Médicos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -2747,23 +2038,12 @@
         "sociotecnica-adopcion",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "irvin-dongo"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2784,7 +2064,6 @@
       "id": "sociotecnica-adopcion-44-2024",
       "titulo": "Análisis Costo-Efectividad de la Implementación de Telemedicina Sincrónica",
       "resumen": "Investigación aplicada sobre análisis costo-efectividad de la implementación de telemedicina sincrónica para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en análisis costo-efectividad de la implementación de telemedicina sincrónica.",
       "descripcion_larga": "El proyecto 'Análisis Costo-Efectividad de la Implementación de Telemedicina Sincrónica' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -2795,23 +2074,12 @@
       "lineas": [
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "irvin-dongo",
-      "investigador_nombre": "Irvin Dongo",
       "integrantes": [
         "irvin-dongo",
         "rafael-leal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2826,7 +2094,6 @@
       "id": "sociotecnica-adopcion-45-2023",
       "titulo": "Guía de Buenas Prácticas para Adopción Segura de IA en Unidades de Cuidados",
       "resumen": "Investigación aplicada sobre guía de buenas prácticas para adopción segura de ia en unidades de cuidados para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en guía de buenas prácticas para adopción segura de ia en unidades de cuidados.",
       "descripcion_larga": "El proyecto 'Guía de Buenas Prácticas para Adopción Segura de IA en Unidades de Cuidados' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -2838,23 +2105,12 @@
         "sociotecnica-adopcion",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "oscar-huapaya"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2875,7 +2131,6 @@
       "id": "sociotecnica-adopcion-46-2022",
       "titulo": "Evaluación del Impacto de la Receta Médica Digital en Farmacias Comunitarias",
       "resumen": "Investigación aplicada sobre evaluación del impacto de la receta médica digital en farmacias comunitarias para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en evaluación del impacto de la receta médica digital en farmacias comunitarias.",
       "descripcion_larga": "El proyecto 'Evaluación del Impacto de la Receta Médica Digital en Farmacias Comunitarias' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -2886,23 +2141,12 @@
       "lineas": [
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "javier-vargas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2917,7 +2161,6 @@
       "id": "sociotecnica-adopcion-47-2024",
       "titulo": "Competencias Digitales del Personal de Enfermería en la Era de la Salud 4.0",
       "resumen": "Investigación aplicada sobre competencias digitales del personal de enfermería en la era de la salud 4.0 para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en competencias digitales del personal de enfermería en la era de la salud 4.0.",
       "descripcion_larga": "El proyecto 'Competencias Digitales del Personal de Enfermería en la Era de la Salud 4.0' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -2929,23 +2172,12 @@
         "sociotecnica-adopcion",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "javier-vargas",
-      "investigador_nombre": "Javier Vargas",
       "integrantes": [
         "javier-vargas",
         "milagros-cahuana"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -2966,7 +2198,6 @@
       "id": "sociotecnica-adopcion-48-2023",
       "titulo": "Percepción del Paciente sobre Privacidad y Teleconsultas Clínicas",
       "resumen": "Investigación aplicada sobre percepción del paciente sobre privacidad y teleconsultas clínicas para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en percepción del paciente sobre privacidad y teleconsultas clínicas.",
       "descripcion_larga": "El proyecto 'Percepción del Paciente sobre Privacidad y Teleconsultas Clínicas' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -2978,23 +2209,12 @@
         "sociotecnica-adopcion",
         "interoperabilidad"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "milagros-cahuana",
-      "investigador_nombre": "Milagros Cahuana",
       "integrantes": [
         "milagros-cahuana",
         "guido-bendezu"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3015,7 +2235,6 @@
       "id": "sociotecnica-adopcion-49-2021",
       "titulo": "Auditoría de Experiencia de Usuario (UX) en Plataformas de Salud Móvil",
       "resumen": "Investigación aplicada sobre auditoría de experiencia de usuario (ux) en plataformas de salud móvil para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en auditoría de experiencia de usuario (ux) en plataformas de salud móvil.",
       "descripcion_larga": "El proyecto 'Auditoría de Experiencia de Usuario (UX) en Plataformas de Salud Móvil' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -3027,23 +2246,12 @@
         "sociotecnica-adopcion",
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "jose-florez"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3064,7 +2272,6 @@
       "id": "sociotecnica-adopcion-50-2024",
       "titulo": "Estrategias de Capacitación Continua en Informática Clínica para Médicos",
       "resumen": "Investigación aplicada sobre estrategias de capacitación continua en informática clínica para médicos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en estrategias de capacitación continua en informática clínica para médicos.",
       "descripcion_larga": "El proyecto 'Estrategias de Capacitación Continua en Informática Clínica para Médicos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en evaluación sociotécnica y adopción digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -3075,23 +2282,12 @@
       "lineas": [
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "jose-florez",
-      "investigador_nombre": "Jose Florez",
       "integrantes": [
         "jose-florez",
         "stefan-escobar"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Evaluación",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3106,7 +2302,6 @@
       "id": "salud-digital-51-2023",
       "titulo": "Plataforma Digital de Vigilancia Sindrómica Basada en Redes Comunitarias",
       "resumen": "Investigación aplicada sobre plataforma digital de vigilancia sindrómica basada en redes comunitarias para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en plataforma digital de vigilancia sindrómica basada en redes comunitarias.",
       "descripcion_larga": "El proyecto 'Plataforma Digital de Vigilancia Sindrómica Basada en Redes Comunitarias' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -3118,23 +2313,12 @@
         "salud-digital",
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "stefan-escobar",
-      "investigador_nombre": "Stefan Escobar",
       "integrantes": [
         "stefan-escobar",
         "kelly-de-la-cruz"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3155,7 +2339,6 @@
       "id": "salud-digital-52-2022",
       "titulo": "Georreferenciación de Vulnerabilidad Sanitaria en Asentamientos Urbanos",
       "resumen": "Investigación aplicada sobre georreferenciación de vulnerabilidad sanitaria en asentamientos urbanos para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en georreferenciación de vulnerabilidad sanitaria en asentamientos urbanos.",
       "descripcion_larga": "El proyecto 'Georreferenciación de Vulnerabilidad Sanitaria en Asentamientos Urbanos' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -3166,23 +2349,12 @@
       "lineas": [
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "pamela-chacon"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3197,7 +2369,6 @@
       "id": "salud-digital-53-2024",
       "titulo": "Sistema de Alerta Temprana de Olas de Calor y Mortalidad Cardiovascular",
       "resumen": "Investigación aplicada sobre sistema de alerta temprana de olas de calor y mortalidad cardiovascular para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en sistema de alerta temprana de olas de calor y mortalidad cardiovascular.",
       "descripcion_larga": "El proyecto 'Sistema de Alerta Temprana de Olas de Calor y Mortalidad Cardiovascular' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -3209,23 +2380,12 @@
         "salud-digital",
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "david-villarreal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3246,7 +2406,6 @@
       "id": "salud-digital-54-2023",
       "titulo": "Monitoreo Epidemiológico de Enfermedades Zoonóticas en Fronteras",
       "resumen": "Investigación aplicada sobre monitoreo epidemiológico de enfermedades zoonóticas en fronteras para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en monitoreo epidemiológico de enfermedades zoonóticas en fronteras.",
       "descripcion_larga": "El proyecto 'Monitoreo Epidemiológico de Enfermedades Zoonóticas en Fronteras' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -3258,23 +2417,12 @@
         "salud-digital",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "christian-reategui"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3295,7 +2443,6 @@
       "id": "salud-digital-55-2021",
       "titulo": "Aplicación Móvil para Triaje de Desnutrición Infantil en Áreas Remotas",
       "resumen": "Investigación aplicada sobre aplicación móvil para triaje de desnutrición infantil en áreas remotas para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en aplicación móvil para triaje de desnutrición infantil en áreas remotas.",
       "descripcion_larga": "El proyecto 'Aplicación Móvil para Triaje de Desnutrición Infantil en Áreas Remotas' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -3307,23 +2454,12 @@
         "salud-digital",
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "henry-cardenas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3344,7 +2480,6 @@
       "id": "salud-digital-56-2024",
       "titulo": "Ecosistema Digital de Salud Pública para el Control de Tuberculosis",
       "resumen": "Investigación aplicada sobre ecosistema digital de salud pública para el control de tuberculosis para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en ecosistema digital de salud pública para el control de tuberculosis.",
       "descripcion_larga": "El proyecto 'Ecosistema Digital de Salud Pública para el Control de Tuberculosis' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -3355,23 +2490,12 @@
       "lineas": [
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "henry-cardenas",
-      "investigador_nombre": "Henry Cardenas",
       "integrantes": [
         "henry-cardenas",
         "irvin-dongo"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3386,7 +2510,6 @@
       "id": "salud-digital-57-2022",
       "titulo": "Integración de Datos Climáticos a Modelos de Transmisión de Leishmaniasis",
       "resumen": "Investigación aplicada sobre integración de datos climáticos a modelos de transmisión de leishmaniasis para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en integración de datos climáticos a modelos de transmisión de leishmaniasis.",
       "descripcion_larga": "El proyecto 'Integración de Datos Climáticos a Modelos de Transmisión de Leishmaniasis' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2022–2023",
       "anio_inicio": 2022,
@@ -3398,23 +2521,12 @@
         "salud-digital",
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "david-villarreal",
-      "investigador_nombre": "David Villarreal",
       "integrantes": [
         "david-villarreal",
         "rafael-leal"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3435,7 +2547,6 @@
       "id": "salud-digital-58-2023",
       "titulo": "Tablero de Comando para Monitoreo de Cobertura de Vacunación Infantil",
       "resumen": "Investigación aplicada sobre tablero de comando para monitoreo de cobertura de vacunación infantil para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en tablero de comando para monitoreo de cobertura de vacunación infantil.",
       "descripcion_larga": "El proyecto 'Tablero de Comando para Monitoreo de Cobertura de Vacunación Infantil' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2023–2025",
       "anio_inicio": 2023,
@@ -3446,23 +2557,12 @@
       "lineas": [
         "salud-digital"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "pamela-chacon",
-      "investigador_nombre": "Pamela Chacon",
       "integrantes": [
         "pamela-chacon",
         "oscar-huapaya"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3477,7 +2577,6 @@
       "id": "salud-digital-59-2024",
       "titulo": "Red de Sensores Comunitarios para Detección de Calidad de Aire y Asma",
       "resumen": "Investigación aplicada sobre red de sensores comunitarios para detección de calidad de aire y asma para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en red de sensores comunitarios para detección de calidad de aire y asma.",
       "descripcion_larga": "El proyecto 'Red de Sensores Comunitarios para Detección de Calidad de Aire y Asma' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2024–2026",
       "anio_inicio": 2024,
@@ -3489,23 +2588,12 @@
         "salud-digital",
         "sociotecnica-adopcion"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "oscar-huapaya",
-      "investigador_nombre": "Oscar Huapaya",
       "integrantes": [
         "oscar-huapaya",
         "javier-vargas"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {
@@ -3526,7 +2614,6 @@
       "id": "salud-digital-60-2021",
       "titulo": "Mapeo Participativo de Barreras de Acceso a Servicios de Salud Materna",
       "resumen": "Investigación aplicada sobre mapeo participativo de barreras de acceso a servicios de salud materna para optimizar la salud digital y la toma de decisiones clínicas.",
-      "descripcion": "Desarrollo e implementación de soluciones tecnológicas enfocadas en mapeo participativo de barreras de acceso a servicios de salud materna.",
       "descripcion_larga": "El proyecto 'Mapeo Participativo de Barreras de Acceso a Servicios de Salud Materna' tiene como objetivo principal la investigación, diseño e implementación de metodologías avanzadas en salud global y epidemiología digital. Se enfoca en mejorar la calidad de atención y la interoperabilidad en los sistemas de salud de la región.",
       "anio": "2021–2022",
       "anio_inicio": 2021,
@@ -3538,23 +2625,12 @@
         "salud-digital",
         "analitica-datos"
       ],
-      "paises": [
-        "Perú"
-      ],
       "instituciones": [
         "Universidad Científica del Sur"
       ],
-      "investigador_principal": "javier-vargas",
-      "investigador_nombre": "Javier Vargas",
       "integrantes": [
         "javier-vargas",
         "milagros-cahuana"
-      ],
-      "categoria_miembro": "investigadores",
-      "tags": [
-        "Salud",
-        "Salud",
-        "Investigación"
       ],
       "publicaciones": [
         {

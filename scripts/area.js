@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const idsParticipantesEnProyectos = new Set();
     proyectosRelacionados.forEach(p => {
-      if (p.investigador_principal) idsParticipantesEnProyectos.add(p.investigador_principal);
       if (Array.isArray(p.integrantes)) {
         p.integrantes.forEach(id => idsParticipantesEnProyectos.add(id));
       }
@@ -143,8 +142,8 @@ function renderArea(area, proyectos, investigadores) {
   // 1. Renderizar Investigadores del Área
   renderInvestigadores(investigadores, color);
 
-  // 2. Renderizar Proyectos del Área
-  renderProyectos(proyectos, color);
+  // 2. Inicializar Paginación y Renderizado de Proyectos Relacionados (Vista en Lista Limpia)
+  inicializarPaginacionProyectos(proyectos, area.id);
 }
 
 function renderInvestigadores(investigadores, color) {
@@ -182,41 +181,184 @@ function renderInvestigadores(investigadores, color) {
   }).join('');
 }
 
-function renderProyectos(proyectos, color) {
-  const grid = document.getElementById('area-proyectos-grid');
-  if (!grid) return;
+/* ==========================================================================
+   SISTEMA DE PAGINACIÓN DINÁMICA - LISTA DE PROYECTOS EN ÁREA
+   ========================================================================== */
 
-  if (!proyectos || proyectos.length === 0) {
-    grid.innerHTML = `
-      <div class="area-proyectos-vacio">
-        <i class="fa-solid fa-folder-open" style="font-size:2.5rem;color:#cbd5e1;margin-bottom:1rem;display:block;"></i>
-        <p>Actualmente no hay proyectos registrados en este eje científico.</p>
-        <a href="proyectos.html" class="btn-banner btn-gold" style="display:inline-flex;margin-top:1rem;">
-          Ver todos los proyectos
-        </a>
-      </div>`;
+let proyectosAreaActual = [];
+let paginaActualProy = 1;
+let itemsPorPaginaProy = 5;
+
+function inicializarPaginacionProyectos(proyectos, areaId) {
+  proyectosAreaActual = proyectos || [];
+  paginaActualProy = 1;
+
+  const selectPerPage = document.getElementById('area-proy-per-page');
+  if (selectPerPage) {
+    itemsPorPaginaProy = parseInt(selectPerPage.value, 10) || 5;
+    selectPerPage.onchange = (e) => {
+      itemsPorPaginaProy = parseInt(e.target.value, 10) || 5;
+      paginaActualProy = 1;
+      renderizarListaProyectos();
+    };
+  }
+
+  const badgeTotal = document.getElementById('area-proyectos-total-badge');
+  if (badgeTotal) {
+    badgeTotal.textContent = `(${proyectosAreaActual.length})`;
+  }
+
+  const verTodosLink = document.getElementById('area-ver-todos-proy-link');
+  if (verTodosLink && areaId) {
+    verTodosLink.href = `proyectos.html?linea=${areaId}`;
+  }
+
+  renderizarListaProyectos();
+}
+
+function renderizarListaProyectos() {
+  const contenedor = document.getElementById('area-proyectos-list');
+  const paginationBar = document.getElementById('area-proyectos-pagination');
+  if (!contenedor) return;
+
+  if (proyectosAreaActual.length === 0) {
+    contenedor.innerHTML = '<p class="perfil-empty" style="padding: 2.5rem; text-align: center; color: #64748b; font-style: italic;">Sin proyectos registrados actualmente en este eje científico.</p>';
+    if (paginationBar) paginationBar.innerHTML = '';
     return;
   }
 
-  grid.innerHTML = proyectos.map((p, index) => {
+  const totalProyectos = proyectosAreaActual.length;
+  const totalPaginas = Math.ceil(totalProyectos / itemsPorPaginaProy);
+
+  if (paginaActualProy > totalPaginas) paginaActualProy = totalPaginas;
+  if (paginaActualProy < 1) paginaActualProy = 1;
+
+  const inicio = (paginaActualProy - 1) * itemsPorPaginaProy;
+  const fin = Math.min(inicio + itemsPorPaginaProy, totalProyectos);
+  const proyectosPagina = proyectosAreaActual.slice(inicio, fin);
+
+  // Renderizar filas limpias: Nombre - Año de inicio solamente - Estado - Flecha
+  contenedor.innerHTML = proyectosPagina.map(p => {
+    const anioInicio = p.anio_inicio || (p.anio ? p.anio.split('–')[0].split('-')[0].trim() : '—');
     const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
-    const badgeHtml = p.area_nombre ? `<span class="proy-area-badge">${p.area_nombre}</span>` : '';
 
     return `
-      <a href="proyecto-detalle.html?id=${p.id}" class="area-proy-card" style="animation-delay:${index * 50}ms;">
-        <div class="area-proy-top">
-          <span class="area-proy-anio">${p.anio || ''}</span>
-          <span class="proy-estado ${estadoClass}">${p.estado || 'En curso'}</span>
-        </div>
-        <h3 class="area-proy-titulo">${p.titulo}</h3>
-        <p class="area-proy-desc">${p.descripcion || ''}</p>
-        <div class="area-proy-action">
-          ${badgeHtml}
-          <span class="area-proy-flecha"><i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>`;
+      <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proy-row">
+        <span class="proy-row-title">${p.titulo}</span>
+        <span class="proy-row-anio">${anioInicio}</span>
+        <span class="proy-row-estado ${estadoClass}">${p.estado || 'En curso'}</span>
+        <span class="proy-row-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    `;
   }).join('');
+
+  // Renderizar controles de paginación
+  if (paginationBar) {
+    if (totalPaginas <= 1) {
+      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}</span>`;
+      return;
+    }
+
+    const itemsPaginacion = obtenerRangoPaginacion(totalPaginas, paginaActualProy);
+    let botonesPaginas = '';
+    itemsPaginacion.forEach(item => {
+      if (item === '...') {
+        botonesPaginas += `<span class="proy-pag-ellipsis" aria-hidden="true">&hellip;</span>`;
+      } else {
+        const activeClass = item === paginaActualProy ? 'active' : '';
+        botonesPaginas += `<button type="button" class="proy-pag-btn proy-pag-num ${activeClass}" data-page="${item}" aria-label="Página ${item}">${item}</button>`;
+      }
+    });
+
+    paginationBar.innerHTML = `
+      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos</span>
+      <div class="proy-pag-controls">
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActualProy === 1 ? 'disabled' : ''} aria-label="Página anterior">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="proy-pag-numbers">
+          ${botonesPaginas}
+        </div>
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-next" ${paginaActualProy === totalPaginas ? 'disabled' : ''} aria-label="Página siguiente">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    `;
+
+    // Event listeners
+    paginationBar.querySelector('.proy-pag-prev')?.addEventListener('click', () => {
+      if (paginaActualProy > 1) {
+        paginaActualProy--;
+        renderizarListaProyectos();
+      }
+    });
+
+    paginationBar.querySelector('.proy-pag-next')?.addEventListener('click', () => {
+      if (paginaActualProy < totalPaginas) {
+        paginaActualProy++;
+        renderizarListaProyectos();
+      }
+    });
+
+    paginationBar.querySelectorAll('.proy-pag-num').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const p = parseInt(btn.dataset.page, 10);
+        if (p && p !== paginaActualProy) {
+          paginaActualProy = p;
+          renderizarListaProyectos();
+        }
+      });
+    });
+  }
 }
+
+/**
+ * Genera el rango de números y elipsis para la paginación dinámica adaptada a móvil.
+ */
+function obtenerRangoPaginacion(totalPaginas, actual) {
+  const esMovil = typeof window !== 'undefined' && window.innerWidth <= 640;
+
+  if (esMovil) {
+    if (totalPaginas <= 4) {
+      const paginas = [];
+      for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
+      return paginas;
+    }
+    if (actual <= 2) {
+      return [1, 2, '...', totalPaginas];
+    }
+    if (actual >= totalPaginas - 1) {
+      return [1, '...', totalPaginas - 1, totalPaginas];
+    }
+    return [1, '...', actual, '...', totalPaginas];
+  }
+
+  if (totalPaginas <= 7) {
+    const paginas = [];
+    for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
+    return paginas;
+  }
+
+  if (actual <= 4) {
+    return [1, 2, 3, 4, 5, '...', totalPaginas];
+  }
+
+  if (actual >= totalPaginas - 3) {
+    return [1, '...', totalPaginas - 4, totalPaginas - 3, totalPaginas - 2, totalPaginas - 1, totalPaginas];
+  }
+
+  return [1, '...', actual - 1, actual, actual + 1, '...', totalPaginas];
+}
+
+let resizeTimerArea;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimerArea);
+  resizeTimerArea = setTimeout(() => {
+    if (typeof renderizarListaProyectos === 'function') {
+      renderizarListaProyectos();
+    }
+  }, 150);
+});
 
 function setHtml(id, html) {
   const el = document.getElementById(id);

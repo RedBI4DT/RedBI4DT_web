@@ -634,3 +634,262 @@
   color: var(--color-navy-subtitles);
   gap: 0.55rem;
 }
+
+
+/* ==========================================================================
+   HOMOLOGACIÓN DE PROYECTOS: LISTA LIMPIA Y PAGINACIÓN DINÁMICA
+   ========================================================================== */
+
+.area-proyectos-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.area-proyectos-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.area-proyectos-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.proy-total-badge {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-left: 0.35rem;
+}
+
+.proyectos-per-page-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.proy-per-page-select {
+  padding: 0.3rem 0.6rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.proy-per-page-select:focus {
+  border-color: var(--color-blue-hover, #226ee0);
+}
+
+.proy-per-page-suffix {
+  color: #64748b;
+}
+
+/* ── Lista Limpia de Proyectos ───────────────────── */
+.perfil-proyectos-list {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.perfil-proy-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto 30px;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.15rem 1.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-decoration: none;
+  transition: background-color 0.18s ease;
+  color: inherit;
+}
+
+.perfil-proy-row:last-child {
+  border-bottom: none;
+}
+
+.perfil-proy-row:hover {
+  background-color: #f8fafc;
+}
+
+.proy-row-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.4;
+  transition: color 0.18s ease;
+}
+
+.perfil-proy-row:hover .proy-row-title {
+  color: var(--color-blue-hover, #226ee0);
+}
+
+.proy-row-anio {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.proy-row-estado {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.proy-estado--activo {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.proy-estado--concluido {
+  background: rgba(100, 116, 139, 0.12);
+  color: #475569;
+  border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+.proy-row-arrow {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: flex-end;
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.perfil-proy-row:hover .proy-row-arrow {
+  color: var(--color-blue-hover, #226ee0);
+  transform: translateX(4px);
+}
+
+/* ── Barra de Paginación ─────────────────────────── */
+.proyectos-pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.proy-pag-info {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.proy-pag-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.proy-pag-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.proy-pag-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 8px;
+  color: var(--color-navy-subtitles, #1a3668);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.proy-pag-btn:hover:not(:disabled):not(.active) {
+  border-color: var(--color-blue-hover, #226ee0);
+  color: var(--color-blue-hover, #226ee0);
+  background: #f0f7ff;
+}
+
+.proy-pag-btn.active {
+  background: var(--color-navy-subtitles, #1a3668);
+  color: #ffffff;
+  border-color: var(--color-navy-subtitles, #1a3668);
+  cursor: default;
+}
+
+.proy-pag-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.proy-pag-ellipsis {
+  padding: 0 0.35rem;
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+/* ── Responsive para la Lista de Proyectos ──────── */
+@media (max-width: 640px) {
+  .area-proyectos-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .area-proyectos-header-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .perfil-proy-row {
+    grid-template-columns: auto 1fr auto;
+    row-gap: 0.5rem;
+    column-gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .proy-row-title {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+  }
+
+  .proy-row-arrow {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .proy-pag-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .proy-pag-numbers {
+    gap: 0.2rem;
+  }
+
+  .proyectos-pagination-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
