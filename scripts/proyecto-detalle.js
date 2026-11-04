@@ -44,11 +44,37 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   // Actualizar título en pestaña
   document.title = `${p.titulo} - Proyecto | BI4DT Network`;
 
-  // 1. Hero Metadata
+  // 1. Hero Metadata y Ficha de Proyecto (soporte multilínea: formato lista sin punto, una encima de otra)
+  const AREA_LABELS_DET = {
+    'informatica-biomedica': 'Informática Biomédica',
+    'ia-salud': 'Inteligencia Artificial en Salud',
+    'interoperabilidad': 'Interoperabilidad y Gobernanza de Datos',
+    'analitica-datos': 'Visualización y Analítica de Datos',
+    'sociotecnica-adopcion': 'Evaluación Sociotécnica y Adopción',
+    'salud-digital': 'Salud Digital'
+  };
+
+  const lineasContainer = document.getElementById('proy-lineas-container');
   const lineaBadge = document.getElementById('proy-linea-badge');
-  if (lineaBadge) {
-    lineaBadge.textContent = p.area_nombre || 'Línea Científica';
-    lineaBadge.href = p.area_id ? `area.html?id=${p.area_id}` : 'lineas.html';
+  const lineaLabel = document.getElementById('proy-linea-label');
+
+  const lineasIds = Array.isArray(p.lineas) && p.lineas.length > 0
+    ? p.lineas
+    : (p.area_id ? [p.area_id] : []);
+
+  if (lineaLabel) {
+    lineaLabel.textContent = lineasIds.length > 1 ? 'Líneas de Investigación' : 'Línea de Investigación';
+  }
+
+  const itemsHtml = lineasIds.map(id => {
+    const nombre = AREA_LABELS_DET[id] || (id === p.area_id ? p.area_nombre : id);
+    return `<li><a href="area.html?id=${id}" class="ficha-valor-linea">${nombre}</a></li>`;
+  }).join('');
+
+  if (lineasContainer) {
+    lineasContainer.innerHTML = `<ul class="ficha-lineas-list">${itemsHtml}</ul>`;
+  } else if (lineaBadge) {
+    lineaBadge.parentElement.innerHTML = `<ul class="ficha-lineas-list">${itemsHtml}</ul>`;
   }
 
   const estadoBadge = document.getElementById('proy-estado-badge');
@@ -78,7 +104,8 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   if (equipoGrid) {
     const todosMiembros = [
       ...(datosMiembros.investigadores || []).map(m => ({ ...m, categoria: 'investigadores' })),
-      ...(datosMiembros.gestion || []).map(m => ({ ...m, categoria: 'gestion' }))
+      ...(datosMiembros.gestion || []).map(m => ({ ...m, categoria: 'gestion' })),
+      ...(datosMiembros.estudiantes || []).map(m => ({ ...m, categoria: 'estudiantes' }))
     ];
 
     const idsEquipo = Array.isArray(p.integrantes) && p.integrantes.length > 0
@@ -90,15 +117,17 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
     if (miembrosEncontrados.length > 0) {
       equipoGrid.innerHTML = miembrosEncontrados.map(m => {
         const fotoSrc = m.foto || `${base}assets/images/Imagen_1.jpg`;
+        const linkPerfil = m.categoria === 'estudiantes'
+          ? `estudiante.html?id=${m.id}`
+          : `investigacion.html?id=${m.id}&cat=${m.categoria}`;
         return `
-          <a href="investigacion.html?id=${m.id}&cat=${m.categoria}" class="proyecto-miembro-card" title="Ver perfil de ${m.nombre}">
+          <a href="${linkPerfil}" class="proyecto-miembro-card" title="Ver perfil de ${m.nombre}">
             <div class="proyecto-miembro-img-wrapper">
               <img src="${fotoSrc}" class="proyecto-miembro-img">
               <div class="proyecto-miembro-img-overlay"></div>
             </div>
             <div class="proyecto-miembro-info">
               <span class="proyecto-miembro-nombre">${m.nombre}</span>
-              ${m.cargo ? `<span class="proyecto-miembro-cargo">${m.cargo}</span>` : ''}
               <span class="proyecto-miembro-inst">${m.institucion || ''}</span>
             </div>
           </a>
@@ -109,7 +138,7 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
         <div class="proyecto-miembro-card">
           <div class="proyecto-miembro-info">
             <span class="proyecto-miembro-nombre">${p.investigador_nombre}</span>
-            <span class="proyecto-miembro-cargo">Investigador Principal</span>
+            <span class="proyecto-miembro-inst">${p.institucion_principal || p.institucion || ''}</span>
           </div>
         </div>
       `;
@@ -135,8 +164,15 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
 
   // 5. Enlace del único botón CTA "Ver proyectos similares"
   const filtroLink = document.getElementById('proy-filtro-linea-link');
-  if (filtroLink && p.area_id) {
-    filtroLink.href = `proyectos.html?linea=${p.area_id}`;
+  if (filtroLink) {
+    const lineasIds = Array.isArray(p.lineas) && p.lineas.length > 0
+      ? p.lineas
+      : (p.area_id ? [p.area_id] : []);
+    if (lineasIds.length > 0) {
+      filtroLink.href = `proyectos.html?lineas=${lineasIds.join(',')}&combo=1`;
+    } else if (p.area_id) {
+      filtroLink.href = `proyectos.html?linea=${p.area_id}`;
+    }
   }
 
   // 6. Publicaciones del Proyecto
@@ -201,9 +237,9 @@ function renderPublicaciones(publicaciones) {
 
         return `
           <li class="proy-pub-item">
-            <div class="proy-pub-icon-box" aria-hidden="true">
-              <i class="fa-solid fa-file-lines"></i>
-            </div>
+            <span class="proy-pub-bullet" aria-hidden="true">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
             <div class="proy-pub-content">
               <a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="proy-pub-link">
                 <span>${pub.titulo}</span>

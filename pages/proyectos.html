@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyectos de Investigación - Red BI4DT</title>
   <meta name="description" content="Catálogo de proyectos de investigación de la Red BI4DT en Informática Biomédica, Inteligencia Artificial en Salud e Interoperabilidad.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/proyectos.css">
+  <link rel="stylesheet" href="../styles/proyectos.css?v=3.3">
 </head>
 <body>
 
@@ -17,22 +20,29 @@
   <!-- Contenido Principal -->
   <main class="page-content page-full">
 
-    <!-- Encabezado Institucional Homologado -->
-    <section class="quienes-header-section">
-      <div class="quienes-header-container">
-        <h1 class="quienes-title">Proyectos de la Red BI4DT</h1>
-        <p class="quienes-subtitle">
-          Exploramos y desarrollamos soluciones tecnológicas para la transformación digital en salud, articulando academia, sector público e instituciones estratégicas de Perú, Ecuador y Estados Unidos.
-        </p>
-        <div class="proyectos-hero-stats">
-          <div class="proyectos-stat">
-            <span class="proyectos-stat-num" id="stat-total">16</span>
-            <span class="proyectos-stat-label">Proyectos</span>
+    <!-- Encabezado Institucional con Gráfico de Barras -->
+    <section class="quienes-header-section proyectos-hero-section">
+      <div class="quienes-header-container proyectos-hero-grid">
+        <!-- Columna Izquierda: Título y Estadísticas -->
+        <div class="proyectos-hero-left">
+          <h1 class="quienes-title">Proyectos</h1>
+          <div class="proyectos-hero-stats">
+            <div class="proyectos-stat">
+              <span class="proyectos-stat-num" id="stat-total">76</span>
+              <span class="proyectos-stat-label">Proyectos</span>
+            </div>
+            <div class="proyectos-stat-divider"></div>
+            <div class="proyectos-stat">
+              <span class="proyectos-stat-num">4</span>
+              <span class="proyectos-stat-label">Países</span>
+            </div>
           </div>
-          <div class="proyectos-stat-divider"></div>
-          <div class="proyectos-stat">
-            <span class="proyectos-stat-num">4</span>
-            <span class="proyectos-stat-label">Países</span>
+        </div>
+
+        <!-- Columna Derecha: Gráfico de Barras Integrado al Entorno -->
+        <div class="proyectos-hero-right">
+          <div class="proyectos-chart-wrap" id="proyectos-hero-chart">
+            <!-- Renderizado dinámico con animación progresiva -->
           </div>
         </div>
       </div>
@@ -58,7 +68,7 @@
             <!-- Select Línea de Investigación -->
             <select id="filtro-select-area" class="filtro-select" aria-label="Filtrar por línea de investigación">
               <option value="todos">Todas las líneas</option>
-              <option value="informatica-biomedica">Informática Biomédica y Salud Digital</option>
+              <option value="informatica-biomedica">Informática Biomédica</option>
               <option value="ia-salud">Inteligencia Artificial en Salud</option>
               <option value="interoperabilidad">Interoperabilidad y Gobernanza de Datos</option>
               <option value="analitica-datos">Visualización y Analítica de Datos</option>
@@ -79,12 +89,23 @@
             </button>
           </div>
 
-          <!-- Fila Inferior: Mostrando N proyectos + Chips Activos -->
-          <div class="proyectos-meta-row">
+          <!-- Fila Inferior: Mostrando N proyectos + Chips Activos + Selector de Paginación -->
+        <div class="proyectos-meta-row">
+          <div class="proyectos-meta-left">
             <span id="proyectos-count-label" class="proyectos-count-text">Mostrando <strong id="proyectos-count">0</strong> proyectos</span>
             <div id="proyectos-active-chips" class="proyectos-active-chips" hidden></div>
           </div>
+          <div class="proyectos-per-page-wrapper">
+            <label for="proy-per-page" class="proy-per-page-label">Mostrar:</label>
+            <select id="proy-per-page" class="proy-per-page-select">
+              <option value="6" selected>6</option>
+              <option value="9">9</option>
+              <option value="12">12</option>
+            </select>
+            <span class="proy-per-page-suffix">por página</span>
+          </div>
         </div>
+      </div>
 
         <!-- Grid de proyectos -->
         <div class="proyectos-grid" id="proyectos-grid">
@@ -99,22 +120,11 @@
           <button type="button" class="proyectos-empty-btn" id="proyectos-empty-reset">Restablecer todos los filtros</button>
         </div>
 
+        <!-- Barra de Paginación Dinámica (6, 9, 12) -->
+        <div class="proyectos-pagination-bar" id="proyectos-pagination"></div>
+
       </div>
     </section>
-
-    <!-- CTA -->
-    <section class="proyectos-cta-section">
-      <img src="../assets/images/Imagen_1.jpg" class="proyectos-cta-img">
-      <div class="proyectos-cta-img-overlay"></div>
-      <div class="proyectos-cta-content">
-        <p class="proyectos-cta-label">¿Tienes un proyecto de investigación?</p>
-        <h2 class="proyectos-cta-title">Conecta con la Red BI4DT y amplifica el impacto de tu investigación</h2>
-        <a href="contacto.html" class="proyectos-cta-btn" id="proyectos-cta-contacto">
-          <i class="fa-solid fa-paper-plane"></i> Contáctanos
-        </a>
-      </div>
-    </section>
-
   </main>
 
   <!-- Componente Footer -->
@@ -123,6 +133,6 @@
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/index.js"></script>
-  <script src="../scripts/proyectos.js"></script>
+  <script src="../scripts/proyectos.js?v=3.3"></script>
 </body>
 </html>

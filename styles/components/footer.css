@@ -23,10 +23,10 @@
   position: relative;
 }
 
-/* ─── Cuerpo Principal: Grid de 2 Columnas ─── */
+/* ─── Cuerpo Principal: Grid de 3 Columnas (Marca / Botón Centro / Redes Der) ─── */
 .cuerpo {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 32px;
   padding: 44px 32px;
@@ -107,18 +107,55 @@
   margin: 0;
 }
 
-/* ─── Zona Derecha: Contacto (3 tarjetas cuadradas de 72x72) ─── */
+/* ─── Zona Centro: Botón Contacta con Nosotros ─── */
+.centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botón Contacta con nosotros */
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-gold, #f59e0b);
+  color: var(--color-dark-bg, #0f172a);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.footer-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+  background: #fbbf24;
+}
+
+.footer-cta-btn i {
+  transition: transform 0.25s ease;
+  font-size: 0.88rem;
+}
+
+.footer-cta-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ─── Zona Derecha: Redes Sociales Reducidas ─── */
 .der {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
 }
 
 .social-tile-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  display: inline-flex;
   text-decoration: none;
   transition: transform 0.2s ease;
 }
@@ -130,27 +167,21 @@
 .social-tile-link:focus-visible {
   outline: 2px solid var(--acento);
   outline-offset: 4px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
+/* Tarjetas cuadradas compactas (42x42px) */
 .tile {
-  width: 72px;
-  height: 72px;
+  width: 42px;
+  height: 42px;
   background: var(--fondo-tile);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.tile-label {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--texto-suave);
-  text-align: center;
+  font-size: 1.15rem;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Colores de íconos de redes unificados en Celeste Institucional */
@@ -160,14 +191,14 @@
 }
 
 .social-tile-link:hover .tile {
-  background: rgba(56, 189, 248, 0.12);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.2);
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
 }
 
 .social-tile-link:hover .tile i {
   color: #ffffff;
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 /* ─── Barra Copyright ─── */
@@ -176,7 +207,7 @@
   font-size: 0.82rem;
   color: var(--texto-suave);
   padding: 16px 32px;
-  background: rgba(24, 23, 23, 0.511); /* Ligeramente más oscuro que el fondo del footer */
+  background: rgba(24, 23, 23, 0.511);
   width: 100%;
   box-sizing: border-box;
 }
@@ -185,12 +216,34 @@
 @media (max-width: 768px) {
   .cuerpo {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
     padding: 32px 20px;
+    text-align: center;
+  }
+
+  .izq {
+    align-items: center;
+    text-align: center;
+  }
+
+  .marca {
+    justify-content: center;
+  }
+
+  .centro {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-cta-btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
   }
 
   .der {
-    justify-content: flex-start;
+    justify-content: center;
+    width: 100%;
   }
 
   .copy {

@@ -22,7 +22,7 @@ function initNavbar() {
   if (navContacto)     navContacto.href     = base + 'pages/contacto.html';
   if (navSubLineas)    navSubLineas.href    = base + 'pages/lineas.html';
   if (navSubProyectos) navSubProyectos.href = base + 'pages/proyectos.html';
-  if (navSubArticulos) navSubArticulos.href = base + 'pages/proyectos.html#publicaciones';
+  if (navSubArticulos) navSubArticulos.href = base + 'pages/articulos.html';
 
   // ── Dropdown INVESTIGACIÓN (click en desktop Y móvil) ──────
   const dropdownBtn       = document.getElementById('nav-investigacion-btn');
@@ -98,9 +98,23 @@ function initNavbar() {
   [navInicio, navQuienesSomos, navEquipo, navProyectos, navContacto]
     .forEach(l => l && l.classList.remove('active'));
 
+  const navInvestigacionBtn = document.getElementById('nav-investigacion-btn');
+  if (navInvestigacionBtn) navInvestigacionBtn.classList.remove('active');
+
   if      (currentPath.includes('contacto.html'))                                                            { if (navContacto)     navContacto.classList.add('active'); }
   else if (currentPath.includes('quienes.html'))                                                             { if (navQuienesSomos) navQuienesSomos.classList.add('active'); }
-  else if (currentPath.includes('equipo.html'))                                                              { if (navEquipo)       navEquipo.classList.add('active'); }
-  else if (currentPath.includes('proyectos.html') || currentPath.includes('area.html') || currentPath.includes('proyecto-detalle.html')) { if (navProyectos) navProyectos.classList.add('active'); }
+  else if (currentPath.includes('equipo.html') || currentPath.includes('investigacion.html') || currentPath.includes('estudiante.html')) { if (navEquipo) navEquipo.classList.add('active'); }
+  else if (currentPath.includes('articulos.html')) {
+    if (navInvestigacionBtn) navInvestigacionBtn.classList.add('active');
+    if (navSubArticulos) navSubArticulos.classList.add('active');
+  }
+  else if (currentPath.includes('proyectos.html') || currentPath.includes('proyecto-detalle.html')) {
+    if (navInvestigacionBtn) navInvestigacionBtn.classList.add('active');
+    if (navSubProyectos) navSubProyectos.classList.add('active');
+  }
+  else if (currentPath.includes('lineas.html') || currentPath.includes('area.html')) {
+    if (navInvestigacionBtn) navInvestigacionBtn.classList.add('active');
+    if (navSubLineas) navSubLineas.classList.add('active');
+  }
   else                                                                                                       { if (navInicio)       navInicio.classList.add('active'); }
 }

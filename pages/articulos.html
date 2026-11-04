@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículos Científicos - Red BI4DT</title>
+  <meta name="description" content="Publicaciones y artículos científicos indexados desarrollados por los equipos de investigación de la Red BI4DT.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/articulos.css?v=1.0">
+</head>
+<body>
+
+  <!-- Componente Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Contenido Principal -->
+  <main class="page-content page-full">
+
+    <!-- Encabezado Institucional Sobrio (Hero Azul) -->
+    <section class="quienes-header-section articulos-hero-section">
+      <div class="quienes-header-container articulos-hero-content">
+        <h1 class="quienes-title">Artículos</h1>
+        <div class="articulos-hero-stats">
+          <div class="articulos-stat">
+            <span class="articulos-stat-num" id="stat-total-articulos">0</span>
+            <span class="articulos-stat-label">Artículos Indexados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenedor Principal: Búsqueda, Lista y Paginación -->
+    <section class="articulos-main-section">
+      <div class="articulos-main-container">
+
+        <!-- Toolbar de Búsqueda Simple -->
+        <div class="articulos-toolbar-wrapper">
+          <div class="articulos-search-bar" role="search" aria-label="Búsqueda de artículos">
+            <div class="articulos-search-input-box">
+              <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+              <input type="text" id="articulos-search-input" placeholder="Buscar artículos por título, revista o año..." aria-label="Buscar artículos">
+              <button type="button" id="articulos-search-clear" class="btn-clear-search" aria-label="Borrar texto de búsqueda" hidden>
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Fila de Metadatos: Contador y Selector de Items por Página -->
+          <div class="articulos-meta-row">
+            <div class="articulos-meta-left">
+              <span class="articulos-count-text">Mostrando <strong id="articulos-count">0</strong> artículos</span>
+            </div>
+            <div class="proyectos-per-page-wrapper">
+              <label for="articulos-per-page" class="proy-per-page-label">Mostrar:</label>
+              <select id="articulos-per-page" class="proy-per-page-select">
+                <option value="6" selected>6</option>
+                <option value="9">9</option>
+                <option value="12">12</option>
+              </select>
+              <span class="proy-per-page-suffix">por página</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta / Contenedor Blanco de la Lista de Artículos -->
+        <div class="articulos-card-container">
+          <ul class="articulos-list" id="articulos-list" aria-label="Lista de artículos científicos">
+            <!-- Renderizado dinámico vía JavaScript -->
+          </ul>
+
+          <!-- Estado Vacío cuando no hay resultados -->
+          <div class="articulos-empty" id="articulos-empty" hidden>
+            <i class="fa-solid fa-filter-circle-xmark"></i>
+            <h3>No se encontraron artículos</h3>
+            <p>No se encontraron publicaciones que coincidan con los términos de búsqueda ingresados.</p>
+            <button type="button" class="articulos-empty-btn" id="articulos-empty-reset">Borrar búsqueda</button>
+          </div>
+        </div>
+
+        <!-- Barra de Paginación Dinámica (6, 9, 12 con elipsis y flechas) -->
+        <div class="proyectos-pagination-bar" id="articulos-pagination"></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Componente Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/loadComponents.js"></script>
+  <script src="../scripts/index.js"></script>
+  <script src="../scripts/articulos.js?v=1.0"></script>
+</body>
+</html>
+

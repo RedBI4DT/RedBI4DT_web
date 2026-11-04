@@ -3,6 +3,11 @@
 @import url('investigacion.css');
 
 /* Hereda la estructura y el sistema de variables de investigacion.css */
+.perfil-proyectos-section {
+  border-bottom: 4px solid var(--color-gold);
+  margin-bottom: -3rem;
+}
+
 .perfil-error i {
   color: var(--color-iconos);
 }

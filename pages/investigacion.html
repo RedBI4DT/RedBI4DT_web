@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
-  <link rel="stylesheet" href="../styles/investigacion.css">
+  <link rel="stylesheet" href="../styles/investigacion.css?v=2.7">
 </head>
 <body>
 
@@ -47,13 +47,29 @@
       </div>
     </section>
 
-    <!-- Proyectos Relacionados (Cards mínimas) -->
+    <!-- Proyectos Relacionados (Vista en Lista Limpia) -->
     <section class="perfil-proyectos-section">
       <div class="perfil-section-container">
-        <h2 class="perfil-section-title">
-          <i class="fa-solid fa-folder-open"></i> Proyectos Relacionados
-        </h2>
-        <div class="perfil-proyectos-grid" id="perfil-proyectos"></div>
+        <div class="perfil-proyectos-header-bar">
+          <h2 class="perfil-section-title">
+            Proyectos Relacionados <span id="proyectos-total-badge" class="proy-total-badge">(0)</span>
+          </h2>
+          <div class="proyectos-per-page-wrapper">
+            <label for="proy-per-page" class="proy-per-page-label">Mostrar:</label>
+            <select id="proy-per-page" class="proy-per-page-select">
+              <option value="5" selected>5</option>
+              <option value="7">7</option>
+              <option value="10">10</option>
+            </select>
+            <span class="proy-per-page-suffix">por página</span>
+          </div>
+        </div>
+
+        <!-- Contenedor Lista -->
+        <div class="perfil-proyectos-list" id="perfil-proyectos"></div>
+
+        <!-- Barra de Paginación -->
+        <div class="proyectos-pagination-bar" id="proyectos-pagination"></div>
       </div>
     </section>
 
@@ -64,6 +80,6 @@
 
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
-  <script src="../scripts/investigacion.js"></script>
+  <script src="../scripts/investigacion.js?v=2.7"></script>
 </body>
 </html>
