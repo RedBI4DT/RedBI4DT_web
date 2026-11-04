@@ -7,7 +7,7 @@
 
 /* ── Hero del Proyecto ───────────────────────────────── */
 .proyecto-hero-section {
-  background: var(--gradient-hero-dark);
+  background: linear-gradient(180deg, #1a3668 0%, #1e3a8a 100%);
   padding: 4.5rem 50px 3.5rem;
   width: 100vw;
   position: relative;
