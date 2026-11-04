@@ -448,6 +448,10 @@
   gap: 1rem;
 }
 
+.perfil-proyectos-header-bar .perfil-section-title {
+  margin-bottom: 0;
+}
+
 .proy-total-badge {
   font-size: 1.15rem;
   font-weight: 600;
@@ -657,28 +661,14 @@
   text-align: center;
 }
 
-@media (max-width: 680px) {
-  .perfil-proy-row {
-    grid-template-columns: 1fr auto;
-    gap: 0.75rem 1rem;
-    padding: 1rem 0;
-  }
-  .proy-row-title {
-    grid-column: 1 / -1;
-  }
-  .proy-row-arrow {
-    justify-self: end;
-  }
-  .proyectos-pagination-bar {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.85rem;
-  }
-}
-
-/* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 767px) {
   .perfil-hero-section {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .perfil-lineas-section,
+  .perfil-proyectos-section,
+  .perfil-contacto-section {
     padding: 2.5rem 1.25rem;
   }
 
@@ -725,5 +715,104 @@
 
   .perfil-proyectos-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Proyectos Relacionados en Móvil */
+  .perfil-proyectos-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .perfil-proyectos-header-bar .perfil-section-title {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .perfil-proyectos-header-bar .proy-total-badge {
+    font-size: 1.05rem;
+    margin-left: 0.15rem;
+  }
+
+  .perfil-proyectos-header-bar .proyectos-per-page-wrapper {
+    font-size: 0.85rem;
+  }
+
+  .perfil-proyectos-list {
+    padding: 0.25rem 1.15rem;
+  }
+
+  /* Filas de proyectos: Título arriba, Año + Estado + Flecha en una sola fila compacta */
+  .perfil-proy-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.55rem 0.75rem;
+    padding: 1.05rem 0;
+  }
+
+  .proy-row-title {
+    grid-column: 1 / -1;
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .proy-row-anio {
+    grid-column: 1;
+    font-size: 0.88rem;
+    color: #64748b;
+    font-weight: 700;
+    min-width: auto;
+    text-align: left;
+  }
+
+  .proy-row-estado {
+    grid-column: 2;
+    justify-self: start;
+    font-size: 0.72rem;
+    padding: 0.22rem 0.65rem;
+  }
+
+  .proy-row-arrow {
+    grid-column: 3;
+    justify-self: end;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+
+  .proyectos-pagination-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .proy-pag-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .proy-pag-numbers {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .proy-pag-btn {
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.84rem;
+    padding: 0 0.35rem;
+  }
+  .proy-pag-nav {
+    width: 32px;
+    min-width: 32px;
+  }
+  .proy-pag-ellipsis {
+    min-width: 18px;
+    height: 32px;
+    font-size: 0.85rem;
   }
 }

@@ -287,14 +287,29 @@
    * Genera el rango de números con elipsis para la paginación
    */
   function obtenerRangoPaginacion(totalPaginas, actual) {
+    const esMovil = typeof window !== 'undefined' && window.innerWidth <= 640;
+
+    if (esMovil) {
+      if (totalPaginas <= 4) {
+        return Array.from({ length: totalPaginas }, (_, i) => i + 1);
+      }
+      if (actual <= 2) {
+        return [1, 2, '...', totalPaginas];
+      }
+      if (actual >= totalPaginas - 1) {
+        return [1, '...', totalPaginas - 1, totalPaginas];
+      }
+      return [1, '...', actual, '...', totalPaginas];
+    }
+
     if (totalPaginas <= 7) {
       return Array.from({ length: totalPaginas }, (_, i) => i + 1);
     }
-    if (actual <= 4) {
-      return [1, 2, 3, 4, 5, '...', totalPaginas];
+    if (actual <= 3) {
+      return [1, 2, 3, 4, '...', totalPaginas];
     }
-    if (actual >= totalPaginas - 3) {
-      return [1, '...', totalPaginas - 4, totalPaginas - 3, totalPaginas - 2, totalPaginas - 1, totalPaginas];
+    if (actual >= totalPaginas - 2) {
+      return [1, '...', totalPaginas - 3, totalPaginas - 2, totalPaginas - 1, totalPaginas];
     }
     return [1, '...', actual - 1, actual, actual + 1, '...', totalPaginas];
   }
@@ -317,7 +332,17 @@
     return String(str).replace(/"/g, '&quot;');
   }
 
-  // Inicializar al cargar el DOM
+
+    // Re-renderizar paginación adaptativa al cambiar tamaño de pantalla
+    let resizeTimerArt;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimerArt);
+      resizeTimerArt = setTimeout(() => {
+        renderArticulos();
+      }, 150);
+    });
+
+    // Inicializar al cargar el DOM
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initArticulos);
   } else {

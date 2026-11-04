@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
-  <link rel="stylesheet" href="../styles/estudiante.css?v=2.0">
+  <link rel="stylesheet" href="../styles/estudiante.css?v=2.1">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
   <!-- Contenido Principal -->
   <main class="page-content">
 
-    <!-- Hero: Foto + Contenido + Líneas de Interés -->
+    <!-- Hero: Foto + Contenido + Áreas de Interés -->
     <section class="perfil-hero-section">
       <div class="perfil-hero-container">
         <!-- Columna 1: Foto fija 300x300 -->
@@ -36,7 +36,7 @@
           <p class="perfil-descripcion" id="perfil-descripcion"></p>
         </div>
 
-        <!-- Columna 3: Líneas de Interés -->
+        <!-- Columna 3: Áreas de Interés (Derivadas de los proyectos vinculados) -->
         <div class="perfil-hero-lineas-col">
           <h3 class="perfil-lineas-title">Áreas de Interés</h3>
           <ul class="perfil-lineas-bullet-list" id="perfil-lineas"></ul>
@@ -47,6 +47,32 @@
       </div>
     </section>
 
+    <!-- Proyectos Relacionados (Vista en Lista Limpia) -->
+    <section class="perfil-proyectos-section">
+      <div class="perfil-section-container">
+        <div class="perfil-proyectos-header-bar">
+          <h2 class="perfil-section-title">
+            Proyectos Relacionados <span id="proyectos-total-badge" class="proy-total-badge">(0)</span>
+          </h2>
+          <div class="proyectos-per-page-wrapper">
+            <label for="proy-per-page" class="proy-per-page-label">Mostrar:</label>
+            <select id="proy-per-page" class="proy-per-page-select">
+              <option value="5" selected>5</option>
+              <option value="7">7</option>
+              <option value="10">10</option>
+            </select>
+            <span class="proy-per-page-suffix">por página</span>
+          </div>
+        </div>
+
+        <!-- Contenedor Lista -->
+        <div class="perfil-proyectos-list" id="perfil-proyectos"></div>
+
+        <!-- Barra de Paginación -->
+        <div class="proyectos-pagination-bar" id="proyectos-pagination"></div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Componente Footer -->
@@ -54,6 +80,6 @@
 
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
-  <script src="../scripts/estudiante.js?v=2.0"></script>
+  <script src="../scripts/estudiante.js?v=2.1"></script>
 </body>
 </html>

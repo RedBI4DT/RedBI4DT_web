@@ -29,8 +29,9 @@ let itemsPorPagina = 6; // Opciones: 6, 9, 12
 
 const estadoFiltros = {
   busqueda: '',
-  area: 'todos',
-  estado: 'todos'
+  areas: [],
+  estado: 'todos',
+  comboExacto: false
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -48,13 +49,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Renderizar gráfico de barras de distribución por línea
     renderGraficoDistribucion(todosProyectos);
 
-    // Detectar filtro inicial desde la URL
+    // Detectar filtro inicial desde la URL (soporte multilínea y proyectos similares)
     const params = new URLSearchParams(window.location.search);
+    const lineasParam = params.get('lineas');
     const areaParam = params.get('linea') || params.get('filtro') || params.get('area');
-    if (areaParam && AREA_LABELS[areaParam]) {
-      estadoFiltros.area = areaParam;
-      const selectArea = document.getElementById('filtro-select-area');
-      if (selectArea) selectArea.value = areaParam;
+    const comboParam = params.get('combo');
+
+    if (comboParam === '1' || comboParam === 'true') {
+      estadoFiltros.comboExacto = true;
+    }
+
+    if (lineasParam) {
+      const arr = lineasParam.split(',').map(s => s.trim()).filter(s => AREA_LABELS[s]);
+      if (arr.length > 0) {
+        estadoFiltros.areas = arr;
+      }
+    } else if (areaParam && AREA_LABELS[areaParam]) {
+      estadoFiltros.areas = [areaParam];
+    }
+
+    const selectArea = document.getElementById('filtro-select-area');
+    if (selectArea && estadoFiltros.areas.length > 0) {
+      selectArea.value = estadoFiltros.areas[estadoFiltros.areas.length - 1];
     }
 
     const estadoParam = params.get('estado');
@@ -123,10 +139,26 @@ function initEventosToolbar() {
     });
   }
 
-  // Cambios en los selects compactos
+  // Cambios en los selects compactos (soporte multilínea acumulativo)
   if (selectArea) {
     selectArea.addEventListener('change', (e) => {
-      estadoFiltros.area = e.target.value;
+      const val = e.target.value;
+      if (val === 'todos') {
+        estadoFiltros.areas = [];
+        estadoFiltros.comboExacto = false;
+      } else {
+        if (!estadoFiltros.areas.includes(val)) {
+          estadoFiltros.areas.push(val);
+        }
+        if (estadoFiltros.areas.length > 1) {
+          estadoFiltros.comboExacto = true;
+        }
+      }
+      if (selectArea) {
+        selectArea.value = estadoFiltros.areas.length > 0
+          ? estadoFiltros.areas[estadoFiltros.areas.length - 1]
+          : 'todos';
+      }
       aplicarFiltros();
     });
   }
@@ -151,8 +183,9 @@ function initEventosToolbar() {
 
 function resetearFiltros() {
   estadoFiltros.busqueda = '';
-  estadoFiltros.area = 'todos';
+  estadoFiltros.areas = [];
   estadoFiltros.estado = 'todos';
+  estadoFiltros.comboExacto = false;
 
   const inputSearch = document.getElementById('proyectos-search-input');
   if (inputSearch) inputSearch.value = '';
@@ -185,11 +218,21 @@ function aplicarFiltros() {
       }
     }
 
-    // 2. Línea de Investigación (soporte para múltiples líneas en p.lineas)
-    if (estadoFiltros.area !== 'todos') {
-      const lineasProyecto = Array.isArray(p.lineas) ? p.lineas : [p.area_id];
-      if (!lineasProyecto.includes(estadoFiltros.area) && p.area_id !== estadoFiltros.area) {
-        return false;
+    // 2. Líneas de Investigación (soporte multilínea y combinación exacta)
+    if (estadoFiltros.areas.length > 0) {
+      const lineasProyecto = Array.isArray(p.lineas) && p.lineas.length > 0
+        ? p.lineas
+        : (p.area_id ? [p.area_id] : []);
+
+      if (estadoFiltros.comboExacto && estadoFiltros.areas.length > 1) {
+        // Misma combinación de líneas (debe coincidir con la combinación de líneas del proyecto)
+        const coincideExacto = lineasProyecto.length === estadoFiltros.areas.length &&
+          estadoFiltros.areas.every(a => lineasProyecto.includes(a));
+        if (!coincideExacto) return false;
+      } else {
+        // Contiene todas las líneas seleccionadas
+        const coincideTodas = estadoFiltros.areas.every(a => lineasProyecto.includes(a));
+        if (!coincideTodas) return false;
       }
     }
 
@@ -213,7 +256,7 @@ function actualizarChipsYBadges() {
   const selectEstado = document.getElementById('filtro-select-estado');
 
   if (selectArea) {
-    selectArea.classList.toggle('is-active', estadoFiltros.area !== 'todos');
+    selectArea.classList.toggle('is-active', estadoFiltros.areas.length > 0);
   }
   if (selectEstado) {
     selectEstado.classList.toggle('is-active', estadoFiltros.estado !== 'todos');
@@ -229,11 +272,14 @@ function actualizarChipsYBadges() {
     });
   }
 
-  if (estadoFiltros.area !== 'todos') {
-    chips.push({
-      tipo: 'area',
-      label: AREA_LABELS[estadoFiltros.area] || estadoFiltros.area,
-      icono: 'fa-layer-group'
+  if (estadoFiltros.areas.length > 0) {
+    estadoFiltros.areas.forEach(areaId => {
+      chips.push({
+        tipo: 'area',
+        id: areaId,
+        label: AREA_LABELS[areaId] || areaId,
+        icono: 'fa-layer-group'
+      });
     });
   }
 
@@ -259,7 +305,7 @@ function actualizarChipsYBadges() {
         <span class="proy-chip">
           <i class="fa-solid ${chip.icono}" style="font-size:0.7rem; color:#64748b;"></i>
           <span>${chip.label}</span>
-          <button type="button" class="proy-chip-btn" data-tipo="${chip.tipo}" aria-label="Eliminar filtro ${chip.label}">
+          <button type="button" class="proy-chip-btn" data-tipo="${chip.tipo}" ${chip.id ? `data-id="${chip.id}"` : ''} aria-label="Eliminar filtro ${chip.label}">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </span>
@@ -267,14 +313,14 @@ function actualizarChipsYBadges() {
 
       chipsContainer.querySelectorAll('.proy-chip-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          eliminarFiltro(btn.dataset.tipo);
+          eliminarFiltro(btn.dataset.tipo, btn.dataset.id);
         });
       });
     }
   }
 }
 
-function eliminarFiltro(tipo) {
+function eliminarFiltro(tipo, id) {
   if (tipo === 'busqueda') {
     estadoFiltros.busqueda = '';
     const inputSearch = document.getElementById('proyectos-search-input');
@@ -282,9 +328,18 @@ function eliminarFiltro(tipo) {
     const btnClearSearch = document.getElementById('proyectos-search-clear');
     if (btnClearSearch) btnClearSearch.hidden = true;
   } else if (tipo === 'area') {
-    estadoFiltros.area = 'todos';
+    if (id) {
+      estadoFiltros.areas = estadoFiltros.areas.filter(a => a !== id);
+    } else {
+      estadoFiltros.areas = [];
+    }
+    estadoFiltros.comboExacto = false;
     const selectArea = document.getElementById('filtro-select-area');
-    if (selectArea) selectArea.value = 'todos';
+    if (selectArea) {
+      selectArea.value = estadoFiltros.areas.length > 0
+        ? estadoFiltros.areas[estadoFiltros.areas.length - 1]
+        : 'todos';
+    }
   } else if (tipo === 'estado') {
     estadoFiltros.estado = 'todos';
     const selectEstado = document.getElementById('filtro-select-estado');
@@ -417,6 +472,23 @@ function renderProyectosPaginados() {
  * Genera el rango de números y elipsis para la paginación dinámica.
  */
 function obtenerRangoPaginacion(totalPaginas, actual) {
+  const esMovil = typeof window !== 'undefined' && window.innerWidth <= 640;
+
+  if (esMovil) {
+    if (totalPaginas <= 4) {
+      const paginas = [];
+      for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
+      return paginas;
+    }
+    if (actual <= 2) {
+      return [1, 2, '...', totalPaginas];
+    }
+    if (actual >= totalPaginas - 1) {
+      return [1, '...', totalPaginas - 1, totalPaginas];
+    }
+    return [1, '...', actual, '...', totalPaginas];
+  }
+
   if (totalPaginas <= 7) {
     const paginas = [];
     for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
@@ -497,3 +569,14 @@ function renderGraficoDistribucion(proyectos) {
     });
   }, 100);
 }
+
+
+let resizeTimerProy;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimerProy);
+  resizeTimerProy = setTimeout(() => {
+    if (typeof renderProyectosPaginados === 'function') {
+      renderProyectosPaginados();
+    }
+  }, 150);
+});

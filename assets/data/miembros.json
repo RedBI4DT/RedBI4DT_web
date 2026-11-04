@@ -154,7 +154,8 @@
         "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
-        "telesalud-rural-2024"
+        "telesalud-rural-2024",
+        "fhir-interoperabilidad-2023"
       ],
       "redes": {
         "correo": true,
@@ -177,7 +178,8 @@
         "scholar": "https://scholar.google.com/"
       },
       "proyectos": [
-        "ontologia-diagnosticos-2023"
+        "ontologia-diagnosticos-2023",
+        "fhir-interoperabilidad-2023"
       ],
       "redes": {
         "correo": true,
@@ -316,7 +318,8 @@
         "orcid": "https://orcid.org/"
       },
       "proyectos": [
-        "gestion-concytec-2023"
+        "gestion-concytec-2023",
+        "fhir-interoperabilidad-2023"
       ],
       "redes": {
         "correo": true,
@@ -361,7 +364,12 @@
         "linkedin": "https://www.linkedin.com/",
         "orcid": ""
       },
-      "proyectos": [],
+      "proyectos": [
+        "politica-salud-digital-2024",
+        "vigilancia-epi-2024",
+        "telesalud-rural-2024",
+        "fhir-interoperabilidad-2023"
+      ],
       "redes": {
         "correo": true,
         "linkedin": true,
@@ -381,7 +389,13 @@
         "linkedin": "https://www.linkedin.com/",
         "orcid": ""
       },
-      "proyectos": [],
+      "proyectos": [
+        "hce-nacional-2022",
+        "ontologia-diagnosticos-2023",
+        "nlp-registros-2023",
+        "estudio-comparativo-2023",
+        "fhir-interoperabilidad-2023"
+      ],
       "redes": {
         "correo": true,
         "linkedin": true,
@@ -401,7 +415,12 @@
         "linkedin": "https://www.linkedin.com/",
         "orcid": ""
       },
-      "proyectos": [],
+      "proyectos": [
+        "fhir-interoperabilidad-2023",
+        "gestion-clinica-ia-2023",
+        "plataforma-datos-sanitarios-2022",
+        "telesalud-rural-2024"
+      ],
       "redes": {
         "correo": true,
         "linkedin": true,

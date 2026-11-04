@@ -356,6 +356,23 @@ function renderizarListaProyectos() {
  * Genera el rango de números y elipsis para la paginación dinámica.
  */
 function obtenerRangoPaginacion(totalPaginas, actual) {
+  const esMovil = typeof window !== 'undefined' && window.innerWidth <= 640;
+
+  if (esMovil) {
+    if (totalPaginas <= 4) {
+      const paginas = [];
+      for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
+      return paginas;
+    }
+    if (actual <= 2) {
+      return [1, 2, '...', totalPaginas];
+    }
+    if (actual >= totalPaginas - 1) {
+      return [1, '...', totalPaginas - 1, totalPaginas];
+    }
+    return [1, '...', actual, '...', totalPaginas];
+  }
+
   if (totalPaginas <= 7) {
     const paginas = [];
     for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
@@ -372,3 +389,14 @@ function obtenerRangoPaginacion(totalPaginas, actual) {
 
   return [1, '...', actual - 1, actual, actual + 1, '...', totalPaginas];
 }
+
+
+let resizeTimerInv;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimerInv);
+  resizeTimerInv = setTimeout(() => {
+    if (typeof renderizarListaProyectos === 'function' && proyectosInvestigadorActual.length > 0) {
+      renderizarListaProyectos();
+    }
+  }, 150);
+});

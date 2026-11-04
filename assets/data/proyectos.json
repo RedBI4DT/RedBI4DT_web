@@ -27,7 +27,13 @@
       "investigador_nombre": "Pamela Chacón",
       "integrantes": [
         "pamela-chacon",
-        "david-villarreal"
+        "david-villarreal",
+        "oscar-huapaya",
+        "javier-vargas",
+        "gerson-zapata",
+        "rodrigo-chacon",
+        "selene-salas",
+        "lizeth-guzman"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -80,7 +86,8 @@
       "investigador_principal": "david-villarreal",
       "investigador_nombre": "David Villarreal",
       "integrantes": [
-        "david-villarreal"
+        "david-villarreal",
+        "selene-salas"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -122,7 +129,9 @@
       "investigador_principal": "oscar-huapaya",
       "investigador_nombre": "Oscar Huapaya",
       "integrantes": [
-        "oscar-huapaya"
+        "oscar-huapaya",
+        "rodrigo-chacon",
+        "lizeth-guzman"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -170,7 +179,8 @@
       "investigador_principal": "javier-vargas",
       "investigador_nombre": "Javier Vargas",
       "integrantes": [
-        "javier-vargas"
+        "javier-vargas",
+        "selene-salas"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -220,7 +230,8 @@
       "investigador_principal": "guido-bendezu",
       "investigador_nombre": "Guido Bendezú",
       "integrantes": [
-        "guido-bendezu"
+        "guido-bendezu",
+        "rodrigo-chacon"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -310,7 +321,8 @@
       "investigador_principal": "irvin-dongo",
       "investigador_nombre": "Irvin Dongo",
       "integrantes": [
-        "irvin-dongo"
+        "irvin-dongo",
+        "selene-salas"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -452,7 +464,8 @@
       "investigador_principal": "henry-cardenas",
       "investigador_nombre": "Henry Cárdenas",
       "integrantes": [
-        "henry-cardenas"
+        "henry-cardenas",
+        "lizeth-guzman"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -590,7 +603,8 @@
       "investigador_principal": "adriana-echevarria",
       "investigador_nombre": "Adriana Echevarría",
       "integrantes": [
-        "adriana-echevarria"
+        "adriana-echevarria",
+        "lizeth-guzman"
       ],
       "categoria_miembro": "gestion",
       "tags": [
@@ -638,7 +652,8 @@
       "investigador_principal": "rafael-leal",
       "investigador_nombre": "Rafael Leal",
       "integrantes": [
-        "rafael-leal"
+        "rafael-leal",
+        "rodrigo-chacon"
       ],
       "categoria_miembro": "investigadores",
       "tags": [
@@ -683,7 +698,8 @@
       "investigador_principal": "jose-florez",
       "investigador_nombre": "José Flórez",
       "integrantes": [
-        "jose-florez"
+        "jose-florez",
+        "selene-salas"
       ],
       "categoria_miembro": "investigadores",
       "tags": [

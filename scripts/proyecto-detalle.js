@@ -104,7 +104,8 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   if (equipoGrid) {
     const todosMiembros = [
       ...(datosMiembros.investigadores || []).map(m => ({ ...m, categoria: 'investigadores' })),
-      ...(datosMiembros.gestion || []).map(m => ({ ...m, categoria: 'gestion' }))
+      ...(datosMiembros.gestion || []).map(m => ({ ...m, categoria: 'gestion' })),
+      ...(datosMiembros.estudiantes || []).map(m => ({ ...m, categoria: 'estudiantes' }))
     ];
 
     const idsEquipo = Array.isArray(p.integrantes) && p.integrantes.length > 0
@@ -116,15 +117,17 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
     if (miembrosEncontrados.length > 0) {
       equipoGrid.innerHTML = miembrosEncontrados.map(m => {
         const fotoSrc = m.foto || `${base}assets/images/Imagen_1.jpg`;
+        const linkPerfil = m.categoria === 'estudiantes'
+          ? `estudiante.html?id=${m.id}`
+          : `investigacion.html?id=${m.id}&cat=${m.categoria}`;
         return `
-          <a href="investigacion.html?id=${m.id}&cat=${m.categoria}" class="proyecto-miembro-card" title="Ver perfil de ${m.nombre}">
+          <a href="${linkPerfil}" class="proyecto-miembro-card" title="Ver perfil de ${m.nombre}">
             <div class="proyecto-miembro-img-wrapper">
               <img src="${fotoSrc}" class="proyecto-miembro-img">
               <div class="proyecto-miembro-img-overlay"></div>
             </div>
             <div class="proyecto-miembro-info">
               <span class="proyecto-miembro-nombre">${m.nombre}</span>
-              ${m.cargo ? `<span class="proyecto-miembro-cargo">${m.cargo}</span>` : ''}
               <span class="proyecto-miembro-inst">${m.institucion || ''}</span>
             </div>
           </a>
@@ -135,7 +138,7 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
         <div class="proyecto-miembro-card">
           <div class="proyecto-miembro-info">
             <span class="proyecto-miembro-nombre">${p.investigador_nombre}</span>
-            <span class="proyecto-miembro-cargo">Investigador Principal</span>
+            <span class="proyecto-miembro-inst">${p.institucion_principal || p.institucion || ''}</span>
           </div>
         </div>
       `;
@@ -161,8 +164,15 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
 
   // 5. Enlace del único botón CTA "Ver proyectos similares"
   const filtroLink = document.getElementById('proy-filtro-linea-link');
-  if (filtroLink && p.area_id) {
-    filtroLink.href = `proyectos.html?linea=${p.area_id}`;
+  if (filtroLink) {
+    const lineasIds = Array.isArray(p.lineas) && p.lineas.length > 0
+      ? p.lineas
+      : (p.area_id ? [p.area_id] : []);
+    if (lineasIds.length > 0) {
+      filtroLink.href = `proyectos.html?lineas=${lineasIds.join(',')}&combo=1`;
+    } else if (p.area_id) {
+      filtroLink.href = `proyectos.html?linea=${p.area_id}`;
+    }
   }
 
   // 6. Publicaciones del Proyecto

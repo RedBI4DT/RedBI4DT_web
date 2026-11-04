@@ -91,17 +91,24 @@ document.addEventListener('DOMContentLoaded', async () => {
       p.area_id === area.id || (area.proyectos_ids && area.proyectos_ids.includes(p.id))
     );
 
-    // Obtener todos los investigadores/gestores vinculados
+    // Obtener todos los integrantes vinculados
     const todosMiembros = [
       ...(miembrosData.investigadores || []).map(m => ({ ...m, categoria: 'investigadores' })),
-      ...(miembrosData.gestion || []).map(m => ({ ...m, categoria: 'gestion' }))
+      ...(miembrosData.gestion || []).map(m => ({ ...m, categoria: 'gestion' })),
+      ...(miembrosData.estudiantes || []).map(m => ({ ...m, categoria: 'estudiantes' }))
     ];
 
-    const idsInvestigadoresEnProyectos = new Set(proyectosRelacionados.map(p => p.investigador_principal).filter(Boolean));
+    const idsParticipantesEnProyectos = new Set();
+    proyectosRelacionados.forEach(p => {
+      if (p.investigador_principal) idsParticipantesEnProyectos.add(p.investigador_principal);
+      if (Array.isArray(p.integrantes)) {
+        p.integrantes.forEach(id => idsParticipantesEnProyectos.add(id));
+      }
+    });
 
     const investigadoresDelArea = todosMiembros.filter(m => {
-      // 1. Si lidera un proyecto de esta área
-      if (idsInvestigadoresEnProyectos.has(m.id)) return true;
+      // 1. Si lidera o participa en un proyecto de esta área
+      if (idsParticipantesEnProyectos.has(m.id)) return true;
 
       // 2. Si alguna de sus líneas de investigación mapea a esta área
       if (m.lineas && Array.isArray(m.lineas)) {
@@ -151,9 +158,9 @@ function renderInvestigadores(investigadores, color) {
 
   grid.innerHTML = investigadores.map(m => {
     const foto = m.foto || '../assets/images/Imagen_1.jpg';
-    const linkPerfil = `investigacion.html?id=${m.id}&cat=${m.categoria || 'investigadores'}`;
-    const cargoHtml = m.cargo ? `<span class="area-inv-cargo">${m.cargo}</span>` : '';
-
+    const linkPerfil = m.categoria === 'estudiantes'
+      ? `estudiante.html?id=${m.id}`
+      : `investigacion.html?id=${m.id}&cat=${m.categoria || 'investigadores'}`;
     return `
       <article class="area-investigador-card">
         <div class="area-inv-foto-container">
@@ -164,7 +171,6 @@ function renderInvestigadores(investigadores, color) {
           <a href="${linkPerfil}" class="area-inv-nombre" title="Ver perfil de ${m.nombre}">
             ${m.nombre}
           </a>
-          ${cargoHtml}
           <span class="area-inv-institucion">${m.institucion || ''}</span>
           <a href="${linkPerfil}" class="area-inv-link-perfil">
             <span>Ver perfil completo</span>
