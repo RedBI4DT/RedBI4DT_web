@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/quienes.css">
+  <link rel="stylesheet" href="../styles/quienes.css?v=2.0">
 </head>
 <body>
 
@@ -33,7 +33,6 @@
         <div class="mv-card mv-card--mision reveal-left">
           <div class="mv-card-header">
             <div class="mv-header-info">
-              <span class="mv-card-badge">PROPÓSITO DE LA RED</span>
               <h2 class="mv-card-title">Misión</h2>
             </div>
           </div>
@@ -46,7 +45,6 @@
         <div class="mv-card mv-card--vision reveal-right">
           <div class="mv-card-header">
             <div class="mv-header-info">
-              <span class="mv-card-badge">HORIZONTE ESTRATÉGICO</span>
               <h2 class="mv-card-title">Visión</h2>
             </div>
           </div>
@@ -86,8 +84,7 @@
 
         <!-- Cabecera alineada a la misma altura/margen del mapa -->
         <div class="moments-header reveal-on-scroll">
-          <h2 class="section-title-navy map-title map-title">Momentos de la Red</h2>
-          <p class="moments-description">Trabajamos y compartimos ciencia para mejorar la salud</p>
+          <h2 class="section-title-navy map-title map-title">Fotos</h2>
         </div>
 
         <!-- Frame del Carrusel (con misma estética de tarjeta redondeada del mapa) -->
@@ -157,94 +154,7 @@
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/index.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="../scripts/quienes.js"></script>
-  <script>
-    /* ── Carrusel Momentos BI4DT (Vanilla JS) ── */
-    (function () {
-      const AUTOPLAY_MS = 5000;
-      const slides   = document.querySelectorAll('.carousel-slide');
-      const dots     = document.querySelectorAll('.carousel-dot');
-      const prevBtn  = document.getElementById('carousel-prev');
-      const nextBtn  = document.getElementById('carousel-next');
-      const progress = document.getElementById('carousel-progress');
-      const section  = document.getElementById('contacto-carousel');
-
-      if (!slides.length) return;
-
-      let current  = 0;
-      let timer    = null;
-      let progTimer = null;
-
-      function goTo(index) {
-        slides[current].classList.remove('active', 'prev');
-        slides[current].classList.add('prev');
-        dots[current].classList.remove('active');
-        dots[current].setAttribute('aria-selected', 'false');
-
-        current = (index + slides.length) % slides.length;
-
-        slides[current].classList.add('active');
-        slides[current].classList.remove('prev');
-        dots[current].classList.add('active');
-        dots[current].setAttribute('aria-selected', 'true');
-
-        resetProgress();
-      }
-
-      function next() { goTo(current + 1); }
-      function prev() { goTo(current - 1); }
-
-      function startAutoplay() {
-        stopAutoplay();
-        timer = setInterval(next, AUTOPLAY_MS);
-      }
-
-      function stopAutoplay() {
-        clearInterval(timer);
-        clearInterval(progTimer);
-        timer = null;
-      }
-
-      function resetProgress() {
-        if (!progress) return;
-        progress.style.transition = 'none';
-        progress.style.width = '0%';
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            progress.style.transition = `width ${AUTOPLAY_MS}ms linear`;
-            progress.style.width = '100%';
-          });
-        });
-      }
-
-      if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
-      if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
-
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          goTo(parseInt(dot.dataset.slide, 10));
-          startAutoplay();
-        });
-      });
-
-      if (section) {
-        section.addEventListener('mouseenter', stopAutoplay);
-        section.addEventListener('mouseleave', () => { startAutoplay(); resetProgress(); });
-      }
-
-      let touchStartX = 0;
-      if (section) {
-        section.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-        section.addEventListener('touchend', e => {
-          const dx = e.changedTouches[0].clientX - touchStartX;
-          if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); startAutoplay(); }
-        });
-      }
-
-      startAutoplay();
-      resetProgress();
-    })();
-  </script>
+  <script src="../scripts/quienes.js?v=1.1"></script>
 </body>
 </html>
 

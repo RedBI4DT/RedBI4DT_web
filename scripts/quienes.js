@@ -10,6 +10,7 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initNetworkMap();
+  initMomentosCarousel();
 });
 
 async function initNetworkMap() {
@@ -239,4 +240,94 @@ async function initNetworkMap() {
       });
     });
   }
+}
+
+
+/* ==========================================================================
+   CARRUSEL MOMENTOS BI4DT (Vanilla JS)
+   ========================================================================== */
+
+function initMomentosCarousel() {
+  const AUTOPLAY_MS = 5000;
+  const slides   = document.querySelectorAll('.carousel-slide');
+  const dots     = document.querySelectorAll('.carousel-dot');
+  const prevBtn  = document.getElementById('carousel-prev');
+  const nextBtn  = document.getElementById('carousel-next');
+  const progress = document.getElementById('carousel-progress');
+  const section  = document.getElementById('contacto-carousel');
+
+  if (!slides.length) return;
+
+  let current   = 0;
+  let timer     = null;
+  let progTimer = null;
+
+  function goTo(index) {
+    slides[current].classList.remove('active', 'prev');
+    slides[current].classList.add('prev');
+    dots[current].classList.remove('active');
+    dots[current].setAttribute('aria-selected', 'false');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    slides[current].classList.remove('prev');
+    dots[current].classList.add('active');
+    dots[current].setAttribute('aria-selected', 'true');
+
+    resetProgress();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    timer = setInterval(next, AUTOPLAY_MS);
+  }
+
+  function stopAutoplay() {
+    clearInterval(timer);
+    clearInterval(progTimer);
+    timer = null;
+  }
+
+  function resetProgress() {
+    if (!progress) return;
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        progress.style.transition = `width ${AUTOPLAY_MS}ms linear`;
+        progress.style.width = '100%';
+      });
+    });
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goTo(parseInt(dot.dataset.slide, 10));
+      startAutoplay();
+    });
+  });
+
+  if (section) {
+    section.addEventListener('mouseenter', stopAutoplay);
+    section.addEventListener('mouseleave', () => { startAutoplay(); resetProgress(); });
+  }
+
+  let touchStartX = 0;
+  if (section) {
+    section.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    section.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); startAutoplay(); }
+    });
+  }
+
+  startAutoplay();
+  resetProgress();
 }

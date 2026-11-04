@@ -26,7 +26,7 @@
       "tipo": "Universidad",
       "es_sede_principal": false,
       "coords": [
-        -12.0560,
+        -12.056,
         -77.0844
       ]
     },
@@ -56,7 +56,7 @@
       "tipo": "Universidad",
       "es_sede_principal": false,
       "coords": [
-        -16.4090,
+        -16.409,
         -71.5375
       ]
     },
@@ -72,7 +72,22 @@
       "es_sede_principal": false,
       "coords": [
         -12.1192,
-        -77.0290
+        -77.029
+      ]
+    },
+    {
+      "id": "urp",
+      "nombre": "Universidad Ricardo Palma",
+      "sigla": "URP",
+      "nombre_completo": "Universidad Ricardo Palma (URP)",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Lima",
+      "tipo": "Universidad",
+      "es_sede_principal": false,
+      "coords": [
+        -12.1294,
+        -76.9798
       ]
     },
     {
