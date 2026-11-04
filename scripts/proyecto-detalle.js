@@ -44,11 +44,37 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   // Actualizar título en pestaña
   document.title = `${p.titulo} - Proyecto | BI4DT Network`;
 
-  // 1. Hero Metadata
+  // 1. Hero Metadata y Ficha de Proyecto (soporte multilínea: formato lista sin punto, una encima de otra)
+  const AREA_LABELS_DET = {
+    'informatica-biomedica': 'Informática Biomédica',
+    'ia-salud': 'Inteligencia Artificial en Salud',
+    'interoperabilidad': 'Interoperabilidad y Gobernanza de Datos',
+    'analitica-datos': 'Visualización y Analítica de Datos',
+    'sociotecnica-adopcion': 'Evaluación Sociotécnica y Adopción',
+    'salud-digital': 'Salud Digital'
+  };
+
+  const lineasContainer = document.getElementById('proy-lineas-container');
   const lineaBadge = document.getElementById('proy-linea-badge');
-  if (lineaBadge) {
-    lineaBadge.textContent = p.area_nombre || 'Línea Científica';
-    lineaBadge.href = p.area_id ? `area.html?id=${p.area_id}` : 'lineas.html';
+  const lineaLabel = document.getElementById('proy-linea-label');
+
+  const lineasIds = Array.isArray(p.lineas) && p.lineas.length > 0
+    ? p.lineas
+    : (p.area_id ? [p.area_id] : []);
+
+  if (lineaLabel) {
+    lineaLabel.textContent = lineasIds.length > 1 ? 'Líneas de Investigación' : 'Línea de Investigación';
+  }
+
+  const itemsHtml = lineasIds.map(id => {
+    const nombre = AREA_LABELS_DET[id] || (id === p.area_id ? p.area_nombre : id);
+    return `<li><a href="area.html?id=${id}" class="ficha-valor-linea">${nombre}</a></li>`;
+  }).join('');
+
+  if (lineasContainer) {
+    lineasContainer.innerHTML = `<ul class="ficha-lineas-list">${itemsHtml}</ul>`;
+  } else if (lineaBadge) {
+    lineaBadge.parentElement.innerHTML = `<ul class="ficha-lineas-list">${itemsHtml}</ul>`;
   }
 
   const estadoBadge = document.getElementById('proy-estado-badge');
@@ -201,9 +227,9 @@ function renderPublicaciones(publicaciones) {
 
         return `
           <li class="proy-pub-item">
-            <div class="proy-pub-icon-box" aria-hidden="true">
-              <i class="fa-solid fa-file-lines"></i>
-            </div>
+            <span class="proy-pub-bullet" aria-hidden="true">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
             <div class="proy-pub-content">
               <a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="proy-pub-link">
                 <span>${pub.titulo}</span>

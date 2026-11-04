@@ -66,20 +66,27 @@ function renderPerfil(m) {
   // Contacto (Solo logos/íconos, tamaño uniforme 36px, sin texto visible)
   const contactoEl = document.getElementById('perfil-contacto');
   if (contactoEl && m.contacto) {
+    const redes = m.redes || { correo: true, linkedin: true, orcid: true, scholar: true };
     let links = '';
-    if (m.contacto.email) {
-      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" aria-label="Correo electrónico de ${m.nombre}">
+
+    if (redes.correo && m.contacto.email) {
+      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" data-tooltip="Correo electrónico" aria-label="Correo electrónico de ${m.nombre}">
         <i class="fa-solid fa-envelope"></i>
       </a>`;
     }
-    if (m.contacto.linkedin) {
-      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="LinkedIn de ${m.nombre}">
+    if (redes.linkedin && m.contacto.linkedin) {
+      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Perfil de LinkedIn" aria-label="LinkedIn de ${m.nombre}">
         <i class="fa-brands fa-linkedin"></i>
       </a>`;
     }
-    if (m.contacto.orcid) {
-      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="ORCID de ${m.nombre}">
+    if (redes.orcid && m.contacto.orcid) {
+      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Identificador ORCID" aria-label="ORCID de ${m.nombre}">
         <i class="fa-brands fa-orcid"></i>
+      </a>`;
+    }
+    if (redes.scholar && m.contacto.scholar) {
+      links += `<a href="${m.contacto.scholar}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Perfil de Google Scholar" aria-label="Google Scholar de ${m.nombre}">
+        <i class="fa-brands fa-google-scholar"></i>
       </a>`;
     }
     contactoEl.innerHTML = links;

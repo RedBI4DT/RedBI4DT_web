@@ -170,56 +170,32 @@ function renderPerfil(m, categoria, proyectosReales) {
     }
   }
 
-  // Proyectos Relacionados (Cards mínimas según arquitectura: año, estado, 1 tag línea, título, flecha -> detalle)
-  const proyectosEl = document.getElementById('perfil-proyectos');
-  if (proyectosEl) {
-    if (proyectosReales && proyectosReales.length > 0) {
-      proyectosEl.innerHTML = proyectosReales.map(p => {
-        const color = COLOR_MAP[p.area_id] || 'gold';
-        const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
-
-        return `
-          <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proyecto-card">
-            <div class="perfil-proyecto-top">
-              <span class="perfil-proyecto-anio">${p.anio || ''}</span>
-              <span class="proy-estado ${estadoClass}">${p.estado || 'En curso'}</span>
-            </div>
-            <div class="perfil-proyecto-linea-row">
-              <span class="perfil-proy-linea-tag">${p.area_nombre || 'Línea de Investigación'}</span>
-            </div>
-            <h3 class="perfil-proyecto-titulo">${p.titulo}</h3>
-            <div class="perfil-proyecto-action">
-              <span class="perfil-proyecto-flecha"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </a>
-        `;
-      }).join('');
-    } else {
-      proyectosEl.innerHTML = '<p class="perfil-empty">Sin proyectos registrados actualmente.</p>';
-    }
-  }
+  // Inicializar Paginación de Proyectos en Vista de Lista
+  inicializarPaginacionProyectos(proyectosReales);
 
   // Contacto (Solo logos/íconos, tamaño uniforme 36px, sin texto visible)
   const contactoEl = document.getElementById('perfil-contacto');
   if (contactoEl && m.contacto) {
+    const redes = m.redes || { correo: true, linkedin: true, orcid: true, scholar: true };
     let links = '';
-    if (m.contacto.email) {
-      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" aria-label="Correo electrónico de ${m.nombre}">
+
+    if (redes.correo && m.contacto.email) {
+      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" data-tooltip="Correo electrónico" aria-label="Correo electrónico de ${m.nombre}">
         <i class="fa-solid fa-envelope"></i>
       </a>`;
     }
-    if (m.contacto.linkedin) {
-      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="LinkedIn de ${m.nombre}">
+    if (redes.linkedin && m.contacto.linkedin) {
+      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Perfil de LinkedIn" aria-label="LinkedIn de ${m.nombre}">
         <i class="fa-brands fa-linkedin"></i>
       </a>`;
     }
-    if (m.contacto.orcid) {
-      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="ORCID de ${m.nombre}">
+    if (redes.orcid && m.contacto.orcid) {
+      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Identificador ORCID" aria-label="ORCID de ${m.nombre}">
         <i class="fa-brands fa-orcid"></i>
       </a>`;
     }
-    if (m.contacto.scholar) {
-      links += `<a href="${m.contacto.scholar}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" aria-label="Google Scholar de ${m.nombre}">
+    if (redes.scholar && m.contacto.scholar) {
+      links += `<a href="${m.contacto.scholar}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Perfil de Google Scholar" aria-label="Google Scholar de ${m.nombre}">
         <i class="fa-brands fa-google-scholar"></i>
       </a>`;
     }
@@ -246,4 +222,153 @@ function mostrarError(mensaje) {
       </section>
     `;
   }
+}
+
+
+/* ==========================================================================
+   SISTEMA DE PAGINACIÓN DINÁMICA - LISTA DE PROYECTOS (SIN ÍCONOS)
+   ========================================================================== */
+
+let proyectosInvestigadorActual = [];
+let paginaActualProy = 1;
+let itemsPorPaginaProy = 5;
+
+function inicializarPaginacionProyectos(proyectos) {
+  proyectosInvestigadorActual = proyectos || [];
+  paginaActualProy = 1;
+
+  const selectPerPage = document.getElementById('proy-per-page');
+  if (selectPerPage) {
+    itemsPorPaginaProy = parseInt(selectPerPage.value, 10) || 5;
+    selectPerPage.onchange = (e) => {
+      itemsPorPaginaProy = parseInt(e.target.value, 10) || 5;
+      paginaActualProy = 1;
+      renderizarListaProyectos();
+    };
+  }
+
+  const badgeTotal = document.getElementById('proyectos-total-badge');
+  if (badgeTotal) {
+    badgeTotal.textContent = `(${proyectosInvestigadorActual.length})`;
+  }
+
+  renderizarListaProyectos();
+}
+
+function renderizarListaProyectos() {
+  const contenedor = document.getElementById('perfil-proyectos');
+  const paginationBar = document.getElementById('proyectos-pagination');
+  if (!contenedor) return;
+
+  if (proyectosInvestigadorActual.length === 0) {
+    contenedor.innerHTML = '<p class="perfil-empty">Sin proyectos registrados actualmente.</p>';
+    if (paginationBar) paginationBar.innerHTML = '';
+    return;
+  }
+
+  const totalProyectos = proyectosInvestigadorActual.length;
+  const totalPaginas = Math.ceil(totalProyectos / itemsPorPaginaProy);
+
+  if (paginaActualProy > totalPaginas) paginaActualProy = totalPaginas;
+  if (paginaActualProy < 1) paginaActualProy = 1;
+
+  const inicio = (paginaActualProy - 1) * itemsPorPaginaProy;
+  const fin = Math.min(inicio + itemsPorPaginaProy, totalProyectos);
+  const proyectosPagina = proyectosInvestigadorActual.slice(inicio, fin);
+
+  // Renderizar filas limpias: Nombre - Año de inicio solamente - Estado - Flecha
+  contenedor.innerHTML = proyectosPagina.map(p => {
+    const anioInicio = p.anio_inicio || (p.anio ? p.anio.split('–')[0].split('-')[0].trim() : '—');
+    const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
+
+    return `
+      <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proy-row">
+        <span class="proy-row-title">${p.titulo}</span>
+        <span class="proy-row-anio">${anioInicio}</span>
+        <span class="proy-row-estado ${estadoClass}">${p.estado || 'En curso'}</span>
+        <span class="proy-row-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    `;
+  }).join('');
+
+  // Renderizar controles de paginación
+  if (paginationBar) {
+    if (totalPaginas <= 1) {
+      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}</span>`;
+      return;
+    }
+
+    const itemsPaginacion = obtenerRangoPaginacion(totalPaginas, paginaActualProy);
+    let botonesPaginas = '';
+    itemsPaginacion.forEach(item => {
+      if (item === '...') {
+        botonesPaginas += `<span class="proy-pag-ellipsis" aria-hidden="true">&hellip;</span>`;
+      } else {
+        const activeClass = item === paginaActualProy ? 'active' : '';
+        botonesPaginas += `<button type="button" class="proy-pag-btn proy-pag-num ${activeClass}" data-page="${item}" aria-label="Página ${item}">${item}</button>`;
+      }
+    });
+
+    paginationBar.innerHTML = `
+      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos</span>
+      <div class="proy-pag-controls">
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActualProy === 1 ? 'disabled' : ''} aria-label="Página anterior">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="proy-pag-numbers">
+          ${botonesPaginas}
+        </div>
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-next" ${paginaActualProy === totalPaginas ? 'disabled' : ''} aria-label="Página siguiente">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    `;
+
+    // Event listeners
+    paginationBar.querySelector('.proy-pag-prev')?.addEventListener('click', () => {
+      if (paginaActualProy > 1) {
+        paginaActualProy--;
+        renderizarListaProyectos();
+      }
+    });
+
+    paginationBar.querySelector('.proy-pag-next')?.addEventListener('click', () => {
+      if (paginaActualProy < totalPaginas) {
+        paginaActualProy++;
+        renderizarListaProyectos();
+      }
+    });
+
+    paginationBar.querySelectorAll('.proy-pag-num').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const p = parseInt(btn.dataset.page, 10);
+        if (p && p !== paginaActualProy) {
+          paginaActualProy = p;
+          renderizarListaProyectos();
+        }
+      });
+    });
+  }
+}
+
+
+/**
+ * Genera el rango de números y elipsis para la paginación dinámica.
+ */
+function obtenerRangoPaginacion(totalPaginas, actual) {
+  if (totalPaginas <= 7) {
+    const paginas = [];
+    for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
+    return paginas;
+  }
+
+  if (actual <= 3) {
+    return [1, 2, 3, 4, '...', totalPaginas];
+  }
+
+  if (actual >= totalPaginas - 2) {
+    return [1, '...', totalPaginas - 3, totalPaginas - 2, totalPaginas - 1, totalPaginas];
+  }
+
+  return [1, '...', actual - 1, actual, actual + 1, '...', totalPaginas];
 }

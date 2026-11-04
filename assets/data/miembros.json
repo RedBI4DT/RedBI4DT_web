@@ -16,7 +16,13 @@
         "fhir-interoperabilidad-2023",
         "ia-diagnostico-2024"
       ],
-      "cargo": "Investigadora Principal"
+      "cargo": "Investigadora Principal",
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "david-villarreal",
@@ -34,7 +40,13 @@
       "proyectos": [
         "hce-nacional-2022",
         "fhir-interoperabilidad-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "christian-reategui",
@@ -51,7 +63,13 @@
       },
       "proyectos": [
         "genomica-tropical-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "henry-cardenas",
@@ -68,7 +86,13 @@
       },
       "proyectos": [
         "vigilancia-epi-2024"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "irvin-dongo",
@@ -85,7 +109,13 @@
       },
       "proyectos": [
         "nlp-registros-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "rafael-leal",
@@ -102,7 +132,13 @@
       },
       "proyectos": [
         "plataforma-datos-sanitarios-2022"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "oscar-huapaya",
@@ -119,7 +155,13 @@
       },
       "proyectos": [
         "telesalud-rural-2024"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "javier-vargas",
@@ -136,7 +178,13 @@
       },
       "proyectos": [
         "ontologia-diagnosticos-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "milagros-cahuana",
@@ -153,7 +201,13 @@
       },
       "proyectos": [
         "perfiles-moleculares-2024"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "guido-bendezu",
@@ -170,7 +224,13 @@
       },
       "proyectos": [
         "gestion-clinica-ia-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "jose-florez",
@@ -187,7 +247,13 @@
       },
       "proyectos": [
         "estudio-comparativo-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "stefan-escobar",
@@ -204,7 +270,13 @@
       },
       "proyectos": [
         "ia-radiografias-2024"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     },
     {
       "id": "kelly-de-la-cruz",
@@ -221,7 +293,13 @@
       },
       "proyectos": [
         "modelo-dengue-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      }
     }
   ],
   "gestion": [
@@ -239,7 +317,13 @@
       },
       "proyectos": [
         "gestion-concytec-2023"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      }
     },
     {
       "id": "adriana-echevarria",
@@ -255,7 +339,13 @@
       },
       "proyectos": [
         "politica-salud-digital-2024"
-      ]
+      ],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      }
     }
   ],
   "estudiantes": [
@@ -271,7 +361,13 @@
         "linkedin": "https://www.linkedin.com/",
         "orcid": ""
       },
-      "proyectos": []
+      "proyectos": [],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": false,
+        "scholar": false
+      }
     },
     {
       "id": "selene-salas",
@@ -285,7 +381,13 @@
         "linkedin": "https://www.linkedin.com/",
         "orcid": ""
       },
-      "proyectos": []
+      "proyectos": [],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": false,
+        "scholar": false
+      }
     },
     {
       "id": "rodrigo-chacon",
@@ -299,7 +401,13 @@
         "linkedin": "https://www.linkedin.com/",
         "orcid": ""
       },
-      "proyectos": []
+      "proyectos": [],
+      "redes": {
+        "correo": true,
+        "linkedin": true,
+        "orcid": false,
+        "scholar": false
+      }
     }
   ]
 }

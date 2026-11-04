@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/quienes.css">
-  <link rel="stylesheet" href="../styles/proyecto-detalle.css">
+  <link rel="stylesheet" href="../styles/proyecto-detalle.css?v=2.4">
 </head>
 <body>
 
@@ -83,8 +83,10 @@
                 <span class="proy-estado-badge" id="proy-estado-badge">En curso</span>
               </div>
               <div class="proyecto-ficha-row">
-                <span class="ficha-label">Línea de Investigación</span>
-                <a href="#" class="ficha-valor-linea" id="proy-linea-badge">Línea</a>
+                <span class="ficha-label" id="proy-linea-label">Línea de Investigación</span>
+                <div class="ficha-lineas-container" id="proy-lineas-container">
+                  <a href="#" class="ficha-valor-linea" id="proy-linea-badge">Línea</a>
+                </div>
               </div>
               <div class="proyecto-ficha-row">
                 <span class="ficha-label">Ubicación</span>
@@ -118,6 +120,6 @@
 
   <!-- Scripts -->
   <script src="../scripts/loadComponents.js"></script>
-  <script src="../scripts/proyecto-detalle.js"></script>
+  <script src="../scripts/proyecto-detalle.js?v=2.4"></script>
 </body>
 </html>

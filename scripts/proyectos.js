@@ -1,7 +1,7 @@
 /**
  * scripts/proyectos.js
  * Catálogo completo de proyectos con buscador en tiempo real, filtros compactos
- * (Línea de Investigación y Estado) y footer con instituciones participantes.
+ * (Línea de Investigación múltiple y Estado), soporte sin tag fijo y paginación (6, 9, 12).
  */
 
 const COLOR_MAP = {
@@ -14,7 +14,7 @@ const COLOR_MAP = {
 };
 
 const AREA_LABELS = {
-  'informatica-biomedica': 'Informática Biomédica y Salud Digital',
+  'informatica-biomedica': 'Informática Biomédica',
   'ia-salud': 'Inteligencia Artificial en Salud',
   'interoperabilidad': 'Interoperabilidad y Gobernanza',
   'analitica-datos': 'Visualización y Analítica de Datos',
@@ -23,6 +23,9 @@ const AREA_LABELS = {
 };
 
 let todosProyectos = [];
+let proyectosFiltrados = [];
+let paginaActual = 1;
+let itemsPorPagina = 6; // Opciones: 6, 9, 12
 
 const estadoFiltros = {
   busqueda: '',
@@ -42,7 +45,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const statEl = document.getElementById('stat-total');
     if (statEl) statEl.textContent = todosProyectos.length;
 
-    // Detectar filtro inicial desde la URL (ej. ?linea=ia-salud o ?filtro=ia-salud o ?area=ia-salud)
+    // Renderizar gráfico de barras de distribución por línea
+    renderGraficoDistribucion(todosProyectos);
+
+    // Detectar filtro inicial desde la URL
     const params = new URLSearchParams(window.location.search);
     const areaParam = params.get('linea') || params.get('filtro') || params.get('area');
     if (areaParam && AREA_LABELS[areaParam]) {
@@ -81,6 +87,17 @@ function initEventosToolbar() {
 
   const selectArea = document.getElementById('filtro-select-area');
   const selectEstado = document.getElementById('filtro-select-estado');
+  const selectPerPage = document.getElementById('proy-per-page');
+
+  // Selector de cantidad por página (6, 9, 12)
+  if (selectPerPage) {
+    itemsPorPagina = parseInt(selectPerPage.value, 10) || 6;
+    selectPerPage.addEventListener('change', (e) => {
+      itemsPorPagina = parseInt(e.target.value, 10) || 6;
+      paginaActual = 1;
+      renderProyectosPaginados();
+    });
+  }
 
   // Input de búsqueda
   if (inputSearch) {
@@ -121,7 +138,7 @@ function initEventosToolbar() {
     });
   }
 
-  // Botón limpiar filtros (tacho 36x36)
+  // Botón limpiar filtros (tacho)
   if (btnResetAll) {
     btnResetAll.addEventListener('click', resetearFiltros);
   }
@@ -155,7 +172,7 @@ function resetearFiltros() {
 function aplicarFiltros() {
   const q = estadoFiltros.busqueda.toLowerCase();
 
-  const filtrados = todosProyectos.filter(p => {
+  proyectosFiltrados = todosProyectos.filter(p => {
     // 1. Búsqueda de texto libre
     if (q) {
       const inTitulo = (p.titulo || '').toLowerCase().includes(q);
@@ -168,9 +185,10 @@ function aplicarFiltros() {
       }
     }
 
-    // 2. Línea de Investigación
+    // 2. Línea de Investigación (soporte para múltiples líneas en p.lineas)
     if (estadoFiltros.area !== 'todos') {
-      if (p.area_id !== estadoFiltros.area) {
+      const lineasProyecto = Array.isArray(p.lineas) ? p.lineas : [p.area_id];
+      if (!lineasProyecto.includes(estadoFiltros.area) && p.area_id !== estadoFiltros.area) {
         return false;
       }
     }
@@ -183,7 +201,8 @@ function aplicarFiltros() {
     return true;
   });
 
-  renderProyectos(filtrados);
+  paginaActual = 1; // Reinicia a página 1 al cambiar filtros o búsqueda
+  renderProyectosPaginados();
   actualizarChipsYBadges();
 }
 
@@ -193,7 +212,6 @@ function actualizarChipsYBadges() {
   const selectArea = document.getElementById('filtro-select-area');
   const selectEstado = document.getElementById('filtro-select-estado');
 
-  // Resaltar borde del select con valor activo
   if (selectArea) {
     selectArea.classList.toggle('is-active', estadoFiltros.area !== 'todos');
   }
@@ -227,12 +245,10 @@ function actualizarChipsYBadges() {
     });
   }
 
-  // El botón tacho se deshabilita cuando no hay nada que limpiar
   if (btnResetAll) {
     btnResetAll.disabled = (chips.length === 0);
   }
 
-  // Renderizar chips de filtros activos
   if (chipsContainer) {
     if (chips.length === 0) {
       chipsContainer.setAttribute('hidden', '');
@@ -249,7 +265,6 @@ function actualizarChipsYBadges() {
         </span>
       `).join('');
 
-      // Eventos para eliminar chips individuales
       chipsContainer.querySelectorAll('.proy-chip-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           eliminarFiltro(btn.dataset.tipo);
@@ -279,21 +294,24 @@ function eliminarFiltro(tipo) {
   aplicarFiltros();
 }
 
-function renderProyectos(proyectos) {
+function renderProyectosPaginados() {
   const grid = document.getElementById('proyectos-grid');
   const emptyEl = document.getElementById('proyectos-empty');
   const countEl = document.getElementById('proyectos-count');
+  const paginationBar = document.getElementById('proyectos-pagination');
 
   if (!grid) return;
 
-  if (countEl) countEl.textContent = proyectos.length;
+  const totalProyectos = proyectosFiltrados.length;
+  if (countEl) countEl.textContent = totalProyectos;
 
-  if (proyectos.length === 0) {
+  if (totalProyectos === 0) {
     grid.innerHTML = '';
     if (emptyEl) {
       emptyEl.removeAttribute('hidden');
       emptyEl.style.display = 'flex';
     }
+    if (paginationBar) paginationBar.innerHTML = '';
     return;
   }
 
@@ -302,25 +320,180 @@ function renderProyectos(proyectos) {
     emptyEl.style.display = 'none';
   }
 
-  grid.innerHTML = proyectos.map((p, index) => {
+  const totalPaginas = Math.ceil(totalProyectos / itemsPorPagina);
+  if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+  if (paginaActual < 1) paginaActual = 1;
+
+  const inicio = (paginaActual - 1) * itemsPorPagina;
+  const fin = Math.min(inicio + itemsPorPagina, totalProyectos);
+  const proyectosPagina = proyectosFiltrados.slice(inicio, fin);
+
+  // Renderizar tarjetas de proyectos (limpias, sin tags de línea)
+  grid.innerHTML = proyectosPagina.map((p, index) => {
     const estadoClass = p.estado === 'Concluido'
       ? 'proy-estado--concluido'
       : 'proy-estado--activo';
     const estadoLabel = p.estado || 'En curso';
-    const delay = (index % 9) * 40;
+    const delay = (index % itemsPorPagina) * 35;
     const textoResumen = p.resumen || p.descripcion || '';
+    const anioInicio = p.anio_inicio || (p.anio ? String(p.anio).split(/[-–—]/)[0].trim() : '');
 
     return `
       <a href="proyecto-detalle.html?id=${p.id}" class="proy-card" style="animation-delay:${delay}ms;">
         <div class="proy-meta">
-          <span class="proy-anio">${p.anio || ''}</span>
+          <span class="proy-anio">${anioInicio}</span>
           <span class="proy-estado ${estadoClass}">${estadoLabel}</span>
         </div>
         <h3 class="proy-titulo">${p.titulo}</h3>
         <p class="proy-desc">${textoResumen}</p>
-        <div class="proy-footer-linea">
-          <span class="proy-area-badge">${p.area_nombre || ''}</span>
-        </div>
       </a>`;
   }).join('');
+
+  // Renderizar controles de paginación
+  if (paginationBar) {
+    if (totalPaginas <= 1) {
+      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}</span>`;
+      return;
+    }
+
+    const itemsPaginacion = obtenerRangoPaginacion(totalPaginas, paginaActual);
+    let botonesPaginas = '';
+    itemsPaginacion.forEach(item => {
+      if (item === '...') {
+        botonesPaginas += `<span class="proy-pag-ellipsis" aria-hidden="true">&hellip;</span>`;
+      } else {
+        const activeClass = item === paginaActual ? 'active' : '';
+        botonesPaginas += `<button type="button" class="proy-pag-btn proy-pag-num ${activeClass}" data-page="${item}" aria-label="Página ${item}">${item}</button>`;
+      }
+    });
+
+    paginationBar.innerHTML = `
+      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos</span>
+      <div class="proy-pag-controls">
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActual === 1 ? 'disabled' : ''} aria-label="Página anterior">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="proy-pag-numbers">
+          ${botonesPaginas}
+        </div>
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-next" ${paginaActual === totalPaginas ? 'disabled' : ''} aria-label="Página siguiente">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    `;
+
+    // Event listeners en botones de paginación
+    paginationBar.querySelector('.proy-pag-prev')?.addEventListener('click', () => {
+      if (paginaActual > 1) {
+        paginaActual--;
+        renderProyectosPaginados();
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    paginationBar.querySelector('.proy-pag-next')?.addEventListener('click', () => {
+      if (paginaActual < totalPaginas) {
+        paginaActual++;
+        renderProyectosPaginados();
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    paginationBar.querySelectorAll('.proy-pag-num').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const p = parseInt(btn.dataset.page, 10);
+        if (p && p !== paginaActual) {
+          paginaActual = p;
+          renderProyectosPaginados();
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+}
+
+
+/**
+ * Genera el rango de números y elipsis para la paginación dinámica.
+ */
+function obtenerRangoPaginacion(totalPaginas, actual) {
+  if (totalPaginas <= 7) {
+    const paginas = [];
+    for (let i = 1; i <= totalPaginas; i++) paginas.push(i);
+    return paginas;
+  }
+
+  if (actual <= 3) {
+    return [1, 2, 3, 4, '...', totalPaginas];
+  }
+
+  if (actual >= totalPaginas - 2) {
+    return [1, '...', totalPaginas - 3, totalPaginas - 2, totalPaginas - 1, totalPaginas];
+  }
+
+  return [1, '...', actual - 1, actual, actual + 1, '...', totalPaginas];
+}
+
+
+/**
+ * Renderiza el gráfico de barras horizontales de distribución por línea de investigación.
+ * Color: Azul bien oscuro (#0a192f), sin efectos de hover (estático e informativo).
+ */
+function renderGraficoDistribucion(proyectos) {
+  const chartContainer = document.getElementById('proyectos-hero-chart');
+  if (!chartContainer) return;
+
+  const AREA_DATA = [
+    { id: 'analitica-datos', nombre: 'Visualización y Analítica de Datos' },
+    { id: 'ia-salud', nombre: 'Inteligencia Artificial en Salud' },
+    { id: 'salud-digital', nombre: 'Salud Digital' },
+    { id: 'interoperabilidad', nombre: 'Interoperabilidad y Gobernanza' },
+    { id: 'informatica-biomedica', nombre: 'Informática Biomédica' },
+    { id: 'sociotecnica-adopcion', nombre: 'Evaluación Sociotécnica y Adopción' }
+  ];
+
+  const conteos = {};
+  AREA_DATA.forEach(a => { conteos[a.id] = 0; });
+
+  proyectos.forEach(p => {
+    const lineas = Array.isArray(p.lineas) && p.lineas.length > 0
+      ? p.lineas
+      : (p.area_id ? [p.area_id] : []);
+    lineas.forEach(id => {
+      if (conteos[id] !== undefined) {
+        conteos[id]++;
+      }
+    });
+  });
+
+  // Ordenar descendentemente por cantidad de proyectos
+  const lineasOrdenadas = [...AREA_DATA].sort((a, b) => conteos[b.id] - conteos[a.id]);
+  const maxConteo = Math.max(...Object.values(conteos), 1);
+
+  chartContainer.innerHTML = lineasOrdenadas.map(area => {
+    const total = conteos[area.id] || 0;
+    const pct = Math.round((total / maxConteo) * 100);
+
+    return `
+      <div class="proy-chart-row">
+        <div class="proy-chart-info">
+          <span class="proy-chart-label">${area.nombre}</span>
+          <span class="proy-chart-val">${total}</span>
+        </div>
+        <div class="proy-chart-track">
+          <div class="proy-chart-bar" data-pct="${pct}" style="width: 0%;"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Animación de aparición progresiva en escalera al acceder a la página
+  setTimeout(() => {
+    const bars = chartContainer.querySelectorAll('.proy-chart-bar');
+    bars.forEach((bar, index) => {
+      setTimeout(() => {
+        bar.style.width = `${bar.dataset.pct}%`;
+      }, index * 70);
+    });
+  }, 100);
 }

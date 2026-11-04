@@ -79,10 +79,10 @@
 
 /* Tarjeta de Miembro (Opción A: Fondo Navy Surface con tipografía adaptada) */
 .equipo-member-card {
-  background: #152c4f;
+  background: #0b182c;
   border: none;
   border-radius: 14px;
-  padding: 1.25rem;
+  padding: 1rem;
   box-shadow: 0 8px 26px rgba(15, 23, 42, 0.14);
   display: flex;
   flex-direction: column;

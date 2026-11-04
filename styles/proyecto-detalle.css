@@ -436,6 +436,21 @@
   border-radius: 4px;
 }
 
+.proy-pub-bullet {
+  color: var(--color-blue-hover, #226ee0);
+  font-size: 0.76rem;
+  margin-top: 0.32rem;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease;
+}
+
+.proy-pub-item:hover .proy-pub-bullet {
+  transform: translateX(3px);
+}
+
 .proy-pub-ext-icon {
   font-size: 0.85em;
   color: #94a3b8;
@@ -499,4 +514,28 @@
   .proyecto-equipo-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Lista de líneas en la ficha del proyecto (sin punto, una encima de otra) */
+.ficha-lineas-list {
+  list-style: disc !important;
+  list-style-type: disc !important;
+  padding-left: 1.15rem !important;
+  margin: 0.15rem 0 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ficha-lineas-list li {
+  list-style: disc !important;
+  list-style-type: disc !important;
+  color: var(--color-blue-hover, #226ee0);
+  line-height: 1.4;
+  padding-left: 0.15rem !important;
+}
+
+.ficha-lineas-list li::marker {
+  color: var(--color-blue-hover, #226ee0);
+  font-size: 0.85em;
 }
