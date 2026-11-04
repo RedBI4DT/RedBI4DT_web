@@ -7,12 +7,15 @@ function initFooter() {
   if (footerLogo) footerLogo.href = base + 'index.html';
   if (footerLogoImg) footerLogoImg.src = base + 'assets/images/logo_red/logo_icon.png';
 
-  // Navegación
+  // Navegación y Botón Contacto
   const footerMain = document.getElementById('footer-nav-main');
   if (footerMain) footerMain.href = base + 'index.html';
 
   const footerContact = document.getElementById('footer-nav-contact');
-  if (footerContact) footerContact.href = base + 'pages/contact.html';
+  if (footerContact) footerContact.href = base + 'pages/contacto.html';
+
+  const footerBtnContacto = document.getElementById('footer-btn-contacto');
+  if (footerBtnContacto) footerBtnContacto.href = base + 'pages/contacto.html';
 
   // Botón Volver Arriba universal
   inicializarBotonVolverArriba();

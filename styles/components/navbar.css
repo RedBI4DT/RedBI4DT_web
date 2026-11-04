@@ -305,6 +305,9 @@
 }
 
 @media (max-width: 580px) {
+  .bi4dt-navbar-container {
+    height: 50px;
+  }
   .bi4dt-topbar-container {
     padding: 0.2rem 0.75rem;
   }

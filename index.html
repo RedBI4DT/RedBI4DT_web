@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Red BI4DT - Informática Biomédica & Salud Global</title>
   <link rel="icon" type="image/png" href="assets/images/logo_red/logo_icon.png">
-  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/index.css?v=2.3">
 </head>
 
 <body>
@@ -20,8 +20,10 @@
     <section class="banner-hero-wrapper" id="inicio">
       <div class="banner-hero-card">
         <div class="banner-hero-content reveal-left">
-          <h1 class="banner-title">Red de Informática Biomédica para la Transformación Digital en Salud Global</h1>
-          <h3 class="banner-network-subtitle">BI4DT Network</h3>
+          <div class="banner-hero-logo-box">
+            <img src="assets/images/logo_red/logo_main.png" class="banner-hero-logo-img">
+            <div class="banner-hero-logo-img-overlay"></div>
+          </div>
           <p class="banner-description">
             Articulamos academia, sector público, prestadores de servicios y socios estratégicos internacionales para
             impulsar la <strong>transformación digital en salud</strong> mediante informática biomédica, ciencia de datos e <strong>inteligencia artificial</strong>.
@@ -39,60 +41,42 @@
       </div>
     </section>
 
-    <!-- Sección: Líneas de Investigación (Fondo Blanco) -->
+    <!-- Sección: Líneas de Investigación (Previa Limpia) -->
     <section class="research-lines-section" id="lineas-investigacion">
       <div class="section-container">
-        <div class="research-lines-header reveal-on-scroll">
-          <div class="research-lines-label-group">
-            <h2 class="section-title-navy research-lines-title">Líneas de Investigación</h2>
+        <div class="research-preview-wrapper reveal-on-scroll">
+
+          <!-- Columna Izquierda: Introducción -->
+          <div class="research-preview-info">
+            <h2 class="section-title-navy research-preview-title">Líneas de Investigación</h2>
+            <p class="research-preview-desc">
+              Impulsamos la investigación aplicada en la intersección de las ciencias médicas, la ciencia de datos y la inteligencia artificial para dar respuesta a los desafíos de salud global y acelerar la transformación digital sanitaria.
+            </p>
           </div>
-          <a href="pages/quienes.html" class="research-lines-link">
-            Ver todas las líneas de investigación <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
 
-        <div class="research-lines-grid">
-          <!-- Área 01 -->
-          <a href="pages/area.html?id=informatica-biomedica" class="research-area-card reveal-on-scroll reveal-delay-1">
-            <div class="area-card-left">
-              <div class="area-icon-box">
-                <i class="fa-solid fa-database area-icon"></i>
-              </div>
-              <div class="area-info">
-                <span class="area-number">ÁREA 01</span>
-                <h3 class="area-name">Informática Biomédica</h3>
-              </div>
-            </div>
-            <i class="fa-solid fa-chevron-right area-chevron"></i>
-          </a>
+          <!-- Columna Derecha: Previa Limpia (Sin números, sin iconos) + Enlace -->
+          <div class="research-preview-cards">
+            <a href="pages/area.html?id=informatica-biomedica" class="research-preview-card">
+              <span class="preview-card-name">Informática Biomédica</span>
+              <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+            </a>
 
-          <!-- Área 02 -->
-          <a href="pages/area.html?id=ia-salud" class="research-area-card reveal-on-scroll reveal-delay-2">
-            <div class="area-card-left">
-              <div class="area-icon-box">
-                <i class="fa-solid fa-lightbulb area-icon"></i>
-              </div>
-              <div class="area-info">
-                <span class="area-number">ÁREA 02</span>
-                <h3 class="area-name">Inteligencia Artificial en Salud</h3>
-              </div>
-            </div>
-            <i class="fa-solid fa-chevron-right area-chevron"></i>
-          </a>
+            <a href="pages/area.html?id=ia-salud" class="research-preview-card">
+              <span class="preview-card-name">Inteligencia Artificial en Salud</span>
+              <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+            </a>
 
-          <!-- Área 03 -->
-          <a href="pages/area.html?id=interoperabilidad" class="research-area-card reveal-on-scroll reveal-delay-3">
-            <div class="area-card-left">
-              <div class="area-icon-box">
-                <i class="fa-solid fa-shield-halved area-icon"></i>
-              </div>
-              <div class="area-info">
-                <span class="area-number">ÁREA 03</span>
-                <h3 class="area-name">Interoperabilidad y Gobernanza</h3>
-              </div>
-            </div>
-            <i class="fa-solid fa-chevron-right area-chevron"></i>
-          </a>
+            <a href="pages/area.html?id=interoperabilidad" class="research-preview-card">
+              <span class="preview-card-name">Interoperabilidad y Gobernanza</span>
+              <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+            </a>
+
+            <a href="pages/lineas.html" class="research-lines-link">
+              <span>Ver todas las líneas de investigación</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
@@ -102,7 +86,7 @@
       <div class="section-container publicaciones-container">
         <div class="publicaciones-header reveal-on-scroll">
           <div class="publicaciones-label-group">
-            <h2 class="section-title-navy publicaciones-title">Últimas Noticias / Publicaciones</h2>
+            <h2 class="section-title-navy publicaciones-title">Noticias</h2>
           </div>
         </div>
 
@@ -144,10 +128,14 @@
     <section class="network-institutions-section" id="instituciones-red">
       <div class="section-container network-institutions-container">
         <div class="network-label-group reveal-on-scroll">
-          <h2 class="section-title-navy network-title">Colaboradores de la Red</h2>
+          <h2 class="section-title-navy network-title">Instituciones de la Red</h2>
         </div>
 
         <div class="institutions-grid">
+          <a href="https://www.usfq.edu.ec/es" target="_blank" class="institution-card reveal-on-scroll reveal-delay-6" rel="noopener noreferrer">
+            <img src="assets/images/associations_logo/UCSUR_logo.png" class="institution-img">
+            <div class="institution-img-overlay"></div>
+          </a>
           <a href="https://ucsp.edu.pe" target="_blank" class="institution-card reveal-on-scroll reveal-delay-1" rel="noopener noreferrer">
             <img src="assets/images/associations_logo/UCSP_logo.png" class="institution-img">
             <div class="institution-img-overlay"></div>
@@ -172,22 +160,7 @@
             <img src="assets/images/associations_logo/USF_logo.jpeg" class="institution-img">
             <div class="institution-img-overlay"></div>
           </a>
-          <a href="https://www.usfq.edu.ec/es" target="_blank" class="institution-card reveal-on-scroll reveal-delay-6" rel="noopener noreferrer">
-            <img src="assets/images/associations_logo/UCSUR_logo.png" class="institution-img">
-            <div class="institution-img-overlay"></div>
-          </a>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA Banner (Conectar) -->
-    <section class="cta-banner-section" id="conectar">
-      <img src="assets/images/Imagen_1.jpg" class="cta-banner-img">
-      <div class="cta-banner-img-overlay"></div>
-      <div class="cta-banner-content reveal-on-scroll">
-        <a href="pages/contacto.html" class="btn-cta btn-cta--large">
-          <span>¿Deseas contactar con nosotros?</span>
-        </a>
       </div>
     </section>
   </main>
