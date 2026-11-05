@@ -22,6 +22,12 @@ const AREA_LABELS = {
   'salud-digital': 'Salud Digital'
 };
 
+function getAreaLabel(id) {
+  const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+  const key = id.replace(/-/g, '_');
+  return t(`lineas.${key}`, AREA_LABELS[id] || id);
+}
+
 let todosProyectos = [];
 let proyectosFiltrados = [];
 let paginaActual = 1;
@@ -274,21 +280,26 @@ function actualizarChipsYBadges() {
     });
   }
 
+  const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+
   if (estadoFiltros.areas.length > 0) {
     estadoFiltros.areas.forEach(areaId => {
       chips.push({
         tipo: 'area',
         id: areaId,
-        label: AREA_LABELS[areaId] || areaId,
+        label: getAreaLabel(areaId),
         icono: 'fa-layer-group'
       });
     });
   }
 
   if (estadoFiltros.estado !== 'todos') {
+    const estadoLabel = estadoFiltros.estado === 'Concluido'
+      ? t('proyectos.opt_concluido', 'Concluido')
+      : t('proyectos.opt_en_curso', 'En curso');
     chips.push({
       tipo: 'estado',
-      label: estadoFiltros.estado,
+      label: estadoLabel,
       icono: 'fa-clock-rotate-left'
     });
   }
@@ -307,7 +318,7 @@ function actualizarChipsYBadges() {
         <span class="proy-chip">
           <i class="fa-solid ${chip.icono}" style="font-size:0.7rem; color:#64748b;"></i>
           <span>${chip.label}</span>
-          <button type="button" class="proy-chip-btn" data-tipo="${chip.tipo}" ${chip.id ? `data-id="${chip.id}"` : ''} aria-label="Eliminar filtro ${chip.label}">
+          <button type="button" class="proy-chip-btn" data-tipo="${chip.tipo}" ${chip.id ? `data-id="${chip.id}"` : ''} aria-label="${t('proyectos.aria_eliminar_filtro', 'Eliminar filtro')} ${chip.label}">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </span>
@@ -390,7 +401,8 @@ function renderProyectosPaginados() {
     const estadoClass = p.estado === 'Concluido'
       ? 'proy-estado--concluido'
       : 'proy-estado--activo';
-    const estadoLabel = p.estado || 'En curso';
+    const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+    const estadoLabel = p.estado === 'Concluido' ? t('proyectos.opt_concluido', 'Concluido') : t('proyectos.opt_en_curso', 'En curso');
     const delay = (index % itemsPorPagina) * 35;
     const textoResumen = p.resumen || '';
     const anioInicio = p.anio_inicio || (p.anio ? String(p.anio).split(/[-–—]/)[0].trim() : '');
@@ -409,7 +421,10 @@ function renderProyectosPaginados() {
   // Renderizar controles de paginación
   if (paginationBar) {
     if (totalPaginas <= 1) {
-      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}</span>`;
+      const mostrandoTxt = t('proyectos.mostrando', 'Mostrando');
+    const proyLabel = t('proyectos.proyectos_label', 'proyectos');
+    const deTxt = t('proyectos.de', 'de');
+    paginationBar.innerHTML = `<span class="proy-pag-info">${mostrandoTxt} ${totalProyectos} ${proyLabel}</span>`;
       return;
     }
 
@@ -425,7 +440,7 @@ function renderProyectosPaginados() {
     });
 
     paginationBar.innerHTML = `
-      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos</span>
+      <span class="proy-pag-info">${mostrandoTxt} ${inicio + 1} - ${fin} ${deTxt} ${totalProyectos} ${proyLabel}</span>
       <div class="proy-pag-controls">
         <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActual === 1 ? 'disabled' : ''} aria-label="Página anterior">
           <i class="fa-solid fa-chevron-left"></i>
@@ -551,7 +566,7 @@ function renderGraficoDistribucion(proyectos) {
     return `
       <div class="proy-chart-row">
         <div class="proy-chart-info">
-          <span class="proy-chart-label">${area.nombre}</span>
+          <span class="proy-chart-label">${getAreaLabel(area.id)}</span>
           <span class="proy-chart-val">${total}</span>
         </div>
         <div class="proy-chart-track">
@@ -581,4 +596,17 @@ window.addEventListener('resize', () => {
       renderProyectosPaginados();
     }
   }, 150);
+});
+
+// ── Escuchar cambios reactivos de idioma ──────────────────────────
+document.addEventListener('i18n:changed', () => {
+  if (typeof actualizarChipsYBadges === 'function') {
+    actualizarChipsYBadges();
+  }
+  if (typeof renderProyectosPaginados === 'function') {
+    renderProyectosPaginados();
+  }
+  if (typeof renderGraficoDistribucion === 'function' && todosProyectos && todosProyectos.length > 0) {
+    renderGraficoDistribucion(todosProyectos);
+  }
 });

@@ -39,26 +39,26 @@
 
           <div class="contacto-row">
             <div class="contacto-group" id="group-nombre">
-              <label class="contacto-form-label" for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="Name_First" maxlength="255" class="contacto-input" placeholder="Tu nombre" required>
+              <label class="contacto-form-label" for="nombre"><span data-i18n="contacto.label_nombre">Nombre</span> *</label>
+              <input type="text" id="nombre" name="Name_First" maxlength="255" class="contacto-input" placeholder="Tu nombre" data-i18n-placeholder="contacto.placeholder_nombre" required>
               <span class="contacto-field-error" id="error-nombre"></span>
             </div>
             <div class="contacto-group" id="group-apellido">
-              <label class="contacto-form-label" for="apellido">Apellido *</label>
-              <input type="text" id="apellido" name="Name_Last" maxlength="255" class="contacto-input" placeholder="Tu apellido" required>
+              <label class="contacto-form-label" for="apellido"><span data-i18n="contacto.label_apellido">Apellido</span> *</label>
+              <input type="text" id="apellido" name="Name_Last" maxlength="255" class="contacto-input" placeholder="Tu apellido" data-i18n-placeholder="contacto.placeholder_apellido" required>
               <span class="contacto-field-error" id="error-apellido"></span>
             </div>
           </div>
 
           <div class="contacto-group" id="group-correo">
-            <label class="contacto-form-label" for="correo">Correo Electrónico *</label>
-            <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" required>
+            <label class="contacto-form-label" for="correo"><span data-i18n="contacto.label_correo">Correo Electrónico</span> *</label>
+            <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" data-i18n-placeholder="contacto.placeholder_correo" required>
             <span class="contacto-field-error" id="error-correo"></span>
           </div>
 
           <div class="contacto-group" id="group-mensaje">
-            <label class="contacto-form-label" for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" name="MultiLine" maxlength="65535" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." required></textarea>
+            <label class="contacto-form-label" for="mensaje"><span data-i18n="contacto.label_mensaje">Mensaje</span> *</label>
+            <textarea id="mensaje" name="MultiLine" maxlength="65535" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." data-i18n-placeholder="contacto.placeholder_mensaje" required></textarea>
             <span class="contacto-field-error" id="error-mensaje"></span>
           </div>
 
@@ -66,7 +66,7 @@
           <div id="contacto-status" class="contacto-status" role="alert" style="display: none;"></div>
 
           <button type="submit" class="contacto-submit-btn" id="contacto-submit-btn">
-            <span>Enviar Mensaje</span>
+            <span data-i18n="contacto.btn_enviar">Enviar Mensaje</span>
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </form>
@@ -83,6 +83,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="../scripts/i18n.js"></script>
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/contact.js"></script>
 </body>

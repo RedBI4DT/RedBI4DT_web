@@ -47,6 +47,194 @@
   },
 
   "// ========================================================": "",
+  "// PAGINA: AREA": "",
+  "// ========================================================": "",
+  "area": {
+    "cargando": "Loading...",
+    "integrantes_title": "Members",
+    "ver_equipo": "View all team members",
+    "proyectos_title": "Related Projects",
+    "ver_proyectos": "View all projects",
+    "mostrar": "Show:",
+    "por_pagina": "per page",
+    "ver_perfil": "View full profile",
+    "sin_investigadores": "No researchers registered directly in this area.",
+    "sin_proyectos": "No projects currently registered in this research area.",
+    "estado_en_curso": "Ongoing",
+    "estado_concluido": "Completed",
+    "titulo_pestana": "Research Area | BI4DT Network",
+    "items": {
+      "informatica-biomedica": {
+        "nombre": "Biomedical Informatics",
+        "desc": "Biomedical Informatics integrates principles of computer science, information science, and health sciences to manage, analyze, and optimize clinical information. Within the BI4DT Network, this area encompasses hospital information system design and implementation, the adoption of international standards such as HL7 FHIR and DICOM, and the development of electronic health records tailored to the Latin American context."
+      },
+      "ia-salud": {
+        "nombre": "Artificial Intelligence in Health",
+        "desc": "The Artificial Intelligence in Health track at the BI4DT Network explores advanced machine learning and deep learning techniques to transform clinical practice. Our projects include computer-aided diagnosis systems, automated medical imaging analysis (X-rays, CT scans), clinical natural language processing in Spanish, and predictive models for epidemiological surveillance."
+      },
+      "interoperabilidad": {
+        "nombre": "Interoperability and Data Governance",
+        "desc": "Healthcare interoperability is the ability of information systems to communicate, exchange data, and effectively use shared information. This line at the BI4DT Network focuses on implementing clinical data governance frameworks, adopting international standards, and designing digital health policies at institutional and national levels."
+      },
+      "analitica-datos": {
+        "nombre": "Data Visualization and Analytics",
+        "desc": "This research area addresses predictive modeling, advanced biostatistics, and the analysis of large volumes of healthcare data. It develops clinical-molecular integration algorithms, mathematical models for infectious disease prediction, and maternal-child health indicators on a regional scale."
+      },
+      "sociotecnica-adopcion": {
+        "nombre": "Sociotechnical Evaluation and Adoption",
+        "desc": "Sociotechnical Evaluation and Adoption examines the interaction between healthcare professionals, health institutions, and emerging technological solutions. It focuses on digital health public policy formulation, regulatory frameworks, and techno-financial monitoring of R&D initiatives."
+      },
+      "salud-digital": {
+        "nombre": "Digital Health",
+        "desc": "The Digital Health track develops and implements telemedicine and mobile health (mHealth) solutions designed to expand access to medical care in vulnerable populations and rural areas with low connectivity, while integrating binational platforms for digital epidemiological surveillance."
+      }
+    }
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: ARTICULOS": "",
+  "// ========================================================": "",
+  "articulos": {
+    "hero_title": "Articles",
+    "search_placeholder": "Search articles by title, journal, or year...",
+    "search_aria": "Search articles",
+    "search_clear_aria": "Clear search text",
+    "mostrando": "Showing",
+    "articulos_label": "articles",
+    "mostrar": "Show:",
+    "por_pagina": "per page",
+    "empty_title": "No articles found",
+    "empty_desc": "No publications matched your search terms.",
+    "empty_btn": "Clear search",
+    "ver_articulo": "View article",
+    "error_carga": "An error occurred while loading scientific articles. Please try again later."
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: CONTACTO": "",
+  "// ========================================================": "",
+  "contacto": {
+    "label_nombre": "First Name",
+    "placeholder_nombre": "Your first name",
+    "label_apellido": "Last Name",
+    "placeholder_apellido": "Your last name",
+    "label_correo": "Email Address",
+    "placeholder_correo": "example@email.com",
+    "label_mensaje": "Message",
+    "placeholder_mensaje": "Write your message or inquiry here...",
+    "btn_enviar": "Send Message",
+    "err_nombre_req": "First name is required.",
+    "err_nombre_len": "First name must be at least 2 characters.",
+    "err_apellido_req": "Last name is required.",
+    "err_apellido_len": "Last name must be at least 2 characters.",
+    "err_correo_req": "Email address is required.",
+    "err_correo_inv": "Please enter a valid email address.",
+    "err_mensaje_req": "Message is required.",
+    "err_mensaje_len": "Message must be at least 10 characters.",
+    "status_sending_title": "Sending message...",
+    "status_sending_desc": "Please wait a moment while we process your request.",
+    "status_success_title": "Message sent successfully!",
+    "status_success_desc": "Thank you for contacting the BI4DT Network. Our team will get back to you shortly.",
+    "status_error_title": "Unable to send message",
+    "status_error_desc": "A communication error occurred while submitting your inquiry. Please try again or email us at investigacion@ucsur.edu.pe."
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: EQUIPO": "",
+  "// ========================================================": "",
+  "equipo": {
+    "title_investigacion": "Research Team",
+    "title_estudiantes": "Students"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: ESTUDIANTE": "",
+  "// ========================================================": "",
+  "estudiante": {
+    "areas_interes": "Areas of Interest",
+    "proyectos_relacionados": "Related Projects",
+    "mostrar": "Show:",
+    "por_pagina": "per page",
+    "sin_proyectos": "No projects currently registered.",
+    "estado_en_curso": "Ongoing",
+    "estado_concluido": "Completed"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: INVESTIGACION": "",
+  "// ========================================================": "",
+  "investigacion": {
+    "lineas_investigacion": "Research Areas",
+    "proyectos_relacionados": "Related Projects",
+    "mostrar": "Show:",
+    "por_pagina": "per page",
+    "sin_proyectos": "No projects currently registered.",
+    "estado_en_curso": "Ongoing",
+    "estado_concluido": "Completed"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: PROYECTO-DETALLE": "",
+  "// ========================================================": "",
+  "proyecto_detalle": {
+    "volver": "Back to projects",
+    "periodo": "Period",
+    "descripcion_title": "Project Description",
+    "equipo_title": "Participating Team",
+    "articulos_title": "Articles",
+    "ficha_title": "Project Sheet",
+    "label_estado": "Status",
+    "label_linea": "Research Area",
+    "label_lineas": "Research Areas",
+    "btn_similares": "View similar projects",
+    "instituciones_title": "Institutions",
+    "estado_en_curso": "Ongoing",
+    "estado_concluido": "Completed"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: PROYECTOS": "",
+  "// ========================================================": "",
+  "proyectos": {
+    "hero_title": "Projects",
+    "stat_total": "In Total",
+    "stat_en_curso": "Ongoing",
+    "placeholder_buscar": "Search",
+    "aria_buscar": "Search projects by text",
+    "aria_borrar": "Clear search text",
+    "opt_todas_lineas": "All research areas",
+    "opt_todos_estados": "All statuses",
+    "opt_en_curso": "Ongoing",
+    "opt_concluido": "Completed",
+    "title_limpiar": "Clear filters",
+    "aria_limpiar": "Clear filters",
+    "mostrando": "Showing",
+    "proyectos_label": "projects",
+    "mostrar": "Show:",
+    "por_pagina": "per page",
+    "empty_title": "No projects found",
+    "empty_desc": "There are no projects that match the selected search criteria or filters.",
+    "empty_btn": "Reset all filters",
+    "de": "of",
+    "aria_eliminar_filtro": "Remove filter"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: QUIENES": "",
+  "// ========================================================": "",
+  "quienes": {
+    "mision_title": "Mission",
+    "mision_desc": "Consolidate an inter-institutional and intersectoral network in biomedical informatics that articulates governance, applied research, STI capacity building, scientific dissemination, and sustainability, closing digital capacity gaps in the healthcare system.",
+    "vision_title": "Vision",
+    "vision_desc": "To be a benchmark network in biomedical informatics and digital health in Peru and the region, recognized for its collaboration among academia, government, healthcare providers, and international partners, and for its continuity beyond the grant period.",
+    "mapa_title": "National and International Cooperation Network",
+    "mapa_desc": "We collaborate with universities, research centers, and healthcare providers in Peru, Ecuador, and the United States to enhance biomedical innovation.",
+    "mapa_btn_reset_title": "Reset panoramic view",
+    "mapa_btn_reset_aria": "Reset view",
+    "galeria_title": "Photo Gallery"
+  },
+
+  "// ========================================================": "",
   "// COMPONENTE #2: FOOTER": "",
   "// ========================================================": "",
   "footer": {

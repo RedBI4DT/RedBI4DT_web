@@ -120,8 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function resetButton() {
     submitBtn.disabled = false;
+    const txt = (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t('contacto.btn_enviar') : null) || 'Enviar Mensaje';
     submitBtn.innerHTML = `
-      <span>Enviar Mensaje</span>
+      <span data-i18n="contacto.btn_enviar">${txt}</span>
       <i class="fa-solid fa-paper-plane"></i>
     `;
   }
@@ -152,38 +153,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const correo = correoInput ? correoInput.value.trim() : '';
     const mensaje = mensajeInput ? mensajeInput.value.trim() : '';
 
+    const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+
     // Validar Nombre
     if (!nombre) {
-      setFieldError(nombreInput, errorNombre, 'Por favor, ingresa tu nombre.');
+      setFieldError(nombreInput, errorNombre, t('contacto.err_nombre_req', 'Por favor, ingresa tu nombre.'));
       hasErrors = true;
       if (!firstErrorElement) firstErrorElement = nombreInput;
     }
 
     // Validar Apellido
     if (!apellido) {
-      setFieldError(apellidoInput, errorApellido, 'Por favor, ingresa tu apellido.');
+      setFieldError(apellidoInput, errorApellido, t('contacto.err_apellido_req', 'Por favor, ingresa tu apellido.'));
       hasErrors = true;
       if (!firstErrorElement) firstErrorElement = apellidoInput;
     }
 
     // Validar Correo
     if (!correo) {
-      setFieldError(correoInput, errorCorreo, 'Por favor, ingresa tu correo electrónico.');
+      setFieldError(correoInput, errorCorreo, t('contacto.err_correo_req', 'Por favor, ingresa tu correo electrónico.'));
       hasErrors = true;
       if (!firstErrorElement) firstErrorElement = correoInput;
     } else if (!isValidEmail(correo)) {
-      setFieldError(correoInput, errorCorreo, 'Ingresa un correo electrónico válido (ej: nombre@dominio.com).');
+      setFieldError(correoInput, errorCorreo, t('contacto.err_correo_inv', 'Ingresa un correo electrónico válido (ej: nombre@dominio.com).'));
       hasErrors = true;
       if (!firstErrorElement) firstErrorElement = correoInput;
     }
 
     // Validar Mensaje
     if (!mensaje) {
-      setFieldError(mensajeInput, errorMensaje, 'Por favor, escribe tu mensaje o consulta antes de enviar.');
+      setFieldError(mensajeInput, errorMensaje, t('contacto.err_mensaje_req', 'Por favor, escribe tu mensaje o consulta antes de enviar.'));
       hasErrors = true;
       if (!firstErrorElement) firstErrorElement = mensajeInput;
     } else if (mensaje.length < 5) {
-      setFieldError(mensajeInput, errorMensaje, 'El mensaje es demasiado breve. Cuéntanos más detalles.');
+      setFieldError(mensajeInput, errorMensaje, t('contacto.err_mensaje_len', 'El mensaje es demasiado breve. Cuéntanos más detalles.'));
       hasErrors = true;
       if (!firstErrorElement) firstErrorElement = mensajeInput;
     }
@@ -221,11 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Limpieza de campos del formulario
     form.reset();
 
-    showStatus(
-      'success',
-      '¡Mensaje enviado con éxito!',
-      'Muchas gracias por comunicarte con la Red BI4DT. Hemos recibido tu consulta y nos pondremos en contacto contigo a la brevedad.'
-    );
+    const tSuccessTitle = (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t('contacto.status_success_title') : null) || '¡Mensaje enviado con éxito!';
+    const tSuccessDesc = (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t('contacto.status_success_desc') : null) || 'Muchas gracias por comunicarte con la Red BI4DT. Hemos recibido tu consulta y nos pondremos en contacto contigo a la brevedad.';
+    showStatus('success', tSuccessTitle, tSuccessDesc);
   }
 
   // Escuchar el evento de carga del iframe para detectar respuesta de Zoho

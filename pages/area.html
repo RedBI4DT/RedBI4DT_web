@@ -20,7 +20,7 @@
     <!-- Hero del Área -->
     <section class="area-hero-section" id="area-hero">
       <div class="area-hero-content">
-        <h1 class="area-hero-nombre" id="area-hero-nombre">Cargando...</h1>
+        <h1 class="area-hero-nombre" id="area-hero-nombre"></h1>
         <p class="area-hero-desc" id="area-hero-desc"></p>
       </div>
     </section>
@@ -29,9 +29,9 @@
     <section class="area-investigadores-section" id="area-investigadores-section">
       <div class="area-section-container">
         <div class="area-section-header">
-          <h2 class="section-title-navy area-section-title">Integrantes</h2>
+          <h2 class="section-title-navy area-section-title" data-i18n="area.integrantes_title">Integrantes</h2>
           <a href="equipo.html" class="area-ver-todos-link" id="area-ver-equipo-link">
-            Ver todo el equipo <i class="fa-solid fa-arrow-right"></i>
+            <span data-i18n="area.ver_equipo">Ver todo el equipo</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <div class="area-investigadores-grid" id="area-investigadores-grid">
@@ -46,21 +46,21 @@
         <div class="area-proyectos-header-bar">
           <div class="area-proyectos-header-left">
             <h2 class="section-title-navy area-section-title">
-              Proyectos Relacionados <span id="area-proyectos-total-badge" class="proy-total-badge">(0)</span>
+              <span data-i18n="area.proyectos_title">Proyectos Relacionados</span> <span id="area-proyectos-total-badge" class="proy-total-badge">(0)</span>
             </h2>
           </div>
           <div class="area-proyectos-header-controls">
             <a href="proyectos.html" class="area-ver-todos-link" id="area-ver-todos-proy-link">
-              Ver todos los proyectos <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="area.ver_proyectos">Ver todos los proyectos</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
             <div class="proyectos-per-page-wrapper">
-              <label for="area-proy-per-page" class="proy-per-page-label">Mostrar:</label>
+              <label for="area-proy-per-page" class="proy-per-page-label" data-i18n="area.mostrar">Mostrar:</label>
               <select id="area-proy-per-page" class="proy-per-page-select">
                 <option value="5" selected>5</option>
                 <option value="7">7</option>
                 <option value="10">10</option>
               </select>
-              <span class="proy-per-page-suffix">por página</span>
+              <span class="proy-per-page-suffix" data-i18n="area.por_pagina">por página</span>
             </div>
           </div>
         </div>
@@ -81,6 +81,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="../scripts/i18n.js"></script>
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/area.js"></script>
 </body>

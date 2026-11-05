@@ -80,7 +80,8 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   const estadoBadge = document.getElementById('proy-estado-badge');
   if (estadoBadge) {
     const esConcluido = p.estado === 'Concluido';
-    estadoBadge.textContent = p.estado || 'En curso';
+    const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+    estadoBadge.textContent = esConcluido ? t('proyecto_detalle.estado_concluido', 'Concluido') : t('proyecto_detalle.estado_en_curso', 'En curso');
     estadoBadge.className = `proy-estado-badge ${esConcluido ? 'proy-estado-badge--concluido' : 'proy-estado-badge--activo'}`;
   }
 

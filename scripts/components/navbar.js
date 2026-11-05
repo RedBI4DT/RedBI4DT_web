@@ -118,16 +118,30 @@ function initNavbar() {
     });
 
     langDropdownContainer.querySelectorAll('.bi4dt-lang-option-btn').forEach(opt => {
-      opt.addEventListener('click', () => {
+      opt.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const selectedLang = opt.getAttribute('data-lang');
+        if (selectedLang && window.i18n && typeof window.i18n.setLang === 'function') {
+          window.i18n.setLang(selectedLang);
+        }
         closeLangDropdown();
       });
     });
   }
 
-  // Sincronizar texto de idioma actual
+  // Sincronizar texto de idioma actual y clase activa en opciones
   if (window.i18n && typeof window.i18n.getCurrentLang === 'function') {
     const cur = window.i18n.getCurrentLang();
     if (langCurrentText) langCurrentText.textContent = cur.toUpperCase();
+    if (langDropdownContainer) {
+      langDropdownContainer.querySelectorAll('.bi4dt-lang-option-btn').forEach(btn => {
+        const isActive = (btn.getAttribute('data-lang') || '').toLowerCase() === cur;
+        btn.classList.toggle('is-active', isActive);
+        btn.classList.toggle('i18n-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
   }
 
   // ── Enlace activo según URL ─────────────────────────────────

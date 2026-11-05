@@ -23,7 +23,7 @@
     <!-- Encabezado Institucional Sobrio (Hero Azul) -->
     <section class="quienes-header-section articulos-hero-section">
       <div class="quienes-header-container articulos-hero-content">
-        <h1 class="quienes-title">Artículos</h1>
+        <h1 class="quienes-title" data-i18n="articulos.hero_title">Artículos</h1>
       </div>
     </section>
 
@@ -36,8 +36,8 @@
           <div class="articulos-search-bar" role="search" aria-label="Búsqueda de artículos">
             <div class="articulos-search-input-box">
               <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
-              <input type="text" id="articulos-search-input" placeholder="Buscar artículos por título, revista o año..." aria-label="Buscar artículos">
-              <button type="button" id="articulos-search-clear" class="btn-clear-search" aria-label="Borrar texto de búsqueda" hidden>
+              <input type="text" id="articulos-search-input" placeholder="Buscar artículos por título, revista o año..." data-i18n-placeholder="articulos.search_placeholder" aria-label="Buscar artículos" data-i18n-aria-label="articulos.search_aria">
+              <button type="button" id="articulos-search-clear" class="btn-clear-search" aria-label="Borrar texto de búsqueda" data-i18n-aria-label="articulos.search_clear_aria" hidden>
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -46,16 +46,16 @@
           <!-- Fila de Metadatos: Contador y Selector de Items por Página -->
           <div class="articulos-meta-row">
             <div class="articulos-meta-left">
-              <span class="articulos-count-text">Mostrando <strong id="articulos-count">0</strong> artículos</span>
+              <span class="articulos-count-text"><span data-i18n="articulos.mostrando">Mostrando</span> <strong id="articulos-count">0</strong> <span data-i18n="articulos.articulos_label">artículos</span></span>
             </div>
             <div class="proyectos-per-page-wrapper">
-              <label for="articulos-per-page" class="proy-per-page-label">Mostrar:</label>
+              <label for="articulos-per-page" class="proy-per-page-label" data-i18n="articulos.mostrar">Mostrar:</label>
               <select id="articulos-per-page" class="proy-per-page-select">
                 <option value="6" selected>6</option>
                 <option value="9">9</option>
                 <option value="12">12</option>
               </select>
-              <span class="proy-per-page-suffix">por página</span>
+              <span class="proy-per-page-suffix" data-i18n="articulos.por_pagina">por página</span>
             </div>
           </div>
         </div>
@@ -69,9 +69,9 @@
           <!-- Estado Vacío cuando no hay resultados -->
           <div class="articulos-empty" id="articulos-empty" hidden>
             <i class="fa-solid fa-filter-circle-xmark"></i>
-            <h3>No se encontraron artículos</h3>
-            <p>No se encontraron publicaciones que coincidan con los términos de búsqueda ingresados.</p>
-            <button type="button" class="articulos-empty-btn" id="articulos-empty-reset">Borrar búsqueda</button>
+            <h3 data-i18n="articulos.empty_title">No se encontraron artículos</h3>
+            <p data-i18n="articulos.empty_desc">No se encontraron publicaciones que coincidan con los términos de búsqueda ingresados.</p>
+            <button type="button" class="articulos-empty-btn" id="articulos-empty-reset" data-i18n="articulos.empty_btn">Borrar búsqueda</button>
           </div>
         </div>
 
@@ -87,9 +87,9 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="../scripts/i18n.js"></script>
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/index.js"></script>
   <script src="../scripts/articulos.js?v=1.0"></script>
 </body>
 </html>
-
