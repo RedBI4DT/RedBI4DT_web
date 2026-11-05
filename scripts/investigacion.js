@@ -93,19 +93,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-function normalizarTexto(texto) {
-  return (texto || '').toLowerCase().trim();
-}
-
-const COLOR_MAP = {
-  'informatica-biomedica': 'gold',
-  'ia-salud': 'indigo',
-  'interoperabilidad': 'emerald',
-  'analitica-datos': 'violet',
-  'sociotecnica-adopcion': 'rose',
-  'salud-digital': 'sky'
-};
-
 function renderPerfil(m, categoria, proyectosReales) {
   // Actualizar título del navegador
   document.title = `${m.nombre} - Perfil de Investigación | Red BI4DT`;

@@ -28,33 +28,6 @@
   letter-spacing: -0.5px;
 }
 
-.articulos-hero-stats {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.articulos-stat {
-  display: flex;
-  align-items: baseline;
-  gap: 0.55rem;
-}
-
-.articulos-stat-num {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--color-gold, #f59e0b);
-  line-height: 1;
-}
-
-.articulos-stat-label {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
 /* ── Sección Principal: Búsqueda y Lista ─────────────────────────────────── */
 .articulos-main-section {
   padding: 3rem 50px 5rem 50px;
