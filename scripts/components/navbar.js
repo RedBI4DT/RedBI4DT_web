@@ -87,8 +87,47 @@ function initNavbar() {
       if (e.key === 'Escape') {
         toggleMenu(false);
         closeDropdown();
+        closeLangDropdown();
       }
     });
+  }
+
+  // ── Selector de Idioma (ES / EN) ───────────────────────────
+  const langDropdownBtn       = document.getElementById('nav-lang-btn');
+  const langDropdownContainer = document.getElementById('nav-lang-dropdown');
+  const langCurrentText       = document.getElementById('current-lang-text');
+
+  const closeLangDropdown = () => {
+    if (!langDropdownContainer) return;
+    langDropdownContainer.classList.remove('is-open');
+    if (langDropdownBtn) langDropdownBtn.setAttribute('aria-expanded', 'false');
+  };
+
+  if (langDropdownBtn && langDropdownContainer) {
+    langDropdownBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = langDropdownContainer.classList.toggle('is-open');
+      langDropdownBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!langDropdownContainer.contains(e.target)) {
+        closeLangDropdown();
+      }
+    });
+
+    langDropdownContainer.querySelectorAll('.bi4dt-lang-option-btn').forEach(opt => {
+      opt.addEventListener('click', () => {
+        closeLangDropdown();
+      });
+    });
+  }
+
+  // Sincronizar texto de idioma actual
+  if (window.i18n && typeof window.i18n.getCurrentLang === 'function') {
+    const cur = window.i18n.getCurrentLang();
+    if (langCurrentText) langCurrentText.textContent = cur.toUpperCase();
   }
 
   // ── Enlace activo según URL ─────────────────────────────────
@@ -114,4 +153,9 @@ function initNavbar() {
     if (navInvestigacionBtn) navInvestigacionBtn.classList.add('active');
   }
   else                                                                                                       { if (navInicio)       navInicio.classList.add('active'); }
+
+  // Reaplicar traducciones por si navbar se inyectó de forma asíncrona
+  if (window.i18n && typeof window.i18n.reapply === 'function') {
+    window.i18n.reapply();
+  }
 }

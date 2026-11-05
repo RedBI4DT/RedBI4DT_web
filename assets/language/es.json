@@ -1,0 +1,56 @@
+{
+  "// ========================================================": "",
+  "// COMPONENTE #1: NAVBAR": "",
+  "// ========================================================": "",
+  "nav": {
+    "inicio": "INICIO",
+    "quienes_somos": "QUIÉNES SOMOS",
+    "equipo": "EQUIPO",
+    "investigacion": "INVESTIGACIÓN",
+    "proyectos": "PROYECTOS",
+    "articulos": "ARTÍCULOS",
+    "contacto": "CONTACTO"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: INDEX": "",
+  "// ========================================================": "",
+  "hero": {
+    "desc_p1": "Articulamos academia, sector público, prestadores de servicios y socios estratégicos internacionales para impulsar la",
+    "desc_bold1": "transformación digital en salud",
+    "desc_p2": "mediante informática biomédica, ciencia de datos e",
+    "desc_bold2": "inteligencia artificial",
+    "btn_conocenos": "Conócenos"
+  },
+  "lineas": {
+    "title": "Líneas de Investigación",
+    "informatica_biomedica": "Informática Biomédica",
+    "ia_salud": "Inteligencia Artificial en Salud",
+    "interoperabilidad": "Interoperabilidad y Gobernanza de Datos",
+    "analitica_datos": "Visualización y Analítica de Datos",
+    "sociotecnica_adopcion": "Evaluación Sociotécnica y Adopción",
+    "salud_digital": "Salud Digital"
+  },
+  "noticias": {
+    "title": "Noticias",
+    "error": "No fue posible cargar las publicaciones en este momento. Por favor, intenta de nuevo más tarde."
+  },
+  "ejecutora": {
+    "title": "Universidad Científica del Sur",
+    "desc_p1": "La Red BI4DT es liderada por la Universidad Científica del Sur (UCSUR) a través de la",
+    "desc_bold": "Facultad de Ingeniería Biomédica",
+    "desc_p2": ", impulsando la transformación digital en salud mediante investigación aplicada en informática biomédica y ciencia de datos.",
+    "subtext": "En articulación con universidades, institutos de investigación pública y socios estratégicos de Perú, Ecuador y Estados Unidos, fomentamos la innovación continua y la transferencia tecnológica regional."
+  },
+  "colaboradores": {
+    "title": "Colaboradores de la Red"
+  },
+
+  "// ========================================================": "",
+  "// COMPONENTE #2: FOOTER": "",
+  "// ========================================================": "",
+  "footer": {
+    "btn_contacto": "Contacta con nosotros",
+    "copyright": "© 2026 BI4DT Network. Todos los derechos reservados."
+  }
+}

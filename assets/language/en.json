@@ -1,0 +1,56 @@
+{
+  "// ========================================================": "",
+  "// COMPONENTE #1: NAVBAR": "",
+  "// ========================================================": "",
+  "nav": {
+    "inicio": "HOME",
+    "quienes_somos": "ABOUT US",
+    "equipo": "TEAM",
+    "investigacion": "RESEARCH",
+    "proyectos": "PROJECTS",
+    "articulos": "ARTICLES",
+    "contacto": "CONTACT"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: INDEX": "",
+  "// ========================================================": "",
+  "hero": {
+    "desc_p1": "We articulate academia, the public sector, healthcare providers, and international strategic partners to drive the",
+    "desc_bold1": "digital transformation in healthcare",
+    "desc_p2": "through biomedical informatics, data science, and",
+    "desc_bold2": "artificial intelligence",
+    "btn_conocenos": "About Us"
+  },
+  "lineas": {
+    "title": "Research Areas",
+    "informatica_biomedica": "Biomedical Informatics",
+    "ia_salud": "Artificial Intelligence in Health",
+    "interoperabilidad": "Interoperability and Data Governance",
+    "analitica_datos": "Data Visualization and Analytics",
+    "sociotecnica_adopcion": "Sociotechnical Evaluation and Adoption",
+    "salud_digital": "Digital Health"
+  },
+  "noticias": {
+    "title": "News",
+    "error": "It was not possible to load posts at this moment. Please try again later."
+  },
+  "ejecutora": {
+    "title": "Universidad Científica del Sur",
+    "desc_p1": "The BI4DT Network is led by Universidad Científica del Sur (UCSUR) through the",
+    "desc_bold": "Faculty of Biomedical Engineering",
+    "desc_p2": ", advancing healthcare digital transformation through applied research in biomedical informatics and data science.",
+    "subtext": "In collaboration with universities, public research institutes, and strategic partners across Peru, Ecuador, and the United States, we foster ongoing innovation and regional technology transfer."
+  },
+  "colaboradores": {
+    "title": "Network Partners"
+  },
+
+  "// ========================================================": "",
+  "// COMPONENTE #2: FOOTER": "",
+  "// ========================================================": "",
+  "footer": {
+    "btn_contacto": "Contact us",
+    "copyright": "© 2026 BI4DT Network. All rights reserved."
+  }
+}

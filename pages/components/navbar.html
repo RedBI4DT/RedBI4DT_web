@@ -6,21 +6,33 @@
 
       <!-- Enlaces a la Izquierda -->
       <div class="bi4dt-nav-links" id="navbar-nav-links">
-        <a href="#" class="bi4dt-nav-link" id="nav-inicio">INICIO</a>
-        <a href="#" class="bi4dt-nav-link" id="nav-quienes-somos">QUIÉNES SOMOS</a>
-        <a href="#" class="bi4dt-nav-link" id="nav-equipo">EQUIPO</a>
+        <a href="#" class="bi4dt-nav-link" id="nav-inicio" data-i18n="nav.inicio">INICIO</a>
+        <a href="#" class="bi4dt-nav-link" id="nav-quienes-somos" data-i18n="nav.quienes_somos">QUIÉNES SOMOS</a>
+        <a href="#" class="bi4dt-nav-link" id="nav-equipo" data-i18n="nav.equipo">EQUIPO</a>
         <!-- Dropdown Investigación (Continuo ARC) -->
         <div class="bi4dt-dropdown" id="nav-dropdown-investigacion">
           <button type="button" class="bi4dt-nav-link bi4dt-dropdown-btn" id="nav-investigacion-btn" aria-expanded="false" aria-haspopup="true">
-            <span>INVESTIGACIÓN</span>
+            <span data-i18n="nav.investigacion">INVESTIGACIÓN</span>
             <i class="fa-solid fa-chevron-down bi4dt-arrow" aria-hidden="true"></i>
           </button>
           <div class="bi4dt-dropdown-menu" id="nav-investigacion-menu" aria-label="Submenú de Investigación">
-            <a href="#" class="bi4dt-dropdown-item" id="nav-sub-proyectos">PROYECTOS</a>
-            <a href="#" class="bi4dt-dropdown-item" id="nav-sub-articulos">ARTÍCULOS</a>
+            <a href="#" class="bi4dt-dropdown-item" id="nav-sub-proyectos" data-i18n="nav.proyectos">PROYECTOS</a>
+            <a href="#" class="bi4dt-dropdown-item" id="nav-sub-articulos" data-i18n="nav.articulos">ARTÍCULOS</a>
           </div>
         </div>   
-        <a href="#" class="bi4dt-nav-link" id="nav-contacto">CONTACTO</a>
+        <a href="#" class="bi4dt-nav-link" id="nav-contacto" data-i18n="nav.contacto">CONTACTO</a>
+      </div>
+
+      <!-- Selector de Idioma (ES / EN) al extremo derecho -->
+      <div class="bi4dt-lang-wrapper" id="nav-lang-dropdown">
+        <button type="button" class="bi4dt-lang-pill-btn" id="nav-lang-btn" aria-expanded="false" aria-haspopup="true" aria-label="Seleccionar idioma">
+          <span class="bi4dt-lang-current" id="current-lang-text">ES</span>
+          <i class="fa-solid fa-caret-down bi4dt-lang-caret" id="lang-arrow" aria-hidden="true"></i>
+        </button>
+        <div class="bi4dt-lang-dropdown-menu" id="nav-lang-menu" role="menu" aria-label="Opciones de idioma">
+          <button type="button" class="bi4dt-lang-option-btn" data-lang="en" role="menuitem">EN</button>
+          <button type="button" class="bi4dt-lang-option-btn" data-lang="es" role="menuitem">ES</button>
+        </div>
       </div>
 
       <!-- Toggle Móvil (Aparece al extremo derecho en pantallas pequeñas) -->
