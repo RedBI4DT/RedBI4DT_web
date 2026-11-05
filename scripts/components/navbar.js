@@ -9,7 +9,6 @@ function initNavbar() {
   const navEquipo       = document.getElementById('nav-equipo');
   const navProyectos    = document.getElementById('nav-proyectos');
   const navContacto     = document.getElementById('nav-contacto');
-  const navSubLineas    = document.getElementById('nav-sub-lineas');
   const navSubProyectos = document.getElementById('nav-sub-proyectos');
   const navSubArticulos = document.getElementById('nav-sub-articulos');
 
@@ -20,7 +19,6 @@ function initNavbar() {
   if (navEquipo)       navEquipo.href       = base + 'pages/equipo.html';
   if (navProyectos)    navProyectos.href    = base + 'pages/proyectos.html';
   if (navContacto)     navContacto.href     = base + 'pages/contacto.html';
-  if (navSubLineas)    navSubLineas.href    = base + 'pages/lineas.html';
   if (navSubProyectos) navSubProyectos.href = base + 'pages/proyectos.html';
   if (navSubArticulos) navSubArticulos.href = base + 'pages/articulos.html';
 
@@ -112,9 +110,8 @@ function initNavbar() {
     if (navInvestigacionBtn) navInvestigacionBtn.classList.add('active');
     if (navSubProyectos) navSubProyectos.classList.add('active');
   }
-  else if (currentPath.includes('lineas.html') || currentPath.includes('area.html')) {
+  else if (currentPath.includes('area.html')) {
     if (navInvestigacionBtn) navInvestigacionBtn.classList.add('active');
-    if (navSubLineas) navSubLineas.classList.add('active');
   }
   else                                                                                                       { if (navInicio)       navInicio.classList.add('active'); }
 }

@@ -135,7 +135,7 @@ function renderPerfil(m, proyectosReales) {
     const lineasUnicas = Array.from(lineasMap.values());
     if (lineasUnicas.length > 0) {
       lineasEl.innerHTML = lineasUnicas.map(l => {
-        const href = l.id ? `area.html?id=${l.id}` : 'lineas.html';
+        const href = l.id ? `area.html?id=${l.id}` : '../index.html#lineas-investigacion';
         return `
           <li>
             <a href="${href}" class="perfil-linea-link-text" title="${l.nombre}">

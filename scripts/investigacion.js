@@ -154,7 +154,7 @@ function renderPerfil(m, categoria, proyectosReales) {
     if (lineasUnicas.length > 0) {
       chipsEl.innerHTML = lineasUnicas.map(l => {
         const areaId = l.id || MAPA_LINEAS_A_AREAS[(l.nombre || '').toLowerCase().trim()];
-        const href = areaId ? `area.html?id=${areaId}` : 'lineas.html';
+        const href = areaId ? `area.html?id=${areaId}` : '../index.html#lineas-investigacion';
         return `
           <li>
             <a href="${href}" class="perfil-linea-link-text" title="${l.nombre}">

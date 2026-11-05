@@ -17,44 +17,10 @@
   <!-- Contenido Principal -->
   <main class="page-content page-full">
 
-    <!-- Header: Ponerse en contacto -->
-    <section class="quienes-header-section" style="margin-bottom: 0;">
-      <div class="quienes-header-container">
-         <h1 class="quienes-title">Contacto</h1>
-         <p class="quienes-subtitle">¿Tienes consultas, propuestas de investigación o deseas formar parte de nuestra red? Escríbenos y nos pondremos en contacto contigo.</p>
-      </div>
-    </section>
-
     <!-- Main Contact Info & Form -->
     <section class="contacto-main-section">
-      
-      <!-- Lado Izquierdo: Info -->
-      <div class="contacto-info-panel">
-        
-        <div class="contacto-items-container">
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="contacto-item-content">
-              <span class="contacto-item-label">CORREO ELECTRÓNICO</span>
-              <a href="mailto:investigacion@ucsur.edu.pe" class="contacto-item-value">investigacion@ucsur.edu.pe</a>
-            </div>
-          </div>
-          
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="contacto-item-content">
-              <span class="contacto-item-label">TELÉFONO INSTITUCIONAL</span>
-              <span class="contacto-item-value">(01) 610-6400</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Lado Derecho: Formulario -->
+      <!-- Tarjeta del Formulario Centrada -->
       <div class="contacto-form-wrapper">
         <form 
           class="contacto-form" 
@@ -73,24 +39,28 @@
           <input type="hidden" name="zc_gad" value="">
 
           <div class="contacto-row">
-            <div class="contacto-group">
+            <div class="contacto-group" id="group-nombre">
               <label class="contacto-form-label" for="nombre">Nombre *</label>
               <input type="text" id="nombre" name="Name_First" maxlength="255" class="contacto-input" placeholder="Tu nombre" required>
+              <span class="contacto-field-error" id="error-nombre"></span>
             </div>
-            <div class="contacto-group">
+            <div class="contacto-group" id="group-apellido">
               <label class="contacto-form-label" for="apellido">Apellido *</label>
               <input type="text" id="apellido" name="Name_Last" maxlength="255" class="contacto-input" placeholder="Tu apellido" required>
+              <span class="contacto-field-error" id="error-apellido"></span>
             </div>
           </div>
 
-          <div class="contacto-group">
+          <div class="contacto-group" id="group-correo">
             <label class="contacto-form-label" for="correo">Correo Electrónico *</label>
             <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" required>
+            <span class="contacto-field-error" id="error-correo"></span>
           </div>
 
-          <div class="contacto-group">
+          <div class="contacto-group" id="group-mensaje">
             <label class="contacto-form-label" for="mensaje">Mensaje *</label>
             <textarea id="mensaje" name="MultiLine" maxlength="65535" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." required></textarea>
+            <span class="contacto-field-error" id="error-mensaje"></span>
           </div>
 
           <!-- Mensaje de estado / feedback accesible -->

@@ -48,6 +48,8 @@
               todosArticulos.push({
                 titulo: titulo,
                 anio: pub.anio || '',
+                mes: pub.mes || '',
+                fecha: pub.fecha || (pub.anio ? `${pub.anio}-00` : ''),
                 revista: pub.revista || 'Publicación Científica Indexada',
                 url: pub.url || '#'
               });
@@ -56,11 +58,11 @@
         }
       });
 
-      // Ordenar por año descendente; ante igualdad, alfabéticamente por título
+      // Ordenar por mes-fecha más actual (cronológico descendente)
       todosArticulos.sort((a, b) => {
-        const anioA = parseInt(a.anio, 10) || 0;
-        const anioB = parseInt(b.anio, 10) || 0;
-        if (anioB !== anioA) return anioB - anioA;
+        const fechaA = a.fecha || `${a.anio || 0}-00`;
+        const fechaB = b.fecha || `${b.anio || 0}-00`;
+        if (fechaB !== fechaA) return fechaB.localeCompare(fechaA);
         return a.titulo.localeCompare(b.titulo);
       });
 
@@ -184,7 +186,8 @@
     // Renderizar items con formato homologado: > a la izquierda, título con ↗, año - revista abajo
     listEl.innerHTML = articulosPagina.map((art, idx) => {
       const delay = idx * 30;
-      const metaSubtexto = [art.anio, art.revista].filter(Boolean).join(' &mdash; ');
+      const fechaTexto = art.mes && art.anio ? `${art.mes} ${art.anio}` : (art.anio || '');
+      const metaSubtexto = [fechaTexto, art.revista].filter(Boolean).join(' &mdash; ');
 
       return `
         <li class="articulos-item" style="animation-delay: ${delay}ms;">

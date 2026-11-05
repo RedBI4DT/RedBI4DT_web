@@ -42,9 +42,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await response.json();
     todosProyectos = data.proyectos || [];
 
-    // Actualizar stat total del hero
+    // Actualizar stats del hero (Total y En curso)
     const statEl = document.getElementById('stat-total');
     if (statEl) statEl.textContent = todosProyectos.length;
+
+    const enCursoCount = todosProyectos.filter(p => (p.estado || '').toLowerCase().trim() === 'en curso').length;
+    const statEnCursoEl = document.getElementById('stat-en-curso');
+    if (statEnCursoEl) statEnCursoEl.textContent = enCursoCount;
 
     // Renderizar gráfico de barras de distribución por línea
     renderGraficoDistribucion(todosProyectos);

@@ -203,11 +203,12 @@ function renderPublicaciones(publicaciones) {
     return;
   }
 
-  // Orden: año descendente. Las que no tengan año van al final.
+  // Orden: mes-fecha más actual (cronológico descendente)
   pubs.sort((a, b) => {
-    const anioA = a.anio ? Number(a.anio) : -Infinity;
-    const anioB = b.anio ? Number(b.anio) : -Infinity;
-    return anioB - anioA;
+    const fechaA = a.fecha || (a.anio ? `${a.anio}-00` : '');
+    const fechaB = b.fecha || (b.anio ? `${b.anio}-00` : '');
+    if (fechaB !== fechaA) return fechaB.localeCompare(fechaA);
+    return (a.titulo || '').localeCompare(b.titulo || '');
   });
 
   const hasScrollClass = pubs.length > 8 ? ' has-scroll' : '';
@@ -216,7 +217,8 @@ function renderPublicaciones(publicaciones) {
     <ul class="proy-pub-list${hasScrollClass}">
       ${pubs.map(pub => {
         const metaParts = [];
-        if (pub.anio) metaParts.push(pub.anio);
+        const fechaTexto = pub.mes && pub.anio ? `${pub.mes} ${pub.anio}` : (pub.anio || '');
+        if (fechaTexto) metaParts.push(fechaTexto);
         if (pub.revista) metaParts.push(pub.revista);
         const metaString = metaParts.join(' - ');
 

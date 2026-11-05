@@ -3,7 +3,7 @@
 @import url('quienes.css'); /* Reutilizamos header institucional */
 
 .contacto-page {
-  background: #ffffff;
+  background: #f1f5f9;;
 }
 
 /* ── Banner Introductorio ────────────────────────── */
@@ -180,16 +180,37 @@
   border-radius: 0 2px 2px 0;
 }
 
-/* ── Sección Principal: Info y Formulario ────────── */
+/* ── Sección Principal: Formulario Centrado ────────── */
 .contacto-main-section {
-  max-width: 1280px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 4.5rem 50px 5.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 3.5rem;
-  align-items: start;
-  background: #ffffff;
+  padding: 4.5rem 24px 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f5f9;;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Encabezado Institucional Centrado */
+.contacto-header-centered {
+  text-align: center;
+  margin-bottom: 2.25rem;
+  max-width: 600px;
+}
+
+.contacto-title-centered {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.contacto-subtitle-centered {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Panel de Información Izquierdo */
@@ -279,13 +300,15 @@ a.contacto-item-value:hover {
   color: #d97706;
 }
 
-/* Panel del Formulario Derecho */
+/* Panel del Formulario Centrado */
 .contacto-form-wrapper {
   background: #ffffff;
-  padding: 2.5rem;
+  padding: 2.75rem 2.5rem;
   border-radius: 16px;
   border: 1.5px solid #e2e8f0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 35px rgba(0, 26, 77, 0.06);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contacto-form {
@@ -333,6 +356,45 @@ a.contacto-item-value:hover {
   outline: none;
   border-color: #1a3668;
   box-shadow: 0 0 0 3.5px rgba(26, 54, 104, 0.12);
+}
+
+/* Estado de Error en Inputs */
+.contacto-input.input-error {
+  border-color: #ef4444 !important;
+  background-color: #fffaf9;
+}
+
+.contacto-input.input-error:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3.5px rgba(239, 68, 68, 0.18) !important;
+}
+
+/* Mensajes de error específicos por campo */
+.contacto-field-error {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #dc2626;
+  line-height: 1.35;
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+  animation: fadeInFieldError 0.22s ease-out;
+}
+
+.contacto-field-error.is-visible {
+  display: flex;
+}
+
+@keyframes fadeInFieldError {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contacto-textarea {
