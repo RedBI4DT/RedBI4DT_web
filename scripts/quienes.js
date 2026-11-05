@@ -40,6 +40,7 @@ async function initNetworkMap() {
     peru: {
       id: 'peru',
       pais: 'Perú',
+      pais_en: 'Peru',
       puntos: [
         { nombre: 'Lima (Sede Principal)', coords: [-12.0464, -77.0428], isMain: true },
       ],
@@ -48,6 +49,7 @@ async function initNetworkMap() {
     ecuador: {
       id: 'ecuador',
       pais: 'Ecuador',
+      pais_en: 'Ecuador',
       bandera: '🇪🇨',
       rol: 'Nodo Internacional',
       puntos: [
@@ -58,12 +60,24 @@ async function initNetworkMap() {
     usa: {
       id: 'usa',
       pais: 'Estados Unidos',
+      pais_en: 'United States',
       bandera: '🇺🇸',
       rol: 'Nodo Internacional',
       puntos: [
         { nombre: 'Tucson, Arizona', coords: [32.2226, -110.9747], isMain: false }
       ],
       instituciones: institucionesData.filter(i => i.pais_id === 'usa').map(i => i.nombre_completo || i.nombre)
+    },
+    japon: {
+      id: 'japon',
+      pais: 'Japón',
+      pais_en: 'Japan',
+      bandera: '🇯🇵',
+      rol: 'Nodo Internacional',
+      puntos: [
+        { nombre: 'Kioto', coords: [34.9856, -224.2416], isMain: false }
+      ],
+      instituciones: institucionesData.filter(i => i.pais_id === 'japon').map(i => i.nombre_completo || i.nombre)
     }
   };
 
@@ -83,13 +97,17 @@ async function initNetworkMap() {
   }
   if (PAISES_RED.usa.instituciones.length === 0) {
     PAISES_RED.usa.instituciones = ['The University of Arizona'];
+  }
+  if (PAISES_RED.japon.instituciones.length === 0) {
+    PAISES_RED.japon.instituciones = ['Kyoto Computer Gakuin (KCG)'];
   };
 
   // 2. Inicialización de Leaflet
   const map = L.map('map-opentopo', {
     scrollWheelZoom: true,
     zoomControl: true,
-    minZoom: 2,
+    minZoom: 1,
+    zoomSnap: 0.25,
     maxZoom: 18
   });
 
@@ -107,7 +125,8 @@ async function initNetworkMap() {
     lima: [-12.0464, -77.0428],
     arequipa: [-16.4090, -71.5375],
     quito: [-0.1807, -78.4678],
-    tucson: [32.2226, -110.9747]
+    tucson: [32.2226, -110.9747],
+    kioto: [34.9856, -224.2416]
   };
 
   Object.keys(PAISES_RED).forEach((paisKey) => {
@@ -144,9 +163,10 @@ async function initNetworkMap() {
 
   // 5. Conexiones de Red entre los nodos (Líneas celestes continuas / punteadas)
   const networkLines = [
-    [coordsMap.lima], // Red Nacional Perú
-    [coordsMap.lima, coordsMap.quito],    // Conexión Perú - Ecuador
-    [coordsMap.lima, coordsMap.tucson]    // Conexión Perú - Estados Unidos
+    [coordsMap.lima],                     // Red Nacional Perú
+    [coordsMap.lima, coordsMap.quito],     // Conexión Perú - Ecuador
+    [coordsMap.lima, coordsMap.tucson],    // Conexión Perú - Estados Unidos
+    [coordsMap.lima, coordsMap.kioto]      // Conexión Transpacífica Perú - Japón
   ];
 
   networkLines.forEach((lineCoords) => {
@@ -159,12 +179,25 @@ async function initNetworkMap() {
     }).addTo(map);
   });
 
-  // 6. Encuadre inicial del mapa
-  const initialBounds = L.latLngBounds(allCoords);
-  map.fitBounds(initialBounds, {
-    padding: [60, 60],
-    maxZoom: 4
-  });
+  // 6. Encuadre inicial del mapa (Responsivo: transpacífico para móvil y desktop)
+  function aplicarVistaInicial() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      // Límites que encuadran Kioto (-224.24), Tucson (-110.97), Quito (-78.47) y Lima (-77.04)
+      const mobileBounds = L.latLngBounds([
+        [-14, -232], // SW: sur de Lima y oeste de Kioto
+        [38, -68]    // NE: norte de Kioto/Tucson y este de Lima
+      ]);
+      map.fitBounds(mobileBounds, {
+        padding: [16, 16],
+        maxZoom: 2
+      });
+    } else {
+      map.setView([18, -160], 2);
+    }
+  }
+
+  aplicarVistaInicial();
 
   // 7. Lógica de la Cartilla Lateral agrupada por PAÍS
   function activarCartillaPais(paisId) {
@@ -180,20 +213,27 @@ async function initNetworkMap() {
       }
     });
 
+    const isEn = window.i18n && typeof window.i18n.getLanguage === 'function' && window.i18n.getLanguage() === 'en';
+    const displayCountry = isEn ? (pais.pais_en || pais.pais) : pais.pais;
+    const sectionTitle = isEn
+      ? `Network Institutions in ${displayCountry} (${pais.instituciones.length})`
+      : `Instituciones de la Red en ${displayCountry} (${pais.instituciones.length})`;
+    const closeAria = isEn ? 'Close institutional panel' : 'Cerrar panel institucional';
+
     // Inyectar cartilla agrupada por PAÍS con acento celeste uniforme
     sidebarElement.innerHTML = `
       <div class="map-sidebar-inner">
-        <button class="map-sidebar-close" id="btn-close-sidebar" aria-label="Cerrar panel institucional">
+        <button class="map-sidebar-close" id="btn-close-sidebar" aria-label="${closeAria}">
           <i class="fa-solid fa-xmark"></i>
         </button>
 
         <div class="map-sidebar-header" style="border-left: 3px solid ${COLOR_CELESTE};">
-          <h3 class="map-sidebar-title">${pais.pais}</h3>
+          <h3 class="map-sidebar-title">${displayCountry}</h3>
         </div>
 
         <div class="map-sidebar-body">
           <span class="map-sidebar-section-title">
-            Instituciones de la Red en ${pais.pais} (${pais.instituciones.length})
+            ${sectionTitle}
           </span>
           <ul class="map-sidebar-institutions">
             ${pais.instituciones.map(inst => `
@@ -234,12 +274,17 @@ async function initNetworkMap() {
     resetBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       cerrarPanelLateral();
-      map.fitBounds(initialBounds, {
-        padding: [60, 60],
-        maxZoom: 4
-      });
+      aplicarVistaInicial();
     });
   }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      map.invalidateSize();
+    }, 200);
+  });
 }
 
 

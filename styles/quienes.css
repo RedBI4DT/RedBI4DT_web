@@ -618,6 +618,12 @@
   .map-title {
     font-size: 1.75rem;
   }
+  .map-container {
+    min-height: 380px;
+  }
+  #map-opentopo {
+    height: 380px;
+  }
 }
 
 @media (max-width: 580px) {
@@ -653,5 +659,11 @@
   }
   .map-description {
     font-size: 0.9rem;
+  }
+  .map-container {
+    min-height: 340px;
+  }
+  #map-opentopo {
+    height: 340px;
   }
 }
