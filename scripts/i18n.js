@@ -107,6 +107,9 @@
         const val = resolve(key);
         if (val !== null && val !== undefined) {
           el.setAttribute(attr, val);
+          if (attr === 'placeholder' && 'placeholder' in el) {
+            el.placeholder = val;
+          }
         }
       });
     });
@@ -125,8 +128,19 @@
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
 
+    // 4. Actualización del logo institucional según idioma (ES / EN)
+    const heroLogo = document.querySelector('.banner-hero-logo-img');
+    if (heroLogo) {
+      const base = window.location.pathname.includes('/pages/') ? '../' : './';
+      heroLogo.src = currentLang === 'en'
+        ? `${base}assets/images/logo_red/logo_main_EN.png`
+        : `${base}assets/images/logo_red/logo_main.png`;
+    }
+
     document.documentElement.lang = currentLang;
-    document.dispatchEvent(new CustomEvent('i18n:changed', { detail: { lang: currentLang } }));
+    const evt = new CustomEvent('i18n:changed', { detail: { lang: currentLang } });
+    document.dispatchEvent(evt);
+    window.dispatchEvent(evt);
   }
 
   async function setLang(lang) {
@@ -167,6 +181,8 @@
     setLang,
     reapply: applyTranslations,
     getCurrentLang: () => currentLang,
+    getLanguage: () => currentLang,
+    getLang: () => currentLang,
     t: resolve
   };
 

@@ -107,13 +107,13 @@ async function initNetworkMap() {
     scrollWheelZoom: true,
     zoomControl: true,
     minZoom: 1,
-    zoomSnap: 0.25,
+    zoomSnap: 0.1,
     maxZoom: 18
   });
 
   map.zoomControl.setPosition('topleft');
 
-  // 3. Capa de teselas OpenStreetMap (estilizada monocromática con CSS en styles/quienes.css)
+  // 3. Capa de teselas OpenStreetMap Standard limpia sin filtros
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
@@ -180,24 +180,33 @@ async function initNetworkMap() {
   });
 
   // 6. Encuadre inicial del mapa (Responsivo: transpacífico para móvil y desktop)
+  const DESKTOP_CENTER = [12, -148];
+  const DESKTOP_ZOOM = 2.5;
+
   function aplicarVistaInicial() {
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
+      map.setMinZoom(1);
       // Límites que encuadran Kioto (-224.24), Tucson (-110.97), Quito (-78.47) y Lima (-77.04)
       const mobileBounds = L.latLngBounds([
-        [-14, -232], // SW: sur de Lima y oeste de Kioto
-        [38, -68]    // NE: norte de Kioto/Tucson y este de Lima
+        [-20, -238], // SW: sur de Lima y oeste de Kioto
+        [42, -66]    // NE: norte de Kioto/Tucson y este de Lima
       ]);
       map.fitBounds(mobileBounds, {
-        padding: [16, 16],
+        padding: [12, 12],
         maxZoom: 2
       });
     } else {
-      map.setView([18, -160], 2);
+      map.setMinZoom(2.2);
+      map.setView(DESKTOP_CENTER, DESKTOP_ZOOM);
     }
   }
 
   aplicarVistaInicial();
+  setTimeout(() => {
+    map.invalidateSize();
+    aplicarVistaInicial();
+  }, 150);
 
   // 7. Lógica de la Cartilla Lateral agrupada por PAÍS
   function activarCartillaPais(paisId) {
@@ -213,7 +222,7 @@ async function initNetworkMap() {
       }
     });
 
-    const isEn = window.i18n && typeof window.i18n.getLanguage === 'function' && window.i18n.getLanguage() === 'en';
+    const isEn = (window.i18n && typeof window.i18n.getLanguage === 'function' ? window.i18n.getLanguage() === 'en' : localStorage.getItem('i18n_lang') === 'en');
     const displayCountry = isEn ? (pais.pais_en || pais.pais) : pais.pais;
     const sectionTitle = isEn
       ? `Network Institutions in ${displayCountry} (${pais.instituciones.length})`
@@ -283,6 +292,7 @@ async function initNetworkMap() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       map.invalidateSize();
+      aplicarVistaInicial();
     }, 200);
   });
 }

@@ -155,12 +155,40 @@
     renderArticulos();
   }
 
+  const MESES_EN = {
+    'enero': 'January', 'febrero': 'February', 'marzo': 'March',
+    'abril': 'April', 'mayo': 'May', 'junio': 'June',
+    'julio': 'July', 'agosto': 'August', 'septiembre': 'September',
+    'octubre': 'October', 'noviembre': 'November', 'diciembre': 'December'
+  };
+
+  function esIdiomaIngles() {
+    if (window.i18n) {
+      if (typeof window.i18n.getLanguage === 'function') return window.i18n.getLanguage() === 'en';
+      if (typeof window.i18n.getCurrentLang === 'function') return window.i18n.getCurrentLang() === 'en';
+    }
+    try {
+      return localStorage.getItem('i18n_lang') === 'en';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function formatFechaArticulo(mes, anio, isEn) {
+    if (!mes && !anio) return '';
+    if (!mes) return String(anio);
+    const mesKey = (mes || '').toLowerCase().trim();
+    const mesTrad = isEn ? (MESES_EN[mesKey] || mes) : mes;
+    return anio ? `${mesTrad} ${anio}` : mesTrad;
+  }
+
   /**
    * Renderiza la lista paginada y los controles de paginación
    */
   function renderArticulos() {
     if (!listEl) return;
 
+    const isEn = esIdiomaIngles();
     const total = articulosFiltrados.length;
     if (countEl) countEl.textContent = total;
 
@@ -186,8 +214,9 @@
     // Renderizar items con formato homologado: > a la izquierda, título con ↗, año - revista abajo
     listEl.innerHTML = articulosPagina.map((art, idx) => {
       const delay = idx * 30;
-      const fechaTexto = art.mes && art.anio ? `${art.mes} ${art.anio}` : (art.anio || '');
-      const metaSubtexto = [fechaTexto, art.revista].filter(Boolean).join(' &mdash; ');
+      const fechaTexto = formatFechaArticulo(art.mes, art.anio, isEn);
+      const revistaTexto = art.revista || (isEn ? 'Indexed Scientific Publication' : 'Publicación Científica Indexada');
+      const metaSubtexto = [fechaTexto, revistaTexto].filter(Boolean).join(' &mdash; ');
 
       return `
         <li class="articulos-item" style="animation-delay: ${delay}ms;">
@@ -215,8 +244,13 @@
   function renderControlesPaginacion(totalPaginas, totalArticulos, inicio, fin) {
     if (!paginationBar) return;
 
+    const isEn = esIdiomaIngles();
+
     if (totalPaginas <= 1) {
-      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalArticulos} artículo${totalArticulos !== 1 ? 's' : ''}</span>`;
+      const textoSingle = isEn
+        ? `Showing ${totalArticulos} article${totalArticulos !== 1 ? 's' : ''}`
+        : `Mostrando ${totalArticulos} artículo${totalArticulos !== 1 ? 's' : ''}`;
+      paginationBar.innerHTML = `<span class="proy-pag-info">${textoSingle}</span>`;
       return;
     }
 
@@ -228,20 +262,28 @@
         botonesPaginas += `<span class="proy-pag-ellipsis" aria-hidden="true">&hellip;</span>`;
       } else {
         const activeClass = item === paginaActual ? 'active' : '';
-        botonesPaginas += `<button type="button" class="proy-pag-btn proy-pag-num ${activeClass}" data-page="${item}" aria-label="Página ${item}">${item}</button>`;
+        const ariaLabel = isEn ? `Page ${item}` : `Página ${item}`;
+        botonesPaginas += `<button type="button" class="proy-pag-btn proy-pag-num ${activeClass}" data-page="${item}" aria-label="${ariaLabel}">${item}</button>`;
       }
     });
 
+    const infoPaginacion = isEn
+      ? `Showing ${inicio + 1} - ${fin} of ${totalArticulos} articles`
+      : `Mostrando ${inicio + 1} - ${fin} de ${totalArticulos} artículos`;
+
+    const prevAria = isEn ? 'Previous page' : 'Página anterior';
+    const nextAria = isEn ? 'Next page' : 'Página siguiente';
+
     paginationBar.innerHTML = `
-      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalArticulos} artículos</span>
+      <span class="proy-pag-info">${infoPaginacion}</span>
       <div class="proy-pag-controls">
-        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActual === 1 ? 'disabled' : ''} aria-label="Página anterior">
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActual === 1 ? 'disabled' : ''} aria-label="${prevAria}">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div class="proy-pag-numbers">
           ${botonesPaginas}
         </div>
-        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-next" ${paginaActual === totalPaginas ? 'disabled' : ''} aria-label="Página siguiente">
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-next" ${paginaActual === totalPaginas ? 'disabled' : ''} aria-label="${nextAria}">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
@@ -344,6 +386,12 @@
         renderArticulos();
       }, 150);
     });
+
+    const onI18nChangeArt = () => {
+      renderArticulos();
+    };
+    document.addEventListener('i18n:changed', onI18nChangeArt);
+    window.addEventListener('i18n:changed', onI18nChangeArt);
 
     // Inicializar al cargar el DOM
   if (document.readyState === 'loading') {

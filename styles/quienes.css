@@ -358,9 +358,9 @@
   z-index: 1;
 }
 
-/* Acabado plano monocromático institucional sin marcas de agua (MAP-01) */
+/* Capa de teselas OpenStreetMap Standard limpia sin filtros */
 #map-opentopo .leaflet-tile-pane {
-  filter: grayscale(100%) contrast(88%) brightness(102%);
+  filter: none;
 }
 
 /* Botón flotante para reiniciar vista del mapa */

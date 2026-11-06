@@ -22,6 +22,18 @@ const AREA_LABELS = {
   'salud-digital': 'Salud Digital'
 };
 
+function esIdiomaIngles() {
+  if (window.i18n) {
+    if (typeof window.i18n.getLanguage === 'function') return window.i18n.getLanguage() === 'en';
+    if (typeof window.i18n.getCurrentLang === 'function') return window.i18n.getCurrentLang() === 'en';
+  }
+  try {
+    return localStorage.getItem('i18n_lang') === 'en';
+  } catch (e) {
+    return false;
+  }
+}
+
 function getAreaLabel(id) {
   const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
   const key = id.replace(/-/g, '_');
@@ -160,9 +172,7 @@ function initEventosToolbar() {
         if (!estadoFiltros.areas.includes(val)) {
           estadoFiltros.areas.push(val);
         }
-        if (estadoFiltros.areas.length > 1) {
-          estadoFiltros.comboExacto = true;
-        }
+        estadoFiltros.comboExacto = false;
       }
       if (selectArea) {
         selectArea.value = estadoFiltros.areas.length > 0
@@ -216,12 +226,15 @@ function aplicarFiltros() {
   const q = estadoFiltros.busqueda.toLowerCase();
 
   proyectosFiltrados = todosProyectos.filter(p => {
-    // 1. Búsqueda de texto libre
+    // 1. Búsqueda de texto libre (soporte bilingüe: español e inglés)
     if (q) {
-      const inTitulo = (p.titulo || '').toLowerCase().includes(q);
-      const inDesc = (p.resumen || p.descripcion_larga || '').toLowerCase().includes(q);
-      const inInst = (p.instituciones || []).some(inst => inst.toLowerCase().includes(q));
-      if (!inTitulo && !inDesc && !inInst) {
+      const inTituloEs = (p.titulo || '').toLowerCase().includes(q);
+      const inTituloEn = (p.titulo_en || '').toLowerCase().includes(q);
+      const inDescEs = (p.resumen || p.descripcion_larga || '').toLowerCase().includes(q);
+      const inDescEn = (p.resumen_en || '').toLowerCase().includes(q);
+      const inInst = (p.instituciones || []).some(inst => (inst || '').toLowerCase().includes(q));
+
+      if (!inTituloEs && !inTituloEn && !inDescEs && !inDescEn && !inInst) {
         return false;
       }
     }
@@ -233,14 +246,14 @@ function aplicarFiltros() {
         : (p.area_id ? [p.area_id] : []);
 
       if (estadoFiltros.comboExacto && estadoFiltros.areas.length > 1) {
-        // Misma combinación de líneas (debe coincidir con la combinación de líneas del proyecto)
+        // Misma combinación exacta de líneas (vía ?combo=1)
         const coincideExacto = lineasProyecto.length === estadoFiltros.areas.length &&
           estadoFiltros.areas.every(a => lineasProyecto.includes(a));
         if (!coincideExacto) return false;
       } else {
-        // Contiene todas las líneas seleccionadas
-        const coincideTodas = estadoFiltros.areas.every(a => lineasProyecto.includes(a));
-        if (!coincideTodas) return false;
+        // Debe contener la combinación de todas las líneas seleccionadas
+        const coincideCombinacion = estadoFiltros.areas.every(a => lineasProyecto.includes(a));
+        if (!coincideCombinacion) return false;
       }
     }
 
@@ -253,8 +266,8 @@ function aplicarFiltros() {
   });
 
   paginaActual = 1; // Reinicia a página 1 al cambiar filtros o búsqueda
-  renderProyectosPaginados();
   actualizarChipsYBadges();
+  renderProyectosPaginados();
 }
 
 function actualizarChipsYBadges() {
@@ -402,9 +415,11 @@ function renderProyectosPaginados() {
       ? 'proy-estado--concluido'
       : 'proy-estado--activo';
     const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+    const isEn = esIdiomaIngles();
     const estadoLabel = p.estado === 'Concluido' ? t('proyectos.opt_concluido', 'Concluido') : t('proyectos.opt_en_curso', 'En curso');
     const delay = (index % itemsPorPagina) * 35;
-    const textoResumen = p.resumen || '';
+    const tituloDisplay = (isEn && p.titulo_en) ? p.titulo_en : p.titulo;
+    const textoResumen = (isEn && p.resumen_en) ? p.resumen_en : (p.resumen || '');
     const anioInicio = p.anio_inicio || (p.anio ? String(p.anio).split(/[-–—]/)[0].trim() : '');
 
     return `
@@ -413,18 +428,20 @@ function renderProyectosPaginados() {
           <span class="proy-anio">${anioInicio}</span>
           <span class="proy-estado ${estadoClass}">${estadoLabel}</span>
         </div>
-        <h3 class="proy-titulo">${p.titulo}</h3>
+        <h3 class="proy-titulo">${tituloDisplay}</h3>
         <p class="proy-desc">${textoResumen}</p>
       </a>`;
   }).join('');
 
   // Renderizar controles de paginación
   if (paginationBar) {
-    if (totalPaginas <= 1) {
-      const mostrandoTxt = t('proyectos.mostrando', 'Mostrando');
+    const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+    const mostrandoTxt = t('proyectos.mostrando', 'Mostrando');
     const proyLabel = t('proyectos.proyectos_label', 'proyectos');
     const deTxt = t('proyectos.de', 'de');
-    paginationBar.innerHTML = `<span class="proy-pag-info">${mostrandoTxt} ${totalProyectos} ${proyLabel}</span>`;
+
+    if (totalPaginas <= 1) {
+      paginationBar.innerHTML = `<span class="proy-pag-info">${mostrandoTxt} ${totalProyectos} ${proyLabel}</span>`;
       return;
     }
 
@@ -599,7 +616,7 @@ window.addEventListener('resize', () => {
 });
 
 // ── Escuchar cambios reactivos de idioma ──────────────────────────
-document.addEventListener('i18n:changed', () => {
+const onI18nChangeProy = () => {
   if (typeof actualizarChipsYBadges === 'function') {
     actualizarChipsYBadges();
   }
@@ -609,4 +626,6 @@ document.addEventListener('i18n:changed', () => {
   if (typeof renderGraficoDistribucion === 'function' && todosProyectos && todosProyectos.length > 0) {
     renderGraficoDistribucion(todosProyectos);
   }
-});
+};
+document.addEventListener('i18n:changed', onI18nChangeProy);
+window.addEventListener('i18n:changed', onI18nChangeProy);

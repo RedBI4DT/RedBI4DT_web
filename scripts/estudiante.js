@@ -21,6 +21,64 @@ const MAPA_LINEAS_A_AREAS = {
   'salud digital': 'salud-digital'
 };
 
+const DICCIONARIO_LINEAS_EN = {
+  'informática biomédica y salud digital': 'Biomedical Informatics and Digital Health',
+  'informática biomédica': 'Biomedical Informatics',
+  'informatica biomedica': 'Biomedical Informatics',
+  'sistemas de información en salud': 'Health Information Systems',
+  'sistemas de informacion en salud': 'Health Information Systems',
+  'estándares clínicos': 'Clinical Standards',
+  'estandares clinicos': 'Clinical Standards',
+  'telemedicina': 'Telemedicine',
+  'ontologías biomédicas': 'Biomedical Ontologies',
+  'ontologias biomedicas': 'Biomedical Ontologies',
+  'inteligencia artificial en salud': 'Artificial Intelligence in Health',
+  'ia en salud': 'Artificial Intelligence in Health',
+  'inteligencia artificial': 'Artificial Intelligence',
+  'procesamiento de lenguaje natural': 'Natural Language Processing',
+  'visión computacional': 'Computer Vision',
+  'vision computacional': 'Computer Vision',
+  'bioinformática': 'Bioinformatics',
+  'bioinformática clínica': 'Clinical Bioinformatics',
+  'bioinformática computacional': 'Computational Bioinformatics',
+  'interoperabilidad y gobernanza de datos': 'Interoperability and Data Governance',
+  'interoperabilidad clínica (hl7 fhir)': 'Clinical Interoperability (HL7 FHIR)',
+  'interoperabilidad': 'Interoperability',
+  'gobernanza': 'Data Governance',
+  'visualización y analítica de datos': 'Data Visualization and Analytics',
+  'visualizacion y analitica de datos': 'Data Visualization and Analytics',
+  'analítica de datos': 'Data Analytics',
+  'analítica de datos y bioinformática': 'Data Analytics and Bioinformatics',
+  'bioestadística': 'Biostatistics',
+  'epidemiología matemática': 'Mathematical Epidemiology',
+  'evaluación sociotécnica y adopción': 'Sociotechnical Evaluation and Adoption',
+  'evaluacion sociotecnica y adopcion': 'Sociotechnical Evaluation and Adoption',
+  'evaluación sociotécnica y adopción digital': 'Sociotechnical Evaluation and Digital Adoption',
+  'políticas de salud digital': 'Digital Health Policies',
+  'salud digital': 'Digital Health',
+  'salud global y epidemiología digital': 'Global Health and Digital Epidemiology',
+  'epidemiología digital': 'Digital Epidemiology'
+};
+
+function esIdiomaIngles() {
+  if (window.i18n) {
+    if (typeof window.i18n.getLanguage === 'function') return window.i18n.getLanguage() === 'en';
+    if (typeof window.i18n.getCurrentLang === 'function') return window.i18n.getCurrentLang() === 'en';
+  }
+  try {
+    return localStorage.getItem('i18n_lang') === 'en';
+  } catch (e) {
+    return false;
+  }
+}
+
+function getNombreLinea(nombreEs) {
+  const isEn = esIdiomaIngles();
+  if (!isEn) return nombreEs;
+  const key = (nombreEs || '').toLowerCase().trim();
+  return DICCIONARIO_LINEAS_EN[key] || nombreEs;
+}
+
 const NOMBRES_AREAS = {
   'informatica-biomedica': 'Informática Biomédica',
   'ia-salud': 'Inteligencia Artificial en Salud',
@@ -29,6 +87,9 @@ const NOMBRES_AREAS = {
   'sociotecnica-adopcion': 'Evaluación Sociotécnica y Adopción',
   'salud-digital': 'Salud Digital'
 };
+
+let estudianteActualGlobal = null;
+let proyectosActualesGlobal = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
   const params = new URLSearchParams(window.location.search);
@@ -70,6 +131,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       return false;
     });
 
+    estudianteActualGlobal = miembro;
+    proyectosActualesGlobal = proyectosDelEstudiante;
+
     renderPerfil(miembro, proyectosDelEstudiante);
 
   } catch (err) {
@@ -78,9 +142,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+const onI18nChangeEst = () => {
+  if (estudianteActualGlobal) {
+    renderPerfil(estudianteActualGlobal, proyectosActualesGlobal);
+  }
+};
+document.addEventListener('i18n:changed', onI18nChangeEst);
+window.addEventListener('i18n:changed', onI18nChangeEst);
+
 function renderPerfil(m, proyectosReales) {
+  const isEn = esIdiomaIngles();
+
   // Título de la pestaña
-  document.title = `${m.nombre} - Perfil | Red BI4DT`;
+  document.title = isEn
+    ? `${m.nombre} - Profile | BI4DT Network`
+    : `${m.nombre} - Perfil | Red BI4DT`;
 
   // Foto
   const fotoEl = document.getElementById('perfil-foto');
@@ -89,10 +165,12 @@ function renderPerfil(m, proyectosReales) {
     fotoEl.removeAttribute('alt');
   }
 
-  // Datos básicos
+  // Datos básicos con soporte bilingüe
+  const descTexto = isEn ? (m.descripcion_en || m.descripcion) : m.descripcion;
+
   setTexto('perfil-nombre', m.nombre);
   setTexto('perfil-institucion', m.institucion);
-  setTexto('perfil-descripcion', m.descripcion);
+  setTexto('perfil-descripcion', descTexto);
 
   // Áreas de interés derivadas dinámicamente de los proyectos vinculados
   const lineasEl = document.getElementById('perfil-lineas');
@@ -136,16 +214,18 @@ function renderPerfil(m, proyectosReales) {
     if (lineasUnicas.length > 0) {
       lineasEl.innerHTML = lineasUnicas.map(l => {
         const href = l.id ? `area.html?id=${l.id}` : '../index.html#lineas-investigacion';
+        const nombreDisplay = getNombreLinea(l.nombre);
         return `
           <li>
-            <a href="${href}" class="perfil-linea-link-text" title="${l.nombre}">
-              ${l.nombre}
+            <a href="${href}" class="perfil-linea-link-text" title="${nombreDisplay}">
+              ${nombreDisplay}
             </a>
           </li>
         `;
       }).join('');
     } else {
-      lineasEl.innerHTML = '<li><span class="perfil-linea-link-text" style="color:#94a3b8; font-style:italic;">En proceso de asignación</span></li>';
+      const msgVacio = isEn ? 'In process of assignment' : 'En proceso de asignación';
+      lineasEl.innerHTML = `<li><span class="perfil-linea-link-text" style="color:#94a3b8; font-style:italic;">${msgVacio}</span></li>`;
     }
   }
 
@@ -155,23 +235,28 @@ function renderPerfil(m, proyectosReales) {
     const redes = m.redes || { correo: true, linkedin: true, orcid: true, scholar: true };
     let links = '';
 
+    const tooltipEmail = isEn ? 'Email' : 'Correo electrónico';
+    const tooltipLinkedin = isEn ? 'LinkedIn profile' : 'Perfil de LinkedIn';
+    const tooltipOrcid = isEn ? 'ORCID identifier' : 'Identificador ORCID';
+    const tooltipScholar = isEn ? 'Google Scholar profile' : 'Perfil de Google Scholar';
+
     if (redes.correo && m.contacto.email) {
-      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" data-tooltip="Correo electrónico" aria-label="Correo electrónico de ${m.nombre}">
+      links += `<a href="mailto:${m.contacto.email}" class="perfil-contacto-btn" data-tooltip="${tooltipEmail}" aria-label="${tooltipEmail} - ${m.nombre}">
         <i class="fa-solid fa-envelope"></i>
       </a>`;
     }
     if (redes.linkedin && m.contacto.linkedin) {
-      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Perfil de LinkedIn" aria-label="LinkedIn de ${m.nombre}">
+      links += `<a href="${m.contacto.linkedin}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="${tooltipLinkedin}" aria-label="${tooltipLinkedin} - ${m.nombre}">
         <i class="fa-brands fa-linkedin"></i>
       </a>`;
     }
     if (redes.orcid && m.contacto.orcid) {
-      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Identificador ORCID" aria-label="ORCID de ${m.nombre}">
+      links += `<a href="${m.contacto.orcid}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="${tooltipOrcid}" aria-label="${tooltipOrcid} - ${m.nombre}">
         <i class="fa-brands fa-orcid"></i>
       </a>`;
     }
     if (redes.scholar && m.contacto.scholar) {
-      links += `<a href="${m.contacto.scholar}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="Perfil de Google Scholar" aria-label="Google Scholar de ${m.nombre}">
+      links += `<a href="${m.contacto.scholar}" target="_blank" rel="noopener noreferrer" class="perfil-contacto-btn" data-tooltip="${tooltipScholar}" aria-label="${tooltipScholar} - ${m.nombre}">
         <i class="fa-brands fa-google-scholar"></i>
       </a>`;
     }
@@ -238,8 +323,10 @@ function renderizarListaProyectos() {
   const paginationBar = document.getElementById('proyectos-pagination');
   if (!contenedor) return;
 
+  const isEn = esIdiomaIngles();
+
   if (proyectosEstudianteActual.length === 0) {
-    contenedor.innerHTML = '<p class="perfil-empty">Sin proyectos registrados actualmente.</p>';
+    contenedor.innerHTML = `<p class="perfil-empty">${isEn ? 'No projects currently registered.' : 'Sin proyectos registrados actualmente.'}</p>`;
     if (paginationBar) paginationBar.innerHTML = '';
     return;
   }
@@ -257,13 +344,16 @@ function renderizarListaProyectos() {
   // Renderizar filas limpias: Nombre - Año de inicio solamente - Estado - Flecha
   contenedor.innerHTML = proyectosPagina.map(p => {
     const anioInicio = p.anio_inicio || (p.anio ? p.anio.split('–')[0].split('-')[0].trim() : '—');
-    const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
+    const esConcluido = p.estado === 'Concluido';
+    const estadoClass = esConcluido ? 'proy-estado--concluido' : 'proy-estado--activo';
+    const estadoLabel = isEn ? (esConcluido ? 'Completed' : 'In progress') : (p.estado || 'En curso');
+    const tituloDisplay = (isEn && p.titulo_en) ? p.titulo_en : p.titulo;
 
     return `
       <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proy-row">
-        <span class="proy-row-title">${p.titulo}</span>
+        <span class="proy-row-title">${tituloDisplay}</span>
         <span class="proy-row-anio">${anioInicio}</span>
-        <span class="proy-row-estado ${estadoClass}">${p.estado || 'En curso'}</span>
+        <span class="proy-row-estado ${estadoClass}">${estadoLabel}</span>
         <span class="proy-row-arrow"><i class="fa-solid fa-arrow-right"></i></span>
       </a>
     `;
@@ -272,7 +362,10 @@ function renderizarListaProyectos() {
   // Renderizar controles de paginación
   if (paginationBar) {
     if (totalPaginas <= 1) {
-      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}</span>`;
+      const textoSingle = isEn
+        ? `Showing ${totalProyectos} project${totalProyectos !== 1 ? 's' : ''}`
+        : `Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}`;
+      paginationBar.innerHTML = `<span class="proy-pag-info">${textoSingle}</span>`;
       return;
     }
 
@@ -283,20 +376,28 @@ function renderizarListaProyectos() {
         botonesPaginas += `<span class="proy-pag-ellipsis" aria-hidden="true">&hellip;</span>`;
       } else {
         const activeClass = item === paginaActualProy ? 'active' : '';
-        botonesPaginas += `<button type="button" class="proy-pag-btn proy-pag-num ${activeClass}" data-page="${item}" aria-label="Página ${item}">${item}</button>`;
+        const ariaLabel = isEn ? `Page ${item}` : `Página ${item}`;
+        botonesPaginas += `<button type="button" class="proy-pag-btn proy-pag-num ${activeClass}" data-page="${item}" aria-label="${ariaLabel}">${item}</button>`;
       }
     });
 
+    const infoPaginacion = isEn
+      ? `Showing ${inicio + 1} - ${fin} of ${totalProyectos} projects`
+      : `Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos`;
+
+    const prevAria = isEn ? 'Previous page' : 'Página anterior';
+    const nextAria = isEn ? 'Next page' : 'Página siguiente';
+
     paginationBar.innerHTML = `
-      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos</span>
+      <span class="proy-pag-info">${infoPaginacion}</span>
       <div class="proy-pag-controls">
-        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActualProy === 1 ? 'disabled' : ''} aria-label="Página anterior">
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActualProy === 1 ? 'disabled' : ''} aria-label="${prevAria}">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div class="proy-pag-numbers">
           ${botonesPaginas}
         </div>
-        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-next" ${paginaActualProy === totalPaginas ? 'disabled' : ''} aria-label="Página siguiente">
+        <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-next" ${paginaActualProy === totalPaginas ? 'disabled' : ''} aria-label="${nextAria}">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>

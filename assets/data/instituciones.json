@@ -121,10 +121,10 @@
       ]
     },
     {
-      "id": "kcg",
-      "nombre": "Kyoto Computer Gakuin",
-      "sigla": "KCG",
-      "nombre_completo": "Kyoto Computer Gakuin (KCG)",
+      "id": "kcgi",
+      "nombre": "The Kyoto College of Graduate Studies for Informatics",
+      "sigla": "KCGI",
+      "nombre_completo": "The Kyoto College of Graduate Studies for Informatics (KCGI)",
       "pais": "Japón",
       "pais_id": "japon",
       "ciudad": "Kioto",

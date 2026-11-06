@@ -22,7 +22,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Principal Investigator",
+      "descripcion_en": "Principal investigator in Biomedical Informatics. Leads clinical interoperability and AI in healthcare projects."
     },
     {
       "id": "david-villarreal",
@@ -46,7 +48,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Specialist in health information systems and SOA. Develops electronic health record standardization initiatives."
     },
     {
       "id": "christian-reategui",
@@ -69,7 +73,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Technical Lead",
+      "descripcion_en": "Researcher in computational bioinformatics and genomic data. Integrates omics data for pathogen research."
     },
     {
       "id": "henry-cardenas",
@@ -92,7 +98,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Researcher in global health and digital epidemiology. Designs binational epidemiological surveillance platforms."
     },
     {
       "id": "irvin-dongo",
@@ -115,7 +123,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Specialist in natural language processing (NLP) for medical text knowledge extraction."
     },
     {
       "id": "rafael-leal",
@@ -138,7 +148,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Researcher in health big data repositories, anonymization, and public health epidemiological analysis."
     },
     {
       "id": "oscar-huapaya",
@@ -162,7 +174,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Researcher in telemedicine and mHealth solutions for healthcare access in vulnerable and rural populations."
     },
     {
       "id": "javier-vargas",
@@ -186,7 +200,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Specialist in biomedical ontologies. Develops formal terminological models to standardize diagnoses."
     },
     {
       "id": "milagros-cahuana",
@@ -209,7 +225,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Researcher in clinical bioinformatics. Develops clinical-molecular integration algorithms in oncology patients."
     },
     {
       "id": "guido-bendezu",
@@ -232,7 +250,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Technological leader in biomedical software development and technology transfer between academia and digital health."
     },
     {
       "id": "jose-florez",
@@ -255,7 +275,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "Co-Investigator",
+      "descripcion_en": "Researcher in biostatistics and large-scale public health analysis of maternal and child health in the Americas."
     },
     {
       "id": "stefan-escobar",
@@ -278,7 +300,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "RENACYT Researcher",
+      "descripcion_en": "RENACYT researcher in computer vision and deep learning for automated chest X-ray analysis."
     },
     {
       "id": "kelly-de-la-cruz",
@@ -301,7 +325,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": true
-      }
+      },
+      "cargo_en": "RENACYT Researcher",
+      "descripcion_en": "RENACYT researcher in mathematical epidemiology and predictive modeling of infectious and vector-borne diseases."
     }
   ],
   "gestion": [
@@ -326,7 +352,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": false
-      }
+      },
+      "cargo_en": "Project Manager",
+      "descripcion_en": "R&D project manager experienced in competitive grant funding administration and digital health monitoring."
     },
     {
       "id": "adriana-echevarria",
@@ -348,7 +376,9 @@
         "linkedin": true,
         "orcid": true,
         "scholar": false
-      }
+      },
+      "cargo_en": "Productive Sector Lead",
+      "descripcion_en": "Productive sector liaison specialist, focused on regulatory design and digital health public policies."
     }
   ],
   "estudiantes": [
@@ -375,7 +405,9 @@
         "linkedin": true,
         "orcid": false,
         "scholar": false
-      }
+      },
+      "cargo_en": "Collaborator",
+      "descripcion_en": "Active collaborator in documentary systematization and healthcare research project management support."
     },
     {
       "id": "selene-salas",
@@ -401,7 +433,9 @@
         "linkedin": true,
         "orcid": false,
         "scholar": false
-      }
+      },
+      "cargo_en": "Database Administrator",
+      "descripcion_en": "Specialist in clinical database administration, modeling, and health research data repositories."
     },
     {
       "id": "rodrigo-chacon",
@@ -426,7 +460,9 @@
         "linkedin": true,
         "orcid": false,
         "scholar": false
-      }
+      },
+      "cargo_en": "Informatics Engineering Student",
+      "descripcion_en": "Informatics Engineering student focused on web application development and interface architecture for the BI4DT Network."
     }
   ]
 }

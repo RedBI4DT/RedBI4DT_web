@@ -69,22 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
     clearFieldError(mensajeInput, errorMensaje);
   }
 
+  let currentStatusState = null;
+
+  const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+
   /**
    * Muestra mensaje en el contenedor de estado general
    */
   function showStatus(type, title, message) {
+    currentStatusState = { type, title, message };
     statusBox.className = `contacto-status contacto-status--${type}`;
     statusBox.style.display = 'flex';
 
     let iconHtml = '';
     let closeBtnHtml = '';
+    const closeAria = t('contacto.aria_cerrar_notificacion', 'Cerrar notificación');
 
     if (type === 'success') {
       iconHtml = '<i class="fa-solid fa-circle-check contacto-status-icon"></i>';
-      closeBtnHtml = '<button type="button" class="contacto-status-close" aria-label="Cerrar notificación"><i class="fa-solid fa-xmark"></i></button>';
+      closeBtnHtml = `<button type="button" class="contacto-status-close" aria-label="${closeAria}"><i class="fa-solid fa-xmark"></i></button>`;
     } else if (type === 'error') {
       iconHtml = '<i class="fa-solid fa-circle-exclamation contacto-status-icon"></i>';
-      closeBtnHtml = '<button type="button" class="contacto-status-close" aria-label="Cerrar notificación"><i class="fa-solid fa-xmark"></i></button>';
+      closeBtnHtml = `<button type="button" class="contacto-status-close" aria-label="${closeAria}"><i class="fa-solid fa-xmark"></i></button>`;
     } else if (type === 'loading') {
       iconHtml = '<i class="fa-solid fa-circle-notch fa-spin contacto-status-icon"></i>';
     }
@@ -110,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Oculta el contenedor de estado general
    */
   function hideStatus() {
+    currentStatusState = null;
     statusBox.style.display = 'none';
     statusBox.className = 'contacto-status';
     statusBox.innerHTML = '';
@@ -120,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function resetButton() {
     submitBtn.disabled = false;
-    const txt = (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t('contacto.btn_enviar') : null) || 'Enviar Mensaje';
+    const txt = t('contacto.btn_enviar', 'Enviar Mensaje');
     submitBtn.innerHTML = `
       <span data-i18n="contacto.btn_enviar">${txt}</span>
       <i class="fa-solid fa-paper-plane"></i>
@@ -132,8 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function setLoadingButton() {
     submitBtn.disabled = true;
+    const txt = t('contacto.btn_enviando', 'Enviando...');
     submitBtn.innerHTML = `
-      <span>Enviando...</span>
+      <span>${txt}</span>
       <i class="fa-solid fa-circle-notch fa-spin"></i>
     `;
   }
@@ -194,8 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hasErrors) {
       showStatus(
         'error',
-        'Campos incompletos o incorrectos',
-        'Por favor, revisa y completa los campos señalados en rojo para poder enviar tu mensaje.'
+        t('contacto.status_validation_title', 'Campos incompletos o incorrectos'),
+        t('contacto.status_validation_desc', 'Por favor, revisa y completa los campos señalados en rojo para poder enviar tu mensaje.')
       );
       if (firstErrorElement) {
         firstErrorElement.focus();
@@ -224,8 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Limpieza de campos del formulario
     form.reset();
 
-    const tSuccessTitle = (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t('contacto.status_success_title') : null) || '¡Mensaje enviado con éxito!';
-    const tSuccessDesc = (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t('contacto.status_success_desc') : null) || 'Muchas gracias por comunicarte con la Red BI4DT. Hemos recibido tu consulta y nos pondremos en contacto contigo a la brevedad.';
+    const tSuccessTitle = t('contacto.status_success_title', '¡Mensaje enviado con éxito!');
+    const tSuccessDesc = t('contacto.status_success_desc', 'Muchas gracias por comunicarte con la Red BI4DT. Hemos recibido tu consulta y nos pondremos en contacto contigo a la brevedad.');
     showStatus('success', tSuccessTitle, tSuccessDesc);
   }
 
@@ -255,7 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     isSubmitting = true;
     setLoadingButton();
-    showStatus('loading', 'Enviando información', 'Estamos registrando tu mensaje en nuestra plataforma...');
+    showStatus(
+      'loading',
+      t('contacto.status_sending_title', 'Enviando mensaje...'),
+      t('contacto.status_sending_desc', 'Por favor, espera un momento mientras procesamos tu consulta.')
+    );
 
     // Timeout de seguridad en caso de respuesta lenta de red
     submissionTimeout = setTimeout(() => {
@@ -291,4 +303,60 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Re-traducción reactiva al cambiar de idioma
+  function refreshContactoTexts() {
+    if (isSubmitting) {
+      setLoadingButton();
+    } else {
+      resetButton();
+    }
+
+    if (currentStatusState) {
+      if (currentStatusState.type === 'error') {
+        showStatus(
+          'error',
+          t('contacto.status_validation_title', 'Campos incompletos o incorrectos'),
+          t('contacto.status_validation_desc', 'Por favor, revisa y completa los campos señalados en rojo para poder enviar tu mensaje.')
+        );
+      } else if (currentStatusState.type === 'loading') {
+        showStatus(
+          'loading',
+          t('contacto.status_sending_title', 'Enviando mensaje...'),
+          t('contacto.status_sending_desc', 'Por favor, espera un momento mientras procesamos tu consulta.')
+        );
+      } else if (currentStatusState.type === 'success') {
+        showStatus(
+          'success',
+          t('contacto.status_success_title', '¡Mensaje enviado con éxito!'),
+          t('contacto.status_success_desc', 'Gracias por comunicarte con la Red BI4DT. Nuestro equipo se pondrá en contacto contigo a la brevedad.')
+        );
+      }
+    }
+
+    // Si hay campos con errores visibles, actualizar sus textos al nuevo idioma
+    if (nombreInput && nombreInput.classList.contains('input-error')) {
+      errorNombre.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${t('contacto.err_nombre_req', 'El nombre es obligatorio.')}`;
+    }
+    if (apellidoInput && apellidoInput.classList.contains('input-error')) {
+      errorApellido.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${t('contacto.err_apellido_req', 'El apellido es obligatorio.')}`;
+    }
+    if (correoInput && correoInput.classList.contains('input-error')) {
+      const val = correoInput.value.trim();
+      const errTxt = !val
+        ? t('contacto.err_correo_req', 'El correo electrónico es obligatorio.')
+        : t('contacto.err_correo_inv', 'Por favor ingresa un correo electrónico válido.');
+      errorCorreo.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errTxt}`;
+    }
+    if (mensajeInput && mensajeInput.classList.contains('input-error')) {
+      const val = mensajeInput.value.trim();
+      const errTxt = !val
+        ? t('contacto.err_mensaje_req', 'El mensaje es obligatorio.')
+        : t('contacto.err_mensaje_len', 'El mensaje debe tener al menos 10 caracteres.');
+      errorMensaje.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errTxt}`;
+    }
+  }
+
+  document.addEventListener('i18n:changed', refreshContactoTexts);
+  window.addEventListener('i18n:changed', refreshContactoTexts);
 });

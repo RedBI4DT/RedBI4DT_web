@@ -13,7 +13,17 @@ function initNavbar() {
   const navSubArticulos = document.getElementById('nav-sub-articulos');
 
   if (logoLink)        logoLink.href        = base + 'index.html';
-  if (logoImg)         logoImg.src          = base + 'assets/images/logo_red/logo_main.png';
+  const updateNavbarLogo = () => {
+    if (logoImg) {
+      const isEn = (window.i18n && typeof window.i18n.getLanguage === 'function')
+        ? window.i18n.getLanguage() === 'en'
+        : (localStorage.getItem('i18n_lang') === 'en');
+      logoImg.src = base + (isEn ? 'assets/images/logo_red/logo_main_EN.png' : 'assets/images/logo_red/logo_main.png');
+    }
+  };
+  updateNavbarLogo();
+  document.addEventListener('i18n:changed', updateNavbarLogo);
+  window.addEventListener('i18n:changed', updateNavbarLogo);
   if (navInicio)       navInicio.href       = base + 'index.html';
   if (navQuienesSomos) navQuienesSomos.href = base + 'pages/quienes.html';
   if (navEquipo)       navEquipo.href       = base + 'pages/equipo.html';

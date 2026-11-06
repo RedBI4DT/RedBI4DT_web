@@ -33,7 +33,10 @@
   },
   "noticias": {
     "title": "Noticias",
-    "error": "No fue posible cargar las publicaciones en este momento. Por favor, intenta de nuevo más tarde."
+    "error": "No fue posible cargar las publicaciones en este momento. Por favor, intenta de nuevo más tarde.",
+    "ver_linkedin": "Ver en LinkedIn",
+    "ver_linkedin_aria": "Ver publicación en LinkedIn",
+    "iframe_title": "Publicación de LinkedIn"
   },
   "ejecutora": {
     "title": "Universidad Científica del Sur",
@@ -123,6 +126,8 @@
     "label_mensaje": "Mensaje",
     "placeholder_mensaje": "Escribe tu mensaje o consulta aquí...",
     "btn_enviar": "Enviar Mensaje",
+    "btn_enviando": "Enviando...",
+    "aria_cerrar_notificacion": "Cerrar notificación",
     "err_nombre_req": "El nombre es obligatorio.",
     "err_nombre_len": "El nombre debe tener al menos 2 caracteres.",
     "err_apellido_req": "El apellido es obligatorio.",
@@ -131,6 +136,8 @@
     "err_correo_inv": "Por favor ingresa un correo electrónico válido.",
     "err_mensaje_req": "El mensaje es obligatorio.",
     "err_mensaje_len": "El mensaje debe tener al menos 10 caracteres.",
+    "status_validation_title": "Campos incompletos o incorrectos",
+    "status_validation_desc": "Por favor, revisa y completa los campos señalados en rojo para poder enviar tu mensaje.",
     "status_sending_title": "Enviando mensaje...",
     "status_sending_desc": "Por favor, espera un momento mientras procesamos tu consulta.",
     "status_success_title": "¡Mensaje enviado con éxito!",
@@ -228,7 +235,6 @@
     "vision_title": "Visión",
     "vision_desc": "Ser una red de referencia en informática biomédica y salud digital en Perú y la región, reconocida por su articulación entre academia, Estado, prestadores y socios internacionales, y por su continuidad más allá del periodo de subvención.",
     "mapa_title": "Red de Cooperación Nacional e Internacional",
-    "mapa_desc": "Articulamos con universidades, centros de investigación y prestadores de salud en Perú, Ecuador, Estados Unidos y Japón para potenciar la innovación biomédica.",
     "mapa_btn_reset_title": "Reiniciar vista panorámica",
     "mapa_btn_reset_aria": "Reiniciar vista",
     "galeria_title": "Galería de Fotos"

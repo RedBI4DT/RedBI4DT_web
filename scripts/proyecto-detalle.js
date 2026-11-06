@@ -4,6 +4,11 @@
  * Conecta bidireccionalmente con integrantes (Nivel 2) y catálogo general filtrado (Nivel 3).
  */
 
+let proyectoActualGlobal = null;
+let todosProyectosGlobal = [];
+let datosMiembrosGlobal = { investigadores: [], gestion: [] };
+let baseGlobal = './';
+
 document.addEventListener('DOMContentLoaded', async () => {
   const params = new URLSearchParams(window.location.search);
   const idProyecto = params.get('id');
@@ -15,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     const base = window.location.pathname.includes('/pages/') ? '../' : './';
+    baseGlobal = base;
     const [proyectosRes, miembrosRes] = await Promise.all([
       fetch(`${base}assets/data/proyectos.json`),
       fetch(`${base}assets/data/miembros.json`)
@@ -32,6 +38,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
+    proyectoActualGlobal = proyecto;
+    todosProyectosGlobal = todosProyectos;
+    datosMiembrosGlobal = datosMiembros;
+
     renderDetalleProyecto(proyecto, todosProyectos, datosMiembros, base);
 
   } catch (err) {
@@ -40,12 +50,42 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+function esIdiomaIngles() {
+  if (window.i18n) {
+    if (typeof window.i18n.getLanguage === 'function') return window.i18n.getLanguage() === 'en';
+    if (typeof window.i18n.getCurrentLang === 'function') return window.i18n.getCurrentLang() === 'en';
+  }
+  try {
+    return localStorage.getItem('i18n_lang') === 'en';
+  } catch (e) {
+    return false;
+  }
+}
+
+const onI18nChangeDet = () => {
+  if (proyectoActualGlobal) {
+    renderDetalleProyecto(proyectoActualGlobal, todosProyectosGlobal, datosMiembrosGlobal, baseGlobal);
+  }
+};
+document.addEventListener('i18n:changed', onI18nChangeDet);
+window.addEventListener('i18n:changed', onI18nChangeDet);
+
 function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
+  const isEn = esIdiomaIngles();
+  const tituloProyecto = isEn ? (p.titulo_en || p.titulo) : p.titulo;
+
   // Actualizar título en pestaña
-  document.title = `${p.titulo} - Proyecto | BI4DT Network`;
+  document.title = `${tituloProyecto} - ${isEn ? 'Project' : 'Proyecto'} | BI4DT Network`;
 
   // 1. Hero Metadata y Ficha de Proyecto (soporte multilínea: formato lista sin punto, una encima de otra)
-  const AREA_LABELS_DET = {
+  const AREA_LABELS_DET = isEn ? {
+    'informatica-biomedica': 'Biomedical Informatics',
+    'ia-salud': 'Artificial Intelligence in Health',
+    'interoperabilidad': 'Interoperability and Data Governance',
+    'analitica-datos': 'Data Visualization and Analytics',
+    'sociotecnica-adopcion': 'Sociotechnical Evaluation and Adoption',
+    'salud-digital': 'Digital Health'
+  } : {
     'informatica-biomedica': 'Informática Biomédica',
     'ia-salud': 'Inteligencia Artificial en Salud',
     'interoperabilidad': 'Interoperabilidad y Gobernanza de Datos',
@@ -63,7 +103,11 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
     : (p.area_id ? [p.area_id] : []);
 
   if (lineaLabel) {
-    lineaLabel.textContent = lineasIds.length > 1 ? 'Líneas de Investigación' : 'Línea de Investigación';
+    if (isEn) {
+      lineaLabel.textContent = lineasIds.length > 1 ? 'Research Lines' : 'Research Line';
+    } else {
+      lineaLabel.textContent = lineasIds.length > 1 ? 'Líneas de Investigación' : 'Línea de Investigación';
+    }
   }
 
   const itemsHtml = lineasIds.map(id => {
@@ -86,13 +130,15 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
   }
 
 
-  setTexto('proy-titulo', p.titulo);
+  setTexto('proy-titulo', tituloProyecto);
   setTexto('proy-periodo', p.anio || `${p.anio_inicio || ''}–${p.anio_fin || ''}`);
 
   // 2. Descripción completa
   const descEl = document.getElementById('proy-descripcion-larga');
   if (descEl) {
-    const contenido = p.descripcion_larga || p.resumen || 'Sin descripción disponible.';
+    const contenido = isEn
+      ? (p.resumen_en || p.descripcion_larga || p.resumen || 'No description available.')
+      : (p.descripcion_larga || p.resumen || 'Sin descripción disponible.');
     descEl.innerHTML = `<p>${contenido}</p>`;
   }
 
@@ -129,7 +175,7 @@ function renderDetalleProyecto(p, todosProyectos, datosMiembros, base) {
         `;
       }).join('');
     } else {
-      equipoGrid.innerHTML = '<p class="perfil-empty">Equipo en proceso de registro.</p>';
+      equipoGrid.innerHTML = `<p class="perfil-empty">${isEn ? 'Team members being registered.' : 'Equipo en proceso de registro.'}</p>`;
     }
   }
 
@@ -199,10 +245,19 @@ function renderPublicaciones(publicaciones) {
 
   if (!container) return;
 
+  const isEn = esIdiomaIngles();
+
   if (pubs.length === 0) {
-    container.innerHTML = '<p class="proy-pub-empty">Este proyecto aún no tiene publicaciones registradas.</p>';
+    container.innerHTML = `<p class="proy-pub-empty">${isEn ? 'This project has no registered publications yet.' : 'Este proyecto aún no tiene publicaciones registradas.'}</p>`;
     return;
   }
+
+  const MESES_EN_DET = {
+    'enero': 'January', 'febrero': 'February', 'marzo': 'March',
+    'abril': 'April', 'mayo': 'May', 'junio': 'June',
+    'julio': 'July', 'agosto': 'August', 'septiembre': 'September',
+    'octubre': 'October', 'noviembre': 'November', 'diciembre': 'December'
+  };
 
   // Orden: mes-fecha más actual (cronológico descendente)
   pubs.sort((a, b) => {
@@ -218,7 +273,11 @@ function renderPublicaciones(publicaciones) {
     <ul class="proy-pub-list${hasScrollClass}">
       ${pubs.map(pub => {
         const metaParts = [];
-        const fechaTexto = pub.mes && pub.anio ? `${pub.mes} ${pub.anio}` : (pub.anio || '');
+        let mesTexto = pub.mes || '';
+        if (isEn && mesTexto) {
+          mesTexto = MESES_EN_DET[mesTexto.toLowerCase().trim()] || mesTexto;
+        }
+        const fechaTexto = mesTexto && pub.anio ? `${mesTexto} ${pub.anio}` : (pub.anio || '');
         if (fechaTexto) metaParts.push(fechaTexto);
         if (pub.revista) metaParts.push(pub.revista);
         const metaString = metaParts.join(' - ');
@@ -232,7 +291,7 @@ function renderPublicaciones(publicaciones) {
               <a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="proy-pub-link">
                 <span>${pub.titulo}</span>
                 <span class="proy-pub-ext-icon" aria-hidden="true">↗</span>
-                <span class="sr-only">(se abre en una pestaña nueva)</span>
+                <span class="sr-only">(${isEn ? 'opens in new tab' : 'se abre en una pestaña nueva'})</span>
               </a>
               ${metaString ? `<span class="proy-pub-meta">${metaString}</span>` : ''}
             </div>

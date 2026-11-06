@@ -56,6 +56,18 @@ const MAPA_LINEAS_A_AREAS = {
   'epidemiología digital': 'salud-digital'
 };
 
+function esIdiomaIngles() {
+  if (window.i18n) {
+    if (typeof window.i18n.getLanguage === 'function') return window.i18n.getLanguage() === 'en';
+    if (typeof window.i18n.getCurrentLang === 'function') return window.i18n.getCurrentLang() === 'en';
+  }
+  try {
+    return localStorage.getItem('i18n_lang') === 'en';
+  } catch (e) {
+    return false;
+  }
+}
+
 let areaActual = null;
 let proyectosRelacionadosActual = [];
 let investigadoresAreaActual = [];
@@ -91,9 +103,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const todosProyectos = proyectosData.proyectos || [];
-    const proyectosRelacionados = todosProyectos.filter(p =>
-      p.area_id === area.id || (area.proyectos_ids && area.proyectos_ids.includes(p.id))
-    );
+    const proyectosRelacionados = todosProyectos.filter(p => {
+      const lineas = Array.isArray(p.lineas) && p.lineas.length > 0 ? p.lineas : [p.area_id];
+      return lineas.includes(area.id) || p.area_id === area.id || (area.proyectos_ids && area.proyectos_ids.includes(p.id));
+    });
 
     // Obtener todos los integrantes vinculados
     const todosMiembros = [
@@ -259,7 +272,10 @@ function renderizarListaProyectos() {
   const proyectosPagina = proyectosAreaActual.slice(inicio, fin);
 
   // Renderizar filas limpias: Nombre - Año de inicio solamente - Estado - Flecha
+  const isEn = esIdiomaIngles();
+
   contenedor.innerHTML = proyectosPagina.map(p => {
+    const tituloDisplay = (isEn && p.titulo_en) ? p.titulo_en : p.titulo;
     const anioInicio = p.anio_inicio || (p.anio ? p.anio.split('–')[0].split('-')[0].trim() : '—');
     const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
     const estadoTexto = p.estado === 'Concluido'
@@ -268,7 +284,7 @@ function renderizarListaProyectos() {
 
     return `
       <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proy-row">
-        <span class="proy-row-title">${p.titulo}</span>
+        <span class="proy-row-title">${tituloDisplay}</span>
         <span class="proy-row-anio">${anioInicio}</span>
         <span class="proy-row-estado ${estadoClass}">${estadoTexto}</span>
         <span class="proy-row-arrow"><i class="fa-solid fa-arrow-right"></i></span>
@@ -278,8 +294,12 @@ function renderizarListaProyectos() {
 
   // Renderizar controles de paginación
   if (paginationBar) {
+    const mostrandoTxt = t('proyectos.mostrando', 'Mostrando');
+    const proyLabel = t('proyectos.proyectos_label', 'proyectos');
+    const deTxt = t('proyectos.de', 'de');
+
     if (totalPaginas <= 1) {
-      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}</span>`;
+      paginationBar.innerHTML = `<span class="proy-pag-info">${mostrandoTxt} ${totalProyectos} ${proyLabel}</span>`;
       return;
     }
 
@@ -295,7 +315,7 @@ function renderizarListaProyectos() {
     });
 
     paginationBar.innerHTML = `
-      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos</span>
+      <span class="proy-pag-info">${mostrandoTxt} ${inicio + 1} - ${fin} ${deTxt} ${totalProyectos} ${proyLabel}</span>
       <div class="proy-pag-controls">
         <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActualProy === 1 ? 'disabled' : ''} aria-label="Página anterior">
           <i class="fa-solid fa-chevron-left"></i>
@@ -406,10 +426,12 @@ function mostrarError(mensaje) {
 }
 
 // ── Escuchar cambios reactivos de idioma ──────────────────────────
-document.addEventListener('i18n:changed', () => {
+const onI18nChangeArea = () => {
   if (areaActual) {
     actualizarTextosArea(areaActual);
     renderInvestigadores(investigadoresAreaActual, COLORES[areaActual.id] || 'gold');
     renderizarListaProyectos();
   }
-});
+};
+document.addEventListener('i18n:changed', onI18nChangeArea);
+window.addEventListener('i18n:changed', onI18nChangeArea);
