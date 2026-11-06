@@ -2,339 +2,404 @@
   "investigadores": [
     {
       "id": "pamela-chacon",
-      "nombre": "Pamela Chacón",
+      "nombre": "Pamela Chacón Uscamaita",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Pamela Chacon.webp",
       "descripcion": "Investigadora principal en Informática Biomédica. Lidera proyectos de interoperabilidad clínica e IA en salud.",
       "contacto": {
         "email": "pchacon@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/pamela-chacon-uscamaita/",
+        "orcid": "https://orcid.org/0000-0001-9462-5607",
+        "scholar": "https://scholar.google.com/citations?hl=es&user=fRYj8fAAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "fhir-interoperabilidad-2023",
-        "ia-diagnostico-2024"
-      ],
-      "cargo": "Investigadora Principal",
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Principal Investigator",
       "descripcion_en": "Principal investigator in Biomedical Informatics. Leads clinical interoperability and AI in healthcare projects."
     },
     {
       "id": "david-villarreal",
-      "nombre": "David Villarreal",
-      "cargo": "Co-investigador",
+      "nombre": "David Villarreal Zegarra",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/David Villareal.webp",
       "descripcion": "Especialista en sistemas de información en salud y SOA. Desarrolla iniciativas de estandarización de historias clínicas.",
       "contacto": {
         "email": "dvillarreal@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/david-villarreal-zegarra/",
+        "orcid": "https://orcid.org/0000-0002-2222-4764",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=UhIQliwAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "hce-nacional-2022",
-        "fhir-interoperabilidad-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Specialist in health information systems and SOA. Develops electronic health record standardization initiatives."
     },
     {
       "id": "christian-reategui",
-      "nombre": "Christian Reátegui",
-      "cargo": "Responsable Técnico",
+      "nombre": "Christian Reategui Rivera",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Mahony Reategui.webp",
       "descripcion": "Investigador en bioinformática computacional y datos genómicos. Integra datos ómicos para el estudio de patógenos.",
       "contacto": {
         "email": "creategui@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/c-mahony-reategui-rivera/",
+        "orcid": "https://orcid.org/0000-0002-4030-8777",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=xM09xrYAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "genomica-tropical-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Technical Lead",
       "descripcion_en": "Researcher in computational bioinformatics and genomic data. Integrates omics data for pathogen research."
     },
     {
       "id": "henry-cardenas",
-      "nombre": "Henry Cárdenas",
-      "cargo": "Co-investigador",
+      "nombre": "Henry Cárdenas Campoverde",
       "institucion": "Universidad San Francisco de Quito",
       "foto": "../assets/images/members_bi4dt/Henry Cardenas.webp",
       "descripcion": "Investigador en salud global y epidemiología digital. Diseña plataformas binacionales de vigilancia epidemiológica.",
       "contacto": {
         "email": "hcardenas@usfq.edu.ec",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
+        "linkedin": "https://www.linkedin.com/in/henry-cardenas-c/",
+        "orcid": "https://orcid.org/0009-0001-8383-7695",
         "scholar": "https://scholar.google.com/"
       },
-      "proyectos": [
-        "vigilancia-epi-2024"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Researcher in global health and digital epidemiology. Designs binational epidemiological surveillance platforms."
     },
     {
       "id": "irvin-dongo",
-      "nombre": "Irvin Dongo",
-      "cargo": "Co-investigador",
+      "nombre": "Irvin Benito Dongo",
       "institucion": "Universidad Católica San Pablo",
       "foto": "../assets/images/members_bi4dt/Irvin Dongo.webp",
       "descripcion": "Especialista en procesamiento de lenguaje natural (PLN) para la extracción de conocimiento en textos médicos.",
       "contacto": {
         "email": "idongo@ucsp.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/irvin-dongo/",
+        "orcid": "https://orcid.org/0000-0003-4859-0428",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=DpPqHAQAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "nlp-registros-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Specialist in natural language processing (NLP) for medical text knowledge extraction."
     },
     {
       "id": "rafael-leal",
-      "nombre": "Rafael Leal",
-      "cargo": "Co-investigador",
+      "nombre": "Rafael Leal Zavala",
       "institucion": "Instituto Nacional de Salud",
-      "foto": "../assets/images/members_bi4dt/user.webp",
+      "foto": "../assets/images/members_bi4dt/Rafael Leal.webp",
       "descripcion": "Investigador en repositorios de big data sanitario, anonimización y análisis epidemiológico para salud pública.",
       "contacto": {
         "email": "rleal@ins.gob.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
+        "linkedin": "https://www.linkedin.com/in/rafael-antonio-leal-zavala-975b2764/",
+        "orcid": "https://orcid.org/0000-0003-3718-5347",
         "scholar": "https://scholar.google.com/"
       },
-      "proyectos": [
-        "plataforma-datos-sanitarios-2022"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Researcher in health big data repositories, anonymization, and public health epidemiological analysis."
     },
     {
       "id": "oscar-huapaya",
-      "nombre": "Oscar Huapaya",
-      "cargo": "Co-investigador",
+      "nombre": "Oscar Huapaya Huertas",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Oscar Huapaya.webp",
       "descripcion": "Investigador en telemedicina y soluciones de mHealth para el acceso a la salud en poblaciones vulnerables y rurales.",
       "contacto": {
         "email": "ohuapaya@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/oscar-huapaya-huertas-92b16488/",
+        "orcid": "https://orcid.org/0000-0002-5435-7246",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=eDL7ESIAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "telesalud-rural-2024",
-        "fhir-interoperabilidad-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Researcher in telemedicine and mHealth solutions for healthcare access in vulnerable and rural populations."
     },
     {
       "id": "javier-vargas",
-      "nombre": "Javier Vargas",
-      "cargo": "Co-investigador",
+      "nombre": "Javier Vargas Herrera",
       "institucion": "Universidad Nacional Mayor de San Marcos",
       "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Especialista en ontologías biomédicas. Desarrolla modelos terminológicos formales para estandarizar diagnósticos.",
       "contacto": {
         "email": "jvargas@unmsm.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
+        "linkedin": "https://www.linkedin.com/in/javier-vargas-herrera-1b2785a0/",
         "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "scholar": "https://scholar.google.com/citations?hl=en&user=DcwG13gAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "ontologia-diagnosticos-2023",
-        "fhir-interoperabilidad-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Specialist in biomedical ontologies. Develops formal terminological models to standardize diagnoses."
     },
     {
       "id": "milagros-cahuana",
-      "nombre": "Milagros Cahuana",
-      "cargo": "Co-investigadora",
+      "nombre": "Milagros Cahuana Cuentas",
       "institucion": "Universidad Católica San Pablo",
       "foto": "../assets/images/members_bi4dt/Milagros Cahuana.webp",
       "descripcion": "Investigadora en bioinformática clínica. Desarrolla algoritmos de integración clínico-molecular en pacientes oncológicos.",
       "contacto": {
         "email": "mcahuana@ucsp.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/milagros-isela-cahuana-cuentas-07ab05340/",
+        "orcid": "https://orcid.org/0000-0002-2431-6216",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=Xsp6yhcAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "perfiles-moleculares-2024"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Researcher in clinical bioinformatics. Develops clinical-molecular integration algorithms in oncology patients."
     },
     {
       "id": "guido-bendezu",
-      "nombre": "Guido Bendezú",
-      "cargo": "Co-investigador",
+      "nombre": "Guido Bendezú Quispe",
       "institucion": "Procesa Lab S.A.C.",
-      "foto": "../assets/images/members_bi4dt/user.webp",
+      "foto": "../assets/images/members_bi4dt/Guido Bendezu.webp",
       "descripcion": "Líder tecnológico en desarrollo de software biomédico y transferencia tecnológica entre academia y salud digital.",
       "contacto": {
         "email": "gbendezu@procesalab.com",
-        "linkedin": "https://www.linkedin.com/",
+        "linkedin": "https://www.linkedin.com/in/guidobendezuquispe/",
         "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "scholar": "https://scholar.google.com/citations?hl=en&user=GxEyJXoAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "gestion-clinica-ia-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Technological leader in biomedical software development and technology transfer between academia and digital health."
     },
     {
       "id": "jose-florez",
-      "nombre": "José Flórez",
-      "cargo": "Co-investigador",
+      "nombre": "José Flórez Arango",
       "institucion": "The University of Arizona",
       "foto": "../assets/images/members_bi4dt/Jose Florez.webp",
       "descripcion": "Investigador en bioestadística y análisis a gran escala de indicadores de salud pública materno-infantil en las Américas.",
       "contacto": {
         "email": "jflorez@arizona.edu",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/josefflo/",
+        "orcid": "https://orcid.org/0000-0001-9083-0195",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=PsQBEXkAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "estudio-comparativo-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "Co-Investigator",
       "descripcion_en": "Researcher in biostatistics and large-scale public health analysis of maternal and child health in the Americas."
     },
     {
       "id": "stefan-escobar",
-      "nombre": "Stefan Escobar",
-      "cargo": "Investigador RENACYT",
+      "nombre": "Stefan Escobar Agreda",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/Stefan Escobar.webp",
       "descripcion": "Investigador RENACYT en visión computacional y aprendizaje profundo para el análisis automatizado de radiografías.",
       "contacto": {
         "email": "sescobar@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/",
-        "scholar": "https://scholar.google.com/"
+        "linkedin": "https://www.linkedin.com/in/stefan-escobar-agreda/",
+        "orcid": "https://orcid.org/0000-0002-8355-4310",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=4jaRW8gAAAAJ&view_op=list_works&sortby=pubdate"
       },
-      "proyectos": [
-        "ia-radiografias-2024"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "RENACYT Researcher",
       "descripcion_en": "RENACYT researcher in computer vision and deep learning for automated chest X-ray analysis."
     },
     {
       "id": "kelly-de-la-cruz",
-      "nombre": "Kelly De La Cruz",
-      "cargo": "Investigadora RENACYT",
+      "nombre": "Kelly De La Cruz Torralva",
       "institucion": "Universidad Nacional Mayor de San Marcos",
-      "foto": "../assets/images/members_bi4dt/user.webp",
+      "foto": "../assets/images/members_bi4dt/Kelly de la Cruz.webp",
       "descripcion": "Investigadora RENACYT en epidemiología matemática y modelamiento predictivo de enfermedades infecciosas y metaxénicas.",
       "contacto": {
         "email": "kdelacruz@unmsm.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
+        "linkedin": "https://www.linkedin.com/in/kellydelacruz/",
         "orcid": "https://orcid.org/",
         "scholar": "https://scholar.google.com/"
       },
-      "proyectos": [
-        "modelo-dengue-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": true
       },
-      "cargo_en": "RENACYT Researcher",
       "descripcion_en": "RENACYT researcher in mathematical epidemiology and predictive modeling of infectious and vector-borne diseases."
+    },
+    {
+      "id": "jorge-maguina",
+      "nombre": "Jorge Maguiña Quispe",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Docente e investigador en la Universidad Científica del Sur especializado en salud pública e informática biomédica.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/jorge-luis-maguiña-quispe-085837199/",
+        "orcid": "https://orcid.org/0000-0002-4136-7795"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Professor and researcher at Universidad Científica del Sur specialized in public health and biomedical informatics."
+    },
+    {
+      "id": "roberto-espinoza",
+      "nombre": "Roberto Espinoza Chamorro",
+      "institucion": "The Kyoto College of Graduate Studies for Informatics",
+      "foto": "../assets/images/members_bi4dt/Roberto Espinoza.webp",
+      "descripcion": "Investigador en The Kyoto College of Graduate Studies for Informatics enfocado en tecnologías de información y salud digital.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/roberto-espinoza-a5b133b7/",
+        "orcid": "https://orcid.org/0009-0007-5074-2482"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at The Kyoto College of Graduate Studies for Informatics focused on information technology and digital health."
+    },
+    {
+      "id": "yscenia-paredes",
+      "nombre": "Yscenia Paredes Gonzales",
+      "institucion": "Digital Health",
+      "foto": "../assets/images/members_bi4dt/Yscenia Paredes.webp",
+      "descripcion": "Investigadora especializada en iniciativas de salud digital y transformación tecnológica en sistemas sanitarios.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/yscenia/",
+        "orcid": "https://orcid.org/0009-0001-7588-4977",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=pYKW7l8AAAAJ&view_op=list_works&sortby=pubdate"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      },
+      "descripcion_en": "Researcher specializing in digital health initiatives and technological transformation in healthcare systems."
+    },
+    {
+      "id": "armando-pezo",
+      "nombre": "Armando Pezo Pezo",
+      "institucion": "Instituto Nacional de Salud",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigador en el Instituto Nacional de Salud enfocado en vigilancia epidemiológica e interoperabilidad clínica.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0001-6285-5096"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Instituto Nacional de Salud focused on epidemiological surveillance and clinical interoperability."
+    },
+    {
+      "id": "anthony-copez",
+      "nombre": "Anthony Copez Lonzoy",
+      "institucion": "Universidad San Ignacio de Loyola",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Docente e investigador en la Universidad San Ignacio de Loyola enfocado en analítica de datos en salud y salud global.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0003-4761-4272"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Professor and researcher at Universidad San Ignacio de Loyola focused on healthcare data analytics and global health."
+    },
+    {
+      "id": "javier-flores",
+      "nombre": "Javier Flores Cohaila",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Médico e investigador en la Universidad Científica del Sur enfocado en efectividad clínica, IA en medicina y salud pública.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0002-9169-2094"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Physician and researcher at Universidad Científica del Sur focused on clinical effectiveness, AI in medicine, and public health."
+    },
+    {
+      "id": "leonardo-rojas",
+      "nombre": "Leonardo Rojas Mezarina",
+      "institucion": "Universidad Nacional Mayor de San Marcos",
+      "foto": "../assets/images/members_bi4dt/Leonardo Rojas.webp",
+      "descripcion": "Médico e investigador en la UNMSM especializado en salud pública, gestión sanitaria y tecnologías de información en salud.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/leonardo-rojas-mezarina/",
+        "orcid": "https://orcid.org/0000-0003-0293-7107",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=Tzq507cAAAAJ&view_op=list_works&sortby=pubdate"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      },
+      "descripcion_en": "Physician and researcher at UNMSM specialized in public health, healthcare management, and health information technologies."
     }
   ],
   "gestion": [
     {
       "id": "gerson-zapata",
-      "nombre": "Gerson Zapata",
-      "cargo": "Gestor de Proyectos",
+      "nombre": "Gerson Zapata Cordova",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Gestor de proyectos de I+D con experiencia en administración de fondos concursables y seguimiento en salud digital.",
@@ -343,126 +408,186 @@
         "linkedin": "https://www.linkedin.com/",
         "orcid": "https://orcid.org/"
       },
-      "proyectos": [
-        "gestion-concytec-2023",
-        "fhir-interoperabilidad-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": false
       },
-      "cargo_en": "Project Manager",
       "descripcion_en": "R&D project manager experienced in competitive grant funding administration and digital health monitoring."
     },
     {
       "id": "adriana-echevarria",
-      "nombre": "Adriana Echevarría",
-      "cargo": "Sector Productivo",
+      "nombre": "Adriana Echevarria Goche",
       "institucion": "Instituto Nacional de Salud",
       "foto": "../assets/images/members_bi4dt/Adriana Echevarria.webp",
       "descripcion": "Especialista en articulación con el sector productivo, orientada al diseño normativo y políticas públicas de salud digital.",
       "contacto": {
         "email": "aechevarria@ins.gob.pe",
         "linkedin": "https://www.linkedin.com/",
-        "orcid": "https://orcid.org/"
+        "orcid": "https://orcid.org/0000-0001-6182-3164"
       },
-      "proyectos": [
-        "politica-salud-digital-2024"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
         "orcid": true,
         "scholar": false
       },
-      "cargo_en": "Productive Sector Lead",
       "descripcion_en": "Productive sector liaison specialist, focused on regulatory design and digital health public policies."
     }
   ],
   "estudiantes": [
     {
       "id": "lizeth-guzman",
-      "nombre": "Lizeth Guzmán",
-      "cargo": "Colaboradora",
+      "nombre": "Lizeth Guzmán Lázaro",
       "institucion": "Universidad Científica del Sur",
-      "foto": "../assets/images/members_bi4dt/user.webp",
+      "foto": "../assets/images/members_bi4dt/Lizeth Guzman.webp",
       "descripcion": "Colaboradora activa en sistematización documental y soporte en la gestión de proyectos de investigación en salud.",
       "contacto": {
         "email": "lguzman@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": ""
+        "linkedin": "https://www.linkedin.com/in/lizeth-guzmán-21261a356/",
+        "orcid": "https://orcid.org/0009-0000-7337-540X"
       },
-      "proyectos": [
-        "politica-salud-digital-2024",
-        "vigilancia-epi-2024",
-        "telesalud-rural-2024",
-        "fhir-interoperabilidad-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
-        "orcid": false,
+        "orcid": true,
         "scholar": false
       },
-      "cargo_en": "Collaborator",
       "descripcion_en": "Active collaborator in documentary systematization and healthcare research project management support."
     },
     {
       "id": "selene-salas",
-      "nombre": "Selene Salas",
-      "cargo": "Administradora de Bases de Datos",
+      "nombre": "Selene Salas Reymundo",
       "institucion": "Universidad Científica del Sur",
       "foto": "../assets/images/members_bi4dt/user.webp",
       "descripcion": "Especialista en administración y modelado de bases de datos clínicas y repositorios de investigación en salud.",
       "contacto": {
         "email": "ssalas@ucientifica.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": ""
+        "linkedin": "https://www.linkedin.com/in/selene-salas-reymundo-0aa369202/",
+        "orcid": "https://orcid.org/0000-0001-5551-8382 "
       },
-      "proyectos": [
-        "hce-nacional-2022",
-        "ontologia-diagnosticos-2023",
-        "nlp-registros-2023",
-        "estudio-comparativo-2023",
-        "fhir-interoperabilidad-2023"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
-        "orcid": false,
+        "orcid": true,
         "scholar": false
       },
-      "cargo_en": "Database Administrator",
       "descripcion_en": "Specialist in clinical database administration, modeling, and health research data repositories."
     },
     {
       "id": "rodrigo-chacon",
-      "nombre": "Rodrigo Chacón",
-      "cargo": "Estudiante de Ing. Informática",
+      "nombre": "Rodrigo Chacón Uscamaita",
       "institucion": "Universidad Ricardo Palma",
       "foto": "../assets/images/members_bi4dt/Rodrigo Chacon.webp",
       "descripcion": "Estudiante de Ing. Informática enfocado en desarrollo de aplicaciones web y arquitectura de interfaces para la Red BI4DT.",
       "contacto": {
-        "email": "rodrigo.chacon@urp.edu.pe",
-        "linkedin": "https://www.linkedin.com/",
-        "orcid": ""
+        "email": "rodrigochacon2064@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/rodrigo-alessandro-chacón-uscamaita-483254281/",
+        "orcid": "https://orcid.org/0009-0000-6236-8925"
       },
-      "proyectos": [
-        "fhir-interoperabilidad-2023",
-        "gestion-clinica-ia-2023",
-        "plataforma-datos-sanitarios-2022",
-        "telesalud-rural-2024"
-      ],
       "redes": {
         "correo": true,
         "linkedin": true,
-        "orcid": false,
+        "orcid": true,
         "scholar": false
       },
-      "cargo_en": "Informatics Engineering Student",
       "descripcion_en": "Informatics Engineering student focused on web application development and interface architecture for the BI4DT Network."
+    },
+    {
+      "id": "olenka-valenzuela",
+      "nombre": "Olenka Valenzuela Torres",
+      "institucion": "Niigata University",
+      "foto": "../assets/images/members_bi4dt/Olenka Valenzuela.webp",
+      "descripcion": "Estudiante e investigadora en Niigata University vinculada a iniciativas de informática biomédica y salud digital.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/olenka-valenzuela-torres-1a6a913b7/",
+        "orcid": "https://orcid.org/0000-0003-4701-7611"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Student and researcher at Niigata University associated with biomedical informatics and digital health initiatives."
+    },
+    {
+      "id": "milena-tafur",
+      "nombre": "Milena Tafur Mestanza",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigadora en la Universidad Científica del Sur participando en proyectos de informática biomédica e innovación en salud.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0009-0000-4426-3898"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur participating in biomedical informatics and healthcare innovation projects."
+    },
+    {
+      "id": "jorge-barzola",
+      "nombre": "Jorge Barzola Gallardo",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigador en la Universidad Científica del Sur vinculado al desarrollo de soluciones tecnológicas aplicadas a salud.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0003-3699-4484"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur engaged in developing technological solutions applied to health."
+    },
+    {
+      "id": "michele-macavilca",
+      "nombre": "Michele Macavilca Toribio",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigadora en la Universidad Científica del Sur enfocada en ciencia de datos en salud y bioinformática médica.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0003-4885-5326"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur focused on healthcare data science and medical bioinformatics."
+    },
+    {
+      "id": "mateo-sernaque",
+      "nombre": "Mateo Sernaqué Paz",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigador en la Universidad Científica del Sur especializado en tecnologías de interoperabilidad y datos clínicos.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0009-0009-5506-7775"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur specialized in interoperability technologies and clinical data."
     }
   ]
 }

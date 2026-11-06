@@ -135,6 +135,52 @@
         135.7584
       ],
       "url": "https://www.kcg.edu/en/school-info"
+    },
+    {
+      "id": "usil",
+      "nombre": "Universidad San Ignacio de Loyola",
+      "sigla": "USIL",
+      "nombre_completo": "Universidad San Ignacio de Loyola (USIL)",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Lima",
+      "tipo": "Universidad",
+      "es_sede_principal": false,
+      "coords": [
+        -12.0722,
+        -76.9634
+      ]
+    },
+    {
+      "id": "digital-health",
+      "nombre": "Digital Health",
+      "sigla": "Digital Health",
+      "nombre_completo": "Digital Health",
+      "pais": "Perú",
+      "pais_id": "peru",
+      "ciudad": "Lima",
+      "tipo": "Centro de Investigación / Salud Digital",
+      "es_sede_principal": false,
+      "coords": [
+        -12.1215,
+        -77.0298
+      ]
+    },
+    {
+      "id": "niigata-u",
+      "nombre": "Niigata University",
+      "sigla": "Niigata U",
+      "nombre_completo": "Niigata University",
+      "pais": "Japón",
+      "pais_id": "japon",
+      "ciudad": "Niigata",
+      "tipo": "Universidad",
+      "es_sede_principal": false,
+      "coords": [
+        37.8687,
+        138.9431
+      ],
+      "url": "https://www.niigata-u.ac.jp/en/"
     }
   ]
 }

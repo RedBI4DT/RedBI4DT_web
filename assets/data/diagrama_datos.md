@@ -42,12 +42,10 @@ erDiagram
     MIEMBRO {
         string id PK "Identificador único del investigador (slug)"
         string nombre "Nombre y apellidos completos"
-        string cargo "Investigador Principal | Co-investigador | Responsable Técnico"
         string institucion FK "Nombre de institución de adscripción"
         string foto "Ruta local del recurso de imagen webp"
         string descripcion "Perfil profesional, trayectoria y biografía científica"
         string categoria "investigadores | gestion | estudiantes"
-        string[] proyectos FK "Array de IDs de proyectos en los que participa"
     }
 
     PROYECTO {
@@ -122,7 +120,7 @@ erDiagram
 | Relación | Implementación Técnica | Flujo de Usuario en la Web |
 | :--- | :--- | :--- |
 | **Proyecto ↔ Área** | `PROYECTO.area_id` → `AREA.id` | En `proyectos.html` se filtra por línea. En `proyecto-detalle.html` el badge enlaza a `area.html?id=...`. En `area.html` se listan los proyectos de esa línea. |
-| **Proyecto ↔ Miembro (N:M)** | `PROYECTO.integrantes[]` ↔ `MIEMBRO.proyectos[]` | En `proyecto-detalle.html` se muestra el equipo con fotos y cargos que enlazan a `investigacion.html?id=...`. En `investigacion.html` el perfil muestra los proyectos del miembro con enlaces a `proyecto-detalle.html?id=...`. |
+| **Proyecto ↔ Miembro (N:M)** | `PROYECTO.integrantes[]` → `MIEMBRO.id` | En `proyecto-detalle.html` se muestra el equipo con fotos que enlazan a `investigacion.html?id=...`. En `investigacion.html` el perfil muestra los proyectos del miembro filtrando por `p.integrantes.includes(m.id)`. |
 | **Proyecto ↔ Institución** | `PROYECTO.instituciones[]` ↔ `INSTITUCION.nombre` | En `proyecto-detalle.html` la ficha técnica muestra las instituciones socias del proyecto. |
 | **Miembro ↔ Institución** | `MIEMBRO.institucion` → `INSTITUCION.nombre` | En las tarjetas de miembro y en el perfil del investigador se indica su universidad o centro de investigación. |
 | **Institución ↔ Mapa de Red** | `INSTITUCION.pais_id` y `INSTITUCION.coords` | En `quienes.html` el mapa de OpenStreetMap sitúa los nodos y al hacer clic en un país el panel lateral despliega sus instituciones aliadas. |

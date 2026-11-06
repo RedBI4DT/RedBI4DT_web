@@ -122,13 +122,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // Obtener proyectos asociados al estudiante
+    // Obtener proyectos vinculados mediante el campo integrantes de proyectos.json
     const todosProyectos = datosProyectos.proyectos || [];
-    const idsAsociados = Array.isArray(miembro.proyectos) ? miembro.proyectos : [];
     const proyectosDelEstudiante = todosProyectos.filter(p => {
-      if (idsAsociados.includes(p.id)) return true;
-      if (Array.isArray(p.integrantes) && p.integrantes.includes(miembro.id)) return true;
-      return false;
+      return Array.isArray(p.integrantes) && p.integrantes.includes(miembro.id);
     });
 
     estudianteActualGlobal = miembro;
@@ -155,8 +152,8 @@ function renderPerfil(m, proyectosReales) {
 
   // Título de la pestaña
   document.title = isEn
-    ? `${m.nombre} - Profile | BI4DT Network`
-    : `${m.nombre} - Perfil | Red BI4DT`;
+    ? `${m.nombre} | BI4DT Network`
+    : `${m.nombre} | BI4DT Network`;
 
   // Foto
   const fotoEl = document.getElementById('perfil-foto');

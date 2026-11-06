@@ -89,7 +89,9 @@ async function initNetworkMap() {
       'Instituto Nacional de Salud (INS)',
       'Universidad Católica San Pablo (UCSP)',
       'Procesa Lab S.A.C.',
-      'Universidad Ricardo Palma (URP)'
+      'Universidad Ricardo Palma (URP)',
+      'Universidad San Ignacio de Loyola (USIL)',
+      'Digital Health'
     ];
   }
   if (PAISES_RED.ecuador.instituciones.length === 0) {
@@ -99,7 +101,10 @@ async function initNetworkMap() {
     PAISES_RED.usa.instituciones = ['The University of Arizona'];
   }
   if (PAISES_RED.japon.instituciones.length === 0) {
-    PAISES_RED.japon.instituciones = ['Kyoto Computer Gakuin (KCG)'];
+    PAISES_RED.japon.instituciones = [
+      'The Kyoto College of Graduate Studies for Informatics (KCGI)',
+      'Niigata University'
+    ];
   };
 
   // 2. Inicialización de Leaflet
