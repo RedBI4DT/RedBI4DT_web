@@ -138,13 +138,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // Obtener proyectos asociados por ID o por integración directa
+    // Obtener proyectos vinculados mediante el campo integrantes de proyectos.json
     const todosProyectos = datosProyectos.proyectos || [];
-    const idsAsociados = Array.isArray(miembro.proyectos) ? miembro.proyectos : [];
     const proyectosDelInvestigador = todosProyectos.filter(p => {
-      if (idsAsociados.includes(p.id)) return true;
-      if (Array.isArray(p.integrantes) && p.integrantes.includes(miembro.id)) return true;
-      return false;
+      return Array.isArray(p.integrantes) && p.integrantes.includes(miembro.id);
     });
 
     miembroActualGlobal = miembro;
@@ -171,8 +168,8 @@ function renderPerfil(m, categoria, proyectosReales) {
 
   // Actualizar título del navegador
   document.title = isEn
-    ? `${m.nombre} - Research Profile | BI4DT Network`
-    : `${m.nombre} - Perfil de Investigación | Red BI4DT`;
+    ? `${m.nombre} | BI4DT Network`
+    : `${m.nombre} | BI4DT Network`;
 
   // Etiqueta de categoría
   const labelEl = document.getElementById('perfil-categoria');
@@ -197,11 +194,9 @@ function renderPerfil(m, categoria, proyectosReales) {
   }
 
   // Datos básicos con soporte bilingüe
-  const cargoTexto = isEn ? (m.cargo_en || m.cargo) : m.cargo;
   const descTexto = isEn ? (m.descripcion_en || m.descripcion) : m.descripcion;
 
   setTexto('perfil-nombre', m.nombre);
-  setTexto('perfil-cargo', cargoTexto);
   setTexto('perfil-institucion', m.institucion);
   setTexto('perfil-descripcion', descTexto);
 
