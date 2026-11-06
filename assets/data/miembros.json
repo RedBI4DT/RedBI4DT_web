@@ -307,13 +307,14 @@
       "contacto": {
         "email": "",
         "linkedin": "https://www.linkedin.com/in/yscenia/",
-        "orcid": "https://orcid.org/0009-0001-7588-4977"
+        "orcid": "https://orcid.org/0009-0001-7588-4977",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=pYKW7l8AAAAJ&view_op=list_works&sortby=pubdate"
       },
       "redes": {
         "correo": false,
         "linkedin": true,
         "orcid": true,
-        "scholar": false
+        "scholar": true
       },
       "descripcion_en": "Researcher specializing in digital health initiatives and technological transformation in healthcare systems."
     },
@@ -373,6 +374,26 @@
         "scholar": false
       },
       "descripcion_en": "Physician and researcher at Universidad Científica del Sur focused on clinical effectiveness, AI in medicine, and public health."
+    },
+    {
+      "id": "leonardo-rojas",
+      "nombre": "Leonardo Rojas Mezarina",
+      "institucion": "Universidad Nacional Mayor de San Marcos",
+      "foto": "../assets/images/members_bi4dt/Leonardo Rojas.webp",
+      "descripcion": "Médico e investigador en la UNMSM especializado en salud pública, gestión sanitaria y tecnologías de información en salud.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/leonardo-rojas-mezarina/",
+        "orcid": "https://orcid.org/0000-0003-0293-7107",
+        "scholar": "https://scholar.google.com/citations?hl=en&user=Tzq507cAAAAJ&view_op=list_works&sortby=pubdate"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": true
+      },
+      "descripcion_en": "Physician and researcher at UNMSM specialized in public health, healthcare management, and health information technologies."
     }
   ],
   "gestion": [
