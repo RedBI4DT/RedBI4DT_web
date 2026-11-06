@@ -259,6 +259,120 @@
         "scholar": true
       },
       "descripcion_en": "RENACYT researcher in mathematical epidemiology and predictive modeling of infectious and vector-borne diseases."
+    },
+    {
+      "id": "jorge-maguina",
+      "nombre": "Jorge Maguiña Quispe",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Docente e investigador en la Universidad Científica del Sur especializado en salud pública e informática biomédica.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/jorge-luis-maguiña-quispe-085837199/",
+        "orcid": "https://orcid.org/0000-0002-4136-7795"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Professor and researcher at Universidad Científica del Sur specialized in public health and biomedical informatics."
+    },
+    {
+      "id": "roberto-espinoza",
+      "nombre": "Roberto Espinoza Chamorro",
+      "institucion": "The Kyoto College of Graduate Studies for Informatics",
+      "foto": "../assets/images/members_bi4dt/Roberto Espinoza.webp",
+      "descripcion": "Investigador en The Kyoto College of Graduate Studies for Informatics enfocado en tecnologías de información y salud digital.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/roberto-espinoza-a5b133b7/",
+        "orcid": "https://orcid.org/0009-0007-5074-2482"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at The Kyoto College of Graduate Studies for Informatics focused on information technology and digital health."
+    },
+    {
+      "id": "yscenia-paredes",
+      "nombre": "Yscenia Paredes Gonzales",
+      "institucion": "Digital Health",
+      "foto": "../assets/images/members_bi4dt/Yscenia Paredes.webp",
+      "descripcion": "Investigadora especializada en iniciativas de salud digital y transformación tecnológica en sistemas sanitarios.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/yscenia/",
+        "orcid": "https://orcid.org/0009-0001-7588-4977"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher specializing in digital health initiatives and technological transformation in healthcare systems."
+    },
+    {
+      "id": "armando-pezo",
+      "nombre": "Armando Pezo Pezo",
+      "institucion": "Instituto Nacional de Salud",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigador en el Instituto Nacional de Salud enfocado en vigilancia epidemiológica e interoperabilidad clínica.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0001-6285-5096"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Instituto Nacional de Salud focused on epidemiological surveillance and clinical interoperability."
+    },
+    {
+      "id": "anthony-copez",
+      "nombre": "Anthony Copez Lonzoy",
+      "institucion": "Universidad San Ignacio de Loyola",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Docente e investigador en la Universidad San Ignacio de Loyola enfocado en analítica de datos en salud y salud global.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0003-4761-4272"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Professor and researcher at Universidad San Ignacio de Loyola focused on healthcare data analytics and global health."
+    },
+    {
+      "id": "javier-flores",
+      "nombre": "Javier Flores Cohaila",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Médico e investigador en la Universidad Científica del Sur enfocado en efectividad clínica, IA en medicina y salud pública.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0002-9169-2094"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Physician and researcher at Universidad Científica del Sur focused on clinical effectiveness, AI in medicine, and public health."
     }
   ],
   "gestion": [
@@ -358,6 +472,101 @@
         "scholar": false
       },
       "descripcion_en": "Informatics Engineering student focused on web application development and interface architecture for the BI4DT Network."
+    },
+    {
+      "id": "olenka-valenzuela",
+      "nombre": "Olenka Valenzuela Torres",
+      "institucion": "Niigata University",
+      "foto": "../assets/images/members_bi4dt/Olenka Valenzuela.webp",
+      "descripcion": "Estudiante e investigadora en Niigata University vinculada a iniciativas de informática biomédica y salud digital.",
+      "contacto": {
+        "email": "",
+        "linkedin": "https://www.linkedin.com/in/olenka-valenzuela-torres-1a6a913b7/",
+        "orcid": "https://orcid.org/0000-0003-4701-7611"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": true,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Student and researcher at Niigata University associated with biomedical informatics and digital health initiatives."
+    },
+    {
+      "id": "milena-tafur",
+      "nombre": "Milena Tafur Mestanza",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigadora en la Universidad Científica del Sur participando en proyectos de informática biomédica e innovación en salud.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0009-0000-4426-3898"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur participating in biomedical informatics and healthcare innovation projects."
+    },
+    {
+      "id": "jorge-barzola",
+      "nombre": "Jorge Barzola Gallardo",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigador en la Universidad Científica del Sur vinculado al desarrollo de soluciones tecnológicas aplicadas a salud.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0003-3699-4484"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur engaged in developing technological solutions applied to health."
+    },
+    {
+      "id": "michele-macavilca",
+      "nombre": "Michele Macavilca Toribio",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigadora en la Universidad Científica del Sur enfocada en ciencia de datos en salud y bioinformática médica.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0000-0003-4885-5326"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur focused on healthcare data science and medical bioinformatics."
+    },
+    {
+      "id": "mateo-sernaque",
+      "nombre": "Mateo Sernaqué Paz",
+      "institucion": "Universidad Científica del Sur",
+      "foto": "../assets/images/members_bi4dt/user.webp",
+      "descripcion": "Investigador en la Universidad Científica del Sur especializado en tecnologías de interoperabilidad y datos clínicos.",
+      "contacto": {
+        "email": "",
+        "linkedin": "",
+        "orcid": "https://orcid.org/0009-0009-5506-7775"
+      },
+      "redes": {
+        "correo": false,
+        "linkedin": false,
+        "orcid": true,
+        "scholar": false
+      },
+      "descripcion_en": "Researcher at Universidad Científica del Sur specialized in interoperability technologies and clinical data."
     }
   ]
 }
