@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Red BI4DT</title>
+  <title>BI4DT Network</title>
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/contacto.css">
 </head>
 <body class="contacto-page">
@@ -17,44 +16,10 @@
   <!-- Contenido Principal -->
   <main class="page-content page-full">
 
-    <!-- Header: Ponerse en contacto -->
-    <section class="quienes-header-section" style="margin-bottom: 0;">
-      <div class="quienes-header-container">
-         <h1 class="quienes-title">Contacto</h1>
-         <p class="quienes-subtitle">¿Tienes consultas, propuestas de investigación o deseas formar parte de nuestra red? Escríbenos y nos pondremos en contacto contigo.</p>
-      </div>
-    </section>
-
     <!-- Main Contact Info & Form -->
     <section class="contacto-main-section">
-      
-      <!-- Lado Izquierdo: Info -->
-      <div class="contacto-info-panel">
-        
-        <div class="contacto-items-container">
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="contacto-item-content">
-              <span class="contacto-item-label">CORREO ELECTRÓNICO</span>
-              <a href="mailto:investigacion@ucsur.edu.pe" class="contacto-item-value">investigacion@ucsur.edu.pe</a>
-            </div>
-          </div>
-          
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="contacto-item-content">
-              <span class="contacto-item-label">TELÉFONO INSTITUCIONAL</span>
-              <span class="contacto-item-value">(01) 610-6400</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Lado Derecho: Formulario -->
+      <!-- Tarjeta del Formulario Centrada -->
       <div class="contacto-form-wrapper">
         <form 
           class="contacto-form" 
@@ -73,31 +38,35 @@
           <input type="hidden" name="zc_gad" value="">
 
           <div class="contacto-row">
-            <div class="contacto-group">
-              <label class="contacto-form-label" for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="Name_First" maxlength="255" class="contacto-input" placeholder="Tu nombre" required>
+            <div class="contacto-group" id="group-nombre">
+              <label class="contacto-form-label" for="nombre"><span data-i18n="contacto.label_nombre">Nombre</span> *</label>
+              <input type="text" id="nombre" name="Name_First" maxlength="255" class="contacto-input" placeholder="Tu nombre" data-i18n-placeholder="contacto.placeholder_nombre" required>
+              <span class="contacto-field-error" id="error-nombre"></span>
             </div>
-            <div class="contacto-group">
-              <label class="contacto-form-label" for="apellido">Apellido *</label>
-              <input type="text" id="apellido" name="Name_Last" maxlength="255" class="contacto-input" placeholder="Tu apellido" required>
+            <div class="contacto-group" id="group-apellido">
+              <label class="contacto-form-label" for="apellido"><span data-i18n="contacto.label_apellido">Apellido</span> *</label>
+              <input type="text" id="apellido" name="Name_Last" maxlength="255" class="contacto-input" placeholder="Tu apellido" data-i18n-placeholder="contacto.placeholder_apellido" required>
+              <span class="contacto-field-error" id="error-apellido"></span>
             </div>
           </div>
 
-          <div class="contacto-group">
-            <label class="contacto-form-label" for="correo">Correo Electrónico *</label>
-            <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" required>
+          <div class="contacto-group" id="group-correo">
+            <label class="contacto-form-label" for="correo"><span data-i18n="contacto.label_correo">Correo Electrónico</span> *</label>
+            <input type="email" id="correo" name="Email" maxlength="255" class="contacto-input" placeholder="ejemplo@correo.com" data-i18n-placeholder="contacto.placeholder_correo" required>
+            <span class="contacto-field-error" id="error-correo"></span>
           </div>
 
-          <div class="contacto-group">
-            <label class="contacto-form-label" for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" name="MultiLine" maxlength="65535" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." required></textarea>
+          <div class="contacto-group" id="group-mensaje">
+            <label class="contacto-form-label" for="mensaje"><span data-i18n="contacto.label_mensaje">Mensaje</span> *</label>
+            <textarea id="mensaje" name="MultiLine" maxlength="65535" class="contacto-input contacto-textarea" placeholder="Escribe tu mensaje o consulta aquí..." data-i18n-placeholder="contacto.placeholder_mensaje" required></textarea>
+            <span class="contacto-field-error" id="error-mensaje"></span>
           </div>
 
           <!-- Mensaje de estado / feedback accesible -->
           <div id="contacto-status" class="contacto-status" role="alert" style="display: none;"></div>
 
           <button type="submit" class="contacto-submit-btn" id="contacto-submit-btn">
-            <span>Enviar Mensaje</span>
+            <span data-i18n="contacto.btn_enviar">Enviar Mensaje</span>
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </form>
@@ -114,6 +83,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="../scripts/i18n.js"></script>
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/contact.js"></script>
 </body>

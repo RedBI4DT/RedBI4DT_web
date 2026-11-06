@@ -358,9 +358,9 @@
   z-index: 1;
 }
 
-/* Acabado plano monocromático institucional sin marcas de agua (MAP-01) */
+/* Capa de teselas OpenStreetMap Standard limpia sin filtros */
 #map-opentopo .leaflet-tile-pane {
-  filter: grayscale(100%) contrast(88%) brightness(102%);
+  filter: none;
 }
 
 /* Botón flotante para reiniciar vista del mapa */
@@ -618,6 +618,12 @@
   .map-title {
     font-size: 1.75rem;
   }
+  .map-container {
+    min-height: 380px;
+  }
+  #map-opentopo {
+    height: 380px;
+  }
 }
 
 @media (max-width: 580px) {
@@ -653,5 +659,11 @@
   }
   .map-description {
     font-size: 0.9rem;
+  }
+  .map-container {
+    min-height: 340px;
+  }
+  #map-opentopo {
+    height: 340px;
   }
 }

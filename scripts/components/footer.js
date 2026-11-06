@@ -20,6 +20,11 @@ function initFooter() {
   // Botón Volver Arriba universal
   inicializarBotonVolverArriba();
 
+  // Reaplicar traducciones por si footer se inyectó de forma asíncrona
+  if (window.i18n && typeof window.i18n.reapply === 'function') {
+    window.i18n.reapply();
+  }
+
   console.log('Componente Footer inicializado correctamente con enlaces dinámicos.');
 }
 

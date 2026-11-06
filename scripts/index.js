@@ -144,6 +144,11 @@ async function cargarPublicacionesLinkedIn() {
 function renderizarPostsLinkedIn(posts, contenedor) {
   contenedor.innerHTML = '';
 
+  const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+  const verLinkedinTxt = t('noticias.ver_linkedin', 'Ver en LinkedIn');
+  const verLinkedinAria = t('noticias.ver_linkedin_aria', 'Ver publicación en LinkedIn');
+  const iframeTitle = t('noticias.iframe_title', 'Publicación de LinkedIn');
+
   posts.forEach((post, indice) => {
     const tarjeta = document.createElement('article');
     tarjeta.className = 'publicacion-card reveal-on-scroll';
@@ -160,7 +165,8 @@ function renderizarPostsLinkedIn(posts, contenedor) {
           width="100%" 
           frameborder="0" 
           allowfullscreen="" 
-          title="Publicación de LinkedIn" 
+          title="${iframeTitle}" 
+          data-i18n-title="noticias.iframe_title"
           loading="lazy" 
           class="publicacion-iframe">
         </iframe>
@@ -171,8 +177,9 @@ function renderizarPostsLinkedIn(posts, contenedor) {
           target="_blank" 
           rel="noopener noreferrer" 
           class="publicacion-link-mas" 
-          aria-label="Ver publicación en LinkedIn">
-          <span>Ver en LinkedIn</span>
+          aria-label="${verLinkedinAria}"
+          data-i18n-aria-label="noticias.ver_linkedin_aria">
+          <span data-i18n="noticias.ver_linkedin">${verLinkedinTxt}</span>
           <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>

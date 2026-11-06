@@ -1,6 +1,6 @@
 /* styles/equipo.css */
 @import url('colors.css');
-@import url('quienes.css'); /* Reutilizamos el header institucional */
+
 
 .equipo-content-section {
   background: #f8fafc;
@@ -33,20 +33,6 @@
 
 .equipo-container > .equipo-category-header:first-child {
   margin-top: 0.5rem;
-}
-
-.equipo-category-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(26, 54, 104, 0.08);
-  border: 1.5px solid rgba(26, 54, 104, 0.18);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1a3668;
-  font-size: 1.15rem;
-  flex-shrink: 0;
 }
 
 .equipo-category-title {
@@ -226,12 +212,6 @@ a.member-name-link:hover::after,
   .equipo-category-header {
     gap: 0.65rem;
     margin: 2rem 0 1rem 0;
-  }
-  .equipo-category-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 0.95rem;
-    border-radius: 8px;
   }
   .equipo-category-title {
     font-size: 1.3rem;

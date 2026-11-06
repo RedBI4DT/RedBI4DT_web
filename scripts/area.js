@@ -56,6 +56,22 @@ const MAPA_LINEAS_A_AREAS = {
   'epidemiología digital': 'salud-digital'
 };
 
+function esIdiomaIngles() {
+  if (window.i18n) {
+    if (typeof window.i18n.getLanguage === 'function') return window.i18n.getLanguage() === 'en';
+    if (typeof window.i18n.getCurrentLang === 'function') return window.i18n.getCurrentLang() === 'en';
+  }
+  try {
+    return localStorage.getItem('i18n_lang') === 'en';
+  } catch (e) {
+    return false;
+  }
+}
+
+let areaActual = null;
+let proyectosRelacionadosActual = [];
+let investigadoresAreaActual = [];
+
 document.addEventListener('DOMContentLoaded', async () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
@@ -87,9 +103,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const todosProyectos = proyectosData.proyectos || [];
-    const proyectosRelacionados = todosProyectos.filter(p =>
-      p.area_id === area.id || (area.proyectos_ids && area.proyectos_ids.includes(p.id))
-    );
+    const proyectosRelacionados = todosProyectos.filter(p => {
+      const lineas = Array.isArray(p.lineas) && p.lineas.length > 0 ? p.lineas : [p.area_id];
+      return lineas.includes(area.id) || p.area_id === area.id || (area.proyectos_ids && area.proyectos_ids.includes(p.id));
+    });
 
     // Obtener todos los integrantes vinculados
     const todosMiembros = [
@@ -120,6 +137,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       return false;
     });
 
+    areaActual = area;
+    proyectosRelacionadosActual = proyectosRelacionados;
+    investigadoresAreaActual = investigadoresDelArea;
     renderArea(area, proyectosRelacionados, investigadoresDelArea);
 
   } catch (err) {
@@ -128,16 +148,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+function actualizarTextosArea(area) {
+  if (!area) return;
+  const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+  const nombre = t(`area.items.${area.id}.nombre`, area.nombre);
+  const desc = t(`area.items.${area.id}.desc`, area.descripcion_larga);
+  const tituloPestana = t('area.titulo_pestana', 'Eje Científico | Red BI4DT');
+
+  document.title = `${nombre} - ${tituloPestana}`;
+  setHtml('area-hero-numero', area.numero);
+  setHtml('area-hero-nombre', nombre);
+  setHtml('area-hero-desc', desc);
+}
+
 function renderArea(area, proyectos, investigadores) {
   const color = COLORES[area.id] || 'gold';
 
-  // Título de la pestaña
-  document.title = `${area.nombre} - Eje Científico | Red BI4DT`;
-
-  // Número, Nombre y Descripción
-  setHtml('area-hero-numero', area.numero);
-  setHtml('area-hero-nombre', area.nombre);
-  setHtml('area-hero-desc', area.descripcion_larga);
+  actualizarTextosArea(area);
 
   // 1. Renderizar Investigadores del Área
   renderInvestigadores(investigadores, color);
@@ -150,8 +177,12 @@ function renderInvestigadores(investigadores, color) {
   const grid = document.getElementById('area-investigadores-grid');
   if (!grid) return;
 
+  const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+  const sinInvTxt = t('area.sin_investigadores', 'No hay investigadores registrados directamente en esta línea.');
+  const verPerfilTxt = t('area.ver_perfil', 'Ver perfil completo');
+
   if (!investigadores || investigadores.length === 0) {
-    grid.innerHTML = '<p style="color:#64748b; font-style:italic; grid-column:1/-1;">No hay investigadores registrados directamente en esta línea.</p>';
+    grid.innerHTML = `<p style="color:#64748b; font-style:italic; grid-column:1/-1;">${sinInvTxt}</p>`;
     return;
   }
 
@@ -172,7 +203,7 @@ function renderInvestigadores(investigadores, color) {
           </a>
           <span class="area-inv-institucion">${m.institucion || ''}</span>
           <a href="${linkPerfil}" class="area-inv-link-perfil">
-            <span>Ver perfil completo</span>
+            <span>${verPerfilTxt}</span>
             <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i>
           </a>
         </div>
@@ -221,8 +252,11 @@ function renderizarListaProyectos() {
   const paginationBar = document.getElementById('area-proyectos-pagination');
   if (!contenedor) return;
 
+  const t = (k, fb) => (window.i18n && typeof window.i18n.t === 'function' ? window.i18n.t(k) : null) || fb;
+
   if (proyectosAreaActual.length === 0) {
-    contenedor.innerHTML = '<p class="perfil-empty" style="padding: 2.5rem; text-align: center; color: #64748b; font-style: italic;">Sin proyectos registrados actualmente en este eje científico.</p>';
+    const sinProyTxt = t('area.sin_proyectos', 'Sin proyectos registrados actualmente en este eje científico.');
+    contenedor.innerHTML = `<p class="perfil-empty" style="padding: 2.5rem; text-align: center; color: #64748b; font-style: italic;">${sinProyTxt}</p>`;
     if (paginationBar) paginationBar.innerHTML = '';
     return;
   }
@@ -238,15 +272,21 @@ function renderizarListaProyectos() {
   const proyectosPagina = proyectosAreaActual.slice(inicio, fin);
 
   // Renderizar filas limpias: Nombre - Año de inicio solamente - Estado - Flecha
+  const isEn = esIdiomaIngles();
+
   contenedor.innerHTML = proyectosPagina.map(p => {
+    const tituloDisplay = (isEn && p.titulo_en) ? p.titulo_en : p.titulo;
     const anioInicio = p.anio_inicio || (p.anio ? p.anio.split('–')[0].split('-')[0].trim() : '—');
     const estadoClass = p.estado === 'Concluido' ? 'proy-estado--concluido' : 'proy-estado--activo';
+    const estadoTexto = p.estado === 'Concluido'
+      ? t('area.estado_concluido', 'Concluido')
+      : t('area.estado_en_curso', 'En curso');
 
     return `
       <a href="proyecto-detalle.html?id=${p.id}" class="perfil-proy-row">
-        <span class="proy-row-title">${p.titulo}</span>
+        <span class="proy-row-title">${tituloDisplay}</span>
         <span class="proy-row-anio">${anioInicio}</span>
-        <span class="proy-row-estado ${estadoClass}">${p.estado || 'En curso'}</span>
+        <span class="proy-row-estado ${estadoClass}">${estadoTexto}</span>
         <span class="proy-row-arrow"><i class="fa-solid fa-arrow-right"></i></span>
       </a>
     `;
@@ -254,8 +294,12 @@ function renderizarListaProyectos() {
 
   // Renderizar controles de paginación
   if (paginationBar) {
+    const mostrandoTxt = t('proyectos.mostrando', 'Mostrando');
+    const proyLabel = t('proyectos.proyectos_label', 'proyectos');
+    const deTxt = t('proyectos.de', 'de');
+
     if (totalPaginas <= 1) {
-      paginationBar.innerHTML = `<span class="proy-pag-info">Mostrando ${totalProyectos} proyecto${totalProyectos !== 1 ? 's' : ''}</span>`;
+      paginationBar.innerHTML = `<span class="proy-pag-info">${mostrandoTxt} ${totalProyectos} ${proyLabel}</span>`;
       return;
     }
 
@@ -271,7 +315,7 @@ function renderizarListaProyectos() {
     });
 
     paginationBar.innerHTML = `
-      <span class="proy-pag-info">Mostrando ${inicio + 1} - ${fin} de ${totalProyectos} proyectos</span>
+      <span class="proy-pag-info">${mostrandoTxt} ${inicio + 1} - ${fin} ${deTxt} ${totalProyectos} ${proyLabel}</span>
       <div class="proy-pag-controls">
         <button type="button" class="proy-pag-btn proy-pag-nav proy-pag-prev" ${paginaActualProy === 1 ? 'disabled' : ''} aria-label="Página anterior">
           <i class="fa-solid fa-chevron-left"></i>
@@ -380,3 +424,14 @@ function mostrarError(mensaje) {
     `;
   }
 }
+
+// ── Escuchar cambios reactivos de idioma ──────────────────────────
+const onI18nChangeArea = () => {
+  if (areaActual) {
+    actualizarTextosArea(areaActual);
+    renderInvestigadores(investigadoresAreaActual, COLORES[areaActual.id] || 'gold');
+    renderizarListaProyectos();
+  }
+};
+document.addEventListener('i18n:changed', onI18nChangeArea);
+window.addEventListener('i18n:changed', onI18nChangeArea);

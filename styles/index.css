@@ -124,39 +124,37 @@ main.page-content.page-full {
   color: #0f172a;
 }
 
-.research-preview-wrapper {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-/* Columna Izquierda: Contenido Editorial */
-.research-preview-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.research-section-header {
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .research-preview-title {
   margin-top: 0;
-  margin-bottom: 1.15rem;
-}
-
-.research-preview-desc {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: #334155;
   margin-bottom: 0;
-  max-width: 580px;
+  text-align: left;
 }
 
-/* Columna Derecha: Tarjetas de Previa Limpias */
-.research-preview-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.research-lines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem 1.5rem;
   width: 100%;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .research-lines-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .research-lines-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .research-preview-card {
@@ -222,53 +220,10 @@ main.page-content.page-full {
   transform: translateX(5px);
 }
 
-/* Enlace "Ver todas las líneas" estilo anterior debajo de las tarjetas */
-.research-lines-link {
-  color: #1e293b;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  transition: all 0.25s ease;
-  padding-bottom: 3px;
-  border-bottom: 1.5px solid transparent;
-  margin-top: 0.35rem;
-  align-self: flex-start;
-}
-
-.research-lines-link:hover {
-  color: var(--color-blue-hover, #226ee0);
-  border-bottom-color: var(--color-blue-hover, #226ee0);
-  gap: 0.85rem;
-}
-
-.research-lines-link i {
-  font-size: 0.88rem;
-  transition: transform 0.25s ease;
-}
-
-.research-lines-link:hover i {
-  transform: translateX(4px);
-}
-
-
 /* Responsividad */
 @media (max-width: 960px) {
   .research-lines-section {
     padding: 3.5rem 0;
-  }
-
-  .research-preview-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2.25rem;
-  }
-
-  .research-preview-desc {
-    font-size: 1rem;
-    margin-bottom: 1.6rem;
-    max-width: 100%;
   }
 }
 
@@ -542,137 +497,6 @@ main.page-content.page-full {
   }
 }
 
-/* =====================================================
-   Sección: CTA Banner (Conectar)
-   ===================================================== */
-.cta-banner-section {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  min-height: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 4px solid #f59e0b;
-  /* Borde amarillo superior */
-  border-bottom: none;
-  overflow: hidden;
-  margin-bottom: -3rem;
-}
-
-.cta-banner-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.cta-banner-img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.65);
-  /* Overlay oscuro para legibilidad */
-  z-index: 2;
-  pointer-events: none;
-}
-
-.cta-banner-content {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  max-width: 800px;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.cta-title {
-  color: #ffffff;
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.3;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.btn-cta {
-  padding: 1rem 2.5rem;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.25s ease;
-  cursor: pointer;
-  background: #f59e0b;
-  color: #0f172a;
-  border: none;
-}
-
-.btn-cta:hover {
-  background: #f59e0b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-}
-
-.btn-cta--large {
-  padding: 1.25rem 3rem;
-  font-size: 1.35rem;
-  font-weight: 700;
-  border-radius: 8px;
-  background: var(--color-gold);
-  color: #0f172a;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-  border: none;
-}
-
-.btn-cta--large:hover {
-  background: var(--color-gold-light);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35);
-}
-
-@media (max-width: 768px) {
-  .btn-cta--large {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    text-align: center;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .cta-banner-section {
-    min-height: 350px;
-  }
-
-  .cta-title {
-    font-size: 1.8rem;
-  }
-
-  .btn-cta {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
-}
-
 /* Banner Principal (Hero Network Banner) */
 .banner-hero-wrapper {
   margin-bottom: 0;
@@ -936,154 +760,6 @@ main.page-content.page-full {
 }
 
 
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: #94a3b8;
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.card {
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-.card-icon {
-  font-size: 2rem;
-  color: #38bdf8;
-  margin-bottom: 1rem;
-  display: inline-block;
-}
-
-.card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: #38bdf8;
-}
-
-.card p {
-  color: #94a3b8;
-  font-size: 0.95rem;
-}
-
-.card code {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  color: #38bdf8;
-  font-family: monospace;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: #cbd5e1;
-}
-
-.form-input-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.form-input-icon {
-  position: absolute;
-  left: 1rem;
-  color: #64748b;
-  pointer-events: none;
-}
-
-.form-input {
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.75rem;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: white;
-  font-family: inherit;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
-}
-
-.form-input:focus+.form-input-icon,
-.form-input-container:focus-within .form-input-icon {
-  color: #38bdf8;
-}
-
-/* Info Sections (Quiénes somos, Equipo, Proyectos) */
-.info-section {
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  padding: 2.5rem;
-  scroll-margin-top: 100px;
-}
-
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, #f59e0b, #fbbf24);
-  border-radius: 2px;
-  margin-top: 6px;
-}
-
-.section-desc {
-  color: #94a3b8;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
 /* =====================================================
    Sección: Últimas Noticias / Publicaciones (LinkedIn)
    ===================================================== */
@@ -1159,89 +835,6 @@ main.page-content.page-full {
 .publicacion-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-}
-
-/* Borde izquierdo según color de área */
-.publicacion-card--dorado {
-  border-left-color: var(--pub-gold);
-}
-
-.publicacion-card--indigo {
-  border-left-color: var(--pub-indigo);
-}
-
-.publicacion-card--esmeralda {
-  border-left-color: var(--pub-emerald);
-}
-
-/* ── Encabezado y Metadatos de la Tarjeta ───────────── */
-.publicacion-card-header {
-  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.publicacion-badge-wrapper {
-  margin-bottom: 0.2rem;
-}
-
-.publicacion-badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  padding: 0.25rem 0.7rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-}
-
-.publicacion-badge--dorado {
-  background: rgba(212, 160, 23, 0.12);
-  color: #9a6700;
-  border: 1px solid rgba(212, 160, 23, 0.35);
-}
-
-.publicacion-badge--indigo {
-  background: rgba(79, 70, 229, 0.1);
-  color: #4338ca;
-  border: 1px solid rgba(79, 70, 229, 0.3);
-}
-
-.publicacion-badge--esmeralda {
-  background: rgba(5, 150, 105, 0.1);
-  color: #047857;
-  border: 1px solid rgba(5, 150, 105, 0.3);
-}
-
-.publicacion-card-titulo {
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.35;
-  margin: 0;
-}
-
-.publicacion-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: #64748b;
-  margin-top: 0.15rem;
-}
-
-.publicacion-autor,
-.publicacion-fecha {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.publicacion-meta-separador {
-  color: #cbd5e1;
-  font-weight: bold;
 }
 
 /* ── Contenedor Iframe de LinkedIn ──────────────────── */
@@ -1506,27 +1099,4 @@ main.page-content.page-full {
     transform: none !important;
     transition: none !important;
   }
-}
-/* ── Clases Reutilizables de Eyebrow / Etiqueta Superior ── */
-.eyebrow-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.5rem;
-}
-
-.eyebrow-line {
-  display: inline-block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--color-cta-amber);
-  border-radius: 2px;
-}
-
-.eyebrow-text {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-cta-amber);
 }

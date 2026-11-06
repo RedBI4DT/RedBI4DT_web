@@ -193,6 +193,114 @@
   padding-left: 1.45rem;
 }
 
+/* ── Selector de Idioma (ES / EN) ── */
+.bi4dt-lang-wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  z-index: 1015;
+}
+
+/* Botón Cápsula Blanco */
+.bi4dt-lang-pill-btn {
+  background: #FFFFFF;
+  color: #001A4D;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  font-family: inherit;
+  outline: none;
+}
+
+.bi4dt-lang-pill-btn:hover {
+  background-color: #F8FAFC;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.bi4dt-lang-current {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #001A4D;
+  line-height: 1;
+}
+
+.bi4dt-lang-caret {
+  font-size: 0.65rem;
+  color: #001A4D;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+
+/* Flecha rotando hacia arriba al abrir (idéntico a la imagen de referencia) */
+.bi4dt-lang-wrapper.is-open .bi4dt-lang-caret {
+  transform: rotate(180deg);
+}
+
+/* Menú Desplegable Azul Marino Oscuro */
+.bi4dt-lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 62px;
+  background: #001A4D;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+  z-index: 1020;
+}
+
+.bi4dt-lang-wrapper.is-open .bi4dt-lang-dropdown-menu {
+  max-height: 120px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Botones de opción EN / ES */
+.bi4dt-lang-option-btn {
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.55rem 0.6rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+}
+
+.bi4dt-lang-option-btn:hover {
+  background-color: #002A7A;
+}
+
+/* Opción activa (Azul vibrante idéntico a la imagen) */
+.bi4dt-lang-option-btn.is-active,
+.bi4dt-lang-option-btn.i18n-active {
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+}
+
 /* ── Mobile Hamburger (≤ 880px) ── */
 .mobile-toggle {
   display: none;
@@ -239,8 +347,14 @@
     max-width: 250px;
   }
 
+  .bi4dt-lang-wrapper {
+    margin-right: 0.75rem;
+  }
+
   .mobile-toggle {
     display: flex;
+    margin-left: 0;
+    margin-right: 1rem;
   }
 
   /* Menú hamburguesa: animado con max-height */

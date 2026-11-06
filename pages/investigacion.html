@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>BI4DT Network</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil de Investigación - Red BI4DT</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/investigacion.css?v=2.7">
 </head>
 <body>
@@ -38,7 +37,7 @@
 
         <!-- Columna 3: Líneas de Investigación -->
         <div class="perfil-hero-lineas-col">
-          <h3 class="perfil-lineas-title">Líneas de Investigación</h3>
+          <h3 class="perfil-lineas-title" data-i18n="investigacion.lineas_investigacion">Líneas de Investigación</h3>
           <ul class="perfil-lineas-bullet-list" id="perfil-chips"></ul>
         </div>
 
@@ -51,17 +50,17 @@
     <section class="perfil-proyectos-section">
       <div class="perfil-section-container">
         <div class="perfil-proyectos-header-bar">
-          <h2 class="perfil-section-title">
-            Proyectos Relacionados <span id="proyectos-total-badge" class="proy-total-badge">(0)</span>
+          <h2 class="section-title-navy perfil-section-title">
+            <span data-i18n="investigacion.proyectos_relacionados">Proyectos Relacionados</span> <span id="proyectos-total-badge" class="proy-total-badge">(0)</span>
           </h2>
           <div class="proyectos-per-page-wrapper">
-            <label for="proy-per-page" class="proy-per-page-label">Mostrar:</label>
+            <label for="proy-per-page" class="proy-per-page-label" data-i18n="investigacion.mostrar">Mostrar:</label>
             <select id="proy-per-page" class="proy-per-page-select">
               <option value="5" selected>5</option>
               <option value="7">7</option>
               <option value="10">10</option>
             </select>
-            <span class="proy-per-page-suffix">por página</span>
+            <span class="proy-per-page-suffix" data-i18n="investigacion.por_pagina">por página</span>
           </div>
         </div>
 
@@ -79,6 +78,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="../scripts/i18n.js"></script>
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/investigacion.js?v=2.7"></script>
 </body>

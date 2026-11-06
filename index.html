@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red BI4DT - Informática Biomédica & Salud Global</title>
+  <title>BI4DT Network</title>
   <link rel="icon" type="image/png" href="assets/images/logo_red/logo_icon.png">
-  <link rel="stylesheet" href="styles/index.css?v=2.3">
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
@@ -25,12 +25,14 @@
             <div class="banner-hero-logo-img-overlay"></div>
           </div>
           <p class="banner-description">
-            Articulamos academia, sector público, prestadores de servicios y socios estratégicos internacionales para
-            impulsar la <strong>transformación digital en salud</strong> mediante informática biomédica, ciencia de datos e <strong>inteligencia artificial</strong>.
+            <span data-i18n="hero.desc_p1">Articulamos academia, sector público, prestadores de servicios y socios estratégicos internacionales para impulsar la</span>
+            <strong data-i18n="hero.desc_bold1">transformación digital en salud</strong>
+            <span data-i18n="hero.desc_p2">mediante informática biomédica, ciencia de datos e</span>
+            <strong data-i18n="hero.desc_bold2">inteligencia artificial</strong>.
           </p>
           <div class="banner-actions">
             <a href="pages/quienes.html" class="btn-banner btn-gold">
-              <span>Conócenos</span>
+              <span data-i18n="hero.btn_conocenos">Conócenos</span>
             </a>
           </div>
         </div>
@@ -41,42 +43,43 @@
       </div>
     </section>
 
-    <!-- Sección: Líneas de Investigación (Previa Limpia) -->
+    <!-- Sección: Líneas de Investigación (6 Cartillas en 3 Secciones de 2) -->
     <section class="research-lines-section" id="lineas-investigacion">
       <div class="section-container">
-        <div class="research-preview-wrapper reveal-on-scroll">
+        <div class="research-section-header">
+          <h2 class="section-title-navy research-preview-title" data-i18n="lineas.title">Líneas de Investigación</h2>
+        </div>
 
-          <!-- Columna Izquierda: Introducción -->
-          <div class="research-preview-info">
-            <h2 class="section-title-navy research-preview-title">Líneas de Investigación</h2>
-            <p class="research-preview-desc">
-              Impulsamos la investigación aplicada en la intersección de las ciencias médicas, la ciencia de datos y la inteligencia artificial para dar respuesta a los desafíos de salud global y acelerar la transformación digital sanitaria.
-            </p>
-          </div>
+        <div class="research-lines-grid">
+          <a href="pages/area.html?id=informatica-biomedica" class="research-preview-card">
+            <span class="preview-card-name" data-i18n="lineas.informatica_biomedica">Informática Biomédica</span>
+            <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+          </a>
 
-          <!-- Columna Derecha: Previa Limpia (Sin números, sin iconos) + Enlace -->
-          <div class="research-preview-cards">
-            <a href="pages/area.html?id=informatica-biomedica" class="research-preview-card">
-              <span class="preview-card-name">Informática Biomédica</span>
-              <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
-            </a>
+          <a href="pages/area.html?id=ia-salud" class="research-preview-card">
+            <span class="preview-card-name" data-i18n="lineas.ia_salud">Inteligencia Artificial en Salud</span>
+            <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+          </a>
 
-            <a href="pages/area.html?id=ia-salud" class="research-preview-card">
-              <span class="preview-card-name">Inteligencia Artificial en Salud</span>
-              <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
-            </a>
+          <a href="pages/area.html?id=interoperabilidad" class="research-preview-card">
+            <span class="preview-card-name" data-i18n="lineas.interoperabilidad">Interoperabilidad y Gobernanza de Datos</span>
+            <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+          </a>
 
-            <a href="pages/area.html?id=interoperabilidad" class="research-preview-card">
-              <span class="preview-card-name">Interoperabilidad y Gobernanza</span>
-              <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
-            </a>
+          <a href="pages/area.html?id=analitica-datos" class="research-preview-card">
+            <span class="preview-card-name" data-i18n="lineas.analitica_datos">Visualización y Analítica de Datos</span>
+            <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+          </a>
 
-            <a href="pages/lineas.html" class="research-lines-link">
-              <span>Ver todas las líneas de investigación</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+          <a href="pages/area.html?id=sociotecnica-adopcion" class="research-preview-card">
+            <span class="preview-card-name" data-i18n="lineas.sociotecnica_adopcion">Evaluación Sociotécnica y Adopción</span>
+            <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+          </a>
 
+          <a href="pages/area.html?id=salud-digital" class="research-preview-card">
+            <span class="preview-card-name" data-i18n="lineas.salud_digital">Salud Digital</span>
+            <i class="fa-solid fa-chevron-right preview-card-chevron"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -86,7 +89,7 @@
       <div class="section-container publicaciones-container">
         <div class="publicaciones-header reveal-on-scroll">
           <div class="publicaciones-label-group">
-            <h2 class="section-title-navy publicaciones-title">Noticias</h2>
+            <h2 class="section-title-navy publicaciones-title" data-i18n="noticias.title">Noticias</h2>
           </div>
         </div>
 
@@ -96,7 +99,7 @@
 
         <div id="publicaciones-error" class="publicaciones-error" hidden>
           <i class="fa-solid fa-circle-exclamation"></i>
-          <p>No fue posible cargar las publicaciones en este momento. Por favor, intenta de nuevo más tarde.</p>
+          <p data-i18n="noticias.error">No fue posible cargar las publicaciones en este momento. Por favor, intenta de nuevo más tarde.</p>
         </div>
       </div>
     </section>
@@ -106,12 +109,13 @@
       <div class="section-container executor-container">
         <div class="executor-content reveal-left">
           <div class="executor-label-group">
-            <h2 class="section-title-navy executor-title">Universidad Científica del Sur</h2>
+            <h2 class="section-title-navy executor-title" data-i18n="ejecutora.title">Universidad Científica del Sur</h2>
           </div>
           <p class="executor-description">
-            La Red BI4DT es liderada por la Universidad Científica del Sur (UCSUR) a través de la <strong>Facultad de Ingeniería Biomédica</strong>, impulsando la transformación digital en salud mediante investigación aplicada en informática biomédica y ciencia de datos.
+            <span data-i18n="ejecutora.desc_p1">La Red BI4DT es liderada por la Universidad Científica del Sur (UCSUR) a través de la</span>
+            <strong data-i18n="ejecutora.desc_bold">Facultad de Ingeniería Biomédica</strong><span data-i18n="ejecutora.desc_p2">, impulsando la transformación digital en salud mediante investigación aplicada en informática biomédica y ciencia de datos.</span>
           </p>
-          <p class="executor-subtext">
+          <p class="executor-subtext" data-i18n="ejecutora.subtext">
             En articulación con universidades, institutos de investigación pública y socios estratégicos de Perú, Ecuador y Estados Unidos, fomentamos la innovación continua y la transferencia tecnológica regional.
           </p>
         </div>
@@ -128,11 +132,11 @@
     <section class="network-institutions-section" id="instituciones-red">
       <div class="section-container network-institutions-container">
         <div class="network-label-group reveal-on-scroll">
-          <h2 class="section-title-navy network-title">Instituciones de la Red</h2>
+          <h2 class="section-title-navy network-title" data-i18n="colaboradores.title">Colaboradores de la Red</h2>
         </div>
 
         <div class="institutions-grid">
-          <a href="https://www.usfq.edu.ec/es" target="_blank" class="institution-card reveal-on-scroll reveal-delay-6" rel="noopener noreferrer">
+          <a href="https://cris.cientifica.edu.pe/p/en/organisations/ideas-research-group-data-science-digital-health-artificial-intel" target="_blank" class="institution-card reveal-on-scroll reveal-delay-6" rel="noopener noreferrer">
             <img src="assets/images/associations_logo/UCSUR_logo.png" class="institution-img">
             <div class="institution-img-overlay"></div>
           </a>
@@ -152,12 +156,16 @@
             <img src="assets/images/associations_logo/ProcesaLab_logo.png" class="institution-img">
             <div class="institution-img-overlay"></div>
           </a>
-          <a href="https://www.arizona.edu" target="_blank" class="institution-card reveal-on-scroll reveal-delay-5" rel="noopener noreferrer">
+          <a href="https://cb2.arizona.edu" target="_blank" class="institution-card reveal-on-scroll reveal-delay-5" rel="noopener noreferrer">
             <img src="assets/images/associations_logo/UA_logo.jpg" class="institution-img">
             <div class="institution-img-overlay"></div>
           </a>
           <a href="https://www.usfq.edu.ec/es" target="_blank" class="institution-card reveal-on-scroll reveal-delay-6" rel="noopener noreferrer">
             <img src="assets/images/associations_logo/USF_logo.jpeg" class="institution-img">
+            <div class="institution-img-overlay"></div>
+          </a>
+          <a href="https://www.kcg.edu/en/school-info" target="_blank" class="institution-card reveal-on-scroll reveal-delay-6" rel="noopener noreferrer">
+            <img src="assets/images/associations_logo/Kyoto_Logo.png" class="institution-img">
             <div class="institution-img-overlay"></div>
           </a>
         </div>
@@ -169,6 +177,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="scripts/i18n.js"></script>
   <script src="scripts/loadComponents.js"></script>
   <script src="scripts/index.js"></script>
   <!-- scripts/publicaciones.js consolidado en scripts/index.js -->

@@ -119,6 +119,22 @@
         32.2226,
         -110.9747
       ]
+    },
+    {
+      "id": "kcgi",
+      "nombre": "The Kyoto College of Graduate Studies for Informatics",
+      "sigla": "KCGI",
+      "nombre_completo": "The Kyoto College of Graduate Studies for Informatics (KCGI)",
+      "pais": "Japón",
+      "pais_id": "japon",
+      "ciudad": "Kioto",
+      "tipo": "Instituto / Universidad de Informática",
+      "es_sede_principal": false,
+      "coords": [
+        34.9856,
+        135.7584
+      ],
+      "url": "https://www.kcg.edu/en/school-info"
     }
   ]
 }

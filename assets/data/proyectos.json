@@ -34,20 +34,29 @@
           "titulo": "Implementation of HL7 FHIR Standard for Clinical Data Interoperability in Metropolitan Hospitals",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38291024/",
           "anio": 2024,
-          "revista": "Journal of Medical Internet Research"
+          "revista": "Journal of Medical Internet Research",
+          "mes": "Marzo",
+          "fecha": "2024-03"
         },
         {
           "titulo": "Architectural Design and Middleware Evaluation for Cross-Institutional Health Records Exchange",
           "url": "https://doi.org/10.1186/s12911-023-02340-1",
           "anio": 2023,
-          "revista": "BMC Medical Informatics and Decision Making"
+          "revista": "BMC Medical Informatics and Decision Making",
+          "mes": "Julio",
+          "fecha": "2023-07"
         },
         {
           "titulo": "Estandarización y Gobernanza de Datos Clínicos en el Sistema Hospitalario Peruano",
           "url": "https://rpmesp.ins.gob.pe/index.php/rpmesp/article/view/11245",
-          "revista": "Revista Peruana de Medicina Experimental y Salud Pública"
+          "revista": "Revista Peruana de Medicina Experimental y Salud Pública",
+          "anio": 2024,
+          "mes": "Febrero",
+          "fecha": "2024-02"
         }
-      ]
+      ],
+      "titulo_en": "FHIR Interoperability System",
+      "resumen_en": "Clinical data exchange platform using the HL7 FHIR standard to optimize communication between hospital systems in Lima."
     },
     {
       "id": "hce-nacional-2022",
@@ -75,9 +84,13 @@
           "titulo": "A National Service-Oriented Architecture Framework for Electronic Health Records in Developing Nations",
           "url": "https://doi.org/10.1016/j.ijmedinf.2023.105122",
           "anio": 2023,
-          "revista": "International Journal of Medical Informatics"
+          "revista": "International Journal of Medical Informatics",
+          "mes": "Abril",
+          "fecha": "2023-04"
         }
-      ]
+      ],
+      "titulo_en": "National Electronic Health Record",
+      "resumen_en": "Service-oriented architecture (SOA) for federated electronic health record interoperability at the national level."
     },
     {
       "id": "telesalud-rural-2024",
@@ -107,15 +120,21 @@
           "titulo": "Design and Clinical Validation of Telesalud Rural Perú in Hospital Networks",
           "anio": 2024,
           "revista": "IEEE Journal of Biomedical and Health Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.101"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.101",
+          "mes": "Abril",
+          "fecha": "2024-04"
         },
         {
           "titulo": "Mobile Health Applications for Maternal and Child Nutritional Monitoring in Rural Settings: A Multicentric Study",
           "anio": 2025,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.102"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.102",
+          "mes": "Enero",
+          "fecha": "2025-01"
         }
-      ]
+      ],
+      "titulo_en": "Rural Telehealth Peru",
+      "resumen_en": "Synchronous and asynchronous telemedicine platform designed for healthcare facilities in remote and low-connectivity areas."
     },
     {
       "id": "ontologia-diagnosticos-2023",
@@ -144,15 +163,21 @@
           "titulo": "Evaluation of Ontología Nacional de Diagnósticos in Hospital Networks",
           "anio": 2023,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.103"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.103",
+          "mes": "Febrero",
+          "fecha": "2023-02"
         },
         {
           "titulo": "Architectural Requirements and Usability Evaluation of Service-Oriented EHR Systems: A Multicentric Study",
           "anio": 2024,
           "revista": "Scientific Reports",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.104"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.104",
+          "mes": "Enero",
+          "fecha": "2024-01"
         }
-      ]
+      ],
+      "titulo_en": "National Diagnostic Ontology",
+      "resumen_en": "Harmonization and mapping of diagnostic catalogs to international terminologies (SNOMED CT, CIE-11, and LOINC)."
     },
     {
       "id": "gestion-clinica-ia-2023",
@@ -182,15 +207,21 @@
           "titulo": "Implementation and Impact of Módulo de Gestión Clínica Inteligente in Hospital Networks",
           "anio": 2023,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.105"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.105",
+          "mes": "Noviembre",
+          "fecha": "2023-11"
         },
         {
           "titulo": "Time-Series Forecasting of Pediatric Emergency Visits Using Open Climatic and Health Data: A Multicentric Study",
           "anio": 2024,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.106"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.106",
+          "mes": "Mayo",
+          "fecha": "2024-05"
         }
-      ]
+      ],
+      "titulo_en": "Intelligent Clinical Management Module",
+      "resumen_en": "Hospital decision support system integrating predictive models for hospital bed occupancy and critical resource allocation."
     },
     {
       "id": "ia-diagnostico-2024",
@@ -217,9 +248,13 @@
           "titulo": "Framework for IA para Diagnóstico Temprano de Enfermedades Crónicas in Hospital Networks",
           "anio": 2024,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.107"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.107",
+          "mes": "Octubre",
+          "fecha": "2024-10"
         }
-      ]
+      ],
+      "titulo_en": "AI for Early Diagnosis of Chronic Diseases",
+      "resumen_en": "Machine learning algorithms for early risk detection of diabetes, hypertension, and chronic kidney disease in primary care."
     },
     {
       "id": "nlp-registros-2023",
@@ -248,15 +283,21 @@
           "titulo": "Design and Clinical Validation of NLP para Registros Médicos en Español in Hospital Networks",
           "anio": 2024,
           "revista": "PLOS Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.108"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.108",
+          "mes": "Abril",
+          "fecha": "2024-04"
         },
         {
           "titulo": "Clinical Natural Language Processing for Automated Phenotyping from Spanish Electronic Health Records: A Multicentric Study",
           "anio": 2024,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.109"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.109",
+          "mes": "Noviembre",
+          "fecha": "2024-11"
         }
-      ]
+      ],
+      "titulo_en": "NLP for Spanish Medical Records",
+      "resumen_en": "Natural language processing models to extract structured entities, diagnoses, and treatments from unstructured clinical narratives."
     },
     {
       "id": "ia-radiografias-2024",
@@ -283,9 +324,13 @@
           "titulo": "Design and Clinical Validation of IA para Análisis Automático de Radiografías de Tórax in Hospital Networks",
           "anio": 2025,
           "revista": "Pan American Journal of Public Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.110"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.110",
+          "mes": "Agosto",
+          "fecha": "2025-08"
         }
-      ]
+      ],
+      "titulo_en": "AI for Automated Chest X-Ray Analysis",
+      "resumen_en": "Deep learning convolutional models for triaging and detecting pulmonary findings (tuberculosis, pneumonia, and nodules) in plain radiographs."
     },
     {
       "id": "modelo-dengue-2023",
@@ -313,15 +358,21 @@
           "titulo": "Design and Clinical Validation of Modelo Predictivo de Brotes de Dengue in Hospital Networks",
           "anio": 2023,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.111"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.111",
+          "mes": "Octubre",
+          "fecha": "2023-10"
         },
         {
           "titulo": "Visual Analytics and Predictive Modeling for Hospital Bed Capacity and Resource Allocation: A Multicentric Study",
           "anio": 2024,
           "revista": "IEEE Journal of Biomedical and Health Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.112"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.112",
+          "mes": "Noviembre",
+          "fecha": "2024-11"
         }
-      ]
+      ],
+      "titulo_en": "Dengue Outbreak Predictive Model",
+      "resumen_en": "Mathematical epidemiology and spatio-temporal modeling combining climatic and epidemiological data for arbovirus outbreak alerts."
     },
     {
       "id": "vigilancia-epi-2024",
@@ -351,15 +402,21 @@
           "titulo": "Design and Clinical Validation of Red de Vigilancia Epidemiológica Digital in Hospital Networks",
           "anio": 2024,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.113"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.113",
+          "mes": "Junio",
+          "fecha": "2024-06"
         },
         {
           "titulo": "Patient Perceptions and Usability of Smartphone-Based Health Interventions in Vulnerable Populations: A Multicentric Study",
           "anio": 2025,
           "revista": "Health Informatics Journal",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.114"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.114",
+          "mes": "Agosto",
+          "fecha": "2025-08"
         }
-      ]
+      ],
+      "titulo_en": "Digital Epidemiological Surveillance Network",
+      "resumen_en": "Binational platform for real-time syndromic surveillance between Peru and Ecuador using decentralized health indicators."
     },
     {
       "id": "genomica-tropical-2023",
@@ -387,15 +444,21 @@
           "titulo": "Framework for Análisis Genómico de Enfermedades Tropicales in Hospital Networks",
           "anio": 2023,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.115"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.115",
+          "mes": "Octubre",
+          "fecha": "2023-10"
         },
         {
           "titulo": "Convolutional Neural Networks for Automated Screening of Pulmonary Tuberculosis in Chest Radiographs: A Multicentric Study",
           "anio": 2024,
           "revista": "IEEE Journal of Biomedical and Health Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.116"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.116",
+          "mes": "Enero",
+          "fecha": "2024-01"
         }
-      ]
+      ],
+      "titulo_en": "Genomic Analysis of Tropical Diseases",
+      "resumen_en": "Bioinformatics pipeline for metagenomic and genomic sequencing of resistant tropical pathogens and arbovirus vectors."
     },
     {
       "id": "perfiles-moleculares-2024",
@@ -422,9 +485,13 @@
           "titulo": "Design and Clinical Validation of Perfiles Moleculares para Cáncer y Medicina de Precisión in Hospital Networks",
           "anio": 2025,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.117"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.117",
+          "mes": "Octubre",
+          "fecha": "2025-10"
         }
-      ]
+      ],
+      "titulo_en": "Molecular Profiles for Cancer and Precision Medicine",
+      "resumen_en": "Integrative multi-omic analysis platform for biomarkers and clinical-molecular characterization in oncology cohorts."
     },
     {
       "id": "politica-salud-digital-2024",
@@ -453,15 +520,21 @@
           "titulo": "Evaluation of Política Nacional de Salud Digital in Hospital Networks",
           "anio": 2024,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.118"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.118",
+          "mes": "Mayo",
+          "fecha": "2024-05"
         },
         {
           "titulo": "Regulatory Analysis and Policy Recommendations for National Health Data Governance: A Multicentric Study",
           "anio": 2025,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.119"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.119",
+          "mes": "Junio",
+          "fecha": "2025-06"
         }
-      ]
+      ],
+      "titulo_en": "National Digital Health Policy",
+      "resumen_en": "Sociotechnical framework and public policy proposals for health digital transformation, governance, and clinical ethics in Peru."
     },
     {
       "id": "plataforma-datos-sanitarios-2022",
@@ -489,9 +562,13 @@
           "titulo": "Evaluation of Plataforma Nacional de Datos Sanitarios in Hospital Networks",
           "anio": 2022,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.120"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.120",
+          "mes": "Septiembre",
+          "fecha": "2022-09"
         }
-      ]
+      ],
+      "titulo_en": "National Health Data Platform",
+      "resumen_en": "Unified clinical repository and analytical framework for the secondary use of anonymized health data in public health research."
     },
     {
       "id": "estudio-comparativo-2023",
@@ -521,15 +598,21 @@
           "titulo": "Framework for Estudio Comparativo Latinoamérica-EEUU en Salud Materno-Infantil in Hospital Networks",
           "anio": 2024,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.121"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.121",
+          "mes": "Abril",
+          "fecha": "2024-04"
         },
         {
           "titulo": "Geospatial Modeling and Machine Learning for Epidemic Outbreak Early Warning Systems: A Multicentric Study",
           "anio": 2024,
           "revista": "Health Informatics Journal",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.122"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.122",
+          "mes": "Febrero",
+          "fecha": "2024-02"
         }
-      ]
+      ],
+      "titulo_en": "Latin America-US Comparative Study in Maternal-Child Health",
+      "resumen_en": "Multicenter epidemiological analysis comparing maternal and neonatal outcomes, clinical indicators, and healthcare access barriers."
     },
     {
       "id": "gestion-concytec-2023",
@@ -557,15 +640,21 @@
           "titulo": "Implementation and Impact of Coordinación y Articulación Proyecto CONCYTEC in Hospital Networks",
           "anio": 2024,
           "revista": "Health Informatics Journal",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.123"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.123",
+          "mes": "Octubre",
+          "fecha": "2024-10"
         },
         {
           "titulo": "Cost-Effectiveness and Implementation Barriers of Telehealth Networks in Low-Resource Settings: A Multicentric Study",
           "anio": 2024,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.124"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.124",
+          "mes": "Abril",
+          "fecha": "2024-04"
         }
-      ]
+      ],
+      "titulo_en": "CONCYTEC Project Coordination and Articulation",
+      "resumen_en": "Academic governance, technology transfer, and STI capacity building program for the BI4DT Biomedical Informatics Network."
     },
     {
       "id": "interoperabilidad-01-2023",
@@ -594,15 +683,21 @@
           "titulo": "Implementation and Impact of Intercambio Transfronterizo de Datos Clínicos Andinos in Hospital Networks",
           "anio": 2023,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.125"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.125",
+          "mes": "Marzo",
+          "fecha": "2023-03"
         },
         {
           "titulo": "Mapping Laboratory and Pharmacy Catalogs to SNOMED CT and RxNorm for Regional Integration: A Multicentric Study",
           "anio": 2024,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.126"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.126",
+          "mes": "Mayo",
+          "fecha": "2024-05"
         }
-      ]
+      ],
+      "titulo_en": "Cross-Border Andean Clinical Data Exchange",
+      "resumen_en": "Interoperability framework based on HL7 FHIR to enable clinical summary exchange between Peru and neighboring Andean countries."
     },
     {
       "id": "interoperabilidad-02-2022",
@@ -630,9 +725,13 @@
           "titulo": "Implementation and Impact of Marco de Gobernanza de Datos de Salud para Redes Integradas in Hospital Networks",
           "anio": 2023,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.127"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.127",
+          "mes": "Mayo",
+          "fecha": "2023-05"
         }
-      ]
+      ],
+      "titulo_en": "Health Data Governance Framework for Integrated Networks",
+      "resumen_en": "Standardized data governance policies, metadata catalogs, and information quality assurance guidelines for primary care networks."
     },
     {
       "id": "interoperabilidad-03-2024",
@@ -661,15 +760,21 @@
           "titulo": "Implementation and Impact of Implementación de Perfiles FHIR para Oncología de Precisión in Hospital Networks",
           "anio": 2024,
           "revista": "Computer Methods and Programs in Biomedicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.128"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.128",
+          "mes": "Junio",
+          "fecha": "2024-06"
         },
         {
           "titulo": "Federated Governance Model and Privacy-Preserving Health Data Exchange across Metropolitan Hospitals: A Multicentric Study",
           "anio": 2025,
           "revista": "BMC Medical Informatics and Decision Making",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.129"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.129",
+          "mes": "Julio",
+          "fecha": "2025-07"
         }
-      ]
+      ],
+      "titulo_en": "Implementation of FHIR Profiles for Precision Oncology",
+      "resumen_en": "Custom HL7 FHIR genomic profiles for structured reporting of cancer biomarker panels and clinical next-generation sequencing."
     },
     {
       "id": "interoperabilidad-04-2021",
@@ -697,9 +802,13 @@
           "titulo": "Evaluation of Mapeo Semántico de Catálogos Farmacéuticos a RxNorm y SNOMED CT in Hospital Networks",
           "anio": 2022,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.130"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.130",
+          "mes": "Febrero",
+          "fecha": "2022-02"
         }
-      ]
+      ],
+      "titulo_en": "Semantic Mapping of Pharmaceutical Catalogs to RxNorm and SNOMED CT",
+      "resumen_en": "Automated semantic harmonization pipeline to align national pharmaceutical databases with international drug knowledge bases."
     },
     {
       "id": "interoperabilidad-05-2023",
@@ -728,15 +837,21 @@
           "titulo": "Implementation and Impact of Integración de Dispositivos Médicos IoT a Servidores HAPI-FHIR in Hospital Networks",
           "anio": 2024,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.131"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.131",
+          "mes": "Noviembre",
+          "fecha": "2024-11"
         },
         {
           "titulo": "Mapping Laboratory and Pharmacy Catalogs to SNOMED CT and RxNorm for Regional Integration: A Multicentric Study",
           "anio": 2024,
           "revista": "Applied Clinical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.132"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.132",
+          "mes": "Mayo",
+          "fecha": "2024-05"
         }
-      ]
+      ],
+      "titulo_en": "Integration of IoT Medical Devices into HAPI-FHIR Servers",
+      "resumen_en": "Edge computing middleware capturing real-time vital signs from wearable sensors and persisting observations on open FHIR servers."
     },
     {
       "id": "interoperabilidad-06-2024",
@@ -765,15 +880,21 @@
           "titulo": "Design and Clinical Validation of Gobernanza Federada para Repositorios de Imágenes DICOM in Hospital Networks",
           "anio": 2024,
           "revista": "Scientific Reports",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.133"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.133",
+          "mes": "Febrero",
+          "fecha": "2024-02"
         },
         {
           "titulo": "Semantic Interoperability Architecture for Heterogeneous Clinical Information Systems in Andean Regions: A Multicentric Study",
           "anio": 2025,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.134"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.134",
+          "mes": "Octubre",
+          "fecha": "2025-10"
         }
-      ]
+      ],
+      "titulo_en": "Federated Governance for DICOM Image Repositories",
+      "resumen_en": "Distributed PACS federation protocol enabling secure cross-institutional diagnostic imaging retrieval with de-identification."
     },
     {
       "id": "interoperabilidad-07-2022",
@@ -802,15 +923,21 @@
           "titulo": "Framework for Trazabilidad de Consentimiento Informado Dinámico en Redes de Salud in Hospital Networks",
           "anio": 2023,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.135"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.135",
+          "mes": "Octubre",
+          "fecha": "2023-10"
         },
         {
           "titulo": "Semantic Interoperability Architecture for Heterogeneous Clinical Information Systems in Andean Regions: A Multicentric Study",
           "anio": 2023,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.136"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.136",
+          "mes": "Octubre",
+          "fecha": "2023-10"
         }
-      ]
+      ],
+      "titulo_en": "Traceability of Dynamic Informed Consent in Health Networks",
+      "resumen_en": "Cryptographic ledger and smart contract system enabling patients to grant, track, and revoke clinical data sharing permissions."
     },
     {
       "id": "interoperabilidad-08-2021",
@@ -838,9 +965,13 @@
           "titulo": "Evaluation of Estandarización de Registros de Vacunación bajo Guías HL7 in Hospital Networks",
           "anio": 2022,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.137"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.137",
+          "mes": "Junio",
+          "fecha": "2022-06"
         }
-      ]
+      ],
+      "titulo_en": "Standardization of Immunization Records under HL7 Guidelines",
+      "resumen_en": "Electronic immunization registry architecture ensuring interoperability between ministry tracking systems and point-of-care clinics."
     },
     {
       "id": "interoperabilidad-09-2023",
@@ -869,15 +1000,21 @@
           "titulo": "Implementation and Impact of Middleware Seguro para Intercambio de Resultados de Laboratorio in Hospital Networks",
           "anio": 2023,
           "revista": "BMC Medical Informatics and Decision Making",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.138"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.138",
+          "mes": "Abril",
+          "fecha": "2023-04"
         },
         {
           "titulo": "Data Standardization and Quality Metrics in Public Health Interoperability Pipelines: A Multicentric Study",
           "anio": 2024,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.139"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.139",
+          "mes": "Junio",
+          "fecha": "2024-06"
         }
-      ]
+      ],
+      "titulo_en": "Secure Middleware for Laboratory Results Exchange",
+      "resumen_en": "Encrypted communication bridge translating proprietary LIS formats into LOINC-coded HL7 messages for primary healthcare providers."
     },
     {
       "id": "interoperabilidad-10-2024",
@@ -905,9 +1042,13 @@
           "titulo": "Framework for Auditoría Automatizada de Calidad de Datos Clínicos Electrónicos in Hospital Networks",
           "anio": 2024,
           "revista": "Pan American Journal of Public Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.140"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.140",
+          "mes": "Julio",
+          "fecha": "2024-07"
         }
-      ]
+      ],
+      "titulo_en": "Automated Quality Auditing of Electronic Clinical Data",
+      "resumen_en": "Heuristic validation engine benchmarking clinical record completeness, consistency, and terminological adherence across hospitals."
     },
     {
       "id": "ia-salud-11-2022",
@@ -936,15 +1077,21 @@
           "titulo": "Design and Clinical Validation of Detección Temprana de Retinopatía Diabética con Redes Convolucionales in Hospital Networks",
           "anio": 2023,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.141"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.141",
+          "mes": "Marzo",
+          "fecha": "2023-03"
         },
         {
           "titulo": "Validation and Algorithmic Bias Assessment of Predictive Models in Latin American Health Systems: A Multicentric Study",
           "anio": 2023,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.142"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.142",
+          "mes": "Agosto",
+          "fecha": "2023-08"
         }
-      ]
+      ],
+      "titulo_en": "Early Detection of Diabetic Retinopathy with Convolutional Networks",
+      "resumen_en": "Deep learning screening tool trained on fundus photography to grade retinopathy severity and referral urgency in rural clinics."
     },
     {
       "id": "ia-salud-12-2023",
@@ -973,15 +1120,21 @@
           "titulo": "Design and Clinical Validation of Modelo Predictivo de Riesgo Cardiovascular Basado en Grafos de Conocimiento in Hospital Networks",
           "anio": 2024,
           "revista": "IEEE Journal of Biomedical and Health Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.143"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.143",
+          "mes": "Febrero",
+          "fecha": "2024-02"
         },
         {
           "titulo": "Explainable Artificial Intelligence for Cardiovascular Risk Stratification in Primary Care: A Multicentric Study",
           "anio": 2024,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.144"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.144",
+          "mes": "Mayo",
+          "fecha": "2024-05"
         }
-      ]
+      ],
+      "titulo_en": "Cardiovascular Risk Prediction Model Based on Knowledge Graphs",
+      "resumen_en": "Graph neural networks combining electronic health records, lifestyle factors, and clinical guidelines to estimate 10-year cardiac risk."
     },
     {
       "id": "ia-salud-13-2024",
@@ -1010,15 +1163,21 @@
           "titulo": "Framework for Segmentación Automática de Lesiones Pulmonares en Tomografías de Tórax in Hospital Networks",
           "anio": 2024,
           "revista": "Pan American Journal of Public Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.145"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.145",
+          "mes": "Enero",
+          "fecha": "2024-01"
         },
         {
           "titulo": "Validation and Algorithmic Bias Assessment of Predictive Models in Latin American Health Systems: A Multicentric Study",
           "anio": 2025,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.146"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.146",
+          "mes": "Agosto",
+          "fecha": "2025-08"
         }
-      ]
+      ],
+      "titulo_en": "Automated Pulmonary Lesion Segmentation in Chest CT Scans",
+      "resumen_en": "3D U-Net neural network architecture segmenting ground-glass opacities, consolidations, and emphysema for radiologist triage."
     },
     {
       "id": "ia-salud-14-2021",
@@ -1046,9 +1205,13 @@
           "titulo": "Evaluation of Clasificación Asistida por IA de Frotis Sanguíneos para Malaria in Hospital Networks",
           "anio": 2021,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.147"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.147",
+          "mes": "Octubre",
+          "fecha": "2021-10"
         }
-      ]
+      ],
+      "titulo_en": "AI-Assisted Classification of Blood Smears for Malaria",
+      "resumen_en": "Lightweight computer vision model deployed on mobile microscopes to identify and quantify Plasmodium falciparum parasites."
     },
     {
       "id": "ia-salud-15-2024",
@@ -1077,15 +1240,21 @@
           "titulo": "Implementation and Impact of Modelos Generativos para Aumento de Datos en Imágenes Médicas Raras in Hospital Networks",
           "anio": 2024,
           "revista": "Artificial Intelligence in Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.148"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.148",
+          "mes": "Octubre",
+          "fecha": "2024-10"
         },
         {
           "titulo": "Clinical Natural Language Processing for Automated Phenotyping from Spanish Electronic Health Records: A Multicentric Study",
           "anio": 2025,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.149"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.149",
+          "mes": "Noviembre",
+          "fecha": "2025-11"
         }
-      ]
+      ],
+      "titulo_en": "Generative Models for Data Augmentation in Rare Medical Imaging",
+      "resumen_en": "Conditional diffusion models synthesizing realistic, anonymized pathology samples to overcome extreme dataset imbalances in rare diseases."
     },
     {
       "id": "ia-salud-16-2023",
@@ -1113,9 +1282,13 @@
           "titulo": "Design and Clinical Validation of Algoritmo de Triaje Inteligente para Servicios de Emergencia Hospitalaria in Hospital Networks",
           "anio": 2023,
           "revista": "Applied Clinical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.150"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.150",
+          "mes": "Agosto",
+          "fecha": "2023-08"
         }
-      ]
+      ],
+      "titulo_en": "Intelligent Triage Algorithm for Hospital Emergency Services",
+      "resumen_en": "Real-time risk scoring classifier stratifying incoming emergency room patients based on vitals, chief complaints, and history."
     },
     {
       "id": "ia-salud-17-2022",
@@ -1144,15 +1317,21 @@
           "titulo": "Evaluation of Predicción de Reingreso Hospitalario en Pacientes Crónicos Complejos in Hospital Networks",
           "anio": 2022,
           "revista": "Nature Digital Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.151"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.151",
+          "mes": "Marzo",
+          "fecha": "2022-03"
         },
         {
           "titulo": "Explainable Artificial Intelligence for Cardiovascular Risk Stratification in Primary Care: A Multicentric Study",
           "anio": 2023,
           "revista": "Health Informatics Journal",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.152"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.152",
+          "mes": "Mayo",
+          "fecha": "2023-05"
         }
-      ]
+      ],
+      "titulo_en": "Hospital Readmission Prediction in Complex Chronic Patients",
+      "resumen_en": "Ensemble gradient boosting framework identifying high-risk multi-morbid patients likely to experience 30-day unplanned readmissions."
     },
     {
       "id": "ia-salud-18-2023",
@@ -1181,15 +1360,21 @@
           "titulo": "Implementation and Impact of Procesamiento de Lenguaje Natural para Detección de Reacciones Adversas in Hospital Networks",
           "anio": 2023,
           "revista": "PLOS Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.153"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.153",
+          "mes": "Septiembre",
+          "fecha": "2023-09"
         },
         {
           "titulo": "Deep Learning Framework for Early Detection of Diabetic Retinopathy in Resource-Constrained Clinics: A Multicentric Study",
           "anio": 2024,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.154"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.154",
+          "mes": "Agosto",
+          "fecha": "2024-08"
         }
-      ]
+      ],
+      "titulo_en": "Natural Language Processing for Adverse Drug Event Detection",
+      "resumen_en": "Clinical transformer model scanning unstructured physician notes to flag suspected pharmacovigilance adverse reactions in hospital wards."
     },
     {
       "id": "ia-salud-19-2021",
@@ -1218,15 +1403,21 @@
           "titulo": "Implementation and Impact of Detección de Arritmias en Señales ECG con Redes Recurrentes Bidireccionales in Hospital Networks",
           "anio": 2021,
           "revista": "Nature Digital Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.155"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.155",
+          "mes": "Junio",
+          "fecha": "2021-06"
         },
         {
           "titulo": "Validation and Algorithmic Bias Assessment of Predictive Models in Latin American Health Systems: A Multicentric Study",
           "anio": 2022,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.156"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.156",
+          "mes": "Agosto",
+          "fecha": "2022-08"
         }
-      ]
+      ],
+      "titulo_en": "Arrhythmia Detection in ECG Signals using Bidirectional Recurrent Networks",
+      "resumen_en": "Bi-LSTM sequence model analyzing continuous 12-lead electrocardiograms to classify paroxysmal atrial fibrillation and venticular events."
     },
     {
       "id": "ia-salud-20-2024",
@@ -1254,9 +1445,13 @@
           "titulo": "Design and Clinical Validation of Evaluación de Sesgos Algorítmicos en Modelos Diagnósticos Clínicos in Hospital Networks",
           "anio": 2024,
           "revista": "Nature Digital Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.157"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.157",
+          "mes": "Julio",
+          "fecha": "2024-07"
         }
-      ]
+      ],
+      "titulo_en": "Evaluation of Algorithmic Bias in Clinical Diagnostic Models",
+      "resumen_en": "Fairness auditing framework quantifying algorithmic disparities across demographic, geographic, and socioeconomic subgroups."
     },
     {
       "id": "informatica-biomedica-21-2022",
@@ -1285,15 +1480,21 @@
           "titulo": "Implementation and Impact of Ontología Biomédica para Fenotipos de Enfermedades Raras in Hospital Networks",
           "anio": 2023,
           "revista": "Applied Clinical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.158"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.158",
+          "mes": "Marzo",
+          "fecha": "2023-03"
         },
         {
           "titulo": "Digital Health Maturity Assessment and Technology Adoption in Secondary Care Facilities: A Multicentric Study",
           "anio": 2023,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.159"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.159",
+          "mes": "Mayo",
+          "fecha": "2023-05"
         }
-      ]
+      ],
+      "titulo_en": "Biomedical Ontology for Rare Disease Phenotypes",
+      "resumen_en": "Formal knowledge representation aligned with Human Phenotype Ontology (HPO) for Spanish clinical descriptions of rare disorders."
     },
     {
       "id": "informatica-biomedica-22-2023",
@@ -1321,9 +1522,13 @@
           "titulo": "Design and Clinical Validation of Plataforma de Prescripción Electrónica con Soporte de Decisiones Clínicas in Hospital Networks",
           "anio": 2024,
           "revista": "Artificial Intelligence in Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.160"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.160",
+          "mes": "Abril",
+          "fecha": "2024-04"
         }
-      ]
+      ],
+      "titulo_en": "Electronic Prescribing Platform with Clinical Decision Support",
+      "resumen_en": "Prescription interface incorporating automated drug-drug interaction warnings, dosage checking, and allergy alerts."
     },
     {
       "id": "informatica-biomedica-23-2021",
@@ -1352,15 +1557,21 @@
           "titulo": "Evaluation of Sistema de Registro Clínico Especializado en Salud Materno-Perinatal in Hospital Networks",
           "anio": 2022,
           "revista": "Scientific Reports",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.161"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.161",
+          "mes": "Diciembre",
+          "fecha": "2022-12"
         },
         {
           "titulo": "Development of a Controlled Clinical Terminology and Formal Ontology for Diagnostic Coding: A Multicentric Study",
           "anio": 2022,
           "revista": "PLOS Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.162"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.162",
+          "mes": "Enero",
+          "fecha": "2022-01"
         }
-      ]
+      ],
+      "titulo_en": "Specialized Clinical Registry System in Maternal-Perinatal Health",
+      "resumen_en": "Longitudinal registry capturing obstetric care indicators, labor progression, and postpartum checkups across district hospitals."
     },
     {
       "id": "informatica-biomedica-24-2023",
@@ -1389,15 +1600,21 @@
           "titulo": "Evaluation of Armonización Terminológica de Conceptos Clínicos Locales a LOINC in Hospital Networks",
           "anio": 2024,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.163"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.163",
+          "mes": "Mayo",
+          "fecha": "2024-05"
         },
         {
           "titulo": "Open-Source Biomedical Software Implementation in University Hospitals: Challenges and Lessons: A Multicentric Study",
           "anio": 2024,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.164"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.164",
+          "mes": "Agosto",
+          "fecha": "2024-08"
         }
-      ]
+      ],
+      "titulo_en": "Terminological Harmonization of Local Clinical Concepts to LOINC",
+      "resumen_en": "Machine-assisted mapping engine aligning regional laboratory test catalogs with standard international LOINC observation codes."
     },
     {
       "id": "informatica-biomedica-25-2024",
@@ -1426,15 +1643,21 @@
           "titulo": "Evaluation of Diseño de Interfaz Centrada en el Usuario para Sistemas de Gestión Clínica in Hospital Networks",
           "anio": 2024,
           "revista": "PLOS Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.165"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.165",
+          "mes": "Noviembre",
+          "fecha": "2024-11"
         },
         {
           "titulo": "Development of a Controlled Clinical Terminology and Formal Ontology for Diagnostic Coding: A Multicentric Study",
           "anio": 2025,
           "revista": "BMC Medical Informatics and Decision Making",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.166"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.166",
+          "mes": "Enero",
+          "fecha": "2025-01"
         }
-      ]
+      ],
+      "titulo_en": "User-Centered Interface Design for Clinical Management Systems",
+      "resumen_en": "Usability engineering study optimizing cognitive ergonomics, documentation speed, and alert fatigue among hospital clinicians."
     },
     {
       "id": "informatica-biomedica-26-2022",
@@ -1462,9 +1685,13 @@
           "titulo": "Design and Clinical Validation of Infraestructura de Datos para Ensayos Clínicos Descentralizados in Hospital Networks",
           "anio": 2022,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.167"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.167",
+          "mes": "Noviembre",
+          "fecha": "2022-11"
         }
-      ]
+      ],
+      "titulo_en": "Data Infrastructure for Decentralized Clinical Trials",
+      "resumen_en": "Secure web platform supporting electronic consent, remote patient reported outcomes (ePRO), and decentralized trial oversight."
     },
     {
       "id": "informatica-biomedica-27-2023",
@@ -1493,15 +1720,21 @@
           "titulo": "Design and Clinical Validation of Portal del Paciente Interoperable para Autogestión de Enfermedades Crónicas in Hospital Networks",
           "anio": 2023,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.168"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.168",
+          "mes": "Mayo",
+          "fecha": "2023-05"
         },
         {
           "titulo": "Development of a Controlled Clinical Terminology and Formal Ontology for Diagnostic Coding: A Multicentric Study",
           "anio": 2024,
           "revista": "Applied Clinical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.169"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.169",
+          "mes": "Enero",
+          "fecha": "2024-01"
         }
-      ]
+      ],
+      "titulo_en": "Interoperable Patient Portal for Chronic Disease Self-Management",
+      "resumen_en": "SMART-on-FHIR web application empowering chronic patients to view lab history, medication schedules, and log home vital signs."
     },
     {
       "id": "informatica-biomedica-28-2024",
@@ -1529,9 +1762,13 @@
           "titulo": "Implementation and Impact of Sistema Móvil para Monitoreo de Parámetros Fisiológicos en Altura in Hospital Networks",
           "anio": 2025,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.170"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.170",
+          "mes": "Febrero",
+          "fecha": "2025-02"
         }
-      ]
+      ],
+      "titulo_en": "Mobile System for Monitoring High-Altitude Physiological Parameters",
+      "resumen_en": "Wearable sensor kit and telemetry software tracking arterial oxygenation, heart rate variability, and acute mountain sickness signs."
     },
     {
       "id": "informatica-biomedica-29-2021",
@@ -1560,15 +1797,21 @@
           "titulo": "Implementation and Impact of Integración de Fichas Familiares Comunitarias al Sistema Hospitalario in Hospital Networks",
           "anio": 2022,
           "revista": "Nature Digital Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.171"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.171",
+          "mes": "Noviembre",
+          "fecha": "2022-11"
         },
         {
           "titulo": "Architectural Requirements and Usability Evaluation of Service-Oriented EHR Systems: A Multicentric Study",
           "anio": 2022,
           "revista": "IEEE Journal of Biomedical and Health Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.172"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.172",
+          "mes": "Enero",
+          "fecha": "2022-01"
         }
-      ]
+      ],
+      "titulo_en": "Integration of Community Family Cards into Hospital Information Systems",
+      "resumen_en": "Digitalization of community health worker family surveillance forms, integrating household risk factors into central hospital EHRs."
     },
     {
       "id": "informatica-biomedica-30-2022",
@@ -1597,15 +1840,21 @@
           "titulo": "Framework for Bancos de Datos Moleculares Integrados a la Historia Clínica Digital in Hospital Networks",
           "anio": 2023,
           "revista": "Pan American Journal of Public Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.173"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.173",
+          "mes": "Junio",
+          "fecha": "2023-06"
         },
         {
           "titulo": "Data Quality Auditing and Completeness Framework for Hospital Clinical Repositories: A Multicentric Study",
           "anio": 2023,
           "revista": "Scientific Reports",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.174"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.174",
+          "mes": "Octubre",
+          "fecha": "2023-10"
         }
-      ]
+      ],
+      "titulo_en": "Molecular Data Banks Integrated with Digital Health Records",
+      "resumen_en": "Standardized data warehouse linking biobank specimen catalogs with longitudinal patient trajectories for translational research."
     },
     {
       "id": "analitica-datos-31-2023",
@@ -1634,15 +1883,21 @@
           "titulo": "Evaluation of Pipeline Bioinformático para Análisis de Variantes Genómicas en Tuberculosis in Hospital Networks",
           "anio": 2023,
           "revista": "BMC Medical Informatics and Decision Making",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.175"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.175",
+          "mes": "Enero",
+          "fecha": "2023-01"
         },
         {
           "titulo": "Data Governance and Federation Strategies for Clinical Data Warehouses in Academic Hospitals: A Multicentric Study",
           "anio": 2024,
           "revista": "Pan American Journal of Public Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.176"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.176",
+          "mes": "Septiembre",
+          "fecha": "2024-09"
         }
-      ]
+      ],
+      "titulo_en": "Bioinformatics Pipeline for Genomic Variant Analysis in Tuberculosis",
+      "resumen_en": "Automated next-generation sequencing analysis identifying multi-drug resistance mutations in Mycobacterium tuberculosis isolates."
     },
     {
       "id": "analitica-datos-32-2021",
@@ -1670,9 +1925,13 @@
           "titulo": "Implementation and Impact of Dashboard de Inteligencia Sanitaria para Camas UCI y Recursos Críticos in Hospital Networks",
           "anio": 2021,
           "revista": "Computer Methods and Programs in Biomedicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.177"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.177",
+          "mes": "Enero",
+          "fecha": "2021-01"
         }
-      ]
+      ],
+      "titulo_en": "Health Intelligence Dashboard for ICU Beds and Critical Resources",
+      "resumen_en": "Real-time command center tracking intensive care bed availability, mechanical ventilators, and oxygen consumption across health networks."
     },
     {
       "id": "analitica-datos-33-2024",
@@ -1701,15 +1960,21 @@
           "titulo": "Framework for Modelamiento Espacio-Temporal de Brotes de Arbovirus en la Amazonía in Hospital Networks",
           "anio": 2024,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.178"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.178",
+          "mes": "Abril",
+          "fecha": "2024-04"
         },
         {
           "titulo": "Survival Analysis and Predictive Modeling of Multi-Drug Resistant Tuberculosis in Peru: A Multicentric Study",
           "anio": 2025,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.179"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.179",
+          "mes": "Marzo",
+          "fecha": "2025-03"
         }
-      ]
+      ],
+      "titulo_en": "Spatio-Temporal Modeling of Arbovirus Outbreaks in the Amazon",
+      "resumen_en": "Bayesian hierarchical models estimating dengue and zika transmission rates based on river levels, precipitation, and vector densities."
     },
     {
       "id": "analitica-datos-34-2022",
@@ -1737,9 +2002,13 @@
           "titulo": "Framework for Análisis Metagenómico de Patógenos Intrahospitalarios Resistentes in Hospital Networks",
           "anio": 2023,
           "revista": "Revista Peruana de Medicina Experimental y Salud Pública",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.180"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.180",
+          "mes": "Junio",
+          "fecha": "2023-06"
         }
-      ]
+      ],
+      "titulo_en": "Metagenomic Analysis of Resistant Hospital Pathogens",
+      "resumen_en": "Shotgun metagenomics pipeline tracking antimicrobial resistance gene reservoirs in hospital intensive care wastewater and surfaces."
     },
     {
       "id": "analitica-datos-35-2023",
@@ -1768,15 +2037,21 @@
           "titulo": "Framework for Plataforma de Vigilancia Genómica en Tiempo Real para Virus Respiratorios in Hospital Networks",
           "anio": 2023,
           "revista": "PLOS Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.181"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.181",
+          "mes": "Noviembre",
+          "fecha": "2023-11"
         },
         {
           "titulo": "Visual Analytics and Predictive Modeling for Hospital Bed Capacity and Resource Allocation: A Multicentric Study",
           "anio": 2024,
           "revista": "IEEE Journal of Biomedical and Health Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.182"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.182",
+          "mes": "Noviembre",
+          "fecha": "2024-11"
         }
-      ]
+      ],
+      "titulo_en": "Real-Time Genomic Surveillance Platform for Respiratory Viruses",
+      "resumen_en": "Phylodynamic tracking system monitoring variant emergence and transmission clusters of influenza and SARS-CoV-2 in Latin America."
     },
     {
       "id": "analitica-datos-36-2024",
@@ -1805,15 +2080,21 @@
           "titulo": "Implementation and Impact of Minería de Procesos Clínicos para Optimización de Tiempos Quirúrgicos in Hospital Networks",
           "anio": 2024,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.183"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.183",
+          "mes": "Diciembre",
+          "fecha": "2024-12"
         },
         {
           "titulo": "Survival Analysis and Predictive Modeling of Multi-Drug Resistant Tuberculosis in Peru: A Multicentric Study",
           "anio": 2025,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.184"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.184",
+          "mes": "Marzo",
+          "fecha": "2025-03"
         }
-      ]
+      ],
+      "titulo_en": "Clinical Process Mining for Operating Room Time Optimization",
+      "resumen_en": "Process analytics engine discovering workflow bottlenecks and turnover delays to improve surgical suite scheduling efficiency."
     },
     {
       "id": "analitica-datos-37-2022",
@@ -1842,15 +2123,21 @@
           "titulo": "Implementation and Impact of Bioestadística Bayesiana Aplicada a Ensayos Clínicos Multicéntricos in Hospital Networks",
           "anio": 2023,
           "revista": "Nature Digital Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.185"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.185",
+          "mes": "Mayo",
+          "fecha": "2023-05"
         },
         {
           "titulo": "Visual Analytics and Predictive Modeling for Hospital Bed Capacity and Resource Allocation: A Multicentric Study",
           "anio": 2023,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.186"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.186",
+          "mes": "Noviembre",
+          "fecha": "2023-11"
         }
-      ]
+      ],
+      "titulo_en": "Bayesian Biostatistics Applied to Multicenter Clinical Trials",
+      "resumen_en": "Adaptive trial design platform enabling Bayesian sequential monitoring and sample size re-estimation in clinical research."
     },
     {
       "id": "analitica-datos-38-2023",
@@ -1878,9 +2165,13 @@
           "titulo": "Evaluation of Visualización Interactiva de Indicadores de Salud Materna a Nivel Distrital in Hospital Networks",
           "anio": 2024,
           "revista": "Revista Peruana de Medicina Experimental y Salud Pública",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.187"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.187",
+          "mes": "Noviembre",
+          "fecha": "2024-11"
         }
-      ]
+      ],
+      "titulo_en": "Interactive Visualization of District-Level Maternal Health Indicators",
+      "resumen_en": "Choropleth mapping tool displaying prenatal care coverage, institutional delivery rates, and maternal mortality risks by municipality."
     },
     {
       "id": "analitica-datos-39-2021",
@@ -1909,15 +2200,21 @@
           "titulo": "Framework for Predicción de Demanda Farmacológica Hospitalaria mediante Series de Tiempo in Hospital Networks",
           "anio": 2022,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.188"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.188",
+          "mes": "Noviembre",
+          "fecha": "2022-11"
         },
         {
           "titulo": "Survival Analysis and Predictive Modeling of Multi-Drug Resistant Tuberculosis in Peru: A Multicentric Study",
           "anio": 2022,
           "revista": "Artificial Intelligence in Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.189"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.189",
+          "mes": "Marzo",
+          "fecha": "2022-03"
         }
-      ]
+      ],
+      "titulo_en": "Hospital Pharmacological Demand Forecasting using Time Series",
+      "resumen_en": "ARIMA and LSTM forecasting models predicting monthly prescription drug consumption to prevent hospital stockouts."
     },
     {
       "id": "analitica-datos-40-2024",
@@ -1945,9 +2242,13 @@
           "titulo": "Implementation and Impact of Análisis de Supervivencia en Cohortes Oncológicas mediante Machine Learning in Hospital Networks",
           "anio": 2024,
           "revista": "Nature Digital Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.190"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.190",
+          "mes": "Agosto",
+          "fecha": "2024-08"
         }
-      ]
+      ],
+      "titulo_en": "Survival Analysis in Oncology Cohorts using Machine Learning",
+      "resumen_en": "Random survival forests and Cox deep learning models estimating disease-free survival curves in breast and gastric cancer patients."
     },
     {
       "id": "sociotecnica-adopcion-41-2022",
@@ -1976,15 +2277,21 @@
           "titulo": "Evaluation of Evaluación de la Usabilidad de Sistemas HCE en Centros de Salud Rurales in Hospital Networks",
           "anio": 2022,
           "revista": "Artificial Intelligence in Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.191"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.191",
+          "mes": "Noviembre",
+          "fecha": "2022-11"
         },
         {
           "titulo": "Cost-Effectiveness and Implementation Barriers of Telehealth Networks in Low-Resource Settings: A Multicentric Study",
           "anio": 2023,
           "revista": "BMC Medical Informatics and Decision Making",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.192"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.192",
+          "mes": "Abril",
+          "fecha": "2023-04"
         }
-      ]
+      ],
+      "titulo_en": "EHR Usability Evaluation in Rural Health Centers",
+      "resumen_en": "Ethnographic study evaluating software usability barriers, power interruptions, and clinician adoption challenges in remote primary care."
     },
     {
       "id": "sociotecnica-adopcion-42-2023",
@@ -2013,15 +2320,21 @@
           "titulo": "Evaluation of Medición de Madurez Digital Hospitalaria en Establecimientos de Nivel III in Hospital Networks",
           "anio": 2023,
           "revista": "Computer Methods and Programs in Biomedicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.193"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.193",
+          "mes": "Febrero",
+          "fecha": "2023-02"
         },
         {
           "titulo": "Patient Trust and Data Privacy Attitudes Regarding Electronic Health Records in Latin America: A Multicentric Study",
           "anio": 2024,
           "revista": "Applied Clinical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.194"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.194",
+          "mes": "Octubre",
+          "fecha": "2024-10"
         }
-      ]
+      ],
+      "titulo_en": "Hospital Digital Maturity Assessment in Level III Facilities",
+      "resumen_en": "Standardized assessment framework evaluating infrastructure, cybersecurity, EHR adoption, and analytics readiness in tertiary hospitals."
     },
     {
       "id": "sociotecnica-adopcion-43-2021",
@@ -2050,15 +2363,21 @@
           "titulo": "Evaluation of Factores Sociotécnicos en la Resistencia al Cambio de Profesionales Médicos in Hospital Networks",
           "anio": 2021,
           "revista": "Applied Clinical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.195"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.195",
+          "mes": "Mayo",
+          "fecha": "2021-05"
         },
         {
           "titulo": "User Experience (UX) and Cognitive Workload Evaluation of Digital Clinical Decision Systems: A Multicentric Study",
           "anio": 2022,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.196"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.196",
+          "mes": "Noviembre",
+          "fecha": "2022-11"
         }
-      ]
+      ],
+      "titulo_en": "Sociotechnical Factors in Medical Professionals' Resistance to Change",
+      "resumen_en": "Organizational psychology study analyzing perceptions of autonomy, administrative burden, and change readiness when adopting digital records."
     },
     {
       "id": "sociotecnica-adopcion-44-2024",
@@ -2086,9 +2405,13 @@
           "titulo": "Implementation and Impact of Análisis Costo-Efectividad de la Implementación de Telemedicina Sincrónica in Hospital Networks",
           "anio": 2024,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.197"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.197",
+          "mes": "Marzo",
+          "fecha": "2024-03"
         }
-      ]
+      ],
+      "titulo_en": "Cost-Effectiveness Analysis of Synchronous Telemedicine Implementation",
+      "resumen_en": "Health economics study comparing travel cost savings, diagnostic timing, and cost-per-QALY gained through teleconsultation networks."
     },
     {
       "id": "sociotecnica-adopcion-45-2023",
@@ -2117,15 +2440,21 @@
           "titulo": "Implementation and Impact of Guía de Buenas Prácticas para Adopción Segura de IA en Unidades de Cuidados in Hospital Networks",
           "anio": 2023,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.198"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.198",
+          "mes": "Febrero",
+          "fecha": "2023-02"
         },
         {
           "titulo": "Patient Trust and Data Privacy Attitudes Regarding Electronic Health Records in Latin America: A Multicentric Study",
           "anio": 2024,
           "revista": "BMC Medical Informatics and Decision Making",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.199"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.199",
+          "mes": "Octubre",
+          "fecha": "2024-10"
         }
-      ]
+      ],
+      "titulo_en": "Best Practices Guide for Safe AI Adoption in Critical Care Units",
+      "resumen_en": "Clinical governance recommendations for continuous model monitoring, human-in-the-loop oversight, and clinician training in ICU AI."
     },
     {
       "id": "sociotecnica-adopcion-46-2022",
@@ -2153,9 +2482,13 @@
           "titulo": "Design and Clinical Validation of Evaluación del Impacto de la Receta Médica Digital en Farmacias Comunitarias in Hospital Networks",
           "anio": 2023,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.200"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.200",
+          "mes": "Noviembre",
+          "fecha": "2023-11"
         }
-      ]
+      ],
+      "titulo_en": "Impact Assessment of Digital Medical Prescriptions in Community Pharmacies",
+      "resumen_en": "Field survey evaluating pharmacy dispensing accuracy, counterfeit prevention, and prescription clarity following e-prescription rollout."
     },
     {
       "id": "sociotecnica-adopcion-47-2024",
@@ -2184,15 +2517,21 @@
           "titulo": "Design and Clinical Validation of Competencias Digitales del Personal de Enfermería en la Era de la Salud 4.0 in Hospital Networks",
           "anio": 2024,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.201"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.201",
+          "mes": "Octubre",
+          "fecha": "2024-10"
         },
         {
           "titulo": "Regulatory Analysis and Policy Recommendations for National Health Data Governance: A Multicentric Study",
           "anio": 2025,
           "revista": "PLOS Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.202"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.202",
+          "mes": "Junio",
+          "fecha": "2025-06"
         }
-      ]
+      ],
+      "titulo_en": "Nursing Staff Digital Competencies in the Healthcare 4.0 Era",
+      "resumen_en": "Skill gap assessment measuring informatics literacy, device telemetry handling, and clinical documentation efficiency among nurses."
     },
     {
       "id": "sociotecnica-adopcion-48-2023",
@@ -2221,15 +2560,21 @@
           "titulo": "Design and Clinical Validation of Percepción del Paciente sobre Privacidad y Teleconsultas Clínicas in Hospital Networks",
           "anio": 2023,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.203"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.203",
+          "mes": "Mayo",
+          "fecha": "2023-05"
         },
         {
           "titulo": "Regulatory Analysis and Policy Recommendations for National Health Data Governance: A Multicentric Study",
           "anio": 2024,
           "revista": "Nature Digital Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.204"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.204",
+          "mes": "Junio",
+          "fecha": "2024-06"
         }
-      ]
+      ],
+      "titulo_en": "Patient Perception of Privacy and Clinical Teleconsultations",
+      "resumen_en": "Cross-sectional survey examining patient trust, video consultation privacy concerns, and therapeutic rapport in remote care."
     },
     {
       "id": "sociotecnica-adopcion-49-2021",
@@ -2258,15 +2603,21 @@
           "titulo": "Framework for Auditoría de Experiencia de Usuario (UX) en Plataformas de Salud Móvil in Hospital Networks",
           "anio": 2021,
           "revista": "The Lancet Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.205"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.205",
+          "mes": "Septiembre",
+          "fecha": "2021-09"
         },
         {
           "titulo": "Sociotechnical Factors Influencing Physician Adoption of Electronic Health Records in Public Networks: A Multicentric Study",
           "anio": 2022,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.206"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.206",
+          "mes": "Mayo",
+          "fecha": "2022-05"
         }
-      ]
+      ],
+      "titulo_en": "User Experience (UX) Audit in Mobile Health Platforms",
+      "resumen_en": "Heuristic evaluation and user testing of patient-facing mobile apps for diabetes self-monitoring and appointment scheduling."
     },
     {
       "id": "sociotecnica-adopcion-50-2024",
@@ -2294,9 +2645,13 @@
           "titulo": "Implementation and Impact of Estrategias de Capacitación Continua en Informática Clínica para Médicos in Hospital Networks",
           "anio": 2025,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.207"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.207",
+          "mes": "Enero",
+          "fecha": "2025-01"
         }
-      ]
+      ],
+      "titulo_en": "Continuous Training Strategies in Clinical Informatics for Physicians",
+      "resumen_en": "Microlearning curriculum and clinical case simulations designed to build digital competencies and EHR efficiency among doctors."
     },
     {
       "id": "salud-digital-51-2023",
@@ -2325,15 +2680,21 @@
           "titulo": "Implementation and Impact of Plataforma Digital de Vigilancia Sindrómica Basada en Redes Comunitarias in Hospital Networks",
           "anio": 2023,
           "revista": "Health Informatics Journal",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.208"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.208",
+          "mes": "Julio",
+          "fecha": "2023-07"
         },
         {
           "titulo": "Synchronous Telemedicine for Chronic Disease Management: A Cluster-Randomized Feasibility Trial: A Multicentric Study",
           "anio": 2024,
           "revista": "Telemedicine and e-Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.209"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.209",
+          "mes": "Abril",
+          "fecha": "2024-04"
         }
-      ]
+      ],
+      "titulo_en": "Digital Syndromic Surveillance Platform Based on Community Networks",
+      "resumen_en": "Participatory mobile surveillance tool enabling community leaders to report early clusters of febrile, respiratory, and diarrheal illnesses."
     },
     {
       "id": "salud-digital-52-2022",
@@ -2361,9 +2722,13 @@
           "titulo": "Design and Clinical Validation of Georreferenciación de Vulnerabilidad Sanitaria en Asentamientos Urbanos in Hospital Networks",
           "anio": 2023,
           "revista": "Revista Peruana de Medicina Experimental y Salud Pública",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.210"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.210",
+          "mes": "Octubre",
+          "fecha": "2023-10"
         }
-      ]
+      ],
+      "titulo_en": "Georeferencing Health Vulnerability in Urban Informal Settlements",
+      "resumen_en": "GIS spatial analysis identifying peri-urban neighborhoods with limited potable water, overcrowding, and poor health post access."
     },
     {
       "id": "salud-digital-53-2024",
@@ -2392,15 +2757,21 @@
           "titulo": "Design and Clinical Validation of Sistema de Alerta Temprana de Olas de Calor y Mortalidad Cardiovascular in Hospital Networks",
           "anio": 2024,
           "revista": "Applied Clinical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.211"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.211",
+          "mes": "Enero",
+          "fecha": "2024-01"
         },
         {
           "titulo": "Mobile Health Applications for Maternal and Child Nutritional Monitoring in Rural Settings: A Multicentric Study",
           "anio": 2025,
           "revista": "IEEE Journal of Biomedical and Health Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.212"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.212",
+          "mes": "Enero",
+          "fecha": "2025-01"
         }
-      ]
+      ],
+      "titulo_en": "Early Warning System for Heat Waves and Cardiovascular Mortality",
+      "resumen_en": "Biometeorological alert engine forecasting extreme temperature events to trigger preventive clinical outreach for vulnerable elderly citizens."
     },
     {
       "id": "salud-digital-54-2023",
@@ -2429,15 +2800,21 @@
           "titulo": "Evaluation of Monitoreo Epidemiológico de Enfermedades Zoonóticas en Fronteras in Hospital Networks",
           "anio": 2023,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.213"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.213",
+          "mes": "Noviembre",
+          "fecha": "2023-11"
         },
         {
           "titulo": "Synchronous Telemedicine for Chronic Disease Management: A Cluster-Randomized Feasibility Trial: A Multicentric Study",
           "anio": 2024,
           "revista": "International Journal of Medical Informatics",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.214"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.214",
+          "mes": "Abril",
+          "fecha": "2024-04"
         }
-      ]
+      ],
+      "titulo_en": "Epidemiological Monitoring of Zoonotic Diseases in Border Areas",
+      "resumen_en": "One Health digital surveillance portal consolidating animal health reports, wildlife movements, and human rabies/leptospirosis cases."
     },
     {
       "id": "salud-digital-55-2021",
@@ -2466,15 +2843,21 @@
           "titulo": "Design and Clinical Validation of Aplicación Móvil para Triaje de Desnutrición Infantil en Áreas Remotas in Hospital Networks",
           "anio": 2021,
           "revista": "Artificial Intelligence in Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.215"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.215",
+          "mes": "Octubre",
+          "fecha": "2021-10"
         },
         {
           "titulo": "Community-Based IoT Monitoring for Environmental Health and Respiratory Disease Tracing: A Multicentric Study",
           "anio": 2022,
           "revista": "Frontiers in Digital Health",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.216"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.216",
+          "mes": "Octubre",
+          "fecha": "2022-10"
         }
-      ]
+      ],
+      "titulo_en": "Mobile App for Child Malnutrition Screening in Remote Areas",
+      "resumen_en": "Offline mobile application computing WHO growth percentiles and mid-upper arm circumference indices for community nutrition triaging."
     },
     {
       "id": "salud-digital-56-2024",
@@ -2502,9 +2885,13 @@
           "titulo": "Design and Clinical Validation of Ecosistema Digital de Salud Pública para el Control de Tuberculosis in Hospital Networks",
           "anio": 2025,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.217"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.217",
+          "mes": "Agosto",
+          "fecha": "2025-08"
         }
-      ]
+      ],
+      "titulo_en": "Public Health Digital Ecosystem for Tuberculosis Control",
+      "resumen_en": "End-to-end digital tracking system monitoring directly observed therapy (DOT), medication adherence, and contact tracing for TB patients."
     },
     {
       "id": "salud-digital-57-2022",
@@ -2533,15 +2920,21 @@
           "titulo": "Framework for Integración de Datos Climáticos a Modelos de Transmisión de Leishmaniasis in Hospital Networks",
           "anio": 2022,
           "revista": "BMC Medical Informatics and Decision Making",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.218"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.218",
+          "mes": "Septiembre",
+          "fecha": "2022-09"
         },
         {
           "titulo": "Teleconsultation and Asynchronous Triage in Remote Andean Communities: Impact on Referral Times: A Multicentric Study",
           "anio": 2023,
           "revista": "Artificial Intelligence in Medicine",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.219"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.219",
+          "mes": "Agosto",
+          "fecha": "2023-08"
         }
-      ]
+      ],
+      "titulo_en": "Integration of Climatic Data into Leishmaniasis Transmission Models",
+      "resumen_en": "Ecological niche modeling combining satellite vegetation indices, humidity, and sandfly habitats to predict cutaneous leishmaniasis risk."
     },
     {
       "id": "salud-digital-58-2023",
@@ -2569,9 +2962,13 @@
           "titulo": "Implementation and Impact of Tablero de Comando para Monitoreo de Cobertura de Vacunación Infantil in Hospital Networks",
           "anio": 2024,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.220"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.220",
+          "mes": "Marzo",
+          "fecha": "2024-03"
         }
-      ]
+      ],
+      "titulo_en": "Command Dashboard for Child Vaccination Coverage Monitoring",
+      "resumen_en": "Real-time geographical dashboard alerting primary health teams about delayed booster doses and low-coverage urban sectors."
     },
     {
       "id": "salud-digital-59-2024",
@@ -2600,15 +2997,21 @@
           "titulo": "Framework for Red de Sensores Comunitarios para Detección de Calidad de Aire y Asma in Hospital Networks",
           "anio": 2024,
           "revista": "Journal of the American Medical Informatics Association",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.221"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.221",
+          "mes": "Octubre",
+          "fecha": "2024-10"
         },
         {
           "titulo": "Patient Perceptions and Usability of Smartphone-Based Health Interventions in Vulnerable Populations: A Multicentric Study",
           "anio": 2025,
           "revista": "Scientific Reports",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.222"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.222",
+          "mes": "Agosto",
+          "fecha": "2025-08"
         }
-      ]
+      ],
+      "titulo_en": "Community Sensor Network for Air Quality and Asthma Exacerbation Detection",
+      "resumen_en": "IoT environmental monitoring mesh measuring particulate matter (PM2.5) correlated with pediatric emergency room asthma visits."
     },
     {
       "id": "salud-digital-60-2021",
@@ -2637,15 +3040,21 @@
           "titulo": "Evaluation of Mapeo Participativo de Barreras de Acceso a Servicios de Salud Materna in Hospital Networks",
           "anio": 2021,
           "revista": "Journal of Medical Internet Research",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.223"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.223",
+          "mes": "Febrero",
+          "fecha": "2021-02"
         },
         {
           "titulo": "Patient Perceptions and Usability of Smartphone-Based Health Interventions in Vulnerable Populations: A Multicentric Study",
           "anio": 2022,
           "revista": "Revista Peruana de Medicina Experimental y Salud Pública",
-          "url": "https://doi.org/10.1016/j.bi4dt.2024.224"
+          "url": "https://doi.org/10.1016/j.bi4dt.2024.224",
+          "mes": "Agosto",
+          "fecha": "2022-08"
         }
-      ]
+      ],
+      "titulo_en": "Participatory Mapping of Access Barriers to Maternal Health Services",
+      "resumen_en": "Crowdsourced geographic tool identifying geographical, cultural, and transportation barriers faced by pregnant indigenous women."
     }
   ]
 }

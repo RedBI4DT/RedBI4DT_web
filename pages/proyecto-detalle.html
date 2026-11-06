@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle del Proyecto - BI4DT Network</title>
+  <title>BI4DT Network</title>
   <meta name="description" content="Información detallada del proyecto de investigación de la Red BI4DT: objetivos, equipo científico, instituciones asociadas y avances.">
   <link rel="icon" type="image/png" href="../assets/images/logo_red/logo_icon.png">
   <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/quienes.css">
   <link rel="stylesheet" href="../styles/proyecto-detalle.css?v=2.4">
 </head>
 <body>
@@ -24,7 +23,7 @@
         
         <div class="proyecto-hero-nav">
           <a href="proyectos.html" class="proyecto-back-link">
-            <i class="fa-solid fa-arrow-left"></i> Volver a proyectos
+            <i class="fa-solid fa-arrow-left"></i> <span data-i18n="proyecto_detalle.volver">Volver a proyectos</span>
           </a>
         </div>
 
@@ -32,7 +31,7 @@
 
         <div class="proyecto-hero-periodo">
           <i class="fa-regular fa-calendar"></i>
-          <span>Período: <strong id="proy-periodo">2023–2025</strong></span>
+          <span><span data-i18n="proyecto_detalle.periodo">Período</span>: <strong id="proy-periodo">2023–2025</strong></span>
         </div>
 
       </div>
@@ -47,7 +46,7 @@
           
           <!-- Descripción del Proyecto -->
           <div class="proyecto-info-block">
-            <h2 class="proyecto-block-title">Descripción del Proyecto</h2>
+            <h2 class="section-title-navy proyecto-block-title" data-i18n="proyecto_detalle.descripcion_title">Descripción del Proyecto</h2>
             <div class="proyecto-descripcion-completa" id="proy-descripcion-larga">
               <p>Cargando información del proyecto...</p>
             </div>
@@ -55,14 +54,14 @@
 
           <!-- Equipo del Proyecto -->
           <div class="proyecto-info-block">
-            <h2 class="proyecto-block-title">Equipo Participante</h2>
+            <h2 class="section-title-navy proyecto-block-title" data-i18n="proyecto_detalle.equipo_title">Equipo Participante</h2>
             <div class="proyecto-equipo-grid" id="proy-equipo-grid"></div>
           </div>
 
           <!-- Publicaciones del Proyecto -->
           <section class="proyecto-info-block" aria-labelledby="proy-publicaciones-title">
-            <h2 class="proyecto-block-title" id="proy-publicaciones-title">
-              Artículos <span class="proy-pub-count" id="proy-pub-count">(0)</span>
+            <h2 class="section-title-navy proyecto-block-title" id="proy-publicaciones-title">
+              <span data-i18n="proyecto_detalle.articulos_title">Artículos</span> <span class="proy-pub-count" id="proy-pub-count">(0)</span>
             </h2>
             <div id="proy-publicaciones-container">
               <!-- Renderizado dinámicamente -->
@@ -76,14 +75,14 @@
 
           <!-- Metadatos del Proyecto -->
           <div class="proyecto-card-sidebar">
-            <h3 class="proyecto-sidebar-title">Ficha del Proyecto</h3>
+            <h3 class="proyecto-sidebar-title" data-i18n="proyecto_detalle.ficha_title">Ficha del Proyecto</h3>
             <div class="proyecto-ficha-list">
               <div class="proyecto-ficha-row">
-                <span class="ficha-label">Estado</span>
+                <span class="ficha-label" data-i18n="proyecto_detalle.label_estado">Estado</span>
                 <span class="proy-estado-badge" id="proy-estado-badge">En curso</span>
               </div>
               <div class="proyecto-ficha-row">
-                <span class="ficha-label" id="proy-linea-label">Línea de Investigación</span>
+                <span class="ficha-label" id="proy-linea-label" data-i18n="proyecto_detalle.label_linea">Línea de Investigación</span>
                 <div class="ficha-lineas-container" id="proy-lineas-container">
                   <a href="#" class="ficha-valor-linea" id="proy-linea-badge">Línea</a>
                 </div>
@@ -92,13 +91,13 @@
 
             <!-- Único Botón de Acción con Relleno Dorado Institucional -->
             <a href="proyectos.html" class="btn-proy-similares-cta" id="proy-filtro-linea-link">
-              Ver proyectos similares <i class="fa-solid fa-arrow-right btn-icon-right"></i>
+              <span data-i18n="proyecto_detalle.btn_similares">Ver proyectos similares</span> <i class="fa-solid fa-arrow-right btn-icon-right"></i>
             </a>
           </div>
 
           <!-- Instituciones Participantes -->
           <div class="proyecto-card-sidebar">
-            <h3 class="proyecto-sidebar-title">Instituciones</h3>
+            <h3 class="proyecto-sidebar-title" data-i18n="proyecto_detalle.instituciones_title">Instituciones</h3>
             <ul class="proyecto-instituciones-list" id="proy-instituciones-list"></ul>
           </div>
 
@@ -113,6 +112,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="../scripts/i18n.js"></script>
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/proyecto-detalle.js?v=2.4"></script>
 </body>

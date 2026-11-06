@@ -1,0 +1,250 @@
+{
+  "// ========================================================": "",
+  "// COMPONENTE #1: NAVBAR": "",
+  "// ========================================================": "",
+  "nav": {
+    "inicio": "INICIO",
+    "quienes_somos": "QUIÉNES SOMOS",
+    "equipo": "EQUIPO",
+    "investigacion": "INVESTIGACIÓN",
+    "proyectos": "PROYECTOS",
+    "articulos": "ARTÍCULOS",
+    "contacto": "CONTACTO"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: INDEX": "",
+  "// ========================================================": "",
+  "hero": {
+    "desc_p1": "Articulamos academia, sector público, prestadores de servicios y socios estratégicos internacionales para impulsar la",
+    "desc_bold1": "transformación digital en salud",
+    "desc_p2": "mediante informática biomédica, ciencia de datos e",
+    "desc_bold2": "inteligencia artificial",
+    "btn_conocenos": "Conócenos"
+  },
+  "lineas": {
+    "title": "Líneas de Investigación",
+    "informatica_biomedica": "Informática Biomédica",
+    "ia_salud": "Inteligencia Artificial en Salud",
+    "interoperabilidad": "Interoperabilidad y Gobernanza de Datos",
+    "analitica_datos": "Visualización y Analítica de Datos",
+    "sociotecnica_adopcion": "Evaluación Sociotécnica y Adopción",
+    "salud_digital": "Salud Digital"
+  },
+  "noticias": {
+    "title": "Noticias",
+    "error": "No fue posible cargar las publicaciones en este momento. Por favor, intenta de nuevo más tarde.",
+    "ver_linkedin": "Ver en LinkedIn",
+    "ver_linkedin_aria": "Ver publicación en LinkedIn",
+    "iframe_title": "Publicación de LinkedIn"
+  },
+  "ejecutora": {
+    "title": "Universidad Científica del Sur",
+    "desc_p1": "La Red BI4DT es liderada por la Universidad Científica del Sur (UCSUR) a través de la",
+    "desc_bold": "Facultad de Ingeniería Biomédica",
+    "desc_p2": ", impulsando la transformación digital en salud mediante investigación aplicada en informática biomédica y ciencia de datos.",
+    "subtext": "En articulación con universidades, institutos de investigación pública y socios estratégicos de Perú, Ecuador y Estados Unidos, fomentamos la innovación continua y la transferencia tecnológica regional."
+  },
+  "colaboradores": {
+    "title": "Colaboradores de la Red"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: AREA": "",
+  "// ========================================================": "",
+  "area": {
+    "cargando": "Cargando...",
+    "integrantes_title": "Integrantes",
+    "ver_equipo": "Ver todo el equipo",
+    "proyectos_title": "Proyectos Relacionados",
+    "ver_proyectos": "Ver todos los proyectos",
+    "mostrar": "Mostrar:",
+    "por_pagina": "por página",
+    "ver_perfil": "Ver perfil completo",
+    "sin_investigadores": "No hay investigadores registrados directamente en esta línea.",
+    "sin_proyectos": "Sin proyectos registrados actualmente en este eje científico.",
+    "estado_en_curso": "En curso",
+    "estado_concluido": "Concluido",
+    "titulo_pestana": "Eje Científico | Red BI4DT",
+    "items": {
+      "informatica-biomedica": {
+        "nombre": "Informática Biomédica",
+        "desc": "La Informática Biomédica integra principios de ciencias de la computación, ciencias de la información y ciencias de la salud para gestionar, analizar y optimizar la información clínica. En la Red BI4DT, esta línea abarca el diseño e implementación de sistemas de información hospitalaria, la adopción de estándares internacionales como HL7 FHIR y DICOM, y el desarrollo de historias clínicas electrónicas adaptadas al contexto latinoamericano."
+      },
+      "ia-salud": {
+        "nombre": "Inteligencia Artificial en Salud",
+        "desc": "La línea de Inteligencia Artificial en Salud de la Red BI4DT explora el uso de técnicas avanzadas de machine learning y deep learning para transformar la práctica clínica. Nuestros proyectos abarcan sistemas de diagnóstico asistido por computadora, análisis automatizado de imágenes médicas (radiografías, tomografías), procesamiento de lenguaje natural aplicado a textos clínicos en español, y modelos predictivos para vigilancia epidemiológica."
+      },
+      "interoperabilidad": {
+        "nombre": "Interoperabilidad y Gobernanza de Datos",
+        "desc": "La interoperabilidad en salud es la capacidad de los sistemas de información para comunicarse, intercambiar datos y utilizar la información compartida de manera efectiva. Esta línea de la Red BI4DT se centra en la implementación de marcos de gobernanza de datos clínicos, la adopción de estándares internacionales y el diseño de políticas de salud digital a nivel institucional y nacional."
+      },
+      "analitica-datos": {
+        "nombre": "Visualización y Analítica de Datos",
+        "desc": "Esta línea de investigación aborda el modelamiento predictivo, la bioestadística avanzada y el análisis de grandes volúmenes de datos sanitarios. Desarrolla algoritmos de integración clínico-molecular, modelos matemáticos para la predicción de enfermedades transmisibles e indicadores de salud materno-infantil a escala regional."
+      },
+      "sociotecnica-adopcion": {
+        "nombre": "Evaluación Sociotécnica y Adopción",
+        "desc": "La Evaluación Sociotécnica y Adopción examina la interacción entre los profesionales de la salud, las instituciones sanitarias y las soluciones tecnológicas emergentes. Se enfoca en la formulación de políticas públicas de salud digital, el diseño regulatorio y el seguimiento técnico-financiero de iniciativas de I+D."
+      },
+      "salud-digital": {
+        "nombre": "Salud Digital",
+        "desc": "La línea de Salud Digital desarrolla e implementa soluciones de telemedicina y salud móvil (mHealth) destinadas a ampliar el acceso a la atención médica en poblaciones vulnerables y zonas rurales con baja conectividad, integrando además plataformas binacionales de vigilancia epidemiológica digital."
+      }
+    }
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: ARTICULOS": "",
+  "// ========================================================": "",
+  "articulos": {
+    "hero_title": "Artículos",
+    "search_placeholder": "Buscar artículos por título, revista o año...",
+    "search_aria": "Buscar artículos",
+    "search_clear_aria": "Borrar texto de búsqueda",
+    "mostrando": "Mostrando",
+    "articulos_label": "artículos",
+    "mostrar": "Mostrar:",
+    "por_pagina": "por página",
+    "empty_title": "No se encontraron artículos",
+    "empty_desc": "No se encontraron publicaciones que coincidan con los términos de búsqueda ingresados.",
+    "empty_btn": "Borrar búsqueda",
+    "ver_articulo": "Ver artículo",
+    "error_carga": "Ocurrió un error al cargar los artículos científicos. Por favor, intenta de nuevo más tarde."
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: CONTACTO": "",
+  "// ========================================================": "",
+  "contacto": {
+    "label_nombre": "Nombre",
+    "placeholder_nombre": "Tu nombre",
+    "label_apellido": "Apellido",
+    "placeholder_apellido": "Tu apellido",
+    "label_correo": "Correo Electrónico",
+    "placeholder_correo": "ejemplo@correo.com",
+    "label_mensaje": "Mensaje",
+    "placeholder_mensaje": "Escribe tu mensaje o consulta aquí...",
+    "btn_enviar": "Enviar Mensaje",
+    "btn_enviando": "Enviando...",
+    "aria_cerrar_notificacion": "Cerrar notificación",
+    "err_nombre_req": "El nombre es obligatorio.",
+    "err_nombre_len": "El nombre debe tener al menos 2 caracteres.",
+    "err_apellido_req": "El apellido es obligatorio.",
+    "err_apellido_len": "El apellido debe tener al menos 2 caracteres.",
+    "err_correo_req": "El correo electrónico es obligatorio.",
+    "err_correo_inv": "Por favor ingresa un correo electrónico válido.",
+    "err_mensaje_req": "El mensaje es obligatorio.",
+    "err_mensaje_len": "El mensaje debe tener al menos 10 caracteres.",
+    "status_validation_title": "Campos incompletos o incorrectos",
+    "status_validation_desc": "Por favor, revisa y completa los campos señalados en rojo para poder enviar tu mensaje.",
+    "status_sending_title": "Enviando mensaje...",
+    "status_sending_desc": "Por favor, espera un momento mientras procesamos tu consulta.",
+    "status_success_title": "¡Mensaje enviado con éxito!",
+    "status_success_desc": "Gracias por comunicarte con la Red BI4DT. Nuestro equipo se pondrá en contacto contigo a la brevedad.",
+    "status_error_title": "No se pudo enviar el mensaje",
+    "status_error_desc": "Ocurrió un problema de comunicación al intentar registrar tu consulta. Por favor, intenta de nuevo o escríbenos a investigacion@ucsur.edu.pe."
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: EQUIPO": "",
+  "// ========================================================": "",
+  "equipo": {
+    "title_investigacion": "Equipo de Investigación",
+    "title_estudiantes": "Estudiantes"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: ESTUDIANTE": "",
+  "// ========================================================": "",
+  "estudiante": {
+    "areas_interes": "Áreas de Interés",
+    "proyectos_relacionados": "Proyectos Relacionados",
+    "mostrar": "Mostrar:",
+    "por_pagina": "por página",
+    "sin_proyectos": "Sin proyectos registrados actualmente.",
+    "estado_en_curso": "En curso",
+    "estado_concluido": "Concluido"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: INVESTIGACION": "",
+  "// ========================================================": "",
+  "investigacion": {
+    "lineas_investigacion": "Líneas de Investigación",
+    "proyectos_relacionados": "Proyectos Relacionados",
+    "mostrar": "Mostrar:",
+    "por_pagina": "por página",
+    "sin_proyectos": "Sin proyectos registrados actualmente.",
+    "estado_en_curso": "En curso",
+    "estado_concluido": "Concluido"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: PROYECTO-DETALLE": "",
+  "// ========================================================": "",
+  "proyecto_detalle": {
+    "volver": "Volver a proyectos",
+    "periodo": "Período",
+    "descripcion_title": "Descripción del Proyecto",
+    "equipo_title": "Equipo Participante",
+    "articulos_title": "Artículos",
+    "ficha_title": "Ficha del Proyecto",
+    "label_estado": "Estado",
+    "label_linea": "Línea de Investigación",
+    "label_lineas": "Líneas de Investigación",
+    "btn_similares": "Ver proyectos similares",
+    "instituciones_title": "Instituciones",
+    "estado_en_curso": "En curso",
+    "estado_concluido": "Concluido"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: PROYECTOS": "",
+  "// ========================================================": "",
+  "proyectos": {
+    "hero_title": "Proyectos",
+    "stat_total": "En Total",
+    "stat_en_curso": "En curso",
+    "placeholder_buscar": "Buscar",
+    "aria_buscar": "Buscar proyectos por texto",
+    "aria_borrar": "Borrar texto de búsqueda",
+    "opt_todas_lineas": "Todas las líneas",
+    "opt_todos_estados": "Todos los estados",
+    "opt_en_curso": "En curso",
+    "opt_concluido": "Concluido",
+    "title_limpiar": "Limpiar filtros",
+    "aria_limpiar": "Limpiar filtros",
+    "mostrando": "Mostrando",
+    "proyectos_label": "proyectos",
+    "mostrar": "Mostrar:",
+    "por_pagina": "por página",
+    "empty_title": "No se encontraron proyectos",
+    "empty_desc": "No hay proyectos que coincidan con los criterios de búsqueda o filtros seleccionados.",
+    "empty_btn": "Restablecer todos los filtros",
+    "de": "de",
+    "aria_eliminar_filtro": "Eliminar filtro"
+  },
+
+  "// ========================================================": "",
+  "// PAGINA: QUIENES": "",
+  "// ========================================================": "",
+  "quienes": {
+    "mision_title": "Misión",
+    "mision_desc": "Consolidar una red interinstitucional e intersectorial en informática biomédica que articule gobernanza, investigación aplicada, formación de capacidades CTI, difusión científica y sostenibilidad, para cerrar brechas de capacidades digitales en el sistema de salud.",
+    "vision_title": "Visión",
+    "vision_desc": "Ser una red de referencia en informática biomédica y salud digital en Perú y la región, reconocida por su articulación entre academia, Estado, prestadores y socios internacionales, y por su continuidad más allá del periodo de subvención.",
+    "mapa_title": "Red de Cooperación Nacional e Internacional",
+    "mapa_btn_reset_title": "Reiniciar vista panorámica",
+    "mapa_btn_reset_aria": "Reiniciar vista",
+    "galeria_title": "Galería de Fotos"
+  },
+
+  "// ========================================================": "",
+  "// COMPONENTE #2: FOOTER": "",
+  "// ========================================================": "",
+  "footer": {
+    "btn_contacto": "Contacta con nosotros",
+    "copyright": "© 2026 BI4DT Network. Todos los derechos reservados."
+  }
+}

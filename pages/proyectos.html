@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyectos de Investigación - Red BI4DT</title>
+  <title>BI4DT Network</title>
   <meta name="description" content="Catálogo de proyectos de investigación de la Red BI4DT en Informática Biomédica, Inteligencia Artificial en Salud e Interoperabilidad.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
@@ -25,11 +25,16 @@
       <div class="quienes-header-container proyectos-hero-grid">
         <!-- Columna Izquierda: Título y Estadísticas -->
         <div class="proyectos-hero-left">
-          <h1 class="quienes-title">Proyectos</h1>
+          <h1 class="quienes-title" data-i18n="proyectos.hero_title">Proyectos</h1>
           <div class="proyectos-hero-stats">
             <div class="proyectos-stat">
               <span class="proyectos-stat-num" id="stat-total">76</span>
-              <span class="proyectos-stat-label">Proyectos</span>
+              <span class="proyectos-stat-label" data-i18n="proyectos.stat_total">En Total</span>
+            </div>
+            <div class="proyectos-stat-divider" aria-hidden="true"></div>
+            <div class="proyectos-stat">
+              <span class="proyectos-stat-num" id="stat-en-curso">50</span>
+              <span class="proyectos-stat-label stat-badge-en-curso" data-i18n="proyectos.stat_en_curso">En curso</span>
             </div>
           </div>
         </div>
@@ -54,32 +59,32 @@
             <!-- Buscador -->
             <div class="proyectos-search-input-box">
               <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
-              <input type="text" id="proyectos-search-input" placeholder="Buscar" aria-label="Buscar proyectos por texto">
-              <button type="button" id="proyectos-search-clear" class="btn-clear-search" aria-label="Borrar texto de búsqueda" hidden>
+              <input type="text" id="proyectos-search-input" placeholder="Buscar" data-i18n-placeholder="proyectos.placeholder_buscar" aria-label="Buscar proyectos por texto" data-i18n-aria-label="proyectos.aria_buscar">
+              <button type="button" id="proyectos-search-clear" class="btn-clear-search" aria-label="Borrar texto de búsqueda" data-i18n-aria-label="proyectos.aria_borrar" hidden>
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
 
             <!-- Select Línea de Investigación -->
             <select id="filtro-select-area" class="filtro-select" aria-label="Filtrar por línea de investigación">
-              <option value="todos">Todas las líneas</option>
-              <option value="informatica-biomedica">Informática Biomédica</option>
-              <option value="ia-salud">Inteligencia Artificial en Salud</option>
-              <option value="interoperabilidad">Interoperabilidad y Gobernanza de Datos</option>
-              <option value="analitica-datos">Visualización y Analítica de Datos</option>
-              <option value="sociotecnica-adopcion">Evaluación Sociotécnica y Adopción</option>
-              <option value="salud-digital">Salud Digital</option>
+              <option value="todos" data-i18n="proyectos.opt_todas_lineas">Todas las líneas</option>
+              <option value="informatica-biomedica" data-i18n="lineas.informatica_biomedica">Informática Biomédica</option>
+              <option value="ia-salud" data-i18n="lineas.ia_salud">Inteligencia Artificial en Salud</option>
+              <option value="interoperabilidad" data-i18n="lineas.interoperabilidad">Interoperabilidad y Gobernanza de Datos</option>
+              <option value="analitica-datos" data-i18n="lineas.analitica_datos">Visualización y Analítica de Datos</option>
+              <option value="sociotecnica-adopcion" data-i18n="lineas.sociotecnica_adopcion">Evaluación Sociotécnica y Adopción</option>
+              <option value="salud-digital" data-i18n="lineas.salud_digital">Salud Digital</option>
             </select>
 
             <!-- Select Estado -->
             <select id="filtro-select-estado" class="filtro-select" aria-label="Filtrar por estado del proyecto">
-              <option value="todos">Todos los estados</option>
-              <option value="En curso">En curso</option>
-              <option value="Concluido">Concluido</option>
+              <option value="todos" data-i18n="proyectos.opt_todos_estados">Todos los estados</option>
+              <option value="En curso" data-i18n="proyectos.opt_en_curso">En curso</option>
+              <option value="Concluido" data-i18n="proyectos.opt_concluido">Concluido</option>
             </select>
 
             <!-- Botón Limpiar (Tacho 36x36) -->
-            <button type="button" id="btn-reset-all" class="proyectos-btn-trash" title="Limpiar filtros" aria-label="Limpiar filtros" disabled>
+            <button type="button" id="btn-reset-all" class="proyectos-btn-trash" title="Limpiar filtros" data-i18n-title="proyectos.title_limpiar" aria-label="Limpiar filtros" data-i18n-aria-label="proyectos.aria_limpiar" disabled>
               <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
             </button>
           </div>
@@ -87,17 +92,17 @@
           <!-- Fila Inferior: Mostrando N proyectos + Chips Activos + Selector de Paginación -->
         <div class="proyectos-meta-row">
           <div class="proyectos-meta-left">
-            <span id="proyectos-count-label" class="proyectos-count-text">Mostrando <strong id="proyectos-count">0</strong> proyectos</span>
+            <span id="proyectos-count-label" class="proyectos-count-text"><span data-i18n="proyectos.mostrando">Mostrando</span> <strong id="proyectos-count">0</strong> <span data-i18n="proyectos.proyectos_label">proyectos</span></span>
             <div id="proyectos-active-chips" class="proyectos-active-chips" hidden></div>
           </div>
           <div class="proyectos-per-page-wrapper">
-            <label for="proy-per-page" class="proy-per-page-label">Mostrar:</label>
+            <label for="proy-per-page" class="proy-per-page-label" data-i18n="proyectos.mostrar">Mostrar:</label>
             <select id="proy-per-page" class="proy-per-page-select">
               <option value="6" selected>6</option>
               <option value="9">9</option>
               <option value="12">12</option>
             </select>
-            <span class="proy-per-page-suffix">por página</span>
+            <span class="proy-per-page-suffix" data-i18n="proyectos.por_pagina">por página</span>
           </div>
         </div>
       </div>
@@ -110,9 +115,9 @@
         <!-- Estado vacío -->
         <div class="proyectos-empty" id="proyectos-empty" hidden>
           <i class="fa-solid fa-filter-circle-xmark"></i>
-          <h3>No se encontraron proyectos</h3>
-          <p>No hay proyectos que coincidan con los criterios de búsqueda o filtros seleccionados.</p>
-          <button type="button" class="proyectos-empty-btn" id="proyectos-empty-reset">Restablecer todos los filtros</button>
+          <h3 data-i18n="proyectos.empty_title">No se encontraron proyectos</h3>
+          <p data-i18n="proyectos.empty_desc">No hay proyectos que coincidan con los criterios de búsqueda o filtros seleccionados.</p>
+          <button type="button" class="proyectos-empty-btn" id="proyectos-empty-reset" data-i18n="proyectos.empty_btn">Restablecer todos los filtros</button>
         </div>
 
         <!-- Barra de Paginación Dinámica (6, 9, 12) -->
@@ -126,6 +131,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script src="../scripts/i18n.js"></script>
   <script src="../scripts/loadComponents.js"></script>
   <script src="../scripts/index.js"></script>
   <script src="../scripts/proyectos.js?v=3.3"></script>
